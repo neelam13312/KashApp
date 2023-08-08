@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Fragment.AllTable.JOdiFragment">
+
+    <include layout="@layout/bg_withouttext_layout" />
+    <!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/my_tool"
+
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/card_shape"
+                    android:drawableEnd="@drawable/thursday_16px"
+                    android:padding="10dp"
+                    android:text="@string/select_date"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:visibility="invisible"
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/card_shape"
+                    android:padding="10dp"
+                    android:text="@string/select_game_type"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="italic|bold" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <LinearLayout
+                                android:weightSum="1"
+                                android:padding="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                            <TextView
+                                    android:textSize="16sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight=".5"
+                                    android:padding="10dp"
+
+                                    android:text="@string/select_date"
+                                    android:textAlignment="viewStart"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/gray" />
+
+                            <AutoCompleteTextView
+                                    android:id="@+id/auto_openPanna"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".5"
+                                    android:background="@drawable/card_shape"
+                                    android:completionThreshold="1"
+                                    android:dropDownHeight="150dp"
+                                    android:gravity="center"
+                                    android:hint=""
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    android:padding="10dp"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/gray"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                                android:weightSum="1"
+                                android:padding="2dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                            <TextView
+                                    android:textSize="16sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight=".5"
+                                    android:padding="10dp"
+
+                                    android:text="@string/point"
+                                    android:textAlignment="viewStart"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/gray" />
+
+                            <AutoCompleteTextView
+                                    android:id="@+id/auto_ponit"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".5"
+                                    android:background="@drawable/card_shape"
+                                    android:completionThreshold="1"
+                                    android:dropDownHeight="150dp"
+                                    android:gravity="center"
+                                    android:hint=""
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    android:padding="10dp"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/gray"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                        </LinearLayout>
+                        <Button
+                                android:textAllCaps="false"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:background="@drawable/bg_button"
+                                android:text="@string/add_more"
+                                android:padding="6dp"
+                                android:layout_gravity="end"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                        </Button>
+
+                        <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                    android:weightSum="1.5"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                <TextView
+                                        android:layout_weight="0.4"
+                                        android:textSize="16sp"
+                                        android:layout_width="0dp"
+                                        android:textAlignment="center"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        android:padding="4dp"
+                                        android:text="Digit"
+
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black" />
+                                <TextView
+                                        android:layout_weight="0.4"
+                                        android:textSize="16sp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        android:padding="4dp"
+                                        android:text="@string/point"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black" />
+
+                                <TextView
+                                        android:layout_weight="0.4"
+                                        android:textSize="16sp"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="5dp"
+                                        android:padding="4dp"
+                                        android:textAlignment="center"
+                                        android:text="Game Type"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black" />
+
+
+                            </LinearLayout>
+
+                            <View
+                                    android:background="@color/gray"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="1dp"/>
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rec_jodi"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="20dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <TextView
+                    android:visibility="gone"
+                android:id="@+id/btnreset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btn_add"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="TOTAL   0"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <View
+                        android:id="@+id/view1"
+                        android:background="@color/gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"/>
+
+                <Button
+                        android:id="@+id/btn_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/button_bg"
+                        android:padding="10dp"
+                        android:text="@string/submit_bid"
+
+
+                        />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

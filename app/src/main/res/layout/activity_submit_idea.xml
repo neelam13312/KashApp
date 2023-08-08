@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.SubmitIDeaActivity">
+        <include android:id="@+id/toolbar"
+                layout="@layout/app_bar_common"/>
+        <LinearLayout
+                android:orientation="vertical"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+
+                        app:counterMaxLength="500"
+                        app:counterEnabled="true"
+
+                        android:textAlignment="viewStart">
+<!--                    <EditText-->
+<!--                        app:counterEnabled="true"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="300dp"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:gravity="top"-->
+<!--                        android:background="@drawable/bg_round_with_border"-->
+<!--                        android:hint="Type here"-->
+<!--                        app:counterMaxLength="500"-->
+<!--                        >-->
+
+<!--                    </EditText>-->
+<com.google.android.material.textfield.TextInputEditText
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:id="@+id/tv_msg"
+    android:background="@drawable/bg_round_with_border"
+    android:layout_margin="10dp"
+    android:hint="Type here"
+    android:gravity="top">
+
+</com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_submit"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:text="Submit Your Idea"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                </Button>
+</LinearLayout>
+</RelativeLayout>

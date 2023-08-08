@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+                android:id="@+id/rel_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/rel_btn"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="Set Filter"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold">
+
+                </TextView>
+        </RelativeLayout>
+        <androidx.core.widget.NestedScrollView
+                android:layout_below="@+id/rel_title"
+                android:fillViewport="true"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <ScrollView
+                                        android:fillViewport="true"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+                                        <LinearLayout
+                                                android:orientation="vertical"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+                                                <RelativeLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content">
+                                                        <LinearLayout
+                                                                android:id="@+id/lin_game"
+                                                                android:orientation="vertical"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content">
+                                                                <LinearLayout
+                                                                    android:orientation="vertical"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content">
+                                                                        <TextView
+                                                                            android:textColor="@color/black"
+                                                                            android:textSize="16sp"
+                                                                            android:layout_margin="5dp"
+                                                                            android:padding="4dp"
+                                                                            android:text="By Date"
+
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="wrap_content">
+
+                                                                        </TextView>
+                                                                        <LinearLayout
+                                                                            android:weightSum="2"
+                                                                            android:orientation="horizontal"
+                                                                            android:layout_width="match_parent"
+                                                                            android:layout_height="wrap_content">
+                                                                                <CheckBox
+                                                                                    android:buttonTint="@color/colorPrimary"
+                                                                                    android:layout_marginLeft="5dp"
+                                                                                    android:id="@+id/cb_date"
+                                                                                    android:layout_gravity="center"
+                                                                                    android:padding="6dp"
+                                                                                    android:checked="false"
+                                                                                    android:layout_width="wrap_content"
+                                                                                    android:layout_height="wrap_content"/>
+                                                                                <RelativeLayout
+                                                                                    android:layout_weight="1.4"
+                                                                                    android:background="@drawable/edit_bg"
+                                                                                    android:layout_width="0dp"
+                                                                                    android:layout_height="wrap_content">
+
+                                                                                        <TextView
+
+                                                                                            android:id="@+id/tv_date"
+                                                                                            android:layout_width="match_parent"
+                                                                                            android:layout_height="wrap_content"
+                                                                                            android:layout_marginStart="@dimen/space_5"
+                                                                                            android:layout_marginTop="@dimen/space_5"
+                                                                                            android:layout_marginEnd="@dimen/space_5"
+                                                                                            android:layout_marginBottom="@dimen/space_5"
+                                                                                            android:hint="Select date"
+                                                                                            android:padding="10dp"
+                                                                                            android:textColor="@color/black"
+                                                                                            android:textSize="16sp" />
+
+
+                                                                                </RelativeLayout>
+                                                                                <Button
+                                                                                    android:layout_marginLeft="@dimen/space_2"
+                                                                                    android:text="Change"
+                                                                                    android:gravity="center"
+                                                                                    android:layout_gravity="center"
+                                                                                    android:textColor="@color/white"
+                                                                                    android:background="@drawable/button_bg"
+
+                                                                                    android:id="@+id/btn_date"
+                                                                                    android:layout_weight=".6"
+                                                                                    android:layout_width="0dp"
+                                                                                    android:layout_height="wrap_content"/>
+                                                                        </LinearLayout>
+
+
+
+                                                                </LinearLayout>
+                                                                <LinearLayout
+                                                                        android:orientation="vertical"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="wrap_content">
+                                                                        <TextView
+                                                                                android:textColor="@color/black"
+                                                                                android:textSize="16sp"
+                                                                                android:layout_margin="5dp"
+                                                                                android:padding="4dp"
+                                                                                android:text="By Game Type"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="wrap_content">
+
+                                                                        </TextView>
+                                                                        <CheckBox
+                                                                                android:buttonTint="@color/colorPrimary"
+                                                                                android:layout_margin="5dp"
+                                                                                android:id="@+id/cb_open"
+                                                                                android:layout_width="wrap_content"
+                                                                                android:layout_height="wrap_content"
+                                                                                android:text="Open"
+                                                                                android:textSize="16sp"
+                                                                                android:textColor="@color/black"
+                                                                                android:padding="6dp"
+                                                                                android:checked="false"
+                                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                                app:layout_constraintTop_toTopOf="parent" />
+                                                                        <View
+                                                                                android:layout_margin="5dp"
+                                                                                android:background="@color/white_smoke"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="2dp"/>
+                                                                        <CheckBox
+                                                                                android:buttonTint="@color/colorPrimary"
+                                                                                android:layout_margin="5dp"
+                                                                                android:id="@+id/cb_close"
+                                                                                android:layout_width="wrap_content"
+                                                                                android:layout_height="wrap_content"
+                                                                                android:text="Close"
+                                                                                android:textSize="16sp"
+                                                                                android:textColor="@color/black"
+                                                                                android:padding="6dp"
+                                                                                android:checked="false"
+                                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                                app:layout_constraintTop_toTopOf="parent" />
+                                                                        <View
+                                                                                android:layout_margin="5dp"
+                                                                                android:background="@color/white_smoke"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="2dp"/>
+                                                                </LinearLayout>
+                                                                <LinearLayout
+                                                                        android:orientation="vertical"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="wrap_content">
+                                                                        <TextView
+                                                                                android:textColor="@color/black"
+                                                                                android:textSize="16sp"
+                                                                                android:layout_margin="5dp"
+                                                                                android:padding="4dp"
+                                                                                android:text="By Winning Status"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="wrap_content">
+
+                                                                        </TextView>
+                                                                        <CheckBox
+                                                                                android:buttonTint="@color/colorPrimary"
+
+                                                                                android:layout_margin="5dp"
+                                                                                android:id="@+id/cb_win"
+                                                                                android:layout_width="wrap_content"
+                                                                                android:layout_height="wrap_content"
+                                                                                android:text="Win"
+                                                                                android:textSize="16sp"
+                                                                                android:textColor="@color/black"
+                                                                                android:padding="6dp"
+                                                                                android:checked="false"
+                                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                                app:layout_constraintTop_toTopOf="parent" />
+                                                                        <View
+                                                                                android:layout_margin="5dp"
+                                                                                android:background="@color/white_smoke"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="2dp"/>
+                                                                        <CheckBox
+                                                                                android:buttonTint="@color/colorPrimary"
+                                                                                android:layout_margin="5dp"
+                                                                                android:id="@+id/cb_loss"
+                                                                                android:layout_width="wrap_content"
+                                                                                android:layout_height="wrap_content"
+                                                                                android:text="Loss"
+                                                                                android:textSize="16sp"
+                                                                                android:textColor="@color/black"
+                                                                                android:padding="6dp"
+                                                                                android:checked="false"
+                                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                                app:layout_constraintTop_toTopOf="parent" />
+                                                                        <View
+                                                                                android:layout_margin="5dp"
+                                                                                android:background="@color/white_smoke"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="2dp"/>
+                                                                        <CheckBox
+                                                                                android:buttonTint="@color/colorPrimary"
+                                                                                android:layout_margin="5dp"
+                                                                                android:id="@+id/cb_pendind"
+                                                                                android:layout_width="wrap_content"
+                                                                                android:layout_height="wrap_content"
+                                                                                android:text="Pending"
+                                                                                android:textSize="16sp"
+                                                                                android:textColor="@color/black"
+                                                                                android:padding="6dp"
+                                                                                android:checked="false"
+                                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                                app:layout_constraintTop_toTopOf="parent" />
+                                                                        <View
+                                                                                android:layout_margin="5dp"
+                                                                                android:background="@color/white_smoke"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="2dp"/>
+                                                                </LinearLayout>
+
+                                                        </LinearLayout>
+
+                                                        <RelativeLayout
+                                                                android:layout_below="@id/lin_game"
+                                                                android:id="@+id/id_rcv"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content">
+                                                                <androidx.core.widget.NestedScrollView
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="wrap_content">
+                                                                        <LinearLayout
+                                                                                android:orientation="vertical"
+                                                                                android:layout_width="match_parent"
+                                                                                android:layout_height="wrap_content">
+                                                                                <TextView
+                                                                                        android:layout_margin="5dp"
+                                                                                        android:padding="4dp"
+                                                                                        android:textColor="@color/black"
+                                                                                        android:textSize="16sp"
+                                                                                        android:text="By Game"
+                                                                                        android:id="@+id/txt_game"
+                                                                                        android:layout_width="match_parent"
+                                                                                        android:layout_height="wrap_content">
+
+                                                                                </TextView>
+                                                                                <androidx.recyclerview.widget.RecyclerView
+                                                                                        android:id="@+id/rec_gametype"
+                                                                                        android:nestedScrollingEnabled="false"
+                                                                                        android:layout_width="match_parent"
+                                                                                        android:layout_height="wrap_content">
+
+                                                                                </androidx.recyclerview.widget.RecyclerView>
+                                                                        </LinearLayout>
+                                                                </androidx.core.widget.NestedScrollView>
+                                                        </RelativeLayout>
+                                                </RelativeLayout>
+                                        </LinearLayout>
+
+
+                                </ScrollView>
+
+                        </RelativeLayout>
+
+                </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+                android:background="@color/white"
+                android:id="@+id/rel_btn"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                        android:weightSum="4"
+                        android:padding="6dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                                android:textColor="@color/colorPrimary"
+                                android:layout_weight="2"
+                                android:id="@+id/btn_cancel"
+                                android:text="@string/cancel"
+                                android:background="@drawable/bg_addpoint"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp">
+
+                        </Button>
+                        <Button
+                                android:textColor="@color/white"
+                                android:layout_weight="2"
+                                android:id="@+id/btn_submit"
+                                android:text="@string/submit"
+                                android:background="@drawable/button_bg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                        </Button>
+
+                </LinearLayout>
+
+        </RelativeLayout>
+
+</RelativeLayout>

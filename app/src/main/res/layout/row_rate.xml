@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:background="@drawable/bg_round_with_border"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    >
+
+                    <TextView
+                        android:textAlignment="viewStart"
+                        android:id="@+id/tv_gamename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                            android:padding="5dp"
+                            android:gravity="start"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="10dp"
+                        android:text="game name"
+                       
+                        />
+
+
+                    <TextView
+                        android:padding="5dp"
+                        android:layout_gravity="start"
+                        android:id="@+id/tv_gamerate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="game rate"
+                        />
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:layout_centerInParent="true"
+
+                    >
+
+                    <ImageView
+                      android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/remote"
+
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+
+</RelativeLayout>

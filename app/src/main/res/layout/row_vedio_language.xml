@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            android:backgroundTint="@color/card5"
+            android:background="@drawable/bg_rounded_edge_10dp"
+                android:id="@+id/lin_addFund"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+
+
+                android:orientation="horizontal">
+<LinearLayout
+        android:layout_centerInParent="true"
+        android:gravity="center"
+
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/iv_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_fund"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="@string/name"
+            android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+
+
+                >
+
+        </TextView>
+
+        <TextView
+                android:id="@+id/tv_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_fund"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="@string/name"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+</LinearLayout>
+
+                <View
+                        android:id="@+id/view"
+                        android:layout_width="35dp"
+                        android:layout_height="4dp"
+                        android:layout_alignParentBottom="true"
+
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/red"
+
+                        >
+
+                </View>
+        </RelativeLayout>
+
+
+</RelativeLayout>
+

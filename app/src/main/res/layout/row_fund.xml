@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            android:id="@+id/lin_addFund"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_rounded_edge_10dp"
+            android:backgroundTint="@color/card5"
+            android:orientation="horizontal">
+<RelativeLayout
+    android:layout_centerInParent="true"
+        android:id="@+id/rel_backchange"
+        android:backgroundTint="@color/white_smoke"
+        android:background="@drawable/bg_round_with_border"
+        android:layout_width="60dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_height="60dp">
+        <ImageView
+                android:padding="@dimen/space_4"
+                android:id="@+id/iv_fund"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+               android:layout_gravity="center"
+                android:src="@drawable/statement"
+               >
+
+        </ImageView>
+
+</RelativeLayout>
+
+         <LinearLayout
+             android:id="@+id/linText"
+             android:backgroundTint="@color/colorPrimary"
+             android:layout_alignParentBottom="true"
+             android:background="@color/colorPrimary"
+             android:layout_width="match_parent"
+             android:layout_height="30dp">
+             <TextView
+                 android:textColor="@color/white"
+                 android:gravity="center"
+                 android:layout_gravity="center"
+                 android:id="@+id/tv_fund"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:text="@string/name"
+                 android:textAlignment="center" />
+         </LinearLayout>
+        </RelativeLayout>
+
+
+</RelativeLayout>
+

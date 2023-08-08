@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <androidx.cardview.widget.CardView
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                                android:layout_margin="5dp"
+                                android:id="@+id/iv_close"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_close"
+                                android:layout_width="@dimen/space_40dp"
+                                android:layout_height="@dimen/space_40dp"
+                                app:tint="@color/colorPrimary" />
+
+                        <ImageView
+                            android:scaleType="fitXY"
+
+                            android:id="@+id/div_chatimage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/iv_close"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/app_logo">
+
+                        </ImageView>
+                </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

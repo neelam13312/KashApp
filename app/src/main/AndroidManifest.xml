@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="in.games.GamesSattaBets">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- of no use -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+    </queries>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.CHOOSER" />
+
+            <data android:scheme="upi" />
+        </intent>
+
+        <!-- Package Specific UPI Apps -->
+        <package android:name="in.amazon.mShop.android.shopping" />
+        <package android:name="in.org.npci.upiapp" />
+        <package android:name="com.google.android.apps.nbu.paisa.user" />
+        <package android:name="com.phonepe.app" />
+        <package android:name="net.one97.paytm" />
+    </queries>
+
+    <meta-data
+        android:name="com.google.android.gms.wallet.api.enabled"
+        android:value="true" />
+
+    <queries>
+
+        <!-- List of apps which you want to support for Intent pay -->
+        <package android:name="com.google.android.apps.nbu.paisa.user" />
+        <!-- <package android:name="com.phonepe.app"/> -->
+        <!--
+             Specific intents you query for,
+             eg: for a custom share UI
+        -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="in.games.GamesSattaBets.Util.AppController"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GDMatkaLive">
+
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.GrantPermissionActivity"
+            android:exported="false" />
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.WhatsappChatSupportActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.StarlineResultHistoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.ChangeMpinActivity"
+            android:exported="false" />
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.ForgotMpinActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.PlayVideoActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.ShowVedioActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.SubmitIDeaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.StarlineGamesFragment"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name="in.games.GamesSattaBets.Activity.PaymentWebViewActivity"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.SupportActivity"
+            android:exported="false" />
+        <activity android:name="in.games.GamesSattaBets.Activity.AddBankAccountActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.ForgotPasswordWhatsppActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.MpinLoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.PassbookFragment"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.PasschangeActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.ForgetActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.RegisterActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.OTPActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.PermissionActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.SelectGameActivity"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.AllHistoryActivity"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.NotificationFragment"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.AddFundFragment"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.WithdrawalFundFragment"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Fragment.WithdrawFundHistoryFragment"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.PaymentActivity"
+            android:exported="true"
+            android:label="Razorpay Payment" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_8b1OKltFTrsEON" />
+
+        <activity android:name="in.games.GamesSattaBets.Activity.EditUserDetailsActivity"
+            android:exported="false"/>
+        <activity android:name="in.games.GamesSattaBets.Activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="in.games.GamesSattaBets.Activity.MainActivity"
+            android:windowSoftInputMode="adjustNothing"
+            android:exported="false"/>
+
+        <receiver
+            android:name="in.games.GamesSattaBets.Util.GcmBroadcastReceiver"
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action
+                    android:name="com.google.android.c2dm.intent.RECEIVE"
+                    android:exported="false" />
+
+                <category android:name="com.google.android.gcm.demo.app" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

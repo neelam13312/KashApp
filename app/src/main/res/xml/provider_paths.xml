@@ -1,0 +1,5 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path path="Android/data/${applicationId}/" name="files_root" />
+    <root-path name="external_files" path="." />
+    <!--    <root-path name="root" path="/" />-->
+</paths>

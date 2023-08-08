@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.GamesFragment.TwoDigitPannaFragment">
+
+    <include layout="@layout/bg_withouttext_layout"/>
+
+    <ScrollView
+        android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include
+                    layout="@layout/date_time_layout"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:weightSum="2">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/two_digit"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        />
+                    <EditText
+                        android:id="@+id/et_twoDigit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:hint="Enter Two Digit (CPSR)"
+                        android:textColorHint="@color/gray"
+                        android:layout_weight="1"
+                        android:maxLength="2"
+                        android:background="@drawable/card_shape"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+
+                    android:weightSum="2">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/points"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                       />
+                    <EditText
+                        android:id="@+id/et_points"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:inputType="number"
+                        android:gravity="center"
+                        android:hint="@string/enter_points"
+                        android:textColorHint="@color/gray"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_shape"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_bg"
+                    android:paddingVertical="5dp"
+                    android:text="@string/add" />
+            </LinearLayout>
+        </ScrollView>
+    <include
+        android:layout_below="@+id/scroll"
+        layout="@layout/gamebottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rel_submit"
+        />
+    <RelativeLayout
+
+        android:id="@+id/rel_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            layout="@layout/total_amount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

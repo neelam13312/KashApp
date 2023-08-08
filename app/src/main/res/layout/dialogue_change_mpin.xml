@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_round_with_border"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/rel_main"
+
+        android:padding="6dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/iv_close"
+            android:padding="4dp"
+            android:text="@string/updateMpin"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_close"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_close"
+            app:tint="@color/white">
+
+        </ImageView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/rel_main"
+
+        android:id="@+id/lin_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:padding="4dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_with_border"
+
+                android:hint="@string/enter_otp"
+                android:inputType="number"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="4dp"
+                android:layout_gravity="end"
+                android:text="@string/Request_otp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/et_ompin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_with_border"
+                android:hint="@string/enter_oldMPIN"
+                android:inputType="number"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="15dp"
+                android:maxLength="4"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="italic" />
+            <EditText
+                android:id="@+id/et_nmpin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_with_border"
+                android:maxLength="4"
+                android:hint="@string/enter_newMPIN"
+                android:inputType="number"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="italic" />
+            <EditText
+                android:id="@+id/et_cnmpin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_with_border"
+                android:maxLength="4"
+                android:hint="@string/Confirm_neMpin"
+                android:inputType="number"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="italic" />
+
+
+        </LinearLayout>
+        <Button
+
+            android:id="@+id/btn_gen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/update" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.AccountStatementtFragment">
+    <include layout="@layout/bg_withouttext_layout"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+
+            <RelativeLayout
+                    android:id="@+id/lin_withdrawFundHistory"
+                    android:layout_width="130dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bg_rounded_edge_10dp"
+                    android:backgroundTint="@color/full_sangam"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="6dp"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    >
+                <RelativeLayout
+                        android:id="@+id/rel_backchange"
+                        android:background="@drawable/bg_cart_circle"
+                        android:gravity="center"
+                        android:backgroundTint="@color/dark_pink"
+                        android:layout_gravity="center"
+                        android:layout_width="50dp"
+                        android:orientation="vertical"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="50dp">
+                    <ImageView
+                            android:padding="@dimen/space_4"
+                            android:id="@+id/iv_fund"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/fund"
+                            app:tint="@color/yellow"
+                            >
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+                        android:id="@+id/tv_fund"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rel_backchange"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/withdraw_history"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                <View
+                        android:id="@+id/view"
+                        android:layout_width="35dp"
+                        android:layout_height="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="5dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/dark_pink"
+
+                        >
+
+                </View>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/lin_addFundHistory"
+                    android:layout_width="130dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bg_rounded_edge_10dp"
+                    android:backgroundTint="@color/dp_motor"
+                    android:elevation="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    >
+                <RelativeLayout
+                        android:id="@+id/rel_addimg"
+                        android:background="@drawable/bg_cart_circle"
+                        android:backgroundTint="@color/colorAccent"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="50dp"
+                        android:orientation="vertical"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="50dp">
+
+                    <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/space_4"
+                            android:src="@drawable/withdraw_fund">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rel_addimg"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/add_history"
+                        android:textAlignment="center"
+
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                <View
+                        android:id="@+id/view2"
+                        android:layout_width="35dp"
+                        android:layout_height="4dp"
+                        android:layout_alignParentBottom="true"
+android:layout_marginTop="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/colorAccent"
+
+                        >
+
+                </View>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_barLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+                <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:background="@drawable/bg_bottom_round_20pd"
+                        app:layout_scrollFlags="scroll|enterAlways">
+                        <!--        app:theme="@style/ToolBarStyle"-->
+                        <!--        app:theme="@style/ToolbarColoredBackArrow"-->
+                        <LinearLayout
+                                android:id="@+id/lin_toolbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+                                <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight=".4">
+                                        <ImageView
+                                                android:layout_gravity="center"
+                                                android:id="@+id/img_back"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:visibility="visible"
+                                                android:src="@drawable/back_arrow"
+                                                app:tint="@color/white"/>
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/img_profile"
+                                                app:civ_border_color="@color/white"
+                                                app:civ_circle_background_color="@color/white"
+                                                android:layout_width="40dp"
+                                                android:layout_height="40dp"
+                                                android:visibility="visible"
+                                                android:src="@drawable/person" />
+                                </LinearLayout>
+                                <RelativeLayout
+                                        android:layout_marginStart="5dp"
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:weightSum="1"
+                                        android:padding="3dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                                android:id="@+id/tv_title"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:marqueeRepeatLimit="marquee_forever"
+                                                android:paddingLeft="5dp"
+                                                android:singleLine="true"
+                                                android:text="@string/title"
+                                                android:layout_marginStart="5dp"
+                                                android:textColor="@color/white"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+                                        <TextView
+                                                android:id="@+id/tv_online"
+                                                android:layout_below="@id/tv_title"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingLeft="5dp"
+                                                android:gravity="center"
+                                                android:drawableTint="@color/green"
+                                                android:drawablePadding="6dp"
+                                                android:drawableStart="@drawable/bg_circle_green"
+                                                android:singleLine="true"
+                                                android:text="Online"
+                                                android:textColor="@color/white"
+                                                android:textSize="16sp"
+                                                />
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:layout_gravity="end"
+                                        android:gravity="center_vertical|end"
+                                        android:layout_weight=".6">
+
+                                        <ImageView
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginEnd="20dp"
+                                            android:id="@+id/img_call"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:visibility="visible"
+                                            android:src="@drawable/telephone"
+                                            app:tint="@color/white"/>
+
+
+                                </LinearLayout>
+
+                        </LinearLayout>
+                </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+</RelativeLayout>

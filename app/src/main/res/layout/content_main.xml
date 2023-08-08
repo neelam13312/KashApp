@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottomAppBar"
+                android:layout_alignParentTop="true">
+
+                <FrameLayout
+                    android:id="@+id/frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="0dp" />
+
+            </RelativeLayout>
+
+
+                <!--the usual bottom navigation bar with items-->
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                app:backgroundTint="@android:color/transparent"
+                app:fabAlignmentMode="center"
+                app:fabCradleMargin="5dp"
+                app:fabCradleRoundedCornerRadius="10dp"
+                app:fabCradleVerticalOffset="10dp"
+                tools:ignore="BottomAppBar">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="bottom"
+                    android:background="@color/colorAccent"
+                    app:elevation="2dp"
+                    app:itemIconTint="@color/white"
+                    app:itemRippleColor="@color/colorAccent"
+                    app:itemTextColor="@color/white"
+                    app:labelVisibilityMode="labeled"
+                    app:menu="@menu/bottom_menu">
+
+
+                </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+                <!--the normal Floating action button which is
+                    anchored to the bottom navigation button-->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_marginBottom="-30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_above="@id/bottomAppBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:contentDescription="@string/app_name"
+
+                    app:layout_anchor="@id/bottomAppBar"
+                    app:srcCompat="@drawable/home"
+                    app:tint="@color/white"
+                    tools:ignore="VectorDrawableCompat" />
+        </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.PassbookFragment"
+    >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar_common" />
+    <HorizontalScrollView
+
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="match_parent">
+        <RelativeLayout
+
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+
+                android:background="@drawable/bg_round_edge_5dp"
+                android:id="@+id/linearlayout"
+                android:layout_marginRight="@dimen/space_2"
+                android:layout_marginLeft="@dimen/space_2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/lin_trnsdate"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="100dp"
+
+
+                            android:layout_height="wrap_content">
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_achievement"-->
+
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_gravity="center"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:padding="4dp"-->
+                            <!--                                                android:src="@drawable/ic_person"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+
+                            <TextView
+                                android:id="@+id/tv_trnsdate"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+
+                                android:padding="4dp"
+
+                                android:gravity="center"
+                                android:layout_gravity="center"
+
+                                android:text="Trans. Date"
+                                android:textColor="@color/white"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="2dp"
+                            android:layout_height="50dp"
+                            android:background="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/lin_particular"
+                            android:layout_width="200dp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_achievement"-->
+
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_gravity="center"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:padding="4dp"-->
+                            <!--                                                android:src="@drawable/ic_person"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_particular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Particular"
+                                android:textColor="@color/white"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_chpter"
+                            android:layout_width="2dp"
+                            android:layout_height="30dp"
+                            android:background="@color/white" />
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:id="@+id/lin_p_amount"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_achievement"-->
+
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_gravity="center"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:padding="4dp"-->
+                            <!--                                                android:src="@drawable/ic_person"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_p_amount"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_5dp"
+
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center"
+
+
+                                android:text="Previous Amount"
+                                android:textColor="@color/white"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view6"
+                            android:layout_width="2dp"
+                            android:layout_height="30dp"
+                            android:background="@color/white"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/lin_t_amount"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:visibility="visible">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_other"-->
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_5dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:src="@drawable/test_icon"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_t_amount"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_5dp"
+                                android:layout_marginEnd="@dimen/space_10dp"
+                                android:text="Transaction Amount"
+                                android:textColor="@color/white"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                        <View
+                            android:id="@+id/view7"
+                            android:layout_width="2dp"
+                            android:layout_height="30dp"
+                            android:background="@color/white"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/lin_cur_amount"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:visibility="visible">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_other"-->
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_5dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:src="@drawable/test_icon"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_cur_amount"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_5dp"
+
+                               android:padding="@dimen/space_4"
+                                android:text="Current Amount"
+                                android:textColor="@color/white"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_passbook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_below="@id/linearlayout"
+                android:layout_marginTop="5dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>

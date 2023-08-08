@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/space_10"
+    android:background="@drawable/edit_bg"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/lin_block"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:padding="@dimen/space_30"
+        android:layout_height="wrap_content">
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/blocked"
+            android:layout_height="90dp">
+
+        </pl.droidsonroids.gif.GifImageView>
+
+
+        <TextView
+            android:id="@+id/tv_block"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="10pt"
+            android:layout_marginTop="@dimen/space_10"
+            android:text="Your id is blocked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+<Button
+    android:id="@+id/btn_block"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/space_10"
+    android:text="Ok"
+    android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</RelativeLayout>

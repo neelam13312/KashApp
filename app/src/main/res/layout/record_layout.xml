@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_button"
+    android:layout_height="50dp">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_mic_24"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"/>
+    <Chronometer
+        android:id="@+id/tv_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"/>
+
+
+</LinearLayout>

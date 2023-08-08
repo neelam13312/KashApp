@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="@dimen/space_3"
+            android:layout_marginLeft="@dimen/space_2"
+            android:layout_marginRight="@dimen/space_2"
+            app:cardCornerRadius="@dimen/space_6"
+            android:elevation="@dimen/space_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+
+                android:id="@+id/linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:background="@drawable/bg_round_edge_5dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/lin_trnsdate"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content">
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_achievement"-->
+
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_gravity="center"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:padding="4dp"-->
+                            <!--                                                android:src="@drawable/ic_person"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+
+                            <TextView
+                                android:id="@+id/tv_trnsdate"
+                                android:layout_weight=".5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:gravity="center"
+
+                                android:text="Trans. Date"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/passbook_size" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_date"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/lightggray"/>
+
+                        <LinearLayout
+
+                            android:layout_width="200dp"
+                            android:id="@+id/lin_particular"
+                            android:layout_height="wrap_content">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_achievement"-->
+
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_gravity="center"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:padding="4dp"-->
+                            <!--                                                android:src="@drawable/ic_person"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <LinearLayout
+                                android:orientation="vertical"
+
+                                android:padding="4dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+                                <LinearLayout
+                                    android:id="@+id/lin_arrow"
+                                    android:weightSum="2.5"
+
+
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <TextView
+                                        android:layout_weight="2"
+                                        android:id="@+id/tv_particular"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Particular"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/passbook_size" />
+                                    <LinearLayout
+                                        android:gravity="center"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:id="@+id/img_down"
+                                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                            app:tint="@color/colorPrimary"
+                                            android:layout_width="@dimen/space_30dp"
+                                            android:layout_height="@dimen/space_30dp">
+
+                                        </ImageView>
+                                        <ImageView
+                                            android:visibility="gone"
+                                            android:id="@+id/img_up"
+                                            android:src="@drawable/ic_arrow_up"
+                                            android:layout_width="@dimen/space_30dp"
+                                            android:layout_height="@dimen/space_30dp">
+
+                                        </ImageView>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/cv_list"
+                                    android:visibility="gone"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/space_10dp"
+                                    android:layout_gravity="center"
+
+                                    app:cardCornerRadius="10dp"
+                                    app:cardBackgroundColor="@color/lightest">
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+                                        <LinearLayout
+
+                                            android:id="@+id/lin_game"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            >
+
+                                            <LinearLayout
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="3"
+                                                android:layout_gravity="center"
+                                                android:gravity="center"
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:layout_gravity="center"
+                                                    android:gravity="left"
+                                                    android:textStyle="bold"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Type"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:id="@+id/tv_type"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="start"
+                                                    android:layout_weight="2"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:layout_marginLeft="@dimen/space_4"
+                                                    android:textAlignment="viewStart"
+
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="3"
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:textStyle="bold"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="left"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Game Name"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:layout_marginLeft="@dimen/space_4"
+                                                    android:id="@+id/tv_game_name"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="start"
+                                                    android:layout_weight="2"
+                                                    android:textAlignment="viewStart"
+
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="3"
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:textStyle="bold"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="left"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Provider Name"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:layout_marginLeft="@dimen/space_4"
+                                                    android:id="@+id/tv_provider_name"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="start"
+                                                    android:layout_weight="2"
+                                                    android:textAlignment="viewStart"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="3"
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:textStyle="bold"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="left"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Played For"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:id="@+id/tv_played"
+                                                    android:layout_gravity="center"
+                                                    android:gravity="start"
+                                                    android:layout_weight="2"
+                                                    android:layout_marginLeft="@dimen/space_4"
+                                                    android:textAlignment="viewStart"
+
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:id="@+id/lin_other"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            >
+                                            <LinearLayout
+                                                android:layout_gravity="center"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="3"
+
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:layout_gravity="center"
+
+                                                    android:textStyle="bold"
+
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Transaction Id"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:layout_gravity="center"
+                                                    android:gravity="end"
+                                                    android:textAlignment="viewStart"
+                                                    android:layout_marginLeft="@dimen/space_4"
+                                                    android:id="@+id/tv_trans_id"
+                                                    android:layout_weight="2"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="2"
+                                                android:gravity="center"
+                                                android:layout_gravity="center"
+                                                android:visibility="gone"
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:layout_gravity="center"
+                                                    android:gravity="center"
+                                                    android:textStyle="bold"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Fund mode"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:id="@+id/tv_fundmode"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:textAlignment="viewStart"
+
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:padding="5dp"
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:weightSum="3"
+                                                android:layout_gravity="center"
+                                                android:gravity="center"
+                                                android:layout_height="wrap_content"
+                                                >
+                                                <TextView
+                                                    android:layout_gravity="center"
+                                                    android:gravity="left"
+                                                    android:textStyle="bold"
+                                                    android:layout_weight="1"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Transaction Amount"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/passbook_size" />
+                                                <TextView
+                                                    android:id="@+id/tv_trans_amount"
+                                                    android:layout_gravity="start"
+                                                    android:textAlignment="viewStart"
+
+                                                    android:layout_weight="2"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="mode"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="@dimen/passbook_size" />
+
+                                            </LinearLayout>
+
+
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:id="@+id/lin_date"
+                                            android:padding="5dp"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:weightSum="3"
+                                            android:layout_height="wrap_content"
+                                            >
+                                            <TextView
+                                                android:textStyle="bold"
+                                                android:layout_gravity="center"
+                                                android:gravity="left"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Date/Time"
+                                                android:textColor="@color/black"
+                                                android:textSize="@dimen/passbook_size" />
+                                            <TextView
+                                                android:id="@+id/tv_trans_date"
+                                                android:layout_gravity="center"
+                                                android:gravity="start"
+                                                android:layout_weight="2"
+                                                android:textAlignment="viewStart"
+
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="mode"
+                                                android:textColor="@color/gray"
+                                                android:textSize="@dimen/passbook_size" />
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:id="@+id/lin_status"
+                                            android:padding="5dp"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:weightSum="3"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:layout_height="wrap_content"
+                                            >
+                                            <TextView
+                                                android:layout_gravity="center"
+                                                android:gravity="left"
+                                                android:textStyle="bold"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Status"
+                                                android:textColor="@color/black"
+                                                android:textSize="@dimen/passbook_size" />
+                                            <TextView
+                                                android:id="@+id/tv_status"
+                                                android:layout_weight="2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:gravity="start"
+                                                android:text="mode"
+                                                android:textAlignment="viewStart"
+
+                                                android:textColor="@color/gray"
+                                                android:textSize="@dimen/passbook_size" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+
+
+                                </androidx.cardview.widget.CardView>
+                                <TextView
+
+                                    android:id="@+id/tv_no"
+                                    android:visibility="gone"
+
+                                    android:drawableTint="@color/red"
+                                    android:padding="@dimen/space_10dp"
+                                    android:drawablePadding="@dimen/space_10"
+                                    android:drawableEnd="@drawable/icons8_sad_16px"
+                                    android:drawableStart="@drawable/icons8_sad_16px"
+                                    android:text="Old Data is Not Available"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorPrimary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_particular"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/lightggray"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:id="@+id/lin_p_amount"
+                            android:layout_gravity="center"
+
+                            android:layout_height="wrap_content">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_achievement"-->
+
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_gravity="center"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:padding="4dp"-->
+                            <!--                                                android:src="@drawable/ic_person"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_p_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_5dp"
+                                android:textAlignment="center"
+                                android:gravity="center_vertical"
+                                android:text="Previous Amount"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/passbook_size" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_previous"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/lightggray"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:id="@+id/lin_t_amount"
+
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_other"-->
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_5dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:src="@drawable/test_icon"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_t_amount"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_5dp"
+                                android:layout_marginTop="@dimen/space_10dp"
+                                android:layout_marginEnd="@dimen/space_10dp"
+                                android:layout_marginBottom="@dimen/space_10dp"
+                                android:paddingHorizontal="@dimen/space_10dp"
+                                android:text="Transaction Amount"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/passbook_size" />
+                        </LinearLayout>
+                        <View
+                            android:id="@+id/view_transaction"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/lightggray"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:id="@+id/lin_cur_amount"
+
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+
+                            <!--                                        <ImageView-->
+                            <!--                                                android:id="@+id/iv_other"-->
+                            <!--                                                android:layout_width="24dp"-->
+                            <!--                                                android:layout_height="wrap_content"-->
+                            <!--                                                android:layout_marginLeft="@dimen/space_5dp"-->
+                            <!--                                                android:layout_marginTop="@dimen/space_10dp"-->
+                            <!--                                                android:layout_marginBottom="@dimen/space_10dp"-->
+                            <!--                                                android:src="@drawable/test_icon"-->
+                            <!--                                                app:tint="@color/black" />-->
+
+                            <TextView
+                                android:id="@+id/tv_cur_amount"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_5dp"
+                                android:layout_marginTop="@dimen/space_10dp"
+                                android:layout_marginEnd="@dimen/space_10dp"
+                                android:layout_marginBottom="@dimen/space_10dp"
+                                android:paddingHorizontal="@dimen/space_10dp"
+                                android:text="Current Amount"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/passbook_size" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

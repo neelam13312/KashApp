@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.GamesFragment.OddEvenFragment">
+
+    <include layout="@layout/bg_withouttext_layout"/>
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<RelativeLayout
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_weight=".5"
+                        android:textAllCaps="true"
+                        android:layout_margin="5dp"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:drawableEnd="@drawable/thursday_16px"
+                        android:textColor="@color/black"
+                        android:background="@drawable/card_shape"
+                        android:text="@string/select_date"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_weight=".5"
+                        android:padding="10dp"
+                        android:textSize="12sp"
+                        android:layout_margin="5dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:background="@drawable/card_shape"
+                        android:text="@string/select_game_type"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="2"
+                    >
+
+                    <CheckBox
+                        android:id="@+id/check_odd"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:text="@string/odd_number"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/check_even"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/even_number"
+                        android:paddingLeft="10dp"
+                        android:buttonTint="@color/colorPrimary"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    >
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="10dp"
+                            android:text="@string/point"
+                            android:textAllCaps="true"
+                            android:textColor="@color/gray"
+                            android:textSize="15dp"
+                            />
+
+                    <EditText
+                            android:id="@+id/et_point"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/card_shape"
+                            android:hint="@string/points"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:padding="10dp"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/black"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/button_bg"
+                    android:text="@string/add"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
+    <include
+        android:layout_below="@+id/rel"
+        layout="@layout/gamebottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rel_submit"
+        />
+    <RelativeLayout
+
+        android:id="@+id/rel_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            layout="@layout/total_amount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+</RelativeLayout>

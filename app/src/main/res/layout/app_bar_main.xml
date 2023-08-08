@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/app_barLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+         android:backgroundTint="@color/white"
+        android:background="@drawable/bg_bottom_round_20pd"
+    android:theme="@style/AppTheme.AppBarOverlay">
+    <androidx.appcompat.widget.Toolbar
+        android:background="@color/colorAccent"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="2dp"
+        app:layout_scrollFlags="scroll|enterAlways">
+<!--        app:theme="@style/ToolBarStyle"-->
+<!--        app:theme="@style/ToolbarColoredBackArrow"-->
+        <LinearLayout
+            android:id="@+id/lin_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/back_arrow"
+                app:tint="@color/colorPrimary"/>
+            <RelativeLayout
+                android:id="@+id/tool_img_logo"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:src="@drawable/app_logo" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_title"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:weightSum="1"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                android:layout_weight=".9">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="marquee"
+                    android:gravity="center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/title"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:weightSum="1"
+                android:gravity="end|center_vertical"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/lin_wallet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:layout_weight=".5">
+                    <ImageView
+                        android:id="@+id/img_wallet"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/wallet"
+                       
+                        android:layout_gravity="center_vertical"
+                        />
+                    <TextView
+                        android:id="@+id/tv_wallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:textSize="10sp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/lin_notification"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="left"
+                         android:layout_weight=".3">
+                    <ImageView
+                            android:id="@+id/img_notification"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                             android:layout_marginLeft="5dp"
+                             android:layout_marginRight="10dp"
+                             android:src="@drawable/notification"
+                           
+                            android:layout_gravity="center_vertical"
+                            />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <include layout="@layout/content_main" />
+
+    </RelativeLayout>
+</com.google.android.material.appbar.AppBarLayout>
+
+</RelativeLayout>

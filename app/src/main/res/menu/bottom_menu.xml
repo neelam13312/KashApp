@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+                android:id="@+id/bottom_my_bids"
+                android:icon="@drawable/my_bids"
+                android:title="@string/my_bids">
+
+        </item>
+        <item
+                android:id="@+id/bottom_passbook"
+                android:icon="@drawable/passbook"
+                android:title="@string/passbook">
+
+        </item>
+        <item
+                android:id="@+id/bottom_funds"
+                android:icon="@drawable/wallet"
+                android:title="@string/funds">
+
+        </item>
+        <item
+                android:id="@+id/bottom_support"
+                android:icon="@drawable/chat"
+                android:title="@string/support">
+
+        </item>
+        <item android:visible="false"
+                android:id="@+id/bottom_share"
+                android:icon="@drawable/share"
+                android:title="@string/share">
+
+        </item>
+</menu>
