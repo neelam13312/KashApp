@@ -27,8 +27,8 @@
         android:layout_marginLeft="@dimen/space_10"
         android:layout_toRightOf="@+id/img_time"
         android:text="name"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+
+         style="@style/MyTextview_semibold_small" />
 
     <TextView
         android:id="@+id/tv_result"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="10dp"
         android:text="Result"
         android:textColor="@color/colorPrimary"
-        android:textSize="16sp"
+
         android:textStyle="bold" />
 </RelativeLayout>
 </RelativeLayout>

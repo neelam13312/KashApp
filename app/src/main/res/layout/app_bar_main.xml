@@ -60,6 +60,7 @@
                 android:layout_weight=".9">
 
                 <TextView
+                    style="@style/MyTextview_semibold"
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -70,9 +71,7 @@
                     android:scrollHorizontally="true"
                     android:singleLine="true"
                     android:text="@string/title"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/white" />
             </RelativeLayout>
 
             <LinearLayout
@@ -96,14 +95,14 @@
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:src="@drawable/wallet"
-                       
+
                         android:layout_gravity="center_vertical"
-                        />
+                        app:tint="@color/white" />
                     <TextView
                         android:id="@+id/tv_wallet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/white"
                         android:layout_gravity="center_vertical"
                         android:gravity="center_vertical"
                         android:textSize="10sp"
@@ -122,7 +121,7 @@
                         android:gravity="left"
                          android:layout_weight=".3">
                     <ImageView
-                            android:id="@+id/img_notification"
+                        android:id="@+id/img_notification"
                             android:layout_width="22dp"
                             android:layout_height="22dp"
                              android:layout_marginLeft="5dp"
@@ -130,7 +129,7 @@
                              android:src="@drawable/notification"
                            
                             android:layout_gravity="center_vertical"
-                            />
+                        app:tint="@color/white" />
                 </LinearLayout>
             </LinearLayout>
 

@@ -41,8 +41,8 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:text="@string/title"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+
+
                 android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
@@ -145,8 +145,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="@string/starline_ratio"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
+
+                                 />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -154,8 +154,8 @@
                                 android:layout_marginTop="5dp"
                                 android:gravity="center"
                                 android:text="*SingleDigit:- 1-10"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
+
+                                 />
 
                             <TextView
                                 android:id="@+id/tv_singlePanna"
@@ -164,7 +164,7 @@
                                 android:gravity="center"
                                 android:text="*SinglePanna:- 1-160"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"
+
                                 android:visibility="gone" />
 
                             <TextView
@@ -173,8 +173,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="DoublePanna:- 1-320"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
+
+
                                 android:visibility="gone" />
 
                             <TextView
@@ -183,8 +183,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="*TriplePanna:- 1-800"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
+
+
                                 android:visibility="gone" />
                         </LinearLayout>
 
@@ -281,7 +281,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Single Digit"
-                                android:textColor="@color/black"
+
                                 android:textSize="12sp" />
 
                             <TextView
@@ -309,7 +309,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Single Pana"
-                                android:textColor="@color/black"
+
                                 android:textSize="12sp" />
                             <TextView
                                 android:id="@+id/tv_singlePana"
@@ -348,7 +348,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Double Pana"
-                                android:textColor="@color/black"
+
                                 android:textSize="12sp" />
 
                             <TextView
@@ -376,7 +376,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Triple Pana"
-                                android:textColor="@color/black"
+
                                 android:textSize="12sp" />
 
                             <TextView
@@ -409,8 +409,8 @@
                         android:gravity="center"
                         android:padding="4dp"
                         android:text="Kalyan Starline"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+
+                         />
 
                     <Switch
                         android:id="@+id/swt_notification"
@@ -424,7 +424,7 @@
                         android:checked="true"
                         android:padding="4dp"
                         android:text="Notification"
-                        android:textColor="@color/black"/>
+                       />
 
                 </RelativeLayout>
 

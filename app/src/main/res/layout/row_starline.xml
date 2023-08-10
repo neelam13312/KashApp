@@ -47,7 +47,7 @@
                         android:layout_centerHorizontal="false"
                         android:gravity="start"
                         android:text="@string/Bit_Time"
-                        android:textColor="@color/black"
+
                         android:textSize="20dp" />
 
 

@@ -130,7 +130,7 @@
                     android:hint="Mobile"
                     android:maxLength="10"
                     android:inputType="number"
-                    android:textColor="@color/black"
+
                     android:textColorHint="@color/light_gray"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -165,7 +165,7 @@
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:padding="5dp"
-                    android:textColor="@color/black"
+
                     android:textColorHint="@color/light_gray"
                     android:textSize="5pt" />
             </LinearLayout>

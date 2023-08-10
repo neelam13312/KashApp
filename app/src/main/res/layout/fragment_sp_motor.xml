@@ -43,7 +43,7 @@
                             android:layout_weight="1"
                             android:text="SP MOTOR"
                             android:textColor="@color/gray"
-                            android:textSize="14sp"
+
                             />
 
                         <EditText
@@ -57,9 +57,9 @@
                             android:inputType="number"
                             android:padding="10dp"
                             android:text=""
-                            android:textColor="@color/black"
+
                             android:textColorHint="@color/gray"
-                            android:textSize="14sp"
+
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -78,7 +78,7 @@
                             android:layout_weight="1"
                             android:text="DP MOTOR"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
+
                             />
 
                         <EditText
@@ -92,9 +92,9 @@
                             android:inputType="number"
                             android:padding="10dp"
                             android:text=""
-                            android:textColor="@color/black"
+
                             android:textColorHint="@color/gray"
-                            android:textSize="14sp"
+
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -112,7 +112,7 @@
                             android:layout_weight="1"
                             android:text="@string/points"
                             android:textColor="@color/gray"
-                            android:textSize="14sp"
+
                              />
 
                         <EditText
@@ -126,9 +126,9 @@
                             android:inputType="number"
                             android:padding="10dp"
                             android:text=""
-                            android:textColor="@color/black"
+
                             android:textColorHint="@color/gray"
-                            android:textSize="14sp"
+
                             android:textStyle="bold" />
                     </LinearLayout>
 

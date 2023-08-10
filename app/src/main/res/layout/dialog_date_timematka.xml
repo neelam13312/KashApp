@@ -50,8 +50,8 @@
                 android:text="day"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+
+
                 android:textStyle="bold" />
 
         <TextView
@@ -64,7 +64,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
 
-                android:textSize="16sp" />
+                 />
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -96,7 +96,7 @@
 
                         android:text="@string/open"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+
                         android:textSize="12sp" />
 
                 <View
@@ -121,7 +121,7 @@
 
                         android:text="Open Result Time"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+
                         android:textSize="12sp" />
 
                 <View
@@ -142,7 +142,7 @@
                          android:paddingVertical="10dp"
                         android:text="Open Bid Last Time"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+
                         android:textSize="12sp" />
             </LinearLayout>
 
@@ -169,7 +169,7 @@
 
                         android:text="@string/close"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+
                         android:textSize="12sp" />
 
                 <View
@@ -194,7 +194,7 @@
 
                         android:text="Close Result Time"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+
                         android:textSize="12sp" />
 
                 <View
@@ -215,7 +215,7 @@
                         android:paddingVertical="10dp"
                         android:text="Close Bid Last Time"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+
                         android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>

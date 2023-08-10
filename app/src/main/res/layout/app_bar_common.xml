@@ -50,8 +50,7 @@
                         android:singleLine="true"
                         android:text="@string/title"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        style="@style/MyTextview_semibold"/>
                 </RelativeLayout>
 
                 <LinearLayout
@@ -78,10 +77,10 @@
                             android:textColor="@color/white"
                             android:layout_gravity="center_vertical"
                             android:gravity="center_vertical"
-                            android:textSize="14sp"
+
                                 android:layout_marginEnd="10dp"
                             android:layout_marginLeft="5dp"
-                            android:textStyle="bold"
+                            style="@style/MyTextview_semibold"
                             android:text="Help?"/>
                         <ImageView
                                 android:id="@+id/img_passbook"
@@ -115,9 +114,9 @@
                             android:textColor="@color/white"
                             android:layout_gravity="center_vertical"
                             android:gravity="center_vertical"
-                            android:textSize="14sp"
+
                             android:layout_marginLeft="5dp"
-                            android:textStyle="bold"
+                            style="@style/MyTextview_semibold"
                             android:text="0"/>
                     </LinearLayout>
 
@@ -148,7 +147,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_height="wrap_content">
                         <TextView
-                                android:textSize="18sp"
+                                 style="@style/MyTextview_semibold"
                                 android:textColor="@color/white"
                                 android:text="Filter Type"
                                 android:layout_width="wrap_content"

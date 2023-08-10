@@ -50,7 +50,7 @@
             <Button
                 android:id="@+id/btn_submit"
                         android:textAllCaps="false"
-                        android:textSize="18sp"
+                         style="@style/MyTextview_semibold_small"
                         android:textColor="@color/white"
                         android:text="Submit Your Idea"
                         android:backgroundTint="@color/colorPrimary"

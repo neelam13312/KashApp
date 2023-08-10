@@ -26,8 +26,8 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="0"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+
+                 style="@style/MyTextview_semibold_small" />
         </LinearLayout>
     </RelativeLayout>
 

@@ -33,7 +33,7 @@
                     android:text="@string/select_date"
                     android:textAlignment="center"
                     android:textAllCaps="true"
-                    android:textColor="@color/black" />
+                    />
 
             </LinearLayout>
             <LinearLayout
@@ -51,10 +51,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/left_digit"
-                        android:textSize="14sp"
+
                         android:textStyle="bold"
                         android:gravity="center_horizontal"
-                        android:textColor="@color/black"/>
+                       />
                     <EditText
                         android:id="@+id/et_lDigit"
                         android:layout_width="match_parent"
@@ -66,8 +66,8 @@
                         android:inputType="number"
                         android:layout_margin="10dp"
                         android:padding="10dp"
-                        android:textSize="14sp"
-                        android:textColor="@color/black" />
+
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -78,10 +78,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/right_digit"
-                        android:textSize="14sp"
+
                         android:textStyle="bold"
                         android:gravity="center_horizontal"
-                        android:textColor="@color/black"/>
+                       />
                     <EditText
                         android:id="@+id/et_rDigit"
                         android:layout_width="match_parent"
@@ -93,8 +93,8 @@
                         android:gravity="center"
                         android:layout_margin="10dp"
                         android:padding="10dp"
-                        android:textSize="14sp"
-                        android:textColor="@color/black" />
+
+                        />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/points"
                     android:textColor="@color/gray"
-                    android:textSize="14sp"
+
                     android:layout_weight="1"
                     />
                 <EditText
@@ -118,8 +118,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
+
+
                     android:padding="10dp"
                     android:gravity="center"
                     android:inputType="number"

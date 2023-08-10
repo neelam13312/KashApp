@@ -55,8 +55,8 @@
                 android:maxLength="8"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+
+                 />
 
         </LinearLayout>
 

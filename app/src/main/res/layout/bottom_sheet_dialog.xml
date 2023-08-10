@@ -23,7 +23,7 @@
                         android:padding="4dp"
                         android:text="Set Filter"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
+                         style="@style/MyTextview_semibold_small"
                         android:textStyle="bold">
 
                 </TextView>
@@ -63,8 +63,8 @@
                                                                     android:layout_width="match_parent"
                                                                     android:layout_height="wrap_content">
                                                                         <TextView
-                                                                            android:textColor="@color/black"
-                                                                            android:textSize="16sp"
+
+
                                                                             android:layout_margin="5dp"
                                                                             android:padding="4dp"
                                                                             android:text="By Date"
@@ -104,8 +104,8 @@
                                                                                             android:layout_marginBottom="@dimen/space_5"
                                                                                             android:hint="Select date"
                                                                                             android:padding="10dp"
-                                                                                            android:textColor="@color/black"
-                                                                                            android:textSize="16sp" />
+
+                                                                                             />
 
 
                                                                                 </RelativeLayout>
@@ -131,8 +131,8 @@
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="wrap_content">
                                                                         <TextView
-                                                                                android:textColor="@color/black"
-                                                                                android:textSize="16sp"
+
+
                                                                                 android:layout_margin="5dp"
                                                                                 android:padding="4dp"
                                                                                 android:text="By Game Type"
@@ -147,8 +147,8 @@
                                                                                 android:layout_width="wrap_content"
                                                                                 android:layout_height="wrap_content"
                                                                                 android:text="Open"
-                                                                                android:textSize="16sp"
-                                                                                android:textColor="@color/black"
+
+
                                                                                 android:padding="6dp"
                                                                                 android:checked="false"
                                                                                 app:layout_constraintStart_toStartOf="parent"
@@ -165,8 +165,8 @@
                                                                                 android:layout_width="wrap_content"
                                                                                 android:layout_height="wrap_content"
                                                                                 android:text="Close"
-                                                                                android:textSize="16sp"
-                                                                                android:textColor="@color/black"
+
+
                                                                                 android:padding="6dp"
                                                                                 android:checked="false"
                                                                                 app:layout_constraintStart_toStartOf="parent"
@@ -182,8 +182,8 @@
                                                                         android:layout_width="match_parent"
                                                                         android:layout_height="wrap_content">
                                                                         <TextView
-                                                                                android:textColor="@color/black"
-                                                                                android:textSize="16sp"
+
+
                                                                                 android:layout_margin="5dp"
                                                                                 android:padding="4dp"
                                                                                 android:text="By Winning Status"
@@ -199,8 +199,8 @@
                                                                                 android:layout_width="wrap_content"
                                                                                 android:layout_height="wrap_content"
                                                                                 android:text="Win"
-                                                                                android:textSize="16sp"
-                                                                                android:textColor="@color/black"
+
+
                                                                                 android:padding="6dp"
                                                                                 android:checked="false"
                                                                                 app:layout_constraintStart_toStartOf="parent"
@@ -217,8 +217,8 @@
                                                                                 android:layout_width="wrap_content"
                                                                                 android:layout_height="wrap_content"
                                                                                 android:text="Loss"
-                                                                                android:textSize="16sp"
-                                                                                android:textColor="@color/black"
+
+
                                                                                 android:padding="6dp"
                                                                                 android:checked="false"
                                                                                 app:layout_constraintStart_toStartOf="parent"
@@ -235,8 +235,8 @@
                                                                                 android:layout_width="wrap_content"
                                                                                 android:layout_height="wrap_content"
                                                                                 android:text="Pending"
-                                                                                android:textSize="16sp"
-                                                                                android:textColor="@color/black"
+
+
                                                                                 android:padding="6dp"
                                                                                 android:checked="false"
                                                                                 app:layout_constraintStart_toStartOf="parent"
@@ -265,8 +265,8 @@
                                                                                 <TextView
                                                                                         android:layout_margin="5dp"
                                                                                         android:padding="4dp"
-                                                                                        android:textColor="@color/black"
-                                                                                        android:textSize="16sp"
+
+
                                                                                         android:text="By Game"
                                                                                         android:id="@+id/txt_game"
                                                                                         android:layout_width="match_parent"

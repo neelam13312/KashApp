@@ -93,13 +93,13 @@ public class BaseUrls {
     public static final String URL_OrderId = BASE_URL+"paymentuniq_id";
     public static final String URL_PAYMENT_GATEWAY_LINK = BASE_URL+"getorderid_pg";
 
-//    getorderid_pg,paymentuniq_id
+    //    getorderid_pg,paymentuniq_id
 //    public static final String URL_PAYMENT_GATEWAY_STATUS = BASE_URL+"getorderid_pg_status";
     public static final String URL_PAYMENT_GATEWAY_STATUS = BASE_URL_MEDIA+"payment/getorderid_pg_status";
     public static final String URL_UPI_GATEWAY_DETAILS = BASE_URL+"get_payment";
     public static final String URL_UPI_ID = BASE_URL+"get_upi_id";
     public static final String URL_UPI_GATEWAY_COMPLETE_DETAILS = "https://pay2.kastakar.co.in/payment/atompay";
-//    public static final String URL_UPI_ID="https://pay2.kastakar.co.in/payment/upi_pay/1/10";
+    //    public static final String URL_UPI_ID="https://pay2.kastakar.co.in/payment/upi_pay/1/10";
     public static final String URL_CNC_PAY = BASE_URL_MEDIA+"payment/cnc_pay";
     public static final String URL_KASTAKAR_PAY = "https://pay2.kastakar.co.in/payment/innopay";
 

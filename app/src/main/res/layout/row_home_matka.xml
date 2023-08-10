@@ -47,7 +47,7 @@
                                 android:layout_weight="1.5"
                                 android:gravity="center"
                                 android:text="***"
-                                android:textColor="@color/black"
+
                                 android:textSize="10sp"
 
                                 />
@@ -59,7 +59,7 @@
                                 android:layout_weight="1.5"
                                 android:gravity="center"
                                 android:text="***"
-                                android:textColor="@color/black"
+
                                 android:textSize="10sp" />
                     </LinearLayout>
 
@@ -83,7 +83,7 @@
                                     android:layout_centerHorizontal="true"
                                 android:gravity="center"
                                     android:text="MORNING KUBER"
-                                    android:textColor="@color/black"
+
                                     android:textSize="@dimen/space_14" />
 
                             <TextView

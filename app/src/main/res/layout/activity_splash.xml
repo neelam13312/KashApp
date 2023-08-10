@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:gravity="center"
         android:layout_centerInParent="true">
         <ImageView
             android:id="@+id/img_logo"
@@ -24,64 +24,14 @@
             android:src="@drawable/app_logo"
             android:layout_gravity="center_horizontal"
             />
-
-        <ImageView
-
-            android:layout_width="120dp"
-            android:src="@drawable/card_img"
-            android:visibility="gone"
-            android:elevation="1dp"
-            android:layout_height="100dp"/>
-
-        <LinearLayout
-            android:visibility="gone"
-            android:layout_width="match_parent"
+        <TextView
+            style="@style/MyTextview_bold_login12pt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:src="@drawable/app_logo"
-                android:layout_gravity="center_horizontal" />
-
-
-
-<LinearLayout
-        android:visibility="gone"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="to"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textColor="@color/colorAccent"
-                android:textSize="20dp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"/>
-</LinearLayout>
-
-        </LinearLayout>
+            android:text="Welcome To KashApp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+           />
 
 
     </LinearLayout>
@@ -99,7 +49,7 @@
             android:layout_marginBottom="20dp"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="14sp" />
+             />
     </RelativeLayout>
 
 </RelativeLayout>

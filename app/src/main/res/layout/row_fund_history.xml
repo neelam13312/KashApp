@@ -60,7 +60,7 @@
                                 android:orientation="horizontal"
                                 android:padding="2dp"
                                 android:text="@string/request_no"
-                                android:textColor="@color/black">
+                               >
 
                             <TextView
 
@@ -70,7 +70,7 @@
                                     android:text="Withdrawal : "
                                     android:textStyle="bold"
                                     android:textColor="@color/green"
-                                    android:textSize="14sp" />
+                                     />
 
                             <TextView
                                     android:textStyle="bold"
@@ -79,7 +79,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="100"
                                     android:textColor="@color/green"
-                                    android:textSize="14sp" />
+                                     />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -101,7 +101,7 @@
                             android:layout_weight="2"
                             android:padding="2dp"
                             android:text="@string/request_no"
-                            android:textColor="@color/black"
+
                             android:textSize="15dp" />
 
                     <TextView
@@ -113,7 +113,7 @@
                             android:gravity="start"
                             android:padding="2dp"
                             android:text="@string/request_no"
-                            android:textColor="@color/black"
+
                             android:textSize="15dp" />
                 </LinearLayout>
 
@@ -182,7 +182,7 @@
                             android:padding="2dp"
 
                             android:text="Fund Id: "
-                            android:textColor="@color/black"
+
                             android:textSize="15dp"
                             android:visibility="gone" />
 
@@ -195,7 +195,7 @@
                             android:gravity="center"
                             android:padding="2dp"
                             android:text=" "
-                            android:textColor="@color/black"
+
 
                             android:textSize="15dp"
 
@@ -222,7 +222,7 @@
                     android:padding="2dp"
                     android:text="@string/status"
                     android:textColor="@color/green"
-                    android:textSize="18sp"
+                     style="@style/MyTextview_semibold_small"
                     android:textStyle="bold"
 
                     />

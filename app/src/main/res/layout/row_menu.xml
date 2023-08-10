@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:background="@drawable/bg_rounded_btn"
-        android:backgroundTint="@color/light_black"
+        android:backgroundTint="@color/white"
         android:id="@+id/lin_main"
         android:padding="@dimen/space_10"
         android:layout_width="match_parent"
@@ -21,9 +21,10 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:src="@drawable/app_logo"
-                app:tint="@color/white" />
+                app:tint="@color/colorPrimary" />
 
         <TextView
+            style="@style/MyTextview_semibold"
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,15 +32,15 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="@string/title"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+
+                 />
 
 
     </LinearLayout>
     <View
-            android:visibility="gone"
+            android:visibility="visible"
         android:layout_below="@id/lin_main"
-        android:background="@color/white"
+        android:background="#F9F1F1"
         android:layout_width="match_parent"
-        android:layout_height="1.5dp"/>
+        android:layout_height="1dp"/>
 </RelativeLayout>

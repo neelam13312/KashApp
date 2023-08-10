@@ -8,9 +8,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-4dp"
-                android:layout_marginHorizontal="-4dp"
-                android:background="@drawable/bg_lower_round">
+                android:layout_marginHorizontal="-4dp">
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
@@ -73,6 +71,7 @@
                     </LinearLayout>
 
                         <TextView
+                            android:background="@color/gray"
                             android:id="@+id/jackpot_message"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -84,59 +83,79 @@
                             android:scrollHorizontally="true"
                             android:singleLine="true"
                             android:text=""
-                            android:padding="4dp"
                             android:textStyle="italic"
-                            android:textColor="@color/gray"
+                            android:textColor="@color/white_smoke"
                             android:textSize="8pt"/>
 
                         <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="10dp"
                                 android:weightSum="1"
                                 android:padding="0dp"
-                                android:layout_marginTop="5dp"
                                 android:orientation="horizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
                                 <LinearLayout
                                         android:id="@+id/lin_satarline"
-                                        android:layout_marginEnd="20dp"
-                                        android:layout_marginStart="20dp"
                                         android:layout_weight="0.5"
                                         android:orientation="vertical"
-                                        android:layout_width="240dp"
+                                        android:layout_width="0dp"
                                         android:layout_margin="5dp"
                                         android:layout_height="wrap_content">
                                         <TextView
+                                            style="@style/MyTextview_bold"
                                                 android:paddingVertical="18dp"
                                                 android:backgroundTint="@color/colorPrimary"
                                                 android:background="@drawable/bg_rounded_btn"
                                                 android:gravity="center"
                                                 android:layout_gravity="center"
                                                 android:textColor="@color/white"
-                                                android:textSize="11pt"
-                                                android:layout_marginBottom="10dp"
                                                 android:text="@string/kalyan_starline"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"/>
 
-
-                                        <TextView
-                                                android:background="@drawable/outlinerate"
-                                                android:paddingHorizontal="8dp"
-                                                 android:paddingVertical="5dp"
-                                                android:layout_marginTop="-25dp"
-                                                android:gravity="center"
-                                                android:layout_gravity="center_horizontal"
-                                                android:textColor="@color/colorPrimary"
-                                                android:textSize="7pt"
-                                                android:textAlignment="center"
-                                                android:text="Play Now"
-                                                android:layout_width="110dp"
-                                                android:layout_height="wrap_content"/>
+                                </LinearLayout>
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_weight="0.5"
+                                android:layout_margin="5dp"
+                                android:orientation="horizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+                                <LinearLayout
+                                    android:layout_margin="@dimen/space_5"
+                                    android:orientation="vertical"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:background="@drawable/bg_rounded_btn"
+                                    android:layout_width="@dimen/iv_50dp"
+                                    android:layout_height="@dimen/iv_50dp">
+                                    <ImageView
+                                        android:padding="@dimen/space_6"
+                                        android:src="@drawable/whatsapp"
+                                        android:gravity="center"
+                                        android:layout_gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"/>
 
                                 </LinearLayout>
+                                <LinearLayout
+                                    android:layout_margin="@dimen/space_5"
+                                    android:orientation="vertical"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:background="@drawable/bg_rounded_btn"
+                                    android:layout_width="@dimen/iv_50dp"
+                                    android:layout_height="@dimen/iv_50dp">
+                                    <ImageView
+                                        android:padding="@dimen/space_6"                                        android:src="@drawable/whatsapp"
+                                        android:gravity="center"
+                                        android:layout_gravity="center"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"/>
+
+                                </LinearLayout>
+
+                        </LinearLayout>
 
                                 <LinearLayout
                                         android:visibility="gone"
@@ -153,7 +172,7 @@
                                                 android:gravity="center"
                                                 android:layout_gravity="center"
                                                 android:textColor="@color/colorPrimary"
-                                                android:textSize="16sp"
+
                                                 android:layout_marginBottom="10dp"
                                                 android:text="Kalyan Jackpot"
                                                 android:layout_width="match_parent"
@@ -168,7 +187,7 @@
                                                 android:gravity="center"
                                                 android:layout_gravity="center_horizontal"
                                                 android:textColor="@color/white"
-                                                android:textSize="16sp"
+
                                                 android:textAlignment="center"
                                                 android:text="Play Now"
                                                 android:layout_width="90dp"

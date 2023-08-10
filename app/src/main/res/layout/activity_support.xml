@@ -97,7 +97,7 @@
                         android:backgroundTint="@android:color/transparent"
                         android:hint="Type a message "
                         android:padding="@dimen/space_2"
-                        android:textColor="@color/black"
+
                         android:textSize="@dimen/space_15" />
 
                     <ImageView

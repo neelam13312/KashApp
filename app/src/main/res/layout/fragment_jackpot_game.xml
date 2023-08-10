@@ -42,8 +42,8 @@
                                   android:layout_height="wrap_content"
                                   android:text="@string/jackpot_ratio"
                                   android:gravity="center"
-                                  android:textColor="@color/black"
-                                  android:textSize="14sp"/>
+
+                                  />
                               <TextView
                                   android:visibility="visible"
                                   android:id="@+id/tv_jodi"
@@ -52,16 +52,16 @@
                                   android:text="0"
                                   android:gravity="center"
                                   android:layout_marginTop="5dp"
-                                  android:textColor="@color/black"
-                                  android:textSize="14sp"/>
+
+                                  />
                               <TextView
                                   android:id="@+id/tv_singeDigit"
                                   android:layout_width="match_parent"
                                   android:layout_height="wrap_content"
                                   android:text="0"
                                   android:gravity="center"
-                                  android:textColor="@color/black"
-                                  android:textSize="14sp"/>
+
+                                  />
 
                           </LinearLayout>
                           <LinearLayout

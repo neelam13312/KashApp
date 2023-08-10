@@ -71,7 +71,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="578"
-                                    android:textColor="@color/black"
+
                                     android:textSize="8pt" />
 
                                 <TextView
@@ -165,7 +165,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:gravity="center"
                                 android:text=""
-                                android:textColor="@color/black"
+
                                 android:textSize="10dp"
                                 android:visibility="gone" />
 
@@ -274,7 +274,7 @@
                                 android:text="Game Time"
                                 android:layout_marginTop="5dp"
                                 android:textAlignment="center"
-                                android:textColor="@color/black"
+
                                 android:textSize="6pt" />
                         </LinearLayout>
 

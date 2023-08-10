@@ -35,8 +35,8 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Allow Satta Bets Online to access your photos, media contents and files on your device"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+
+
             android:textStyle="bold" />
 
         <Button
@@ -55,8 +55,8 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:text="or"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+
+
             android:textStyle="bold" />
 
         <Button

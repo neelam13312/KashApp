@@ -10,139 +10,124 @@
     <include layout="@layout/background_layout" />
 
     <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/bg_upper_rounded"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
-            <ScrollView
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/app_logo" />
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="OTP Verification"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+               style="@style/MyTextview_bold"
+                android:visibility="visible" />
+
+            <TextView
+                style="@style/texttheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter one time password here"
+                android:textAlignment="center"
+                android:textStyle="" />
+
+            <EditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_bg"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/black"
+                android:hint="@string/otp"
+                android:inputType="number"
+                android:padding="10dp"
+
+                android:textColorHint="@color/black"
+                android:textSize="16dp"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <com.mukesh.OtpView
+                android:id="@+id/otp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:inputType="number"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                app:OtpItemCount="4"
+                app:OtpItemSpacing="10dp"
+                android:cursorVisible="false"
+                app:OtpLineColor="@color/colorPrimary"
+                app:OtpViewType="rectangle" />
+            <Button
+
+                android:id="@+id/btn_resend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:visibility="gone"
+                android:text="@string/resend"
+
+                />
+            <TextView
+                android:id="@+id/tv_timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Time:"
+                android:textAlignment="center"
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:orientation="vertical">
+                android:textStyle="" />
 
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/app_logo" />
+            <Button
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
-                        android:text="OTP Verification"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:visibility="visible" />
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:text="@string/submit"
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Enter one time password here"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="" />
+                />
 
-                    <EditText
-                        android:id="@+id/et_otp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/edit_bg"
-                        android:drawablePadding="10dp"
-                        android:drawableTint="@color/black"
-                        android:hint="@string/otp"
-                        android:inputType="number"
-                        android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="italic"
-                        android:visibility="gone" />
+            <TextView
 
-                    <com.mukesh.OtpView
-                        android:id="@+id/otp_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="32dp"
-                        android:inputType="number"
-                        android:textColor="@android:color/black"
-                        android:textSize="25sp"
-                        app:OtpItemCount="4"
-                        android:cursorVisible="false"
-                        app:OtpLineColor="@color/colorPrimary"
-                        app:OtpViewType="rectangle" />
-                    <Button
-
-                        android:id="@+id/btn_resend"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="30dp"
-                        android:visibility="gone"
-                        android:background="@drawable/button_bg"
-                        android:text="@string/resend"
-
-                        />
-                    <TextView
-                        android:id="@+id/tv_timer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        android:text="Time:"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="" />
-
-                    <Button
-
-                        android:id="@+id/btn_submit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="30dp"
-                        android:background="@drawable/button_bg"
-                        android:text="@string/submit"
-
-                        />
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/please_do_not_share_this_otp_with_anyone"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="" />
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/please_do_not_share_this_otp_with_anyone"
+                android:textAlignment="center"
 
 
-                </LinearLayout>
+                android:textStyle="" />
 
-            </ScrollView>
+
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

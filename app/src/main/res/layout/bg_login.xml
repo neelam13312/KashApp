@@ -28,7 +28,7 @@
                                 android:layout_height="wrap_content"/>
                         <TextView
                                 android:padding="4dp"
-                                android:textSize="18sp"
+                                 style="@style/MyTextview_semibold_small"
                                 android:textStyle="bold"
                                 android:text="@string/to_the_best_betting_platform"
                                 android:textColor="@color/white"

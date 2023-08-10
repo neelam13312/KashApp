@@ -24,8 +24,8 @@
                 android:text="@string/game_name"
                 android:gravity="center"
                 android:textStyle="italic"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+
+                 style="@style/MyTextview_semibold_small" />
 
 
 

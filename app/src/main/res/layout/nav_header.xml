@@ -8,7 +8,7 @@
         android:id="@+id/lin_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/light_black"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="25dp">
@@ -18,7 +18,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/user_profile"
-            app:tint="@color/dark_pink" />
+            app:tint="@color/colorPrimary" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -31,8 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="@string/name"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                style="@style/MyTextview_semibold" />
 
             <TextView
                 android:id="@+id/tv_mob"
@@ -41,7 +40,7 @@
                 android:layout_marginLeft="15dp"
                 android:text="@string/mobile"
                 android:textColor="@color/gray"
-                android:textSize="14sp" />
+                 />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>

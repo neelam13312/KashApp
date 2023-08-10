@@ -46,7 +46,7 @@
                         android:gravity="center"
                         android:textAlignment="center"
                         android:textAllCaps="true"
-                        android:textColor="@color/black" />
+                        />
                     <TextView
                         android:id="@+id/tv_type"
                         android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
                         android:gravity="center"
                         android:text="@string/select_game_type"
                         android:textAlignment="center"
-                        android:textColor="@color/black" />
+                        />
 
                 </LinearLayout>
 

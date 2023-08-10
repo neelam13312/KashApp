@@ -46,7 +46,7 @@
                     android:singleLine="true"
                     android:text="Starline Result History"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                     style="@style/MyTextview_semibold_small"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:text="Select Date"
                     android:layout_margin="10dp"
-                    android:textSize="14sp"/>
+                    />
 
                 <TextView
                     android:id="@+id/tv_date"
@@ -95,7 +95,7 @@
                     android:background="@drawable/button_bg"
                     android:backgroundTint="@color/colorPrimary"
                     android:textColor="@color/white"
-                    android:textSize="14sp"/>
+                    />
             </LinearLayout>
 
             <RelativeLayout

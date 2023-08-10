@@ -34,7 +34,7 @@
                     android:layout_weight="1"
                     android:buttonTint="@color/colorPrimary"
                     android:text="SP"
-                    android:textColor="@color/black" />
+                    />
 
                 <CheckBox
                     android:id="@+id/cb_dp"
@@ -43,7 +43,7 @@
                     android:layout_weight="1"
                     android:buttonTint="@color/colorPrimary"
                     android:text="DP"
-                    android:textColor="@color/black" />
+                    />
 
                 <CheckBox
                     android:id="@+id/cb_tp"
@@ -52,7 +52,7 @@
                     android:layout_weight="1"
                     android:buttonTint="@color/colorPrimary"
                     android:text="TP"
-                    android:textColor="@color/black" />
+                    />
 
             </LinearLayout>
 
@@ -74,8 +74,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/left_digit"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
+
+
                         android:textStyle="bold" />
 
                     <EditText
@@ -89,8 +89,8 @@
                         android:maxLength="1"
                         android:hint="@string/enter_digit"
                         android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+
+                         />
                 </LinearLayout>
 
                 <LinearLayout
@@ -104,8 +104,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/middle_digit"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
+
+
                         android:textStyle="bold" />
 
                     <EditText
@@ -119,8 +119,8 @@
                         android:maxLength="1"
                         android:hint="@string/enter_digit"
                         android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+
+                         />
                 </LinearLayout>
 
                 <LinearLayout
@@ -134,8 +134,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/right_digit"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
+
+
                         android:textStyle="bold" />
 
                     <EditText
@@ -149,8 +149,8 @@
                         android:maxLength="1"
                         android:hint="@string/enter_digit"
                         android:padding="10dp"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+
+                         />
                 </LinearLayout>
             </LinearLayout>
 
@@ -168,8 +168,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/points"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
+
+
                     android:textStyle="bold" />
 
                 <EditText
@@ -183,9 +183,9 @@
                     android:inputType="number"
                     android:padding="10dp"
                     android:text=""
-                    android:textColor="@color/black"
+
                     android:textColorHint="@color/gray"
-                    android:textSize="14sp"
+
                     android:textStyle="bold" />
             </LinearLayout>
 

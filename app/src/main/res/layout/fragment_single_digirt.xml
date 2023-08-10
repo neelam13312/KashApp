@@ -44,7 +44,7 @@
                         android:textSize="12sp"
                         android:textAlignment="center"
                         android:textAllCaps="true"
-                        android:textColor="@color/black" />
+                        />
 
                     <TextView
                         android:id="@+id/tv_type"
@@ -60,7 +60,7 @@
                         android:gravity="center"
                         android:text="@string/select_game_type"
                         android:textAlignment="center"
-                        android:textColor="@color/black" />
+                        />
 
                 </LinearLayout>
 
@@ -99,7 +99,7 @@
                 android:paddingRight="10dp"
                 android:text="TOTAL   0"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+
                 android:textSize="16dp" />
 
             <Button

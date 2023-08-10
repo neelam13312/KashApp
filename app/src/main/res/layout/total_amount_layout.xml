@@ -30,13 +30,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+
         android:text="Bids: "/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_subBid"
-        android:textSize="14sp"
+
         android:text="0"
         android:textColor="@color/colorPrimary" />
     </LinearLayout>
@@ -50,13 +50,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+
             android:text="Points: "/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_subAmount"
-            android:textSize="14sp"
+
             android:text="0"
             android:textColor="@color/colorPrimary" />
     </LinearLayout>

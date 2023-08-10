@@ -50,7 +50,7 @@
                     android:gravity="center"
 
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                     style="@style/MyTextview_semibold_small"
                     android:textStyle="bold" />
 
         </LinearLayout>
@@ -92,7 +92,7 @@ android:elevation="6dp"
                     android:gravity="center"
                     android:text="@string/redeem_point"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                     style="@style/MyTextview_semibold_small"
                     android:textStyle="bold" />
 
         </LinearLayout>
