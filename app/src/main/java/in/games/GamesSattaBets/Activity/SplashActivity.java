@@ -129,7 +129,7 @@ public class SplashActivity extends AppCompatActivity {
        module.postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
            @Override
            public void onResponse(String response) {
-               Log.e ("fg", "onResponse: " + response.toString ( ));
+               Log.e ("index", "onResponse: " + response.toString ( ));
                try {
                    JSONObject jsonObject = new JSONObject (response);
                    Boolean result = Boolean.valueOf (jsonObject.getString ("responce"));
@@ -234,19 +234,20 @@ public void  checkPersimmis(){
             sessionMangement.updateDilogStatus(false);
             Intent intent = null;
             if ( sessionMangement.isLoggedInSuccess()) {
-                intent = new Intent(SplashActivity.this, MpinLoginActivity.class);
+                intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-            }else {
-                intent = new Intent(SplashActivity.this,LoginActivity.class);
+            }
+            else {
+                intent = new Intent(SplashActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
             }
         }
         else
         {
-            Intent intent = new Intent(SplashActivity.this,ForgetActivity.class);
-            intent.putExtra("type","r");
+            Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+            //intent.putExtra("type","r");
             startActivity(intent);
             finish();
 

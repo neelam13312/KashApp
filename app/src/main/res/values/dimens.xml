@@ -7,6 +7,9 @@
     <dimen name="tv_all_padding2">2pt</dimen>
     <dimen name="tv_margin">2pt</dimen>
     <dimen name="tv_x_small_6">5pt</dimen>
+    <dimen name="all_tvsize_7pt">7pt</dimen>
+    <dimen name="box_raddius">7dp</dimen>
+    <dimen name="edittext_padding">4pt</dimen>
 
 
 
@@ -124,7 +127,10 @@
     <dimen name="confirm_order_button">32dp</dimen>
     <dimen name="reward_point_layout_width">85dp</dimen>
     <dimen name="passbook_size">@dimen/space_11</dimen>
-    <dimen name="iv_50dp">60dp</dimen>
+    <dimen name="iv_50dp">50dp</dimen>
+    <dimen name="edittext_height">24pt</dimen>
+    <dimen name="margin_editextvertical">7dp</dimen>
+    <dimen name="margin_edittext_horizontal">20dp</dimen>
     <!--        <dimen name="passbok_size">@dimen/space_14</dimen>-->
 
 

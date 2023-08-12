@@ -514,7 +514,6 @@ public class SelectGameFragment extends Fragment {
                         Log.e ("nsgs", "onResponse: "+sList.size () );
                         if(sList.size ()==18)
                         {
-
                             glm = new GridLayoutManager (getActivity ( ), 2);
                             glm.setSpanSizeLookup (new GridLayoutManager.SpanSizeLookup ( ) {
                                 @Override

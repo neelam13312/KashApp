@@ -172,61 +172,55 @@
                     android:weightSum="1">
 
                     <LinearLayout
-                        android:id="@+id/lin_whatsapp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="0.5"
                         android:gravity="center"
+                        android:padding="@dimen/space_5"
                         android:orientation="horizontal"
-                        android:paddingLeft="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingRight="5dp">
+                        android:background="@drawable/bg_outline_colorprimary_5dp">
 
                         <ImageView
+                            android:layout_marginEnd="@dimen/space_5"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:src="@drawable/whatsapp" />
-
+                            android:src="@drawable/withdraw_fund" />
                         <TextView
-                            android:id="@+id/tv_whatsapp"
+                            android:layout_marginStart="@dimen/space_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text=""
+                            android:text="Recharge"
+                            android:textAllCaps="true"/>
 
-                            android:textSize="9pt"
-                            android:textStyle="bold" />
+
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/lin_whatsapp2"
+                        android:padding="5dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="0.5"
+                        android:background="@drawable/bg_outline_colorprimary_5dp"
                         android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingLeft="5dp"
-                        android:paddingTop="5dp"
-                        android:paddingRight="5dp">
+                        android:orientation="horizontal">
 
                         <ImageView
+                            android:layout_marginEnd="@dimen/space_5"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:src="@drawable/whatsapp" />
+                            android:src="@drawable/withdraw_fund" />
 
                         <TextView
-                            android:id="@+id/tv_whatsapp2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text=""
-
-                            android:textSize="9pt"
-                            android:textStyle="bold" />
+                            android:text="withdraw"
+                            android:textAllCaps="true"/>
                     </LinearLayout>
 
                 </LinearLayout>

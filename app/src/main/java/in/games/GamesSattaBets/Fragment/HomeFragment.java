@@ -230,13 +230,10 @@ int is_download,is_forced;
         lin_home = root.findViewById(R.id.lin_home);
         lin_satarline= root.findViewById(R.id.lin_satarline);
         lin_whatsapp = root.findViewById(R.id.lin_whatsapp);
-        lin_whatsapp2=root.findViewById (R.id.lin_whatsapp2);
         lin_play = root.findViewById(R.id.lin_play);
         civ_logo = root.findViewById(R.id.civ_logo);
         tv_whatsapp = root.findViewById(R.id.tv_whatsapp);
-        tv_whatsapp2 = root.findViewById(R.id.tv_whatsapp2);
         tv_whatsapp.setOnClickListener (this);
-        tv_whatsapp2.setOnClickListener (this);
         tv_msg = root.findViewById(R.id.tv_msg);
         btn_starline = root.findViewById(R.id.btn_starline);
         btn_jackpot = root.findViewById(R.id.btn_jackpot);
@@ -248,9 +245,7 @@ int is_download,is_forced;
         btn_jackpot.setOnClickListener(this);
         btn_starline.setOnClickListener(this);
         lin_whatsapp.setOnClickListener(this);
-        lin_whatsapp2.setOnClickListener(this);
         tv_whatsapp.setOnClickListener(this);
-        tv_whatsapp2.setOnClickListener(this);
         lin_newUpdate.setOnClickListener(this);
 
         btn_withdrawFund.setOnClickListener(this);
@@ -348,10 +343,7 @@ int is_download,is_forced;
           case R.id.tv_whatsapp:
               showWhatsappDailoge(tv_whatsapp.getText ().toString ());
               break;
-          case R.id.lin_whatsapp2:
-          case R.id.tv_whatsapp2:
-              showWhatsappDailoge(tv_whatsapp2.getText ().toString ());
-              break;
+
               
           case R.id.lin_newUpdate:
               if(is_download==1) {

@@ -2,12 +2,14 @@
 <resources>
 
     <color name="colorPrimary">#047EF6</color>
+    <color name="edittextstroke">#047EF6</color>
     <color name="colorPrimaryDark">#047EF6</color>
     <color name="razor_blue">#CE2C21</color>
     <color name="razor_blue_dark">#1F2E87</color>
 <!--    pri and accent same dark differnt-->
 <!--    <color name="colorAccent">#E42063</color>-->
     <color name="colorAccent">#69A9E8</color>
+    <color name="edittext_hint">#AECEED</color>
     <color name="trans">#00000000 </color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

@@ -18,12 +18,106 @@
 
 
             <RelativeLayout
+                android:background="@drawable/bg_outline_colorprimary_5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="0dp">
 
-
                 <LinearLayout
+                    android:id="@+id/linbettime"
+                    android:background="@color/colorAccent"
+                    android:padding="@dimen/space_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/linMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:text=""
+
+                            android:textSize="10dp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:id="@+id/rLayoutBidsTime"
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_marginStart="@dimen/space_5"
+                                android:gravity="start"
+                                android:layout_gravity="start"
+                                android:orientation="horizontal"
+                                android:layout_weight=".5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:id="@+id/matka_txt_open_bid_Time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="OPEN-"
+                                    android:textColor="@color/white"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_openTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_toRightOf="@id/matka_txt_open_bid_Time"
+                                    android:paddingLeft="2dp"
+                                    android:text="12:28 am"
+                                    android:textColor="@color/white"
+                                     />
+
+                            </LinearLayout>
+                           <LinearLayout
+                               android:layout_marginEnd="@dimen/space_5"
+                               android:layout_height="wrap_content"
+                               android:gravity="end"
+                               android:layout_gravity="end"
+                               android:orientation="horizontal"
+                               android:layout_weight=".5"
+                               android:layout_width="0dp">
+                               <TextView
+                                   android:id="@+id/matka_txt_close_bid_Time"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_toLeftOf="@id/tv_closeTime"
+                                   android:text="  Close"
+                                   android:textColor="@color/white"/>
+
+                               <TextView
+                                   android:id="@+id/tv_closeTime"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_alignParentEnd="true"
+                                   android:layout_centerHorizontal="true"
+                                   android:paddingLeft="2dp"
+                                   android:text="12:28 am"
+                                   android:textColor="@color/white"/>
+                           </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_below="@id/linbettime"
                     android:padding="@dimen/space_6"
                     android:id="@+id/linTop"
                     android:layout_width="match_parent"
@@ -45,13 +139,12 @@
                             android:id="@+id/tv_matkaName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/rLayoutBidsTime"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
                                 android:textStyle="bold"
                             android:text="MORNING KUBER"
                             android:textAllCaps="true"
-                            android:textColor="@color/colorPrimaryDark" />
+                            android:textColor="#4A4848" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -67,6 +160,7 @@
                                 android:gravity="center">
 
                                 <TextView
+                                    android:textColor="@color/colorPrimary"
                                     android:id="@+id/tv_sNum"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -150,86 +244,17 @@
                                 android:visibility="gone" />
                         </RelativeLayout>
 
-                        <LinearLayout
-                            android:id="@+id/linMain"
+
+                        <TextView
+                            android:id="@+id/tv_bidStatus"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:visibility="gone">
-
-                            <TextView
-                                android:id="@+id/tv_text"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_gravity="center_vertical"
-                                android:gravity="center"
-                                android:text=""
-
-                                android:textSize="10dp"
-                                android:visibility="gone" />
-
-                            <LinearLayout
-                                android:id="@+id/rLayoutBidsTime"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:id="@+id/matka_txt_open_bid_Time"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="OPEN-"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="12dp" />
-
-                                <TextView
-                                    android:id="@+id/tv_openTime"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_toRightOf="@id/matka_txt_open_bid_Time"
-                                    android:paddingLeft="2dp"
-                                    android:text="12:28 am"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="12dp" />
-
-                                <View
-
-                                    android:layout_width="2dp"
-                                    android:layout_height="10dp"
-                                    android:layout_centerInParent="true"
-                                    android:layout_marginLeft="6dp"
-                                    android:layout_marginTop="2.5dp"
-                                    android:layout_marginBottom="2.5dp"
-                                    android:background="@color/colorPrimaryDark"
-                                    android:padding="2dp"
-                                    android:textColor="@color/colorPrimary" />
-
-                                <TextView
-                                    android:id="@+id/matka_txt_close_bid_Time"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_toLeftOf="@id/tv_closeTime"
-                                    android:text="  Close"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="12dp" />
-
-                                <TextView
-                                    android:id="@+id/tv_closeTime"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_centerHorizontal="true"
-                                    android:paddingLeft="2dp"
-                                    android:text="12:28 am"
-                                    android:textColor="@color/colorPrimary"
-                                    android:textSize="12dp" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:text="Bidding is Running For Today"
+                            android:textColor="@color/red"
+                            android:textSize="6pt" />
 
                     </LinearLayout>
 
@@ -359,25 +384,7 @@
 
 
                 </LinearLayout>
-<LinearLayout
-    android:background="@color/colorAccent"
-    android:padding="@dimen/space_4"
-    android:layout_below="@id/linTop"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_bidStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linMain"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:text="Bidding is Running For Today"
-        android:textColor="@color/white"
-        android:textSize="7pt" />
 
-</LinearLayout>
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

@@ -62,7 +62,7 @@
     </queries>
 
     <application
-        android:name="in.games.GamesSattaBets.Util.AppController"
+        android:name=".Util.AppController"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -71,12 +71,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GDMatkaLive">
-
         <activity
-            android:name="in.games.GamesSattaBets.Activity.GrantPermissionActivity"
+            android:name=".Activity.NewLoginActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.WhatsappChatSupportActivity"
+            android:name=".Activity.GrantPermissionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.WhatsappChatSupportActivity"
             android:exported="false" />
 
         <provider
@@ -90,87 +92,97 @@
         </provider>
 
         <activity
-            android:name="in.games.GamesSattaBets.Activity.StarlineResultHistoryActivity"
+            android:name=".Activity.StarlineResultHistoryActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.ChangeMpinActivity"
+            android:name=".Activity.ChangeMpinActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.ForgotMpinActivity"
+            android:name=".Activity.ForgotMpinActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.PlayVideoActivity"
+            android:name=".Activity.PlayVideoActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.ShowVedioActivity"
+            android:name=".Activity.ShowVedioActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.SubmitIDeaActivity"
+            android:name=".Activity.SubmitIDeaActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.StarlineGamesFragment"
+            android:name=".Fragment.StarlineGamesFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name="in.games.GamesSattaBets.Activity.PaymentWebViewActivity"
-            android:exported="false"/>
         <activity
-            android:name="in.games.GamesSattaBets.Activity.SupportActivity"
+            android:name=".Activity.PaymentWebViewActivity"
             android:exported="false" />
-        <activity android:name="in.games.GamesSattaBets.Activity.AddBankAccountActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.ForgotPasswordWhatsppActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.MpinLoginActivity"
-            android:exported="false"/>
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.PassbookFragment"
+            android:name=".Activity.SupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AddBankAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ForgotPasswordWhatsppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MpinLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.PassbookFragment"
             android:configChanges="orientation|screenSize"
+            android:exported="false"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.PasschangeActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.ForgetActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.RegisterActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.OTPActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.PermissionActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.LoginActivity"
-            android:exported="false"/>
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.SelectGameActivity"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.PasschangeActivity"
+            android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.AllHistoryActivity"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.ForgetActivity"
+            android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.NotificationFragment"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.RegisterActivity"
+            android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.AddFundFragment"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.OTPActivity"
+            android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.WithdrawalFundFragment"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.PermissionActivity"
+            android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Fragment.WithdrawFundHistoryFragment"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.LoginActivity"
+            android:exported="false" />
         <activity
-            android:name="in.games.GamesSattaBets.Activity.PaymentActivity"
+            android:name=".Fragment.SelectGameActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Fragment.AllHistoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Fragment.NotificationFragment"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Fragment.AddFundFragment"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Fragment.WithdrawalFundFragment"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Fragment.WithdrawFundHistoryFragment"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Activity.PaymentActivity"
             android:exported="true"
             android:label="Razorpay Payment" />
 
@@ -178,9 +190,11 @@
             android:name="com.razorpay.ApiKey"
             android:value="rzp_live_8b1OKltFTrsEON" />
 
-        <activity android:name="in.games.GamesSattaBets.Activity.EditUserDetailsActivity"
-            android:exported="false"/>
-        <activity android:name="in.games.GamesSattaBets.Activity.SplashActivity"
+        <activity
+            android:name=".Activity.EditUserDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -189,12 +203,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="in.games.GamesSattaBets.Activity.MainActivity"
-            android:windowSoftInputMode="adjustNothing"
-            android:exported="false"/>
+            android:name=".Activity.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
 
         <receiver
-            android:name="in.games.GamesSattaBets.Util.GcmBroadcastReceiver"
+            android:name=".Util.GcmBroadcastReceiver"
             android:exported="false"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
@@ -207,7 +221,6 @@
                 <category android:name="com.google.android.gcm.demo.app" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

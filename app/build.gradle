@@ -108,5 +108,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-tasks:15.0.1'
     // new
     implementation 'com.razorpay:customui:3.9.11'
-
+//    retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'//2.5.0
 }
