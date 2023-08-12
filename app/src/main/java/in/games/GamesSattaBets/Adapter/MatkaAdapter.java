@@ -455,7 +455,6 @@ public class MatkaAdapter extends RecyclerView.Adapter<MatkaAdapter.ViewHolder> 
                 Log.e("matlasid",m_id);
                 String matka_name=model.getName().toString().trim();
                 String status = model.getStatus();
-
                 if (status.equals( "active" )) {
 
                     Log.e(TAG, "onClick: "+stime+" == "+etime );

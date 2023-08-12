@@ -44,49 +44,49 @@ public class SelectGameAdapter extends RecyclerView.Adapter<SelectGameAdapter.Vi
       holder.tv_gameName.setText(list.get(position).getName().toUpperCase ( ));
       SelectGameModel model = list.get(position);
 
-      if (position%5==0){
-          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.pink2)));
-          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_pink));
-          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
-          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_pink)));
-
-      }
-      else if (position%5==1){
-          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_orangr2)));
-          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_orangr));
-          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.yellow));
-          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_orangr)));
-
-      }
-      else if (position%5==2){
-          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_200)));
-          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.purple));
-          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
-          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
-
-      }
-      else if (position%5==3){
-          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorAccent2)));
-          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.colorAccent));
-          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card2));
-          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorPrimary)));
-
-      }
-      else if (position%5==4) {
-          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green_light)));
-          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_Green));
-          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card_dpana));
-          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_Green)));
-
-      }
-      else {
-          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.pink2)));
-          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_pink));
-          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
-          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_pink)));
-
-      }
-
+//      if (position%5==0){
+//          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.pink2)));
+//          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_pink));
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_pink)));
+//
+//      }
+//      else if (position%5==1){
+//          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_orangr2)));
+//          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_orangr));
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.yellow));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_orangr)));
+//
+//      }
+//      else if (position%5==2){
+//          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_200)));
+//          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.purple));
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
+//
+//      }
+//      else if (position%5==3){
+//          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorAccent2)));
+//          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.colorAccent));
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card2));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorPrimary)));
+//
+//      }
+//      else if (position%5==4) {
+//          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green_light)));
+//          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_Green));
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card_dpana));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_Green)));
+//
+//      }
+//      else {
+//          holder.rel_selectgame.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.pink2)));
+//          holder.iv_selectgame.setColorFilter(ContextCompat.getColor(context, R.color.dark_pink));
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_pink)));
+//
+//      }
+//
 
 //      if (model.getName().equalsIgnoreCase("SINGLE DIGIT"))
 //      {
