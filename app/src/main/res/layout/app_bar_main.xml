@@ -84,6 +84,8 @@
                 android:layout_weight="1">
 
                 <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/space_15"
                     android:padding="@dimen/space_2"
                     android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/bg_round_edge_5dp"
@@ -95,8 +97,8 @@
                     <ImageView
                         android:layout_marginStart="@dimen/space_10"
                         android:id="@+id/img_wallet"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/wallet"
 
                         android:layout_gravity="center_vertical"
