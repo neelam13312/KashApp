@@ -94,7 +94,7 @@ public class SplashActivity extends AppCompatActivity {
         }else {
             module.generateToken();
             loginStatus();
-            getStatus ();
+          ///  getStatus ();
         }
 
         PackageManager pm = getApplicationContext().getPackageManager();
@@ -390,7 +390,7 @@ public void  checkPersimmis(){
 //            }
             module.generateToken();
             loginStatus();
-            getStatus ();
+          //  getStatus ();
         }
     }//onActivityResult
 }
