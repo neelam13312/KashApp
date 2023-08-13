@@ -45,7 +45,6 @@ import com.google.gson.reflect.TypeToken;
 //import com.onesignal.OSDeviceState;
 import com.onesignal.OneSignal;
 
-import in.games.GamesSattaBets.Activity.ForgetActivity;
 import in.games.GamesSattaBets.Activity.MainActivity;
 
 import org.json.JSONArray;
@@ -65,7 +64,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import in.games.GamesSattaBets.Activity.MpinLoginActivity;
+import in.games.GamesSattaBets.Activity.NewLoginActivity;
 import in.games.GamesSattaBets.Activity.SplashActivity;
 import in.games.GamesSattaBets.Adapter.AddDuplicatesCommonAdpater;
 import in.games.GamesSattaBets.Adapter.BulkAdapter;
@@ -1507,7 +1506,7 @@ public void whatsapp(String phone, String message) {
                         Intent intent= null;
 //                        if(is_mpin.equalsIgnoreCase ("1"))
 //                        {
-                            intent = new Intent(context,MpinLoginActivity.class);
+                            intent = new Intent(context, NewLoginActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -1554,7 +1553,7 @@ public void whatsapp(String phone, String message) {
                     JSONObject object = new JSONObject(response);
                     if (object.getBoolean("responce")){
                         session_management.logoutSession();
-                        Intent intent = new Intent(context, ForgetActivity.class);
+                        Intent intent = new Intent(context, NewLoginActivity.class);
                         intent.putExtra("type","r");
                         context.startActivity(intent);
 //                        context.finish();

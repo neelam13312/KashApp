@@ -35,7 +35,7 @@
                 android:visibility="gone"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/back_arrow"
-                app:tint="@color/colorPrimary"/>
+                app:tint="@color/white"/>
             <RelativeLayout
                 android:id="@+id/tool_img_logo"
                 android:visibility="gone"

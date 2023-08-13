@@ -111,12 +111,10 @@ int is_download,is_forced;
 
                 tv_msg.setText (model.getHome_text());
                 tv_whatsapp.setText (model.getMobile());
-                tv_whatsapp2.setText (model.getWhatsapp_no ());
                 running_text = model.getHome_text();
                 home_text =model.getHome_text();
                 message = model.getMessage();
                 whatsapp_no = model.getMobile();
-                whatsapp_no2=model.getWhatsapp_no ();
                 withdraw_no = model.getWithdraw_no();
                 jackpot_message.setText(Html.fromHtml(model.getHome_text())+"                       ");
                 jackpot_message.setSelected(true);

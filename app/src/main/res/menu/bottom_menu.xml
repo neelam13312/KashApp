@@ -26,10 +26,19 @@
                 android:title="@string/support">
 
         </item>
-        <item android:visible="false"
-                android:id="@+id/bottom_share"
-                android:icon="@drawable/share"
-                android:title="@string/share">
+
+<item
+    android:id="@+id/bottom_profile"
+    android:icon="@drawable/profile"
+                android:title="Profile">
 
         </item>
+
+
+<!--        <item android:visible="false"-->
+<!--                android:id="@+id/bottom_share"-->
+<!--                android:icon="@drawable/share"-->
+<!--                android:title="@string/share">-->
+
+<!--        </item>-->
 </menu>

@@ -47,11 +47,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:layout_gravity="bottom"
-                    android:background="@color/colorAccent"
+                    android:background="@color/white"
                     app:elevation="2dp"
-                    app:itemIconTint="@color/white"
-                    app:itemRippleColor="@color/colorAccent"
-                    app:itemTextColor="@color/white"
+                    app:itemIconTint="@color/black"
+                    app:itemRippleColor="@color/white"
+                    app:itemTextColor="@color/black"
                     app:labelVisibilityMode="labeled"
                     app:menu="@menu/bottom_menu">
 
@@ -61,21 +61,21 @@
             </com.google.android.material.bottomappbar.BottomAppBar>
                 <!--the normal Floating action button which is
                     anchored to the bottom navigation button-->
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab"
-                    android:layout_marginBottom="-30dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_above="@id/bottomAppBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:contentDescription="@string/app_name"
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/fab"-->
+<!--                    android:layout_marginBottom="-30dp"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_above="@id/bottomAppBar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:backgroundTint="@color/colorPrimary"-->
+<!--                    android:contentDescription="@string/app_name"-->
 
-                    app:layout_anchor="@id/bottomAppBar"
-                    app:srcCompat="@drawable/home"
-                    app:tint="@color/white"
-                    tools:ignore="VectorDrawableCompat" />
+<!--                    app:layout_anchor="@id/bottomAppBar"-->
+<!--                    app:srcCompat="@drawable/home"-->
+<!--                    app:tint="@color/white"-->
+<!--                    tools:ignore="VectorDrawableCompat" />-->
         </RelativeLayout>
 
 </RelativeLayout>

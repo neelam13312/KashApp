@@ -102,11 +102,11 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if(v.getId ()==R.id.tv_register){
-            Intent intent=new Intent ( NewLoginActivity.this,RegisterActivity.class );
+            Intent intent=new Intent ( NewLoginActivity.this,NewLoginActivity.class );
             startActivity (intent);
 
         }else if (v.getId()==R.id.tv_mpin){
-            Intent intent = new Intent(NewLoginActivity.this,MpinLoginActivity.class);
+            Intent intent = new Intent(NewLoginActivity.this,NewLoginActivity.class);
             startActivity(intent);
             finish();
         }
@@ -114,12 +114,12 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
             Log.e("status",msg_status);
             if (msg_status.equals("0"))
             {
-                Intent intent=new Intent ( NewLoginActivity.this,ForgetActivity.class );
+                Intent intent=new Intent ( NewLoginActivity.this,NewLoginActivity.class );
                 intent.putExtra("type","f");
                 startActivity (intent);
             }
             else {
-                Intent intent=new Intent (NewLoginActivity.this,ForgotPasswordWhatsppActivity.class );
+                Intent intent=new Intent (NewLoginActivity.this,NewLoginActivity.class );
                 startActivity (intent);
             }
         }

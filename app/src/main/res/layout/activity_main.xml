@@ -58,7 +58,6 @@
                               android:id="@+id/tv_ver"
                               android:textAlignment="center"
                               android:layout_marginBottom="@dimen/space_10"
-                              android:textColor="@color/colorPrimary"
                               android:layout_marginTop="@dimen/space_15"
                               android:layout_width="match_parent"
                               android:layout_height="wrap_content">

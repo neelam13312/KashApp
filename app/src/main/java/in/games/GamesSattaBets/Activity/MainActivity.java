@@ -18,7 +18,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -46,14 +45,13 @@ import in.games.GamesSattaBets.Config.Module;
 import in.games.GamesSattaBets.Fragment.AccountStatementtFragment;
 import in.games.GamesSattaBets.Fragment.FundFragment;
 import in.games.GamesSattaBets.Fragment.GameRateFragment;
-import in.games.GamesSattaBets.Fragment.GenerateMPIN_Fragment;
 //import in.games.GamesSattaBet.Fragment.HistoryFragment;
 import in.games.GamesSattaBets.Fragment.HomeFragment;
 import in.games.GamesSattaBets.Fragment.MyBidsFragment;
+import in.games.GamesSattaBets.Fragment.NoticeboardFragment;
 import in.games.GamesSattaBets.Fragment.NotificationFragment;
 import in.games.GamesSattaBets.Fragment.PassbookFragment;
 import in.games.GamesSattaBets.Fragment.SettingFragment;
-import in.games.GamesSattaBets.Fragment.VedioLanguageFragment;
 import in.games.GamesSattaBets.Interfaces.GetAppSettingData;
 import in.games.GamesSattaBets.Model.IndexResponse;
 import in.games.GamesSattaBets.Model.MenuModel;
@@ -62,10 +60,8 @@ import in.games.GamesSattaBets.Util.LoadingBar;
 import in.games.GamesSattaBets.Util.RecyclerTouchListener;
 import in.games.GamesSattaBets.Util.SessionMangement;
 
-import static in.games.GamesSattaBets.Activity.SplashActivity.share_link;
 import static in.games.GamesSattaBets.Config.BaseUrls.URL_CHART;
 import static in.games.GamesSattaBets.Config.BaseUrls.URL_GET_STATUS;
-import static in.games.GamesSattaBets.Config.BaseUrls.URL_MENU;
 import static in.games.GamesSattaBets.Config.BaseUrls.URL_UNSET_TOKE;
 import static in.games.GamesSattaBets.Config.Constants.KEY_ID;
 import static in.games.GamesSattaBets.Config.Constants.KEY_MOBILE;
@@ -75,7 +71,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.dcastalia.localappupdate.DownloadApk;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -83,32 +78,32 @@ import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-DrawerLayout drawer;
-ActionBarDrawerToggle toggle;
-Toolbar toolbar,toolbar2;
-SessionMangement sessionMangement;
-TextView tv_title,tv_wallet,tv_title2,tv_mob;
-RecyclerView rec_menu;
-ImageView img_notification;
-ArrayList<MenuModel> mList;
-MenuAdapter menuAdapter;
-FloatingActionButton fab ;
-LinearLayout lin_notification,lin_wallet;
-Module module;
-TextView tv_name,tv_ver;
-LoadingBar loadingBar;
-public   static  int starline_id;
-ImageView img_back,img_back2;
-RelativeLayout tool_img_logo;
-BottomNavigationView bottomNavigation;
-RelativeLayout rel_title;
-String Chart_link="";
-float version_code ;
-int ver_code;
-int is_download,is_forced;
-public String new_app_link="",app_link;
-String is_notification="",download_link="",chat_msg="",chat_mobile="";
-public static String chat_status="";
+    DrawerLayout drawer;
+    ActionBarDrawerToggle toggle;
+    Toolbar toolbar, toolbar2;
+    SessionMangement sessionMangement;
+    TextView tv_title, tv_wallet, tv_title2, tv_mob;
+    RecyclerView rec_menu;
+    ImageView img_notification;
+    ArrayList<MenuModel> mList;
+    MenuAdapter menuAdapter;
+//    FloatingActionButton fab;
+    LinearLayout lin_notification, lin_wallet;
+    Module module;
+    TextView tv_name, tv_ver;
+    LoadingBar loadingBar;
+    public static int starline_id;
+    ImageView img_back, img_back2;
+    RelativeLayout tool_img_logo;
+    BottomNavigationView bottomNavigation;
+    RelativeLayout rel_title;
+    String Chart_link = "";
+    float version_code;
+    int ver_code;
+    int is_download, is_forced;
+    public String new_app_link = "", app_link;
+    String is_notification = "", download_link = "", chat_msg = "", chat_mobile = "";
+    public static String chat_status = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,42 +111,33 @@ public static String chat_status="";
         setContentView(R.layout.activity_main);
 
         initView();
-        module.loginStatus ();
+        module.loginStatus();
         getMobileData();
         module.getConfigData(new GetAppSettingData() {
             @Override
             public void getAppSettingData(IndexResponse model) {
 
-                chat_msg=model.getChat_msg ();
+                chat_msg = model.getChat_msg();
                 chat_mobile = model.getChat_mobile();
                 chat_status = model.getChat_status();
                 ver_code = Integer.parseInt(model.getVersion());
                 app_link = model.getApp_link();
-                new_app_link=model.getNew_app_link();
-                is_notification=model.getIs_notification ();
-                is_forced=Integer.parseInt (model.getIs_forced ());
-                is_download=Integer.parseInt (model.getIs_in_update ());
-                download_link=model.getDownload_link ();
+                new_app_link = model.getNew_app_link();
+                is_notification = model.getIs_notification();
+                is_forced = Integer.parseInt(model.getIs_forced());
+                is_download = Integer.parseInt(model.getIs_in_update());
+                download_link = model.getDownload_link();
 
                 try {
                     PackageInfo pInfo = MainActivity.this.getPackageManager().getPackageInfo(MainActivity.this.getPackageName(), 0);
                     version_code = pInfo.versionCode;
-                    Log.e("Homefragment",""+ver_code+" - "+version_code);
-                    if(version_code!=ver_code)
-                    {
-                        if(is_notification.equals("1"))
-                        {
+                    Log.e("Homefragment", "" + ver_code + " - " + version_code);
+                    if (version_code != ver_code) {
+                        if (is_notification.equals("1")) {
                             showUpdateDialog();
                         }
                     }
-                    if (chat_status.equals("-1")) {
-                        bottomNavigation.getMenu().removeItem(R.id.bottom_support);
-                        bottomNavigation.getMenu().findItem(R.id.bottom_share).setVisible(true);
-                    }
-                    else {
-                        bottomNavigation.getMenu().removeItem(R.id.bottom_share);
-                        bottomNavigation.getMenu().findItem(R.id.bottom_support).setVisible(true);
-                    }
+
                 } catch (PackageManager.NameNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -162,7 +148,7 @@ public static String chat_status="";
 
     }
 
-     @Override
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
@@ -182,21 +168,21 @@ public static String chat_status="";
         tv_mob = findViewById(R.id.tv_mob);
         img_back = findViewById(R.id.img_back);
         tv_title = findViewById(R.id.tv_title);
-        tool_img_logo= findViewById(R.id.tool_img_logo);
-        fab= findViewById(R.id.fab);
+        tool_img_logo = findViewById(R.id.tool_img_logo);
+//        fab = findViewById(R.id.fab);
         drawer = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);
         rec_menu = findViewById(R.id.rec_menu);
-        tv_ver=findViewById (R.id.tv_ver);
+        tv_ver = findViewById(R.id.tv_ver);
 
         lin_notification = findViewById(R.id.lin_notification);
         tv_wallet = findViewById(R.id.tv_wallet);
         lin_wallet = findViewById(R.id.lin_wallet);
-        img_notification=findViewById (R.id.img_notification);
+        img_notification = findViewById(R.id.img_notification);
         rel_title = findViewById(R.id.rel_title);
-        img_notification.setOnClickListener (this);
-        sessionMangement=new SessionMangement (this);
-        sessionMangement.setnumValue ("","","","","","","");
+        img_notification.setOnClickListener(this);
+        sessionMangement = new SessionMangement(this);
+        sessionMangement.setnumValue("", "", "", "", "", "", "");
 
         tv_name.setText(sessionMangement.getUserDetails().get(KEY_NAME));
         tv_mob.setText(sessionMangement.getUserDetails().get(KEY_MOBILE));
@@ -210,17 +196,18 @@ public static String chat_status="";
         }
         String ver = pkgInfo.versionName;
 
-        tv_ver.setText ("App Version : " +ver);bottomNavigation = (BottomNavigationView) findViewById(R.id.bottomNavigation);
+        tv_ver.setText("App Version : " + ver);
+        bottomNavigation = (BottomNavigationView) findViewById(R.id.bottomNavigation);
         bottomNavigation.setOnNavigationItemSelectedListener(navigation);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment selectedFragment = new HomeFragment();
-                getSupportFragmentManager().beginTransaction().add(R.id.frame,
-                        selectedFragment).addToBackStack(null).commit();
-            }
-        });
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Fragment selectedFragment = new HomeFragment();
+//                getSupportFragmentManager().beginTransaction().add(R.id.frame,
+//                        selectedFragment).addToBackStack(null).commit();
+//            }
+//        });
         module.getConfigData(new GetAppSettingData() {
             @Override
             public void getAppSettingData(IndexResponse model) {
@@ -239,9 +226,9 @@ public static String chat_status="";
         module.getWalletAmount("main");
         Fragment fragment = new HomeFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.frame,fragment).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().add(R.id.frame, fragment).addToBackStack(null).commit();
 
-        toggle = new ActionBarDrawerToggle(MainActivity.this,drawer,R.string.drawer_open,R.string.drawer_close);
+        toggle = new ActionBarDrawerToggle(MainActivity.this, drawer, R.string.drawer_open, R.string.drawer_close);
         toggle.getDrawerArrowDrawable().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_ATOP);
         setSupportActionBar(toolbar);
         setTitles(MainActivity.this.getResources().getString(R.string.app_name));
@@ -250,11 +237,10 @@ public static String chat_status="";
             public void onBackStackChanged() {
                 Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
                 String frgmentName = fragment.getClass().getSimpleName();
-                Log.e("fragment",frgmentName);
+                Log.e("fragment", frgmentName);
                 module.sessionOut();
                 module.checkDeviceLogin();
-                if (frgmentName.contains("HomeFragment"))
-                {
+                if (frgmentName.contains("HomeFragment")) {
                     rel_title.setVisibility(View.GONE);
                     tool_img_logo.setVisibility(View.VISIBLE);
                     img_back.setVisibility(View.GONE);
@@ -270,7 +256,7 @@ public static String chat_status="";
                     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                     getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_sort_24);
 //                    getSupportActionBar().setBackgroundDrawable(R.drawable.bg_circle_red);
-                }else {
+                } else {
                     rel_title.setVisibility(View.VISIBLE);
                     tv_title.setVisibility(View.VISIBLE);
                     tool_img_logo.setVisibility(View.GONE);
@@ -279,8 +265,7 @@ public static String chat_status="";
                     toggle.syncState();
 
 
-                    if (frgmentName.contains("FundFragment")||frgmentName.contains("MyBidsFragment"))
-                    {
+                    if (frgmentName.contains("FundFragment") || frgmentName.contains("MyBidsFragment")) {
                         rel_title.setVisibility(View.VISIBLE);
                         img_back.setVisibility(View.GONE);
                         tv_title.setVisibility(View.VISIBLE);
@@ -302,137 +287,134 @@ public static String chat_status="";
         rec_menu.addOnItemTouchListener(new RecyclerTouchListener(MainActivity.this, rec_menu, new RecyclerTouchListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                    String title = mList.get(position).getTitle();
-                    Fragment fm = null;
-                    Bundle args = new Bundle();
+                String title = mList.get(position).getTitle();
+                Fragment fm = null;
+                Bundle args = new Bundle();
 
-                    switch (title)
-                    {
-                        case "Home":
-                            Fragment selectedFragment = new HomeFragment();
-                            getSupportFragmentManager().beginTransaction().add(R.id.frame,
-                                    selectedFragment).addToBackStack(null).commit();
-                            break;
+                switch (title) {
+                    case "Home":
+                        Fragment selectedFragment = new HomeFragment();
+                        getSupportFragmentManager().beginTransaction().add(R.id.frame,
+                                selectedFragment).addToBackStack(null).commit();
+                        break;
 
-                        case "Submit Idea":
-                            Intent submit =new Intent (MainActivity.this,SubmitIDeaActivity.class);
-                            startActivity (submit);
-                            break;
+                    case "My Profile":
+                        fm = new AccountStatementtFragment();
+                        break;
 
-                        case "Alert":
-                            Intent intents=new Intent (MainActivity.this,NotificationFragment.class);
-                            startActivity (intents);
-                            break;
-                        case "My Bids":
-                            fm=new MyBidsFragment ();
-                            break;
-                        case "MPIN":
-                            fm=new GenerateMPIN_Fragment ();
-                            break;
+//                    case "Alert":
+//                        Intent intents = new Intent(MainActivity.this, NotificationFragment.class);
+//                        startActivity(intents);
+//                        break;
+//                    case "My Bids":
+//                        fm = new MyBidsFragment();
+//                        break;
+//                    case "MPIN":
+//                        fm = new GenerateMPIN_Fragment();
+//                        break;
+//
+////                        case "My History":
+////                            fm=new HistoryFragment ();
+////                            break;
+//                    case "Funds":
+//                        fm = new FundFragment();
+//                        break;
+//                    case "Videos":
+//                        fm = new VedioLanguageFragment();
+//                        break;
 
-//                        case "My History":
-//                            fm=new HistoryFragment ();
-//                            break;
-                        case "Funds":
-                            fm = new FundFragment();
-                            break;
-                        case "Videos":
-                            fm = new VedioLanguageFragment();
-                            break;
+                    case "Account Statement":
+                        fm = new AccountStatementtFragment();
+                        break;
 
-                        case "Account Statement":
-                            fm = new AccountStatementtFragment();
-                            break;
+//                    case "Support":
+//                        if (chat_status.equals("0")) {
+//                            Intent in_support = new Intent(MainActivity.this, SupportActivity.class);
+//                            startActivity(in_support);
+//                        } else if (chat_status.equals("1")) {
+//                            Intent support = new Intent(MainActivity.this, WhatsappChatSupportActivity.class);
+//                            startActivity(support);
+//                        } else {
+//                            module.whatsapp(chat_mobile, chat_msg);
+//                        }
+//
+//                        break;
 
-                        case "Support":
-                            if (chat_status.equals("0")) {
-                                Intent in_support = new Intent(MainActivity.this, SupportActivity.class);
-                                startActivity(in_support);
-                            }else if (chat_status.equals("1")){
-                                Intent support = new Intent(MainActivity.this,WhatsappChatSupportActivity.class);
-                                startActivity(support);
-                            }else {
-                                module.whatsapp(chat_mobile,chat_msg);
-                            }
+                    case "Notification":
+                        Intent intent = new Intent(MainActivity.this, NotificationFragment.class);
+                        startActivity(intent);
 
-                            break;
-
-                        case "Notification":
-                            Intent intent=new Intent (MainActivity.this,NotificationFragment.class);
-                            startActivity (intent);
-
-                            break;
+                        break;
 //                        case "How to Play":
 //                            fm = new HowtoPlayFragment ();
 //                            break;
-                        case "Game Rates":
-                            fm = new GameRateFragment ();
+                    case "Game Rates":
+                        fm = new GameRateFragment();
+                        break;
+                        case "Notice Board/Rules":
+                            fm = new NoticeboardFragment();
                             break;
-//                        case "Notice Board/Rules":
-//                            fm = new NoticeboardFragment ();
-//                            break;
 
-                        case "Setting":
-                            fm = new SettingFragment();
-                            break;
-                        case "Charts":
-                            Intent intent1=new Intent ( Intent.ACTION_VIEW, Uri.parse (Chart_link));
-                            startActivity (intent1);
-
-                            break;
-                        case "Share Application":
-
-                            String message = "I'm loving Satta Bets App\n\nDownload App now\n\nFrom:-\n"+share_link;
-                            Intent share = new Intent(Intent.ACTION_SEND);
-                            share.setType("text/plain");
-                            share.putExtra(Intent.EXTRA_TEXT, message);
-
-                            startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
-
-                            break;
-                        case "Logout":
-                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.RightButtonsDialog);
-                            builder.setTitle("Logout");
-                            builder.setMessage("Are you sure you want to logout ?");
-                            builder.setCancelable(false);
-                            builder.create();
-                            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    getStatus();
+                    case "Setting":
+                        fm = new SettingFragment();
+                        break;
+//                    case "Charts":
+//                        Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(Chart_link));
+//                        startActivity(intent1);
+//
+//                        break;
+//                    case "Share Application":
+//
+//                        String message = "I'm loving Satta Bets App\n\nDownload App now\n\nFrom:-\n" + share_link;
+//                        Intent share = new Intent(Intent.ACTION_SEND);
+//                        share.setType("text/plain");
+//                        share.putExtra(Intent.EXTRA_TEXT, message);
+//
+//                        startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
+//
+//                        break;
+                    case "Logout":
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.RightButtonsDialog);
+                        builder.setTitle("Logout");
+                        builder.setMessage("Are you sure you want to logout ?");
+                        builder.setCancelable(false);
+                        builder.create();
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                  getStatus();
 //                                    unSetToken();
-                                }
-                            });
-                            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
-                                }
-                            });
-                            final AlertDialog dialog=builder.create();
-                            dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                                @Override
-                                public void onShow(DialogInterface dialogInterface) {
-                                    dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.colorPrimary));
-                                    dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorPrimary));
-                                }
-                            });
-                            dialog.show();
-                            break;
+                            }
+                        });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+                        final AlertDialog dialog = builder.create();
+                        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                            @Override
+                            public void onShow(DialogInterface dialogInterface) {
+                                dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.colorPrimary));
+                                dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorPrimary));
+                            }
+                        });
+                        dialog.show();
+                        break;
 
-                    }
+                }
 
-                    if (fm!=null)
-                    {
-                        setTitles(title);
-                        args.putString("title",title);
-                        fm.setArguments(args);
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.frame,fm).addToBackStack(null).commit();
+                if (fm != null) {
+                    setTitles(title);
+                    args.putString("title", title);
+                    fm.setArguments(args);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.frame, fm).addToBackStack(null).commit();
 
-                    }
+                }
 
-                   drawer.closeDrawer(GravityCompat.START);
+                drawer.closeDrawer(GravityCompat.START);
             }
 
             @Override
@@ -442,24 +424,12 @@ public static String chat_status="";
         }));
     }
 
-    public void callCommonApi(){
+    public void callCommonApi() {
         module.getConfigData(new GetAppSettingData() {
             @Override
             public void getAppSettingData(IndexResponse model) {
                 chat_status = model.getChat_status();
-                Log.e("fvghj",chat_msg);
-                try {
-                    if (chat_status.equals("-1")) {
-                        bottomNavigation.getMenu().removeItem(R.id.bottom_support);
-                        bottomNavigation.getMenu().findItem(R.id.bottom_share).setVisible(true);
-                    }
-                    else {
-                        bottomNavigation.getMenu().removeItem(R.id.bottom_share);
-                        bottomNavigation.getMenu().findItem(R.id.bottom_support).setVisible(true);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                Log.e("fvghj", chat_msg);
                 getMenu();
             }
         });
@@ -479,10 +449,15 @@ public static String chat_status="";
                             getSupportFragmentManager().beginTransaction().replace(R.id.frame,
                                     selectedFragment).addToBackStack(null).commit();
                             break;
+case R.id.bottom_profile:
+                            selectedFragment = new AccountStatementtFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frame,
+                                    selectedFragment).addToBackStack(null).commit();
+                            break;
 
                         case R.id.bottom_passbook:
-                            Intent intent=new Intent ( MainActivity.this,PassbookFragment.class);
-                            startActivity (intent);
+                            Intent intent = new Intent(MainActivity.this, PassbookFragment.class);
+                            startActivity(intent);
                             //selectedFragment = new PassbookFragment();
                             break;
 
@@ -491,26 +466,26 @@ public static String chat_status="";
                             getSupportFragmentManager().beginTransaction().replace(R.id.frame,
                                     selectedFragment).addToBackStack(null).commit();
                             break;
-                            case R.id.bottom_share:
-                                String message = "I'm loving Satta Bets App\n\nDownload App now\n\nFrom:-\n"+share_link;
-                                Intent share = new Intent(Intent.ACTION_SEND);
-                                share.setType("text/plain");
-                                share.putExtra(Intent.EXTRA_TEXT, message);
-
-                                startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
-                            break;
+//                        case R.id.bottom_share:
+//                            String message = "I'm loving Satta Bets App\n\nDownload App now\n\nFrom:-\n" + share_link;
+//                            Intent share = new Intent(Intent.ACTION_SEND);
+//                            share.setType("text/plain");
+//                            share.putExtra(Intent.EXTRA_TEXT, message);
+//
+//                            startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
+//                            break;
 
                         case R.id.bottom_support:
 
                             if (chat_status.equals("0")) {
                                 Intent in_support = new Intent(MainActivity.this, SupportActivity.class);
                                 startActivity(in_support);
-                            }else if (chat_status.equals("1")){
-                                Intent support = new Intent(MainActivity.this,WhatsappChatSupportActivity.class);
+                            } else if (chat_status.equals("1")) {
+                                Intent support = new Intent(MainActivity.this, WhatsappChatSupportActivity.class);
                                 startActivity(support);
-                            }else {
-                                module.whatsapp(chat_mobile,chat_msg);
-                        }
+                            } else {
+                                module.whatsapp(chat_mobile, chat_msg);
+                            }
                             break;
                     }
 
@@ -518,30 +493,29 @@ public static String chat_status="";
                 }
             };
 
-    private void getStatus()
-    {
-        loadingBar.show ();
-        HashMap<String,String> params = new HashMap<>();
-        params.put("token",sessionMangement.getToken());
-        params.put("device_id",sessionMangement.getDeviceId());
-        Log.e("wsderf",params.toString());
+    private void getStatus() {
+        loadingBar.show();
+        HashMap<String, String> params = new HashMap<>();
+        params.put("token", sessionMangement.getToken());
+        params.put("device_id", sessionMangement.getDeviceId());
+        Log.e("wsderf", params.toString());
 
 
         module.postRequest(URL_GET_STATUS, params, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("URL_GET_STATUS",response);
+                Log.e("URL_GET_STATUS", response);
                 try {
-                    loadingBar.dismiss ();
+                    loadingBar.dismiss();
                     JSONObject object = new JSONObject(response);
-                    if (object.getBoolean("response")){
+                    if (object.getBoolean("response")) {
                         JSONArray array = object.getJSONArray("data");
 
                         JSONObject obj = array.getJSONObject(0);
-                        String is_mpin=obj.getString ("is_mpin");
-                        String is_pass=obj.getString ("is_password");
+                        String is_mpin = obj.getString("is_mpin");
+                        String is_pass = obj.getString("is_password");
 
-                        if (SplashActivity.sessionCountDownTimer!=null){
+                        if (SplashActivity.sessionCountDownTimer != null) {
                             SplashActivity.sessionCountDownTimer.cancel();
                         }
 
@@ -578,14 +552,13 @@ public static String chat_status="";
 //                            startActivity(intent);
 //                            finish();
 //                        }
-                    }
-                    else {
+                    } else {
 
 //                        module.errorToast("Something Went Wrong");
                     }
 
                 } catch (JSONException e) {
-                    loadingBar.dismiss ();
+                    loadingBar.dismiss();
                     e.printStackTrace();
 
                 }
@@ -595,33 +568,31 @@ public static String chat_status="";
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                loadingBar.dismiss ();
-                module.VolleyErrorMessage (error);
+                loadingBar.dismiss();
+                module.VolleyErrorMessage(error);
             }
         });
     }
 
-    private void unSetToken()
-    {
+    private void unSetToken() {
         loadingBar.show();
-        HashMap<String,String> params = new HashMap<>();
-        params.put("mobileno",sessionMangement.getUserDetails().get(KEY_MOBILE));
-        params.put("user_id",sessionMangement.getUserDetails().get(KEY_ID));
+        HashMap<String, String> params = new HashMap<>();
+        params.put("mobileno", sessionMangement.getUserDetails().get(KEY_MOBILE));
+        params.put("user_id", sessionMangement.getUserDetails().get(KEY_ID));
         module.postRequest(URL_UNSET_TOKE, params, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("URL_UNSET_TOKE",response);
+                Log.e("URL_UNSET_TOKE", response);
                 try {
                     JSONObject object = new JSONObject(response);
                     loadingBar.dismiss();
-                    if (object.getBoolean("responce")){
-                        Intent intent = new Intent(MainActivity.this, MpinLoginActivity.class);
+                    if (object.getBoolean("responce")) {
+                        Intent intent = new Intent(MainActivity.this, NewLoginActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         finish();
-                    }
-                    else {
+                    } else {
                         module.errorToast("Something Went Wrong");
                     }
 
@@ -637,56 +608,29 @@ public static String chat_status="";
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                module.VolleyErrorMessage (error);
+                module.VolleyErrorMessage(error);
             }
         });
     }
 
-    void getMenu(){
-        loadingBar.show();
-        mList.clear();
-        HashMap<String,String> params = new HashMap<>();
-         module.postRequest(URL_MENU, params, new Response.Listener<String>() {
-         @Override
-         public void onResponse(String response) {
-             Log.e("menu",response);
-             loadingBar.dismiss();
-             try {
-                 JSONArray array = new JSONArray(response);
-                 for (int i=0;i<array.length();i++)
-                 {
-                     JSONObject object = array.getJSONObject(i);
-                     MenuModel menuModel = new MenuModel();
-                     menuModel.setId(object.getString("id"));
-                     menuModel.setTitle(object.getString("title"));
-                     menuModel.setStatus(object.getString("status"));
+    void getMenu() {
+        mList.clear ();
+        mList.add (new MenuModel (  "Home",R.drawable.home));
+        mList.add (new MenuModel (  "My Profile",R.drawable.profile));
+        mList.add (new MenuModel (  "My History",R.drawable.history));
+        mList.add (new MenuModel (  "Top Winner",R.drawable.wallet));
+        mList.add (new MenuModel (  "Account Statement",R.drawable.statement));
+        mList.add (new MenuModel (  "Notification",R.drawable.notification));
+        mList.add (new MenuModel (  "Game Rates",R.drawable.rate));
+        mList.add (new MenuModel (  "Notice Board /Rules",R.drawable.notice));
+        mList.add (new MenuModel (  "Setting",R.drawable.settings));
+        mList.add (new MenuModel (  "Logout",R.drawable.signout));
 
-                     if (object.getString("status").equals("1")){
-                         if (object.getString("title").equalsIgnoreCase("Support") && chat_status.equals("-1")){
+        if (mList.size()>0) {
+            menuAdapter = new MenuAdapter(MainActivity.this, mList);
+            rec_menu.setAdapter(menuAdapter);
+        }
 
-                         }else{
-                             mList.add(menuModel);
-                         }
-                     }
-                 }
-                 if (mList.size()>0)
-                 {
-                     menuAdapter = new MenuAdapter(MainActivity.this, mList);
-                     menuAdapter.notifyDataSetChanged();
-                     rec_menu.setAdapter(menuAdapter);
-                 }
-
-             } catch (JSONException e) {
-                 e.printStackTrace();
-             }
-         }
-     }, new Response.ErrorListener() {
-         @Override
-         public void onErrorResponse(VolleyError error) {
-             loadingBar.dismiss();
-             module.showVolleyError(error);
-         }
-     });
     }
 
     public void setTitles(String str) {
