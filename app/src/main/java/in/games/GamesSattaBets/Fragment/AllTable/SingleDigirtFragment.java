@@ -239,7 +239,6 @@ public class SingleDigirtFragment extends Fragment implements View.OnClickListen
             common.setBetTypeDialog (dialog,gamedate,tv_open,tv_close,tv_type,s_time,e_time,game_id);
         }
         else if (id == R.id.btn_add) {
-            common.sessionOut();
             if (bettype.equalsIgnoreCase ("SELECT GAME TYPE"))
             {
                 common.fieldRequired ("Please Select Game Type");

@@ -215,7 +215,7 @@ public class TwoDigitPannaFragment extends Fragment implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.btn_add:
-                module.sessionOut();
+                
 //                Log.e ("list_soize", "onClick: ."+list.size () );
 //                if(list.isEmpty ()) {
 //                    Log.e ("emptyr", "onClick: ." );
@@ -243,7 +243,7 @@ public class TwoDigitPannaFragment extends Fragment implements View.OnClickListe
                 module.setBetTypeDialog (dialog,gamedate,tv_open,tv_close,tv_type,s_time,e_time,game_id);
                 break;
             case R.id.btn_submit:
-                module.sessionOut();
+                
                 placedBid("show",dialog);
                 break;
         }

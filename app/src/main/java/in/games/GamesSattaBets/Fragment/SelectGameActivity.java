@@ -85,7 +85,7 @@ public class SelectGameActivity extends AppCompatActivity {
                 Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.game_frame);
                 if(fragment.getClass().getSimpleName()!=null){
                     String frgmentName = fragment.getClass().getSimpleName();
-                    module.sessionOut();
+                    
                     module.checkDeviceLogin();
                     Log.e("fragment",frgmentName);
                     tv_title.setVisibility(View.VISIBLE);

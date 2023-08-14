@@ -1447,97 +1447,97 @@ public void whatsapp(String phone, String message) {
         return diff_e_s;
     }
 
-    public void loginStatus() {
-        HashMap<String, String> params = new HashMap<> ( );
-        params.put ("user_id",session_management.getUserDetails ().get (KEY_ID));
-        postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    Log.e ("logonstatus", "onResponse: " + response);
-                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
-                    jsonObject.getString ("login_status");
-                    if (jsonObject.getBoolean("responce")) {
-                        if (jsonObject.getString("login_status").equals("1")) {
-                            getStatus();
-                            errorToast (jsonObject.getString ("message"));
-
-                        } else {
-                        }
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace ( );
-                }
-            }
-        }, new Response.ErrorListener ( ) {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                showToast ("" + error);
-            }
-        });
-
-    }
-    public void getStatus()
-    {
-//        unSetToken();
-        loadingBar.show();
-        String android_id = Settings.Secure.getString(context.getContentResolver(),
-                Settings.Secure.ANDROID_ID);
-        HashMap<String,String> params = new HashMap<>();
-        params.put("device_id",android_id);
-        postRequest(URL_GET_STATUS, params, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.e("URL_GET_STATUS",response);
-                try {
-                    loadingBar.dismiss();
-                    JSONObject object = new JSONObject(response);
-                    if (object.getBoolean("response")){
-                        JSONArray array = object.getJSONArray("data");
-
-                        JSONObject obj = array.getJSONObject(0);
-                        String is_mpin=obj.getString ("is_mpin");
-                        String is_pass=obj.getString ("is_password");
-                        if (SplashActivity.sessionCountDownTimer!=null){
-                            SplashActivity.sessionCountDownTimer.cancel();
-                        }
-
-                        Intent intent= null;
-//                        if(is_mpin.equalsIgnoreCase ("1"))
-//                        {
-                            intent = new Intent(context, NewLoginActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            context.startActivity(intent);
+//    public void loginStatus() {
+//        HashMap<String, String> params = new HashMap<> ( );
+//        params.put ("user_id",session_management.getUserDetails ().get (KEY_ID));
+//        postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
+//            @Override
+//            public void onResponse(String response) {
+//                try {
+//                    Log.e ("logonstatus", "onResponse: " + response);
+//                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
+//                    jsonObject.getString ("login_status");
+//                    if (jsonObject.getBoolean("responce")) {
+//                        if (jsonObject.getString("login_status").equals("1")) {
+//                            getStatus();
+//                            errorToast (jsonObject.getString ("message"));
+//
+//                        } else {
 //                        }
-//                        else
-//                        {
-//                            intent = new Intent(context,LoginActivity.class);
+//
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace ( );
+//                }
+//            }
+//        }, new Response.ErrorListener ( ) {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                showToast ("" + error);
+//            }
+//        });
+//
+//    }
+//    public void getStatus()
+//    {
+////        unSetToken();
+//        loadingBar.show();
+//        String android_id = Settings.Secure.getString(context.getContentResolver(),
+//                Settings.Secure.ANDROID_ID);
+//        HashMap<String,String> params = new HashMap<>();
+//        params.put("device_id",android_id);
+//        postRequest(URL_GET_STATUS, params, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                Log.e("URL_GET_STATUS",response);
+//                try {
+//                    loadingBar.dismiss();
+//                    JSONObject object = new JSONObject(response);
+//                    if (object.getBoolean("response")){
+//                        JSONArray array = object.getJSONArray("data");
+//
+//                        JSONObject obj = array.getJSONObject(0);
+//                        String is_mpin=obj.getString ("is_mpin");
+//                        String is_pass=obj.getString ("is_password");
+//                        if (SplashActivity.sessionCountDownTimer!=null){
+//                            SplashActivity.sessionCountDownTimer.cancel();
+//                        }
+//
+//                        Intent intent= null;
+////                        if(is_mpin.equalsIgnoreCase ("1"))
+////                        {
+//                            intent = new Intent(context, NewLoginActivity.class);
 //                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                            context.startActivity(intent);
-//                        }
-                    }
-                    else {
-
-//                        errorToast("Something Went Wrong");
-                    }
-
-                } catch (JSONException e) {
-                    loadingBar.dismiss();
-                    e.printStackTrace();
-
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                loadingBar.dismiss();
-                VolleyErrorMessage (error);
-            }
-        });
-    }
+////                        }
+////                        else
+////                        {
+////                            intent = new Intent(context,LoginActivity.class);
+////                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+////                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+////                            context.startActivity(intent);
+////                        }
+//                    }
+//                    else {
+//
+////                        errorToast("Something Went Wrong");
+//                    }
+//
+//                } catch (JSONException e) {
+//                    loadingBar.dismiss();
+//                    e.printStackTrace();
+//
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                loadingBar.dismiss();
+//                VolleyErrorMessage (error);
+//            }
+//        });
+//    }
     private void unSetToken()
     {
         loadingBar.show();
@@ -1753,63 +1753,63 @@ public void whatsapp(String phone, String message) {
         tableModel.setType (betType);
     }
 
-    public void sessionOut(){
-
-        if (SplashActivity.sessionCountDownTimer!=null){
-            SplashActivity.sessionCountDownTimer.cancel();
-        }
-
-        long minlisec = Long.parseLong(session_management.getSessionLogouttime());
-       //long minlisec = 10000000;
-
-         SplashActivity.sessionCountDownTimer = new CountDownTimer(minlisec,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                Log.e("seconds remaining: ",String.valueOf( millisUntilFinished / 1000));
-                if ((millisUntilFinished / 1000)==0){
-                    sessionDialog();
-                }
-
-            }
-            @Override
-            public void onFinish() {
-//                sessionDialog();
-            }
-        }.start();
-    }
-    public  void sessionDialog(){
-        Dialog dialog;
-        dialog = new Dialog (context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.getWindow();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().setGravity(Gravity.CENTER);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        dialog.setCancelable(false);
-        dialog.setContentView (R.layout.session_out_dialog);
-        try {
-            dialog.show();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        Button btn_ok;
-
-        btn_ok = dialog.findViewById (R.id.btn_ok);
-
-        btn_ok.setOnClickListener (new View.OnClickListener ( ) {
-            @Override
-            public void onClick(View v) {
-                try{
-                dialog.dismiss();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-                getStatus();
-            }
-        });
-        dialog.setCanceledOnTouchOutside (false);
-    }
+//    public void sessionOut(){
+//
+//        if (SplashActivity.sessionCountDownTimer!=null){
+//            SplashActivity.sessionCountDownTimer.cancel();
+//        }
+//
+//        long minlisec = Long.parseLong(session_management.getSessionLogouttime());
+//       //long minlisec = 10000000;
+//
+//         SplashActivity.sessionCountDownTimer = new CountDownTimer(minlisec,1000) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                Log.e("seconds remaining: ",String.valueOf( millisUntilFinished / 1000));
+//                if ((millisUntilFinished / 1000)==0){
+//                    sessionDialog();
+//                }
+//
+//            }
+//            @Override
+//            public void onFinish() {
+////                sessionDialog();
+//            }
+//        }.start();
+//    }
+//    public  void sessionDialog(){
+//        Dialog dialog;
+//        dialog = new Dialog (context);
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.getWindow();
+//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+////        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        dialog.getWindow().setGravity(Gravity.CENTER);
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+//        dialog.setCancelable(false);
+//        dialog.setContentView (R.layout.session_out_dialog);
+//        try {
+//            dialog.show();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        Button btn_ok;
+//
+//        btn_ok = dialog.findViewById (R.id.btn_ok);
+//
+//        btn_ok.setOnClickListener (new View.OnClickListener ( ) {
+//            @Override
+//            public void onClick(View v) {
+//                try{
+//                dialog.dismiss();
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//                getStatus();
+//            }
+//        });
+//        dialog.setCanceledOnTouchOutside (false);
+//    }
 public void generateToken(){
 //    String userId="bvfgyu8765dfvb65ty";
     String UUID = OneSignal.getPermissionSubscriptionState().getSubscriptionStatus().getUserId();

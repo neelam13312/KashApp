@@ -86,7 +86,6 @@ public class NewSinglePointsAdapter extends RecyclerView.Adapter<NewSinglePoints
 
             @Override
             public void afterTextChanged(Editable s) {
-                common.sessionOut();
                 if(s.toString().equals("0")){
                     viewHolder.et_points.setText("");
                 }

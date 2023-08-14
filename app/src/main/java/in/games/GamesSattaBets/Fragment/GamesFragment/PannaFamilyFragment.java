@@ -147,7 +147,7 @@ public class PannaFamilyFragment extends Fragment implements View.OnClickListene
         String point=et_point.getText ().toString ();
         if(v.getId ()==R.id.btn_add)
         {
-            module.sessionOut();
+            
             betdate = tv_date.getText().toString();
             bettype = tv_type.getText().toString();
             if(betdate.equalsIgnoreCase ("SELECT DATE"))
@@ -210,7 +210,7 @@ public class PannaFamilyFragment extends Fragment implements View.OnClickListene
 
         }
         else if(v.getId ()==R.id.btn_submit){
-            module.sessionOut();
+            
            placedBid("show",dialog);
         }
         else if(v.getId ()==R.id.tv_date){

@@ -121,7 +121,6 @@ String your_user_id = "";
         setContentView (R.layout.fragment_add_fund);
         initView ( );
 
-        module.sessionOut();
         tv_title.setText ("Add Fund");
         if (ConnectivityReceiver.isConnected ( )) {
             tv_wallet.setText (module.getAndSetWalletAmount ( ));
@@ -241,8 +240,6 @@ String your_user_id = "";
         {
 //            minAmount=0;
             case R.id.btn_add:
-                module.sessionOut();
-
                 if(TextUtils.isEmpty(et_points.getText().toString())) {
                     et_points.setError("Enter Some Points");
                 } else if((Integer.parseInt(et_points.getText().toString().trim()))<(Integer.parseInt(minAmount))) {

@@ -167,14 +167,12 @@ LinearLayout lin_submit;
         switch (v.getId())
         {
             case R.id.btn_add:
-                module.sessionOut();
                onValidation();
                 break;
             case R.id.tv_date:
                 module.setDateDialog (is_market_open_nextday,is_market_open_nextday2,market_status,dialog,matka_id,tv_date1,tv_date2,tv_date3,txtDate_id,tv_date);
                 break;
             case R.id.btn_submit:
-                module.sessionOut();
                 placedBid("show",dialog);
                 break;
 

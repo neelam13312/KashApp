@@ -164,11 +164,9 @@ LinearLayout lin_submit;
                 manageVisibility();
                 break;
             case R.id.btn_add:
-                module.sessionOut();
                 onValidation();
                 break;
             case R.id.btn_submit:
-                module.sessionOut();
                 placedBid("show",dialog);
                 break;
         }

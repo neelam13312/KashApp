@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initView();
-        module.loginStatus();
         getMobileData();
         module.getConfigData(new GetAppSettingData() {
             @Override
@@ -238,7 +237,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
                 String frgmentName = fragment.getClass().getSimpleName();
                 Log.e("fragment", frgmentName);
-                module.sessionOut();
                 module.checkDeviceLogin();
                 if (frgmentName.contains("HomeFragment")) {
                     rel_title.setVisibility(View.GONE);

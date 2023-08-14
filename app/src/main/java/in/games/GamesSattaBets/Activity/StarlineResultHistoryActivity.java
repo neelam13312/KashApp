@@ -59,7 +59,6 @@ TextView tv_date;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starline_result_history);
         initView();
-        module.sessionOut();
 
     }
 

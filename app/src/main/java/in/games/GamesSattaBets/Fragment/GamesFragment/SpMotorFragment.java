@@ -223,7 +223,7 @@ public class SpMotorFragment extends Fragment implements View.OnClickListener {
         switch (v.getId())
         {
             case R.id.btn_add:
-                module.sessionOut();
+                
                onValidation();
                 break;
             case R.id.tv_date:
@@ -234,7 +234,7 @@ public class SpMotorFragment extends Fragment implements View.OnClickListener {
                 module.setBetTypeDialog (dialog,gamedate,tv_open,tv_close,tv_type,s_time,e_time,game_id);
                 break;
             case R.id.btn_submit:
-                module.sessionOut();
+                
                 placedBid("show",dialog);
                 break;
         }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kash App</string>
+    <string name="app_name">Kash</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -201,12 +201,12 @@
     <string name="text">Sample Text</string>
     <string name="withdraw_history">Withdrawal Request History</string>
     <string name="add_history">Add Fund Request History</string>
-    <string name="market_terms">SATTA BETS  TERMS AND CONDITIONS</string>
+    <string name="market_terms">Kash  TERMS AND CONDITIONS</string>
     <string name="terms_and_conditions">Terms And Conditions</string>
     <string name="win_history">WIN HISTORY</string>
     <string name="bid_history">BID HISTORY</string>
-    <string name="starline_ratio">SATTA BETS STARLINE GAME RATIO</string>
-    <string name="full_app_name">SATTA BETS STARLINE</string>
+    <string name="starline_ratio">Kash STARLINE GAME RATIO</string>
+    <string name="full_app_name">Kash STARLINE</string>
     <string name="jackpot_ratio">JACKPOT GAME RATIO</string>
     <string name="selectDate">SELECT DATE</string>
     <string name="date">Date</string>
@@ -238,7 +238,7 @@
     <string name="already_a_member">Already a member ?</string>
     <string name="please_do_not_share_this_otp_with_anyone">*Please do not share this OTP with anyone</string>
     <string name="forgot_mpin">Forgot MPIN?</string>
-    <string name="kalyan_starline">Milan Starline</string>
+    <string name="kalyan_starline">Kash Starline</string>
     <string name="enter_digit">Enter Digit</string>
     <string name="add_more">+ Add More</string>
     <string name="my_bids">My Bids</string>

@@ -272,7 +272,6 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
         switch (v.getId())
         {
             case R.id.btn_add:
-                module.sessionOut();
                  onValidation();
                 break;
 
@@ -283,7 +282,6 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
                 module.setBetTypeDialog (dialog,gameDate,tv_open,tv_close,tv_type,s_time,e_time,game_id);
                 break;
             case R.id.btn_submit:
-                module.sessionOut();
                 placedBid("show",dialog);
                 break;
 //            case R.id.cb_sp:

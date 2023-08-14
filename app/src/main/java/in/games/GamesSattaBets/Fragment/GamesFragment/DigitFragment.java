@@ -245,7 +245,6 @@ if(name.equalsIgnoreCase ("Jodi")){
         String digit=et_digit.getText ().toString ();
         String point=et_point.getText ().toString ();
         if(v.getId ()==R.id.btn_add){
-            module.sessionOut();
             betdate = tv_date.getText().toString();
             bettype = tv_type.getText().toString();
             if(name.equalsIgnoreCase ("Jodi")){
@@ -386,7 +385,6 @@ if(name.equalsIgnoreCase ("Jodi")){
            module.setBetTypeDialog (dialog,gamedate,tv_open,tv_close,tv_type,s_time,e_time,game_id);
         }
         else if(v.getId ()==R.id.btn_submit){
-            module.sessionOut();
             placedBid("show",dialog);
         }
     }

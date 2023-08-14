@@ -94,13 +94,13 @@ int is_download,is_forced;
 
         if (ConnectivityReceiver.isConnected())
         {
-            module.loginStatus ();
+            
             module.checkDeviceLogin();
             allMatkaGames ();
         }else {
             module.noInternet ();
         }
-        //module.loginStatus ();
+        //
         backPress(root);
         jackpot_message = root.findViewById(R.id.jackpot_message);
 
@@ -163,7 +163,7 @@ int is_download,is_forced;
                 if (swipe.isRefreshing())
                 {
                     if (ConnectivityReceiver.isConnected())
-                    {   module.sessionOut();
+                    {   
                         ((MainActivity)getActivity()).callCommonApi();
                         allMatkaGames ();
                     }else {

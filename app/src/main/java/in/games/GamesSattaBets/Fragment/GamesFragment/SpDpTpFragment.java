@@ -237,7 +237,7 @@ List<TableModel> list;
         switch (v.getId())
         {
             case R.id.btn_add:
-                module.sessionOut();
+                
                 onValidation();
                 break;
             case R.id.tv_date:
@@ -249,7 +249,7 @@ List<TableModel> list;
                 module.setBetTypeDialog (dialog,game_date,tv_open,tv_close,tv_type,s_time,e_time,game_id);
                 break;
             case R.id.btn_submit:
-                module.sessionOut();
+                
                 placedBid("show",dialog);
                 break;
             case R.id.cb_sp:

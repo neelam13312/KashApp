@@ -106,7 +106,6 @@ public class AddBankAccountActivity extends AppCompatActivity {
         module = new Module( AddBankAccountActivity.this );
         module.makeEditTextAcceptCharatacter(et_hname);
         module.makeEditTextAcceptCharatacter(et_bankname);
-        module.sessionOut();
         module.checkDeviceLogin();
         w_amount = Integer.parseInt (module.getAndSetWalletAmount ( ));
 

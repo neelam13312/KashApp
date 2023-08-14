@@ -122,7 +122,7 @@ public class SinglePanaBulkFragment extends Fragment implements View.OnClickList
 //            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 //            @Override
 //            public void onItemClick(View view, int position) {
-//                module.sessionOut();
+//                
 //                String panaDigit = numlist.get(position).getNumber();
 //
 //                betdate = tv_date.getText ( ).toString ( );
@@ -377,7 +377,7 @@ public class SinglePanaBulkFragment extends Fragment implements View.OnClickList
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(View view, int position) {
-                module.sessionOut();
+                
                 String panaDigit = numlist.get(position).getNumber();
 
                 betdate = tv_date.getText ( ).toString ( );
@@ -832,7 +832,7 @@ public class SinglePanaBulkFragment extends Fragment implements View.OnClickList
         }
 
         else if(v.getId ()==R.id.btn_submit){
-            module.sessionOut();
+            
           placedBid("show",dialog);
         }
 

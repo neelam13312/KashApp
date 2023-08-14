@@ -160,7 +160,6 @@ public class JodiDigitBulkFragment extends Fragment implements View.OnClickListe
                     }else {
                         if (s.toString ( ).length ( ) == 2) {
                             addDigits (s.toString ( ));
-                            module.sessionOut ( );
 
                         }
                     }
