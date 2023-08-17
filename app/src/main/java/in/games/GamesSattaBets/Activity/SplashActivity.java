@@ -76,26 +76,26 @@ public class SplashActivity extends AppCompatActivity {
 
         OneSignal.clearOneSignalNotifications();//to clear default notification
 
-        if (!sessionMangement.getToken().equals("")){
-            startTime=0;
-        }
-
-        Log.e("startTime", String.valueOf(startTime));
-        if (isPackageExisted(oldPackageName)){
-            try {
-                Intent intent = new Intent(Intent.ACTION_DELETE);
-                intent.setData(Uri.parse("package:"+oldPackageName));
-                intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-                startActivityForResult(intent, UNINSTALL_APP);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-        }else {
-            module.generateToken();
-            loginStatus();
-          ///  getStatus ();
-        }
+//        if (!sessionMangement.getToken().equals("")){
+//            startTime=0;
+//        }
+//
+//        Log.e("startTime", String.valueOf(startTime));
+//        if (isPackageExisted(oldPackageName)){
+//            try {
+//                Intent intent = new Intent(Intent.ACTION_DELETE);
+//                intent.setData(Uri.parse("package:"+oldPackageName));
+//                intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
+//                startActivityForResult(intent, UNINSTALL_APP);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//
+//        }else {
+//            module.generateToken();
+//           // loginStatus();
+//          ///  getStatus ();
+//        }
 
         PackageManager pm = getApplicationContext().getPackageManager();
         String pkgName = getApplicationContext().getPackageName();
@@ -227,7 +227,7 @@ public void  checkPersimmis(){
         }
     }
     public void go_next() {
-        module.generateToken();
+       // module.generateToken();
 
         if(sessionMangement.isLoggedIn())
         {
@@ -239,14 +239,14 @@ public void  checkPersimmis(){
                 finish();
             }
             else {
-                intent = new Intent(SplashActivity.this,MainActivity.class);
+                intent = new Intent(SplashActivity.this,NewLoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         }
         else
         {
-            Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+            Intent intent = new Intent(SplashActivity.this,NewLoginActivity.class);
             //intent.putExtra("type","r");
             startActivity(intent);
             finish();
@@ -291,79 +291,79 @@ public void  checkPersimmis(){
     }
 
 
-    public void loginStatus() {
-        HashMap<String, String> params = new HashMap<> ( );
-        params.put ("user_id",sessionMangement.getUserDetails ().get (KEY_ID));
-        module.postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    Log.e ("logonstatus", "onResponse: " + response);
-                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
-                    jsonObject.getString ("login_status");
-                    if (jsonObject.getBoolean("responce")) {
-                        if (jsonObject.getString("login_status").equals("1")) {
-
-                            //errorToast (jsonObject.getString ("message"));
-                          Dialog dialog = new Dialog (SplashActivity.this);
-                            dialog.requestWindowFeature( Window.FEATURE_NO_TITLE);
-                            dialog.getWindow();
-                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                            dialog.getWindow().setGravity( Gravity.CENTER);
-                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable (0));
-                            dialog.show();
-                            dialog.setCancelable(false);
-                            dialog.setContentView(R.layout.dialog_block);
-                            TextView tv_block=dialog.findViewById (R.id.tv_block);
-                            tv_block.setText (jsonObject.getString ("message"));
-                            Button btn_block=dialog.findViewById (R.id.btn_block);
-                            btn_block.setOnClickListener (new View.OnClickListener ( ) {
-                                @Override
-                                public void onClick(View v) {
-                                    try {
-                                        dialog.dismiss ( );
-                                        moveTaskToBack (true);
-                                        android.os.Process.killProcess (android.os.Process.myPid ( ));
-                                        System.exit (1);
-                                    }catch (Exception e)
-                                    {
-                                        e.printStackTrace ();
-                                    }
-                                }
-                            });
-                        } else {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-
-                                    if (ConnectivityReceiver.isConnected()) {
-
-//                                        getApiData();
-                                        checkPersimmis();
-                                    }
-                                    else
-                                    {
-                                        module.noInternet ();
-                                    }
-                                }
-                            },limit);
-                           // go_next();
-                        }
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace ( );
-                }
-            }
-        }, new Response.ErrorListener ( ) {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                module.showToast ("" + error);
-            }
-        });
-
-    }
+//    public void loginStatus() {
+//        HashMap<String, String> params = new HashMap<> ( );
+//        params.put ("user_id",sessionMangement.getUserDetails ().get (KEY_ID));
+//        module.postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
+//            @Override
+//            public void onResponse(String response) {
+//                try {
+//                    Log.e ("logonstatus", "onResponse: " + response);
+//                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
+//                    jsonObject.getString ("login_status");
+//                    if (jsonObject.getBoolean("responce")) {
+//                        if (jsonObject.getString("login_status").equals("1")) {
+//
+//                            //errorToast (jsonObject.getString ("message"));
+//                          Dialog dialog = new Dialog (SplashActivity.this);
+//                            dialog.requestWindowFeature( Window.FEATURE_NO_TITLE);
+//                            dialog.getWindow();
+//                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                            dialog.getWindow().setGravity( Gravity.CENTER);
+//                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable (0));
+//                            dialog.show();
+//                            dialog.setCancelable(false);
+//                            dialog.setContentView(R.layout.dialog_block);
+//                            TextView tv_block=dialog.findViewById (R.id.tv_block);
+//                            tv_block.setText (jsonObject.getString ("message"));
+//                            Button btn_block=dialog.findViewById (R.id.btn_block);
+//                            btn_block.setOnClickListener (new View.OnClickListener ( ) {
+//                                @Override
+//                                public void onClick(View v) {
+//                                    try {
+//                                        dialog.dismiss ( );
+//                                        moveTaskToBack (true);
+//                                        android.os.Process.killProcess (android.os.Process.myPid ( ));
+//                                        System.exit (1);
+//                                    }catch (Exception e)
+//                                    {
+//                                        e.printStackTrace ();
+//                                    }
+//                                }
+//                            });
+//                        } else {
+//                            Handler handler = new Handler();
+//                            handler.postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//
+//                                    if (ConnectivityReceiver.isConnected()) {
+//
+////                                        getApiData();
+//                                        checkPersimmis();
+//                                    }
+//                                    else
+//                                    {
+//                                        module.noInternet ();
+//                                    }
+//                                }
+//                            },limit);
+//                           // go_next();
+//                        }
+//
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace ( );
+//                }
+//            }
+//        }, new Response.ErrorListener ( ) {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                module.showToast ("" + error);
+//            }
+//        });
+//
+//    }
     public boolean isPackageExisted(String targetPackage){
         List<ApplicationInfo> packages;
         PackageManager pm;
@@ -389,7 +389,7 @@ public void  checkPersimmis(){
 //                //Dismissed
 //            }
             module.generateToken();
-            loginStatus();
+            //loginStatus();
           //  getStatus ();
         }
     }//onActivityResult

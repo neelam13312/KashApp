@@ -4,14 +4,13 @@ public class BaseUrls {
 
 
     public static final String BASE_URL_MEDIA="https://sattabets.com/";
-    public static final String BASE_URL="https://sattabets.com/Api/";
+    //public static final String BASE_URL="https://sattabets.com/Api/";
+    public static final String BASE_URL="https://softechplanettechnology.com/softwares/matka/api/";
     public static final String BASE_IMAGE_URL="https://sattabets.com/assets/images/";
-    // public static final String BASE_URL="https://sattabets.com/api1/";
-    // public static final String BASE_URL="https://sattamatka143.live/Api/";
 
 
     public static final String URL_INDEX=BASE_URL+"getIndex";
-    public static final String URL_NEWLOGIN="https://softechplanettechnology.com/softwares/matka/api/login";
+    public static final String URL_NEWLOGIN= BASE_URL+"login";
     public static final String URL_LOGIN=BASE_URL+"login";
     public static final String URL_REGISTER=BASE_URL+"sign_up";
     public static final String URL_REQUEST=BASE_URL+"add_request";
@@ -50,7 +49,7 @@ public class BaseUrls {
     public static final String URL_GET_GATEWAY=BASE_URL+"gateway_setting";
     public static final String URL_STARLINE_HISTORY=BASE_URL+"get_starline_history";
     public static final String URL_NOTICEBOARD=BASE_URL+"getNoticeboard";
-    public static final String URL_GETSTATUS=BASE_URL+"getLoginStatus";
+    public static final String URL_GETSTATUS=BASE_URL+"getLoginStatus"; // 404 aa rha h api me
     public static final String URL_STARLINEGAMES=BASE_URL+"getStarlineGames";
     public static final String URL_MATKAGAMES=BASE_URL+"getMatkaGames";
 
