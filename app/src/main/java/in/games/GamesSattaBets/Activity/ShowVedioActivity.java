@@ -47,7 +47,8 @@ ImageView img_back;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_vedio);
         initView();
-        module.checkDeviceLogin();
+        //                module.checkDeviceLogin();
+
         initRecyclerview();
     }
     private void initView() {

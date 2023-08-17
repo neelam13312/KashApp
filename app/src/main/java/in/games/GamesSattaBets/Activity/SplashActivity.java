@@ -1,6 +1,7 @@
 package in.games.GamesSattaBets.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -51,7 +52,6 @@ import static in.games.GamesSattaBets.Config.BaseUrls.URL_INDEX;
 import static in.games.GamesSattaBets.Config.Constants.KEY_ID;
 
 public class SplashActivity extends AppCompatActivity {
-    private final String TAG=SplashActivity.class.getSimpleName();
     int limit=4000,startTime=5000;
     TextView tv_vername;
     String is_mpin="",is_pass="",new_app_link="";
@@ -66,7 +66,9 @@ public class SplashActivity extends AppCompatActivity {
     ImageView img_logo;
     public static int  max_bet_amount=0,min_bet_amount=0,bank_change_charge=0;
     public static final int UNINSTALL_APP = 101;
-    String oldPackageName ="in.games.SattaBetsGame";
+//    String oldPackageName ="in.games.SattaBetsGame";
+    public static final int MY_PERMISSIONS_REQUEST_WRITE_FIELS = 102;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,27 +78,11 @@ public class SplashActivity extends AppCompatActivity {
 
         OneSignal.clearOneSignalNotifications();//to clear default notification
 
-//        if (!sessionMangement.getToken().equals("")){
-//            startTime=0;
-//        }
-//
-//        Log.e("startTime", String.valueOf(startTime));
-//        if (isPackageExisted(oldPackageName)){
-//            try {
-//                Intent intent = new Intent(Intent.ACTION_DELETE);
-//                intent.setData(Uri.parse("package:"+oldPackageName));
-//                intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-//                startActivityForResult(intent, UNINSTALL_APP);
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-//
-//        }else {
-//            module.generateToken();
-//           // loginStatus();
-//          ///  getStatus ();
-//        }
-
+        module.generateToken();
+        if (!sessionMangement.getToken().equals("")){
+            startTime=0;
+        }
+        loginStatus();
         PackageManager pm = getApplicationContext().getPackageManager();
         String pkgName = getApplicationContext().getPackageName();
         PackageInfo pkgInfo = null;
@@ -107,116 +93,104 @@ public class SplashActivity extends AppCompatActivity {
         }
         String ver = pkgInfo.versionName;
         tv_vername.setText("App Version : " +ver);
-        animBlink = AnimationUtils.loadAnimation(this,
-                R.anim.blink_anim);
-        img_logo = findViewById(R.id.img_logo);
-        img_logo.setVisibility(View.VISIBLE);
-
-        // start the animation
-       // img_logo.startAnimation(animBlink);
 
     }
 
     private void initview() {
         tv_vername = findViewById(R.id.tv_vername);
         module=new Module (SplashActivity.this);
-        sessionMangement =new SessionMangement (SplashActivity.this);
 
+        sessionMangement =new SessionMangement (SplashActivity.this);
     }
 
+
     public void getApiData() {
-       HashMap<String,String> params = new HashMap<String, String> ( );
-       module.postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
-           @Override
-           public void onResponse(String response) {
-               Log.e ("index", "onResponse: " + response.toString ( ));
-               try {
-                   JSONObject jsonObject = new JSONObject (response);
-                   Boolean result = Boolean.valueOf (jsonObject.getString ("responce"));
+        HashMap<String,String> params = new HashMap<String, String> ( );
+        module.postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
+            @Override
+            public void onResponse(String response) {
+                Log.e ("getApiData", "onResponse: " + response.toString ( ));
+                try {
+                    JSONObject jsonObject = new JSONObject (response);
+                    Boolean result = Boolean.valueOf (jsonObject.getString ("response"));
 
-                   if (result) {
-                       JSONArray arr=jsonObject.getJSONArray("data");
-                       JSONObject dataObj=arr.getJSONObject(0);
+                    if (result) {
+                        JSONArray arr=jsonObject.getJSONArray("data");
+                        JSONObject dataObj=arr.getJSONObject(0);
 
-                       indexId = dataObj.getString("id");
-                       indexMinAmount = dataObj.getString("min_amount");
-                       index_w_saturday = dataObj.getString("w_saturday");
-                       index_w_sunday = dataObj.getString("w_sunday");
-                       index_w_amount = dataObj.getString("w_amount");
-                       index_withdraw_limit = dataObj.getString("withdraw_limit");
-                       index_min_wallet_msg = dataObj.getString("min_wallet_msg");
-                       index_device_config = dataObj.getString("device_config");
-                       tagline = dataObj.getString ("tag_line");
-                       withdraw_text = dataObj.getString ("withdraw_text");
-                       withdraw_no = dataObj.getString ("withdraw_no");
-                       whatsapp_no= dataObj.getString ("mobile");
-                       home_text = dataObj.getString ("home_text").toString ( );
-                       min_add_amount = dataObj.getString ("min_wallet");
-                       msg_status = dataObj.getString ("msg_status");
-                       app_link = dataObj.getString ("app_link");
-                       share_link = dataObj.getString ("share_link");
-                       ver_code = Integer.parseInt (dataObj.getString ("version"));
-                       message = dataObj.getString ("message");
-                       index_notice = dataObj.getString("notice");
-                       admin_email = dataObj.getString("adm_email");
-                       bank_change_charge=Integer.parseInt(module.checkNullNumber(dataObj.getString("bank_change_charge")));
+                        indexId = dataObj.getString("id");
+                        indexMinAmount = dataObj.getString("min_amount");
+                        index_w_saturday = dataObj.getString("w_saturday");
+                        index_w_sunday = dataObj.getString("w_sunday");
+                        index_w_amount = dataObj.getString("w_amount");
+                        index_withdraw_limit = dataObj.getString("withdraw_limit");
+                        index_min_wallet_msg = dataObj.getString("min_wallet_msg");
+                        index_device_config = dataObj.getString("device_config");
+                        tagline = dataObj.getString ("tag_line");
+                        withdraw_text = dataObj.getString ("withdraw_text");
+                        withdraw_no = dataObj.getString ("withdraw_no");
+                        whatsapp_no= dataObj.getString ("mobile");
+                        home_text = dataObj.getString ("home_text").toString ( );
+                        min_add_amount = dataObj.getString ("min_wallet");
+                        msg_status = dataObj.getString ("msg_status");
+                        app_link = dataObj.getString ("app_link");
+                        share_link = dataObj.getString ("share_link");
+                        ver_code = Integer.parseInt (dataObj.getString ("version"));
+                        message = dataObj.getString ("message");
+                        index_notice = dataObj.getString("notice");
+                        admin_email = dataObj.getString("adm_email");
+                        max_bet_amount = Integer.parseInt(module.checkNullNumber(dataObj.getString("max_bet_amount")));
+                        min_bet_amount = Integer.parseInt(module.checkNullNumber(dataObj.getString("min_bet_amt")));
+                        new_app_link=dataObj.getString("new_app_link");
 
-                       max_bet_amount = Integer.parseInt(module.checkNullNumber(dataObj.getString("max_bet_amount")));
-                       min_bet_amount = Integer.parseInt(module.checkNullNumber(dataObj.getString("min_bet_amt")));
-                       new_app_link=dataObj.getString("new_app_link");
-                       AudioRecord();
-
-                   } else {
-                       module.errorToast ("Something Went Wrong");
-
-                   }
-
-               } catch (JSONException e) {
-                   e.printStackTrace ( );
-
-               }
-           }
-       }, new Response.ErrorListener ( ) {
+//                        checkAppPermissions();
+                        go_next();
+                    } else {
+                        module.errorToast ("Something Went Wrong");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace ( );
+                }
+            }
+        }, new Response.ErrorListener ( ) {
             @Override
             public void onErrorResponse(VolleyError error) {
                 String msg = module.VolleyErrorMessage (error);
                 if (!msg.isEmpty ( )) {
-                   module.errorToast ("" + msg);
-
+                    module.errorToast ("" + msg);
                 }
             }
         });
     }
 
-public void  checkPersimmis(){
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        if (ContextCompat.checkSelfPermission(SplashActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(SplashActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ) {
-            try {
-                PackageInfo pInfo = SplashActivity.this.getApplicationContext().getPackageManager().getPackageInfo(SplashActivity.this.getPackageName(), 0);
-                version_code = pInfo.versionCode;
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-            getApiData();
-        } else {
-            Intent i = new Intent(SplashActivity.this,GrantPermissionActivity.class);
-            startActivity(i);
-            finish();
-//            module.showToast("Allow Satta Bets to access your photos, media contents and files on your device");
+    public void checkAppPermissions() {
+        if (ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.INTERNET)
+                != PackageManager.PERMISSION_GRANTED  ||
+                ContextCompat.checkSelfPermission(this,
+                        android.Manifest.permission.ACCESS_NETWORK_STATE)
+                        != PackageManager.PERMISSION_GRANTED
+        ) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    android.Manifest.permission.INTERNET) && ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    android.Manifest.permission.ACCESS_NETWORK_STATE)) {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
-        }
-    }
-}
-    void AudioRecord() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
-                ||ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED
-                ||ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                ||ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, MY_PERMISSIONS_RECORD_AUDIO);
-                Intent i = new Intent(SplashActivity.this,GrantPermissionActivity.class);
-                startActivity(i);
-        }else {
+                        go_next();
+                    }
+                },startTime);
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{
+                                android.Manifest.permission.INTERNET,
+                                android.Manifest.permission.ACCESS_NETWORK_STATE
+                        },
+                        MY_PERMISSIONS_REQUEST_WRITE_FIELS);
+            }
+        } else {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -227,27 +201,27 @@ public void  checkPersimmis(){
         }
     }
     public void go_next() {
-       // module.generateToken();
+        module.generateToken();
 
         if(sessionMangement.isLoggedIn())
         {
             sessionMangement.updateDilogStatus(false);
             Intent intent = null;
+
             if ( sessionMangement.isLoggedInSuccess()) {
                 intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-            }
-            else {
-                intent = new Intent(SplashActivity.this,NewLoginActivity.class);
+            }else {
+                intent = new Intent(SplashActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
             }
         }
         else
         {
-            Intent intent = new Intent(SplashActivity.this,NewLoginActivity.class);
-            //intent.putExtra("type","r");
+            Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+           // intent.putExtra("type","r");
             startActivity(intent);
             finish();
 
@@ -260,6 +234,8 @@ public void  checkPersimmis(){
                 Settings.Secure.ANDROID_ID);
         HashMap<String,String> params = new HashMap<>();
         params.put("device_id",android_id);
+//        params.put(VERSION_CODE, module.getAppVersion());
+//        params.put(API_KEY, module.getApiKey());
 
         module.postRequest(URL_GET_STATUS, params, new Response.Listener<String>() {
             @Override
@@ -274,12 +250,13 @@ public void  checkPersimmis(){
                         is_mpin=obj.getString ("is_mpin");
                         is_pass=obj.getString ("is_password");
                     }
-                    else {
-//                        module.errorToast("Something Went Wrong");
-                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
+
                 }
+
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -291,7 +268,7 @@ public void  checkPersimmis(){
     }
 
 
-//    public void loginStatus() {
+    public void loginStatus() {
 //        HashMap<String, String> params = new HashMap<> ( );
 //        params.put ("user_id",sessionMangement.getUserDetails ().get (KEY_ID));
 //        module.postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
@@ -305,7 +282,7 @@ public void  checkPersimmis(){
 //                        if (jsonObject.getString("login_status").equals("1")) {
 //
 //                            //errorToast (jsonObject.getString ("message"));
-//                          Dialog dialog = new Dialog (SplashActivity.this);
+//                            Dialog dialog = new Dialog (SplashActivity.this);
 //                            dialog.requestWindowFeature( Window.FEATURE_NO_TITLE);
 //                            dialog.getWindow();
 //                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -331,24 +308,21 @@ public void  checkPersimmis(){
 //                                    }
 //                                }
 //                            });
-//                        } else {
+//
+//                        }
+//                        else {
 //                            Handler handler = new Handler();
 //                            handler.postDelayed(new Runnable() {
 //                                @Override
 //                                public void run() {
-//
-//                                    if (ConnectivityReceiver.isConnected()) {
-//
-////                                        getApiData();
-//                                        checkPersimmis();
-//                                    }
-//                                    else
-//                                    {
-//                                        module.noInternet ();
-//                                    }
+        if (ConnectivityReceiver.isConnected()) {
+            getApiData();
+        } else {
+            module.noInternet ();
+        }
 //                                }
 //                            },limit);
-//                           // go_next();
+        // go_next();
 //                        }
 //
 //                    }
@@ -362,35 +336,7 @@ public void  checkPersimmis(){
 //                module.showToast ("" + error);
 //            }
 //        });
-//
-//    }
-    public boolean isPackageExisted(String targetPackage){
-        List<ApplicationInfo> packages;
-        PackageManager pm;
 
-        pm = getPackageManager();
-        packages = pm.getInstalledApplications(0);
-        for (ApplicationInfo packageInfo : packages) {
-            if(packageInfo.packageName.equals(targetPackage))
-                return true;
-        }
-        return false;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == UNINSTALL_APP) {
-//            if(resultCode == Activity.RESULT_OK){
-//                //Deleted
-//            }
-//            if (resultCode == Activity.RESULT_CANCELED) {
-//                //Dismissed
-//            }
-            module.generateToken();
-            //loginStatus();
-          //  getStatus ();
-        }
-    }//onActivityResult
 }

@@ -237,7 +237,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
                 String frgmentName = fragment.getClass().getSimpleName();
                 Log.e("fragment", frgmentName);
-                module.checkDeviceLogin();
+//               module.checkDeviceLogin();
+
                 if (frgmentName.contains("HomeFragment")) {
                     rel_title.setVisibility(View.GONE);
                     tool_img_logo.setVisibility(View.VISIBLE);

@@ -117,7 +117,8 @@ public class SupportActivity extends AppCompatActivity {
         if (SplashActivity.sessionCountDownTimer!=null){
             SplashActivity.sessionCountDownTimer.cancel();
         }
-        module.checkDeviceLogin();
+        //                module.checkDeviceLogin();
+
         et_message.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

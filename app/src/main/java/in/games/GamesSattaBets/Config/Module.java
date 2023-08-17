@@ -1538,84 +1538,84 @@ public void whatsapp(String phone, String message) {
 //            }
 //        });
 //    }
-    private void unSetToken()
-    {
-        loadingBar.show();
-        HashMap<String,String> params = new HashMap<>();
-        params.put("mobileno",session_management.getUserDetails().get(KEY_MOBILE));
-        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
-        postRequest(URL_UNSET_TOKE, params, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.e("URL_UNSET_TOKE",response);
-                loadingBar.dismiss();
-                try {
-                    JSONObject object = new JSONObject(response);
-                    if (object.getBoolean("responce")){
-                        session_management.logoutSession();
-                        Intent intent = new Intent(context, NewLoginActivity.class);
-                        intent.putExtra("type","r");
-                        context.startActivity(intent);
-//                        context.finish();
-                    }
-                    else {
-                        errorToast("Something Went Wrong");
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-
-                }
-
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                loadingBar.dismiss();
-                VolleyErrorMessage (error);
-            }
-        });
-    }
-    public void checkDeviceLogin() {
-        HashMap<String, String> params = new HashMap<> ( );
-        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
-        params.put("device_id",session_management.getDeviceId());
-        Log.e("asdfg",params.toString());
-        postRequest (URL_CHECK_DEVICE_LOGIN, params, new Response.Listener<String> ( ) {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    Log.e ("URL_CHECK_DEVICE_LOGIN", "onResponse: " + response);
-                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
-                    if (jsonObject.getBoolean("responce")){
-                     if (jsonObject.getString("is_same_device").equalsIgnoreCase("yes")){
-
-                     }  else {
-
-                         unSetToken();
-//                         getStatus();
-                     }
-                    }else {
-                        if (jsonObject.getString("is_same_device").equalsIgnoreCase("no")){
-                            unSetToken();
-//                            getStatus();
-                        }  else {
-
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace ( );
-                }
-            }
-        }, new Response.ErrorListener ( ) {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                showToast ("" + error);
-            }
-        });
-
-    }
+//    private void unSetToken()
+//    {
+//        loadingBar.show();
+//        HashMap<String,String> params = new HashMap<>();
+//        params.put("mobileno",session_management.getUserDetails().get(KEY_MOBILE));
+//        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
+//        postRequest(URL_UNSET_TOKE, params, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                Log.e("URL_UNSET_TOKE",response);
+//                loadingBar.dismiss();
+//                try {
+//                    JSONObject object = new JSONObject(response);
+//                    if (object.getBoolean("responce")){
+//                        session_management.logoutSession();
+//                        Intent intent = new Intent(context, NewLoginActivity.class);
+//                        intent.putExtra("type","r");
+//                        context.startActivity(intent);
+////                        context.finish();
+//                    }
+//                    else {
+//                        errorToast("Something Went Wrong");
+//                    }
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//
+//                }
+//
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                loadingBar.dismiss();
+//                VolleyErrorMessage (error);
+//            }
+//        });
+//    }
+//    public void checkDeviceLogin() {
+//        HashMap<String, String> params = new HashMap<> ( );
+//        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
+//        params.put("device_id",session_management.getDeviceId());
+//        Log.e("asdfg",params.toString());
+//        postRequest (URL_CHECK_DEVICE_LOGIN, params, new Response.Listener<String> ( ) {
+//            @Override
+//            public void onResponse(String response) {
+//                try {
+//                    Log.e ("URL_CHECK_DEVICE_LOGIN", "onResponse: " + response);
+//                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
+//                    if (jsonObject.getBoolean("responce")){
+//                     if (jsonObject.getString("is_same_device").equalsIgnoreCase("yes")){
+//
+//                     }  else {
+//
+//                         unSetToken();
+////                         getStatus();
+//                     }
+//                    }else {
+//                        if (jsonObject.getString("is_same_device").equalsIgnoreCase("no")){
+//                            unSetToken();
+////                            getStatus();
+//                        }  else {
+//
+//                        }
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace ( );
+//                }
+//            }
+//        }, new Response.ErrorListener ( ) {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                showToast ("" + error);
+//            }
+//        });
+//
+//    }
 
     public void getWalletAmount(String page) {
         loadingBar.show ( );

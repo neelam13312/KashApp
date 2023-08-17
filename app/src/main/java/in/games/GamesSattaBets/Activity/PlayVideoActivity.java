@@ -36,7 +36,8 @@ Module module;
         if (SplashActivity.sessionCountDownTimer!=null){
             SplashActivity.sessionCountDownTimer.cancel();
         }
-        module.checkDeviceLogin();
+        //                module.checkDeviceLogin();
+
         try {
             if (!video_url.isEmpty ( )) {
 
