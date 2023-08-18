@@ -212,7 +212,6 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
                             sessionMangement.setIsLoginSuccess();
                             sessionMangement.createLoginSession (id,name,name,mobile,email,"",""
                                     ,"","","","","","","","","","","");
-
                             Intent intent = new Intent(NewLoginActivity.this, MainActivity.class);
                             intent.putExtra("username", jsonObject.getString("name").toString());
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
