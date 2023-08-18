@@ -25,6 +25,7 @@
     <string name="fund">Fund</string>
     <string name="play_starline">Play Starline</string>
     <string name="login_account">Login Please</string>
+    <string name="register_account">Register Please</string>
     <string name="loading...">Loading</string>
     <string name="email">Email</string>
     <string name="forgot_password">FORGOT PASSWORD</string>
@@ -273,5 +274,6 @@
     <string name="red_bracket">Red Bracket</string>
     <string name="session_expired_nplease_logout_to_continue">Session Expired\nPlease Logout To Continue</string>
     <string name="share">Share</string>
+    <string name="login_error">Check mobile number</string>
 
 </resources>

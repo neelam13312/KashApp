@@ -311,7 +311,7 @@ List<TableModel> list;
              }
 
             else if (pints > Integer.parseInt(w_amount)) {
-                module.errorToast("Insufficient Amount");
+                 module.errorToast(getContext(),"Insufficient Amount");
 
             }else {
 //                if (num==1)
@@ -419,7 +419,7 @@ List<TableModel> list;
                     amt = amt + Integer.parseInt(list.get(j).getPoints());
                 }
                 if (amt > Integer.parseInt(w_amount)) {
-                    module.errorToast("Insufficient Amount");
+                    module.errorToast(getContext(),"Insufficient Amount");
                     clearData();
                 } else {
                     if (dialogType.equals("placed")) {
@@ -545,7 +545,7 @@ List<TableModel> list;
                         loadingBar.dismiss();
                     } else {
                         loadingBar.dismiss();
-                        module.errorToast( "Something went wrong");
+                        module.errorToast(getContext(), "Something went wrong");
                     }
 
                 } catch (Exception ex) {

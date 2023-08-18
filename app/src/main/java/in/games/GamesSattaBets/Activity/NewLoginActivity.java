@@ -186,7 +186,7 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
 
                     boolean resp=object.getBoolean("token_status");
                     if (resp)
-                    {   module.successToast (object.getString("message").toString());
+                    {   module.successToast (NewLoginActivity.this,object.getString("message").toString());
                         JSONObject jsonObjectm = object.getJSONObject("data");
                         JSONObject jsonObject = jsonObjectm.getJSONObject("user");
                         String id=module.checkNull(jsonObject.getString("id").toString());
@@ -223,7 +223,7 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
 
                     }
                     else {
-                        module.errorToast (object.getString("error").toString());
+                        module.errorToast (NewLoginActivity.this,object.getString("error").toString());
                     }
 
                 } catch (Exception ex) {

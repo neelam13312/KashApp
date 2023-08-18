@@ -307,7 +307,7 @@ public class TwoDigitPannaFragment extends Fragment implements View.OnClickListe
                 et_points.requestFocus();
                 return;
             }else if (pints > Integer.parseInt(w_amount)) {
-                module.errorToast("Insufficient Amount");
+                 module.errorToast(getContext(),"Insufficient Amount");
 
             }else {
                 int num = 1;
@@ -411,7 +411,7 @@ public class TwoDigitPannaFragment extends Fragment implements View.OnClickListe
                 amt = amt + Integer.parseInt(list.get(j).getPoints());
             }
             if (amt > Integer.parseInt(w_amount)) {
-                module.errorToast("Insufficient Amount");
+                 module.errorToast(getContext(),"Insufficient Amount");
                 clearData();
             } else {
 //                try {

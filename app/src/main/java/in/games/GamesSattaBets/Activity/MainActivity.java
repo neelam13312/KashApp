@@ -553,7 +553,7 @@ case R.id.bottom_profile:
 //                        }
                     } else {
 
-//                        module.errorToast("Something Went Wrong");
+//                         module.errorToast (MainActivity,"Something Went Wrong");
                     }
 
                 } catch (JSONException e) {
@@ -592,7 +592,7 @@ case R.id.bottom_profile:
                         startActivity(intent);
                         finish();
                     } else {
-                        module.errorToast("Something Went Wrong");
+                         module.errorToast (MainActivity.this,"Something Went Wrong");
                     }
 
                 } catch (JSONException e) {
@@ -681,7 +681,7 @@ case R.id.bottom_profile:
            public void onErrorResponse(VolleyError error) {
                String msg = module.VolleyErrorMessage (error);
                if (!msg.isEmpty ( )) {
-                   module.errorToast ("" + msg);
+                   module.errorToast (MainActivity.this,"" + msg);
                }
            }
        });

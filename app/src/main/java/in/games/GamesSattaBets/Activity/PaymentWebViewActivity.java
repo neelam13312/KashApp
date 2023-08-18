@@ -225,7 +225,7 @@ String finalURL="";
                         loadView();
 
                     }else {
-                        module.errorToast(obj.getString("message"));
+                        module.errorToast(PaymentWebViewActivity.this,obj.getString("message"));
                     }
 
                 } catch (Exception ex) {

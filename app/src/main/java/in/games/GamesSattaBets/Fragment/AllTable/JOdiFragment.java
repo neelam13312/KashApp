@@ -260,7 +260,7 @@ public class JOdiFragment extends Fragment implements View.OnClickListener {
              betType=getBetType(getASandC(s_time,e_time));
              if (betType==1)
              {
-                 common.errorToast ("Bidding is closed for today !");
+                 common.errorToast (getContext(),"Bidding is closed for today !");
              }
              else{
             tempList.clear();

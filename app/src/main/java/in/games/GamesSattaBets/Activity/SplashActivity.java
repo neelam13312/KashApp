@@ -146,7 +146,7 @@ public class SplashActivity extends AppCompatActivity {
 //                        checkAppPermissions();
                         go_next();
                     } else {
-                        module.errorToast ("Something Went Wrong");
+                        module.errorToast (SplashActivity.this,"Something Went Wrong");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace ( );
@@ -157,7 +157,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 String msg = module.VolleyErrorMessage (error);
                 if (!msg.isEmpty ( )) {
-                    module.errorToast ("" + msg);
+                    module.errorToast (SplashActivity.this,"" + msg);
                 }
             }
         });

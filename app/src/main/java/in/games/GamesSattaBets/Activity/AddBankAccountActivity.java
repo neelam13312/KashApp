@@ -256,7 +256,7 @@ public class AddBankAccountActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                int wallet_amount = (w_amount);
                 if (w_amount < Integer.parseInt(service)) {
-                    module.errorToast("Insufficient Amount");
+                     module.errorToast (AddBankAccountActivity.this,"Insufficient Amount");
                 }
                 else {
 
@@ -289,7 +289,7 @@ public class AddBankAccountActivity extends AppCompatActivity {
                         et_bankname.setText(object.getString("bank_name"));
                         et_branchname.setText(object.getString("branch"));
                     } else {
-                        module.errorToast("" + jsonObject.getString("message"));
+                         module.errorToast (AddBankAccountActivity.this,"" + jsonObject.getString("message"));
                         Log.e("errorToast", "onResponse: "+ jsonObject.getString("message"));
                     }
                     loadingBar.dismiss();
@@ -331,7 +331,7 @@ public class AddBankAccountActivity extends AppCompatActivity {
                     boolean resp = jsonObject.getBoolean("responce");
                     if (resp) {
                         sessionMangement.updateAccSection(accno, bankname, ifsc, hod_name,branch);
-                        module.successToast("" + jsonObject.getString("message"));
+                        module.successToast(AddBankAccountActivity.this,"" + jsonObject.getString("message"));
                         rel_data.setVisibility (View.VISIBLE);
                         tv_hod.setText (hod_name);
                         tv_bank.setText (bankname+" "+branch);
@@ -339,7 +339,7 @@ public class AddBankAccountActivity extends AppCompatActivity {
                         tv_ifsc.setText (ifsc);
                         rel_edit.setVisibility (View.GONE);
                     } else {
-                        module.errorToast("" + jsonObject.getString("error"));
+                         module.errorToast (AddBankAccountActivity.this,"" + jsonObject.getString("error"));
                     }
 
                 } catch (Exception ex) {
@@ -399,7 +399,7 @@ public class AddBankAccountActivity extends AppCompatActivity {
                         }
                     }
                     else {
-                        module.errorToast(object.getString("error"));
+                         module.errorToast (AddBankAccountActivity.this,object.getString("error"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

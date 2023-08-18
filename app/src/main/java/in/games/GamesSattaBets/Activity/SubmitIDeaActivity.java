@@ -64,7 +64,7 @@ SessionMangement sessionMangement;
             public void onClick(View view) {
                 if(tv_msg.getText ().toString ().isEmpty ())
                 {
-                   module.errorToast ("Message field required");
+                   module.errorToast (SubmitIDeaActivity.this,"Message field required");
                 }
                 else
                 {
@@ -92,14 +92,14 @@ SessionMangement sessionMangement;
 
                     if (resp) {
                         loadingBar.dismiss();
-                        module.successToast (object.getString("success").toString());
+                        module.successToast (SubmitIDeaActivity.this,object.getString("success").toString());
                         Intent intent = new Intent (SubmitIDeaActivity.this, MainActivity.class);
                         startActivity (intent);
 //                        finish ( );
 
                     } else {
                         loadingBar.dismiss ();
-                        module.errorToast (object.getString("error").toString());
+                        module.errorToast (SubmitIDeaActivity.this,object.getString("error").toString());
                     }
                 } catch (Exception ex) {
                     loadingBar.dismiss ();

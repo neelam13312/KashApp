@@ -654,12 +654,12 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
 //                            rec_history.setAdapter(allHistoryAdapter);
 
                         } else {
-                            module.errorToast("No Matka History Available");
+                             module.errorToast(AllHistoryActivity.this,"No Matka History Available");
                         }
                     } else {
                         module.No_historyDailoge();
 
-                        module.errorToast(object.getString("Something Went Wrong"));
+                         module.errorToast(AllHistoryActivity.this,object.getString("Something Went Wrong"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -726,7 +726,7 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
 
                     } else {
                         module.No_historyDailoge();
-                        module.errorToast("No Matka History Available");
+                         module.errorToast(AllHistoryActivity.this,"No Matka History Available");
                     }
 
                 } catch (JSONException e) {
@@ -788,7 +788,7 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
 //                            rec_history.setAdapter(allHistoryAdapter);
                         } else {
                             module.No_historyDailoge();
-                            module.errorToast("No Starline History Available");
+                             module.errorToast(AllHistoryActivity.this,"No Starline History Available");
                         }
                     }
                 } catch (Exception e) {
@@ -850,7 +850,7 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
                             rec_history.setAdapter(allHistoryAdapter);
                         } else {
                             module.No_historyDailoge();
-                            module.errorToast("No Win History Available");
+                             module.errorToast(AllHistoryActivity.this,"No Win History Available");
                         }
                     }
 
@@ -912,11 +912,11 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
                             rec_history.setAdapter(allHistoryAdapter);
                         } else {
 
-                            module.errorToast("No Win History Available");
+                             module.errorToast(AllHistoryActivity.this,"No Win History Available");
                         }
                     } else {
                         module.No_historyDailoge();
-                        module.errorToast("No History Available");
+                         module.errorToast(AllHistoryActivity.this,"No History Available");
                     }
 
                 } catch (JSONException e) {
@@ -979,7 +979,7 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
                             rec_history.setAdapter(allHistoryAdapter);
                         } else {
                             module.No_historyDailoge();
-                            module.errorToast("No Win History Available");
+                             module.errorToast(AllHistoryActivity.this,"No Win History Available");
                         }
                     }
 

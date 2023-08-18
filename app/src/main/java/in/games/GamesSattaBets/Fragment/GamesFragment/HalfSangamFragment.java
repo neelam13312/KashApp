@@ -241,7 +241,7 @@ LinearLayout lin_submit;
 
                     int wallet_amount = Integer.parseInt(w_amount);
                     if (wallet_amount < amt) {
-                        module.errorToast("Insufficient Amount");
+                       module.errorToast(getContext(),"Insufficient Amount");
                     } else {
                         if (dialogType.equals("placed")) {
                             module.setBidsDialog(Integer.parseInt(w_amount), list, matka_id, date, game_id, w_amount, matka_name, dialog.findViewById (R.id.btn_dialogSubmit), s_time, e_time,dialog);
@@ -251,7 +251,7 @@ LinearLayout lin_submit;
                     }
                 } catch (Exception err) {
                     err.printStackTrace();
-                    module.errorToast("Err" + err.getMessage());
+                   module.errorToast(getContext(),"Err" + err.getMessage());
                 }
 
             }
@@ -262,7 +262,7 @@ LinearLayout lin_submit;
         betType=getBetType(getASandC(s_time,e_time));
         if (betType==1)
         {
-            module.errorToast ("Bidding is closed for today !");
+            module.errorToast (getContext(),"Bidding is closed for today !");
         } else {
             betdate = tv_date.getText ( ).toString ( );
             String closedigit = et_closeDigit.getText ( ).toString ( );
@@ -284,7 +284,7 @@ LinearLayout lin_submit;
             auto_openPanna.setError ("Panna Required");
         } else if (!Arrays.asList (halfSangam).contains (openPanna)) {
 
-            module.errorToast ("This is invalid panna");
+            module.errorToast (getContext(),"This is invalid panna");
             auto_openPanna.setText ("");
             auto_openPanna.requestFocus ( );
             return;
@@ -310,7 +310,7 @@ LinearLayout lin_submit;
             }
 
             else if (points > Integer.parseInt (w_amount)) {
-                module.errorToast ("Insufficient Amount");
+                module.errorToast (getContext(),"Insufficient Amount");
             } else {
                 int num = 1;
                 for (int n = 0; n < list.size ( ); n++) {
@@ -333,7 +333,7 @@ LinearLayout lin_submit;
             auto_closePanna.setError ("Panna Required");
         } else if (!Arrays.asList (halfSangam).contains (closePanna)) {
 
-            module.errorToast ("This is invalid panna");
+            module.errorToast (getContext(),"This is invalid panna");
             auto_openPanna.setText ("");
             auto_openPanna.requestFocus ( );
             return;
@@ -348,7 +348,7 @@ LinearLayout lin_submit;
                 et_points.requestFocus ( );
                 return;
             } else if (points > Integer.parseInt (w_amount)) {
-                module.errorToast ("Insufficient Amount");
+                module.errorToast (getContext(),"Insufficient Amount");
             } else {
                 int num = 1;
                 for (int n = 0; n < list.size ( ); n++) {

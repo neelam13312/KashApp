@@ -228,7 +228,7 @@ private String matka_id,e_time,s_time ,matka_name , game_id , game_name ,type = 
 
                 int wallet_amount = Integer.parseInt(w_amount);
                 if (wallet_amount < amt) {
-                    module.errorToast("Insufficient Amount");
+                     module.errorToast(getContext(),"Insufficient Amount");
                 } else {
                     if (dialogType.equals("placed")) {
                         module.setBidsDialog(Integer.parseInt(w_amount), list, matka_id, date, game_id, w_amount, matka_name, dialog.findViewById (R.id.btn_dialogSubmit), s_time, e_time,dialog);
@@ -239,7 +239,7 @@ private String matka_id,e_time,s_time ,matka_name , game_id , game_name ,type = 
                 }
             } catch (Exception err) {
                 err.printStackTrace();
-                module.errorToast("Err" + err.getMessage());
+                 module.errorToast(getContext(),"Err" + err.getMessage());
             }
 
         }
@@ -250,7 +250,7 @@ private String matka_id,e_time,s_time ,matka_name , game_id , game_name ,type = 
         betType=getBetType(getASandC(s_time,e_time));
         if (betType==1)
         {
-            module.errorToast ("Bidding is closed for today !");
+            module.errorToast (getContext(),"Bidding is closed for today !");
         }
         else {
             betdate = tv_date.getText ( ).toString ( );
@@ -266,7 +266,7 @@ private String matka_id,e_time,s_time ,matka_name , game_id , game_name ,type = 
                 auto_openPanna.setError ("Panna Required");
             } else if (!Arrays.asList (fullSangam).contains (openPanna)) {
 
-                module.errorToast ("This is invalid panna");
+                module.errorToast (getContext(),"This is invalid panna");
                 auto_openPanna.setText ("");
                 auto_openPanna.requestFocus ( );
                 return;
@@ -275,7 +275,7 @@ private String matka_id,e_time,s_time ,matka_name , game_id , game_name ,type = 
 
                 auto_closePanna.setError ("Panna Required");
             } else if (!Arrays.asList (fullSangam).contains (closePanna)) {
-                module.errorToast ("This is invalid panna");
+                module.errorToast (getContext(),"This is invalid panna");
                 auto_closePanna.setText ("");
                 auto_closePanna.requestFocus ( );
                 return;
@@ -298,7 +298,7 @@ private String matka_id,e_time,s_time ,matka_name , game_id , game_name ,type = 
                     return;
                 }
                 else if (points > Integer.parseInt (w_amount)) {
-                    module.errorToast ("Insufficient Amount");
+                    module.errorToast (getContext(),"Insufficient Amount");
                 } else {
                     int num = 1;
                     for (int n = 0; n < list.size ( ); n++) {

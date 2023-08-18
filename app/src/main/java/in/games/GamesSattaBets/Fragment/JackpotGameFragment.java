@@ -191,7 +191,7 @@ if(object.getString("id").equals ("4")){
                     }
                     else
                     {
-                        module.errorToast ("Something Went Wrong");
+                        module.errorToast (getContext(),"Something Went Wrong");
                     }
                     loadingBar.dismiss();
                 } catch (JSONException e) {

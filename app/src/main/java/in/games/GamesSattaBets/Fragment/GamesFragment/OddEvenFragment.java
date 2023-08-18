@@ -278,7 +278,7 @@ public class OddEvenFragment extends Fragment implements View.OnClickListener {
                     }
                     else
                     {
-                        module.errorToast("Please select any digit type");
+                       module.errorToast(getContext(),"Please select any digit type");
                         return;
                     }
                     //module.addData(number,"Odd Even",check_value,point,bettype,list,tableAdaper,list_table,btn_submit);

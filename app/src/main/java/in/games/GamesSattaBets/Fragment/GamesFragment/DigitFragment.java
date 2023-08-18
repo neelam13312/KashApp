@@ -238,7 +238,7 @@ if(name.equalsIgnoreCase ("Jodi")){
     betType=getBetType(getASandC(s_time,e_time));
     if (betType==1)
     {
-        module.errorToast ("Bidding is closed for today !");
+        module.errorToast (getContext(),"Bidding is closed for today !");
     }
 }
 
@@ -254,7 +254,7 @@ if(name.equalsIgnoreCase ("Jodi")){
                 betType=getBetType(getASandC(s_time,e_time));
                 if (betType==1)
                 {
-                    module.errorToast ("Bidding is closed for today !");
+                    module.errorToast (getContext(),"Bidding is closed for today !");
                 }
                 else{
                       if(betdate.equalsIgnoreCase ("SELECT DATE"))

@@ -253,7 +253,7 @@ public class SpMotorFragment extends Fragment implements View.OnClickListener {
             }
             if (amt>Integer.parseInt(w_amount))
             {
-                module.errorToast("Insufficient Amount");
+               module.errorToast(getContext(),"Insufficient Amount");
                 clearData();
             }
             else {
@@ -360,7 +360,7 @@ public class SpMotorFragment extends Fragment implements View.OnClickListener {
                 }
                 else if (pints>Integer.parseInt(w_amount))
                 {
-                    module.errorToast("Insufficient Amount");
+                   module.errorToast(getContext(),"Insufficient Amount");
 
                 }
                 else {
@@ -471,7 +471,7 @@ public class SpMotorFragment extends Fragment implements View.OnClickListener {
                                loadingBar.dismiss();
                            } else {
                                loadingBar.dismiss();
-                               module.errorToast( "Something went wrong");
+                              module.errorToast(getContext(), "Something went wrong");
                            }
 
                        } catch (Exception ex) {

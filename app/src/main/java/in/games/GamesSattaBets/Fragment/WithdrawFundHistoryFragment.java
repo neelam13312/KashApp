@@ -129,7 +129,7 @@ Context context = WithdrawFundHistoryFragment.this;
 
                         if (data.equals("[]"))
                         {
-                            module.errorToast ("No History Available");
+                            module.errorToast(getApplicationContext(),"No History Available");
                         }
 
                         for (int i = 0; i < data.length ( ); i++) {
@@ -176,7 +176,7 @@ Context context = WithdrawFundHistoryFragment.this;
                                 rec_wHistory.setAdapter(fundHistoryAdapter);
 
                             } else {
-                                module.errorToast ("No History Available");
+                                module.errorToast(getApplicationContext(),"No History Available");
                             }
                         }else if (name.equalsIgnoreCase("a"))
                         {
@@ -189,12 +189,12 @@ Context context = WithdrawFundHistoryFragment.this;
 
                             } else {
 
-                                module.errorToast ("No History Available");
+                                module.errorToast(getApplicationContext(),"No History Available");
                             }
                         }
 
                     } else {
-                        module.errorToast ("something went wrong");
+                        module.errorToast(getApplicationContext(),"something went wrong");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace ( );
@@ -241,7 +241,7 @@ Context context = WithdrawFundHistoryFragment.this;
 
                         if (data.equals("[]"))
                         {
-                            module.errorToast ("No History Available");
+                            module.errorToast(getApplicationContext(),"No History Available");
                         }
 
                         for (int i = 0; i < data.length ( ); i++) {
@@ -280,7 +280,7 @@ Context context = WithdrawFundHistoryFragment.this;
 
                             } else {
 
-                                module.errorToast ("No History Available");
+                                module.errorToast(getApplicationContext(),"No History Available");
                             }
                         }else if (name.equalsIgnoreCase("a"))
                         {
@@ -293,12 +293,12 @@ Context context = WithdrawFundHistoryFragment.this;
 
                             } else {
 
-                                module.errorToast ("No History Available");
+                                module.errorToast(getApplicationContext(),"No History Available");
                             }
                         }
 
                     } else {
-                        module.errorToast ("something went wrong");
+                        module.errorToast(getApplicationContext(),"something went wrong");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace ( );

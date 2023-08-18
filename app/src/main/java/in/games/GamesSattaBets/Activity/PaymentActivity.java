@@ -366,7 +366,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
             public void onValidationError(Map<String, String> error) {
                 my_error="error";
                 Log.d("com.example", "Validation failed: " + error.get("field") + " " + error.get("description"));
-                module.errorToast ("Validation: " + error.get("field") + " " + error.get("description"));
+                 module.errorToast (PaymentActivity.this,"Validation: " + error.get("field") + " " + error.get("description"));
               //  Toast.makeText(PaymentActivity.this, "Validation: " + error.get("field") + " " + error.get("description"), Toast.LENGTH_SHORT).show();
             }
         });
@@ -375,7 +375,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
             public void onPaymentSuccess(String s) {
                 Log.d ("successpay_msg", "onPaymentError: "+s);
                 payment_webview.setVisibility(View.GONE);
-                module.successToast ("Added Successfully");
+                module.successToast (PaymentActivity.this,"Added Successfully");
                 my_error="";
                 //Toast.makeText (PaymentActivity.this, "Successfully", Toast.LENGTH_SHORT).show ( );
                 Intent intent=new Intent(PaymentActivity.this,MainActivity.class);
@@ -389,7 +389,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 //                module.showToast(razor_pay+"------"+order_id_value);
 //                module.showToast(s);
                 payment_webview.setVisibility(View.GONE);
-                module.errorToast ("Something went wrong");
+                 module.errorToast (PaymentActivity.this,"Something went wrong");
                 my_error="error";
                 Intent intent=new Intent(PaymentActivity.this,AddFundFragment.class);
                 startActivity (intent);
@@ -536,7 +536,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                     }
                     else
                     {
-                        module.errorToast(""+obj.getString("message"));
+                       module.errorToast(PaymentActivity.this,""+obj.getString("message"));
                         loadingBar.dismiss();
                     }
                 }
@@ -652,7 +652,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onPaymentSuccess(String s) {
-        module.successToast ("Success");
+        module.successToast (PaymentActivity.this,"Success");
        // Toast.makeText (this, "Success", Toast.LENGTH_SHORT).show ( );
         payment_webview.setVisibility(View.GONE);
         my_error="";
@@ -666,7 +666,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     public void onPaymentError(int i, String s) {
         Log.d ("error_msg", "onPaymentError: "+s);
         payment_webview.setVisibility(View.GONE);
-        module.errorToast ("Error");
+         module.errorToast (PaymentActivity.this,"Error");
         my_error="error";
         Intent intent=new Intent(PaymentActivity.this,AddFundFragment.class);
         startActivity (intent);
@@ -1008,7 +1008,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                     else
                     {
                         getGatewayDetails();
-//                        module.errorToast("Something went wrong");
+//                       module.errorToast(PaymentActivity.this,"Something went wrong");
                         loadingBar.dismiss();
                     }
                 }
@@ -1048,11 +1048,11 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                     boolean resp=obj.getBoolean("responce");
                     if(resp)
                     {
-                        module.successToast(""+obj.getString("message"));
+                         module.successToast (PaymentActivity.this,""+obj.getString("message"));
                         loadingBar.dismiss();
                         SuccessBidDailoge();
                     } else {
-                        module.errorToast(""+obj.getString("error"));
+                       module.errorToast(PaymentActivity.this,""+obj.getString("error"));
                         loadingBar.dismiss();
                         finish();
                     }
@@ -1194,7 +1194,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                             SuccessBidDailoge();
 //                            saveInfoIntoDatabase(sessionMangement.getUserDetails().get(KEY_ID), amount, "approved", "Add", trans);
                         } else{
-                            module.errorToast("Payment Failed. Try again later");
+                           module.errorToast(PaymentActivity.this,"Payment Failed. Try again later");
                             finish();
                         }
                     }
@@ -1207,7 +1207,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onError( String message) {
                         Log.e("error", String.valueOf(message));
-                        module.errorToast("Payment Failed. Try again later");
+                       module.errorToast(PaymentActivity.this,"Payment Failed. Try again later");
                         finish();
                     }
                 }).pay();

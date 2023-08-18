@@ -128,7 +128,7 @@ public class AllHistoryAdapter extends RecyclerView.Adapter<AllHistoryAdapter.Vi
                     }
                     if (filteredList.size()<=0)
                     {
-                        module.errorToast("No History Found For Date : "+""+charString);
+                        module.errorToast(context,"No History Found For Date : "+""+charString);
                     }
                     list = filteredList;
                 }

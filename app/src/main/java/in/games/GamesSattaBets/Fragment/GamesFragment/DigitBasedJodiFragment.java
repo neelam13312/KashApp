@@ -255,7 +255,7 @@ LinearLayout lin_submit;
                     et_points.requestFocus();
                     return;
                 }else if (pints > Integer.parseInt(w_amount)) {
-                module.errorToast("Insufficient Amount");
+                module.errorToast(getContext(),"Insufficient Amount");
 
             }else {
 
@@ -349,7 +349,7 @@ LinearLayout lin_submit;
 
                 int wallet_amount = Integer.parseInt(w_amount);
                 if (wallet_amount < amt) {
-                    module.errorToast("Insufficient Amount");
+                    module.errorToast(getContext(),"Insufficient Amount");
                 } else {
 //                    module.setBidsDialog(Integer.parseInt(w_amount),list,matka_id,"10","10",w_amount,"matka_name",btn_submit, "s_time", "e_time");
                         if (dialogType.equals("placed")) {
@@ -360,7 +360,7 @@ LinearLayout lin_submit;
 
                 }} catch (Exception err) {
                 err.printStackTrace();
-                module.errorToast("Err" + err.getMessage());
+                module.errorToast(getContext(),"Err" + err.getMessage());
             }
 
         }

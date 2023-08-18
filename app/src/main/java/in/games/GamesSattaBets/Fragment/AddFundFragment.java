@@ -296,7 +296,7 @@ String your_user_id = "";
 //                            calBestObj.execute();
                             if(module.checkNull (orderid).equalsIgnoreCase (""))
                             {
-                               module.errorToast ("Something went Wrong");
+                               module.errorToast (getApplicationContext(),"Something went Wrong");
                             }
                             else {
                                 Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
@@ -353,7 +353,7 @@ String your_user_id = "";
 
                             if(module.checkNull (orderid).equalsIgnoreCase (""))
                             {
-                                module.errorToast ("Something went Wrong");
+                                module.errorToast (getApplicationContext(),"Something went Wrong");
                             }
                             else {
 
@@ -532,7 +532,7 @@ String your_user_id = "";
 
                         }
                     } else {
-                        module.errorToast(""+obj.getString("message"));
+                        module.errorToast (getApplicationContext(),""+obj.getString("message"));
 
                     }
                 } catch (Exception ex) {
@@ -628,14 +628,14 @@ String your_user_id = "";
                     boolean resp=obj.getBoolean("responce");
                     if(resp)
                     {
-                        module.successToast(""+obj.getString("message"));
+                        module.successToast (getApplicationContext(),""+obj.getString("message"));
                         loadingBar.dismiss();
                         tv_walletAmount.setText("Rs. "+module.getAndSetWalletAmount());
                         SuccessBidDailoge();
                     }
                     else
                     {
-                        module.errorToast(""+obj.getString("error"));
+                        module.errorToast (getApplicationContext(),""+obj.getString("error"));
                         loadingBar.dismiss();
                     }
                 }
@@ -765,7 +765,7 @@ String your_user_id = "";
     @Override
     public void onPaymentError(int i, String s) {
         Log.e("TAG", "onPaymentError: "+s );
-        module.errorToast("Payment Failed. Try again later");
+        module.errorToast (getApplicationContext(),"Payment Failed. Try again later");
         finish();
 
 
@@ -952,7 +952,7 @@ String your_user_id = "";
 
                             saveInfoIntoDatabase(your_user_id, amount, "approved", "Add", trans);
                         } else{
-                            module.errorToast("Payment Failed. Try again later");
+                            module.errorToast (getApplicationContext(),"Payment Failed. Try again later");
                             finish();
                         }
                     }
@@ -965,7 +965,7 @@ String your_user_id = "";
                     @Override
                     public void onError( String message) {
                         Log.e("error", String.valueOf(message));
-                        module.errorToast("Payment Failed. Try again later");
+                        module.errorToast (getApplicationContext(),"Payment Failed. Try again later");
                         finish();
                     }
                 }).pay();

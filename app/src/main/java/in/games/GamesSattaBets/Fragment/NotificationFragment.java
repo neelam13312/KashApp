@@ -146,7 +146,7 @@ public class NotificationFragment extends AppCompatActivity {
                     String status = object.getString("status");
                     if (status.equals("success"))
                     {
-                        module.successToast(object.getString("data"));
+                        module.successToast(getApplicationContext(),object.getString("data"));
                     }else {
 //                      module.errorToast(object.getString("data"));
                     }

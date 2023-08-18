@@ -109,7 +109,7 @@
                                                 android:textColor="@color/white"
                                                 android:text="@string/kalyan_starline"
                                                 android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"/>
+                                                android:layout_height="@dimen/iv_50dp"/>
 
                                 </LinearLayout>
                             <LinearLayout
@@ -147,6 +147,7 @@
 
                                 </LinearLayout>
                                 <LinearLayout
+                                    android:id="@+id/linTelegram"
                                     android:layout_margin="@dimen/space_5"
                                     android:orientation="vertical"
                                     android:backgroundTint="@color/colorPrimary"
@@ -154,7 +155,8 @@
                                     android:layout_width="@dimen/iv_50dp"
                                     android:layout_height="@dimen/iv_50dp">
                                     <ImageView
-                                        android:padding="@dimen/space_6"                                        android:src="@drawable/whatsapp"
+                                        android:padding="@dimen/space_6"
+                                        android:src="@drawable/telegram"
                                         android:gravity="center"
                                         android:layout_gravity="center"
                                         android:layout_width="match_parent"

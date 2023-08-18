@@ -200,10 +200,10 @@ String ifsc_code,mobile, paytm_number, account_number, phonePay_number, googlePa
                     if (resp) {
                         sessionMangement.updateAccSection (accno, bankname, ifsc, hod_name,bra);
 //                        common.showToast(""+response.getString("message"));
-                        module.successToast ("" + jsonObject.getString ("message"));
+                         module.successToast (getContext(),"" + jsonObject.getString ("message"));
                         onStart ( );
                     } else {
-                        module.errorToast ("" + jsonObject.getString ("error"));
+                        module.errorToast (getContext(),"" + jsonObject.getString ("error"));
                     }
 
                 } catch (Exception ex) {

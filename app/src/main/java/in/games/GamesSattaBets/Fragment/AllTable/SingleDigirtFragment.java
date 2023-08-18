@@ -342,7 +342,7 @@ public class SingleDigirtFragment extends Fragment implements View.OnClickListen
                                 if (Integer.parseInt (tempList.get (i).getPoints ( )) < (min_bet_amount)) {
 
                                     vv="true";
-                                  //  common.errorToast (getActivity ( ).getResources ( ).getString (R.string.min_bet_value) + " " + min_bet_amount);
+                                  //  common.errorToast (getContext(),getActivity ( ).getResources ( ).getString (R.string.min_bet_value) + " " + min_bet_amount);
 ////
                                 }
                                 else {
@@ -352,7 +352,7 @@ public class SingleDigirtFragment extends Fragment implements View.OnClickListen
                             }
                             if(vv.equalsIgnoreCase ("true"))
                             {
-                                common.errorToast (getActivity ( ).getResources ( ).getString (R.string.min_bet_value) + " " + min_bet_amount);
+                                common.errorToast (getContext(),getActivity ( ).getResources ( ).getString (R.string.min_bet_value) + " " + min_bet_amount);
 ////
                             }else
                             {

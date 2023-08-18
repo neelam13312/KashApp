@@ -226,7 +226,7 @@ public class LeftRightDigitFragment extends Fragment implements View.OnClickList
 
                 int wallet_amount = Integer.parseInt(w_amount);
                 if (wallet_amount < amt) {
-                    module.errorToast("Insufficient Amount");
+                     module.errorToast(getContext(),"Insufficient Amount");
                 } else {
 //                    module.setBidsDialog(Integer.parseInt(w_amount),list,matka_id,"10","10",w_amount,"matka_name",btn_submit, "s_time", "e_time");
                         if (dialogType.equals("placed")) {
@@ -237,7 +237,7 @@ public class LeftRightDigitFragment extends Fragment implements View.OnClickList
                 Log.e("my", "onClick: "+Integer.parseInt(w_amount)+""+list+ matka_id+betdate+game_id+w_amount+matka_name+s_time+e_time );
                 }} catch (Exception err) {
                 err.printStackTrace();
-                module.errorToast("Err" + err.getMessage());
+                 module.errorToast(getContext(),"Err" + err.getMessage());
             }
 
         }
@@ -251,7 +251,7 @@ public class LeftRightDigitFragment extends Fragment implements View.OnClickList
         betType=getBetType(getASandC(s_time,e_time));
         if (betType==1)
         {
-            module.errorToast ("Bidding is closed for today !");
+            module.errorToast (getContext(),"Bidding is closed for today !");
         }
         else {
             if(betdate.equalsIgnoreCase ("Select Date"))

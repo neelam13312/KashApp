@@ -72,6 +72,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GDMatkaLive">
         <activity
+            android:name=".Activity.OTPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.NewLoginActivity"
             android:exported="false" />
         <activity
@@ -168,7 +174,7 @@
         <activity
             android:name=".Activity.SplashActivity"
             android:exported="true">
-            <intent-filter  android:exported="false">
+            <intent-filter android:exported="false">
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

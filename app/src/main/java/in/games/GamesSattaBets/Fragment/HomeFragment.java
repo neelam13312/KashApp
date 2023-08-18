@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 SwipeRefreshLayout swipe;
 LinearLayout lin_home,lin_whatsapp,lin_whatsapp2,lin_play;
 CircleImageView civ_logo;
-LinearLayout lin_satarline,lin_newUpdate;
+LinearLayout lin_satarline,lin_newUpdate,linTelegram;
 LoadingBar loadingBar;
 TextView tv_whatsapp,tv_whatsapp2,tv_msg,jackpot_message;
 Button btn_starline,btn_jackpot,btn_addFund,btn_withdrawFund;
@@ -78,6 +78,8 @@ public String app_link="",home_text="",message="",whatsapp_msg="",whatsapp_no2="
 int ver_code;
 String is_notification,download_link="";
 int is_download,is_forced;
+    String telegramLink="",status="";
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -104,12 +106,12 @@ int is_download,is_forced;
         //
         backPress(root);
         jackpot_message = root.findViewById(R.id.jackpot_message);
+        telegramLink="link";
 
         module.getConfigData(new GetAppSettingData() {
             @Override
             public void getAppSettingData(IndexResponse model) {
                 Log.e("running_text", "getAppSettingData: "+model.getHome_text() );
-
                 tv_msg.setText (model.getHome_text());
                 tv_whatsapp.setText (model.getMobile());
                 running_text = model.getHome_text();
@@ -241,6 +243,8 @@ int is_download,is_forced;
         btn_addFund = root.findViewById(R.id.btn_addFund);
         btn_withdrawFund = root.findViewById(R.id.btn_withdrawFund);
         lin_newUpdate = root.findViewById(R.id.lin_newUpdate);
+        linTelegram = root.findViewById(R.id.linTelegram);
+        linTelegram.setOnClickListener(this);
         btn_jackpot.setOnClickListener(this);
         btn_starline.setOnClickListener(this);
         lin_whatsapp.setOnClickListener(this);
@@ -341,6 +345,10 @@ int is_download,is_forced;
           case R.id.lin_whatsapp:
           case R.id.tv_whatsapp:
               showWhatsappDailoge(tv_whatsapp.getText ().toString ());
+              break;
+          case R.id.linTelegram:
+                  module.intentT0TelegramId(telegramLink);
+
               break;
 
               

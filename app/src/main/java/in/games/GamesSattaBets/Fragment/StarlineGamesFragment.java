@@ -336,7 +336,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                     }
                     else
                     {
-                        module.errorToast ("Something Went Wrong");
+                        module.errorToast (getApplicationContext(),"Something Went Wrong");
                     }
                     loadingBar.dismiss();
                 } catch (JSONException e) {

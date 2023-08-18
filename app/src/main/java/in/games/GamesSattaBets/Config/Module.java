@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
@@ -13,7 +15,9 @@ import android.provider.Settings;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -59,6 +63,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
@@ -75,7 +80,6 @@ import in.games.GamesSattaBets.Util.AppController;
 import in.games.GamesSattaBets.Util.ConnectivityReceiver;
 import in.games.GamesSattaBets.Util.LoadingBar;
 import in.games.GamesSattaBets.Util.SessionMangement;
-import in.games.GamesSattaBets.Util.ToastMsg;
 //import kotlinx.coroutines.channels.Receive;
 
 import static in.games.GamesSattaBets.Config.BaseUrls.URL_INDEX;
@@ -99,13 +103,12 @@ public class Module {
     SessionMangement session_management;
     LoadingBar loadingBar;
     WifiManager wifiManager;
-    ToastMsg toastMsg;
-
+    static Toast toast;
     public Module(Context context) {
         this.context = context;
         session_management = new SessionMangement (context);
         loadingBar = new LoadingBar (context);
-        toastMsg=new ToastMsg(context);
+        toast=new Toast(context);
     }
 
  public  void  SuccessBidDailoge(String matka_name,String m_id, String s_num,String num ,String e_num, String end_time, String start_time){
@@ -287,6 +290,28 @@ public class Module {
         intent.setData(Uri.parse("tel:" + number));
         context.startActivity(intent);
     }
+    public void intentT0TelegramId(String telegrm_link){
+        final String appName = "org.telegram.messenger";
+        Log.e("common_intentT0TelegramId",telegrm_link);
+        try{
+            // Intent intent = new Intent (Intent.ACTION_VIEW, Uri.parse ("tg://resolve?domain=partsilicon"));
+            Intent intent = new Intent (Intent.ACTION_VIEW, Uri.parse (telegrm_link));
+            intent.setPackage (appName);
+            PackageManager pm = context.getPackageManager();
+            if (intent.resolveActivity(pm) != null) {
+                context.startActivity(intent);
+            } else {
+//                Toast.makeText(RequestActivity.this, "No Valid Link Found", Toast.LENGTH_LONG).show();
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(telegrm_link));
+                context.startActivity(browserIntent);
+            }
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
+            errorToast(context,"No Valid Link Found");
+        }
+
+    }
+
 
     public void marketClosed(String msg) {
         Dialog dialog;
@@ -744,7 +769,7 @@ public class Module {
                 } catch (Exception ex) {
                     loadingBar.dismiss ( );
                     ex.printStackTrace ( );
-                    errorToast ("Err" + ex.getMessage ( ));
+                    errorToast (context, "Err" + ex.getMessage ( ));
                 }
             }
         }, new Response.ErrorListener ( ) {
@@ -756,13 +781,69 @@ public class Module {
 
     }
 
-    public void errorToast(String msg) {
-        toastMsg.toastIconError(msg);
+    public static void errorToast(Context context, String msg) {
+        try {
+            View view = LayoutInflater.from(context)
+                    .inflate(R.layout.sucess_toast, null);
+
+            TextView tv_msg = view.findViewById(R.id.tv_msg);
+            String str = msg.substring(0, 1).toUpperCase(Locale.ROOT);
+            String str1 = msg.substring(1, msg.length()).toLowerCase(Locale.ROOT);
+            String msg_s = str + str1;
+            Log.e("toast,", "" + msg_s);
+            ImageView  ivHappy=view.findViewById(R.id.ivHappy);
+            LinearLayout lin_main = view.findViewById(R.id.lin_main);
+            lin_main.setBackgroundTintList(ColorStateList.valueOf(context.getColor(R.color.red)));
+            ivHappy.setImageResource(R.drawable.sad);
+
+            tv_msg.setText(msg_s);
+            tv_msg.setTextColor(Color.WHITE);
+            toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(view);
+
+
+            // view.setBackgroundResource(R.color.colorPrimary);
+            toast.show();
+
+        } catch (Exception e) {
+            Log.e("Exception", "errorToast: " + e);
+
+        }
     }
 
+    public static void successToast(Context context, String msg) {
+        try {
+            View view = LayoutInflater.from(context)
+                    .inflate(R.layout.sucess_toast, null);
 
-    public void successToast(String msg) {
-        toastMsg.toastIconSuccess(msg);
+            TextView tv_msg = view.findViewById(R.id.tv_msg);
+            String str = msg.substring(0, 1).toUpperCase(Locale.ROOT);
+            String str1 = msg.substring(1, msg.length()).toLowerCase(Locale.ROOT);
+            String msg_s = str + str1;
+            Log.e("successToast,", "" + msg_s);
+            tv_msg.setText(msg_s);
+            tv_msg.setTextColor(Color.WHITE);
+            LinearLayout lin_main = view.findViewById(R.id.lin_main);
+            ImageView  ivHappy=view.findViewById(R.id.ivHappy);
+            ivHappy.setImageResource(R.drawable.happy);
+
+            lin_main.setBackgroundTintList(ColorStateList.valueOf(context.getColor(R.color.green)));
+            toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(view);
+            toast.show();
+
+            // view.setBackgroundResource(R.color.colorPrimary);
+
+
+
+        } catch (Exception ex) {
+            Log.e("Exception", "successToast: " + ex);
+
+        }
+
+
     }
 
     public String checkNull(String s) {
@@ -818,7 +899,32 @@ public class Module {
     }
 
     public void customToast(String msg) {
-        toastMsg.toastIcon(msg);
+        try {
+            View view = LayoutInflater.from(context)
+                    .inflate(R.layout.sucess_toast, null);
+
+            TextView tv_msg = view.findViewById(R.id.tv_msg);
+            String str = msg.substring(0, 1).toUpperCase(Locale.ROOT);
+            String str1 = msg.substring(1, msg.length()).toLowerCase(Locale.ROOT);
+            String msg_s = str + str1;
+            Log.e("customtoast,", "" + msg_s);
+            LinearLayout lin_main = view.findViewById(R.id.lin_main);
+            lin_main.setBackgroundTintList(ColorStateList.valueOf(context.getColor(R.color.red)));
+
+            tv_msg.setText(msg_s);
+            tv_msg.setTextColor(Color.WHITE);
+            toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(view);
+
+
+            // view.setBackgroundResource(R.color.colorPrimary);
+            toast.show();
+
+        } catch (Exception e) {
+            Log.e("Exception", "errorToast: " + e);
+
+        }
     }
 
     public void swingAnimations(LinearLayout ln) {
@@ -984,7 +1090,7 @@ public class Module {
                 @Override
                 public void onClick(View v) {
 
-                  errorToast ("Bid is closed for today");
+                  errorToast (context,"Bid is closed for today");
                 }
             });
 //            lin_date.setBackgroundTintList(ColorStateList.valueOf(context.getResources ().getColor (R.color.lightRed)));
@@ -1013,7 +1119,7 @@ public class Module {
             txtNextDate.setOnClickListener (new View.OnClickListener ( ) {
                 @Override
                 public void onClick(View v) {
-                    errorToast ("Bid is closed for this date");
+                    errorToast (context,"Bid is closed for this date");
                 }
             });
             lin_date1.setBackgroundColor(context.getResources().getColor(R.color.white_smoke));
@@ -1039,7 +1145,7 @@ public class Module {
             txtAfterNextDate.setOnClickListener (new View.OnClickListener ( ) {
                 @Override
                 public void onClick(View v) {
-                    errorToast ("Bid is closed for this date");
+                    errorToast (context,"Bid is closed for this date");
                 }
             });
             lin_date2.setBackgroundColor(context.getResources().getColor(R.color.white_smoke));
@@ -1266,7 +1372,7 @@ public class Module {
             @Override
             public void onErrorResponse(VolleyError error) {
                 String msg = VolleyErrorMessage (error);
-                errorToast (msg);
+                errorToast (context,msg);
             }
         });
 
@@ -1471,7 +1577,7 @@ public void whatsapp(String phone, String message) {
 //                    if (jsonObject.getBoolean("responce")) {
 //                        if (jsonObject.getString("login_status").equals("1")) {
 //                            getStatus();
-//                            errorToast (jsonObject.getString ("message"));
+//                            errorToast (context,jsonObject.getString ("message"));
 //
 //                        } else {
 //                        }
@@ -1831,5 +1937,219 @@ public void generateToken(){
     session_management.addDeviceId(android_id);
 
 }
+    public  static boolean validateEmail(EditText et){
+        String value = et.getText ( ).toString ( ).trim ( );
+        Boolean bb = false;
+        if (et.getText ( ).toString ( ).isEmpty ( )) {
+            errorToast (et.getContext(), "Email-ID required");
+            et.requestFocus ( );
+        }
+        else if (et.length ( ) > 0 && et.getText().subSequence(0, 1).toString().equalsIgnoreCase(" ")) {
+            errorToast(et.getContext(), "Please fill valid Email-ID");
+        }
+        else if (!Patterns.EMAIL_ADDRESS.matcher (et.getText ( ).toString ( )).matches ( )) {
+            et.requestFocus ( );
+            errorToast (et.getContext(), "Invalid Email-ID");
+            et.requestFocus ( );
+
+        } else if (et.length ( ) > 0 && et.getText ( ).toString ( ).contains (" ")) {
+            errorToast (et.getContext(), "Space is not allowed in Email-ID");
+            et.setText (et.getText ( ).toString ( ).trim ( ));
+            et.setSelection (et.getText ( ).length ( ));
+
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+    }
+
+    public  static  boolean validateUserName(EditText et) {
+        String value = et.getText().toString().trim();
+        Boolean bb = false;
+        if (et.getText().toString().isEmpty()) {
+            et.requestFocus();
+            errorToast(et.getContext(), "User name required");
+        } else if (et.length ( ) > 0 && et.getText().subSequence(0, 1).toString().equalsIgnoreCase(" ")) {
+            errorToast(et.getContext(), "Please fill valid username");
+        }
+        else if (et.getText().toString().trim().contains("[0-9]")) {
+            errorToast(et.getContext(), "Number not allowed");
+            et.requestFocus();
+        }
+//                else if (et.length ( ) > 0 && et.getText ( ).toString ( ).contains (" ")) {
+//                    errorToast (context, "Space is not allowed in Username");
+//                    et.setText (et.getText ( ).toString ( ).trim ( ));
+//                    et.setSelection (et.getText ( ).length ( ));
+//                    result = "name required";
+//                }
+
+//                else if (!et.getText ( ).toString ( ).matches ("[a-zA-Z]+")) {
+//                    errorToast (context, "This field accept only character value");
+//                    et.requestFocus ( );
+//                    result = "name required";
+//
+//                }
+        else {
+            bb=true;
+
+        }
+
+        return bb;
+
+    }
+    public  static  boolean validateMobileNumber(EditText et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText().toString().isEmpty()) {
+            errorToast(et.getContext(), "Mobile number required");
+            //  et.setError("Mobile Number required");
+            et.requestFocus();
+            result = "Mobile Number required";
+        } else if (et.getText().toString().length() != 10) {
+
+            errorToast(et.getContext(), "Please fill valid Mobile number");
+            //et.setError("Please fill valid mobile number");
+            et.requestFocus();
+            result = "Please fill valid Mobile number";
+        } else if (Integer.parseInt(String.valueOf(et.getText().toString().charAt(0))) < 6) {
+            errorToast(et.getContext(), "Mobile number should be start with 6 or greater than 6");
+            // et.setError("Mobile number should be start 6 or greater 0");
+            et.requestFocus();
+            result = "Mobile number should be start 6 or greater than 6";
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
+    public  static  boolean validateWhatsappNumber(EditText et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText().toString().isEmpty()) {
+            errorToast(et.getContext(), "Whatsapp number required");
+            //  et.setError("Mobile Number required");
+            et.requestFocus();
+        }
+        else if (et.length ( ) > 0 && et.getText().subSequence(0, 1).toString().equalsIgnoreCase(" ")) {
+            errorToast(et.getContext(), "Please fill valid Whatsapp number");
+        }
+        else if (et.getText().toString().length() != 10) {
+
+            errorToast(et.getContext(), "Please fill valid Whatsapp number");
+            //et.setError("Please fill valid mobile number");
+            et.requestFocus();
+        } else if (Integer.parseInt(String.valueOf(et.getText().toString().charAt(0))) < 6) {
+            errorToast(et.getContext(), et.getContext().getString(R.string.login_error));
+            et.requestFocus();
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
+    public  static  boolean validatePassword(EditText et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText ( ).toString ( ).isEmpty ( )) {
+            errorToast (et.getContext(), "Password required");
+            et.requestFocus ( );
+        } else if (et.length ( ) > 0 && et.getText ( ).toString ( ).contains (" ")) {
+            errorToast (et.getContext(), "Space is not allowed in password");
+            et.setText (et.getText ( ).toString ( ).trim ( ));
+            et.setSelection (et.getText ( ).length ( ));
+
+
+        } else if (et.length ( ) < 6) {
+
+            errorToast (et.getContext(), "Password must be at least 6 character in length");
+            et.requestFocus ( );
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
+    public  static  boolean validateUserAddress(EditText et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText ( ).toString ( ).isEmpty ( )) {
+            et.requestFocus ( );
+//                    toast( "Name required");
+//                    result = "Name required";
+            errorToast (et.getContext(), "Address required");
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
+
+    public  static  boolean Validate_Location(EditText et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText ( ).toString ( ).isEmpty ( )) {
+            et.requestFocus ( );
+//                    toast( "Name required");
+//                    result = "Name required";
+            errorToast (et.getContext(), "Location required");
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
+    public  static  boolean validateUserDOB(EditText et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText ( ).toString ( ).isEmpty ( )) {
+            et.requestFocus ( );
+//                    toast( "Name required");
+//                    result = "Name required";
+            errorToast (et.getContext(), "Date of birth required");
+
+        } else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
+    public  static  boolean validateTVUserDOB(TextView et) {
+        String value = et.getText ( ).toString ( ).trim ( );
+        String result = "y";
+        Boolean bb = false;
+        if (et.getText ( ).toString ( ).isEmpty ( )) {
+            et.requestFocus();
+//                    toast( "Name required");
+//                    result = "Name required";
+            errorToast(et.getContext(), "Date of birth required");
+
+        }
+
+        else {
+            bb=true;
+        }
+
+        return bb;
+
+    }
 
 }

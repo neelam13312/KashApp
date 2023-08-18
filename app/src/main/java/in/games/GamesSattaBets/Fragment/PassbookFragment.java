@@ -122,10 +122,10 @@ SessionMangement sessionMangement;
                                 rec_passbook.setAdapter(adapter);
 
                             } else {
-                                module.errorToast ("No History Available");
+                                module.errorToast (getApplicationContext(),"No History Available");
                             }
                         } else {
-                            module.errorToast(object.getString("Something Went Wrong"));
+                            module.errorToast(getApplicationContext(),object.getString("Something Went Wrong"));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace ( );

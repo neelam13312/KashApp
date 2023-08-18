@@ -361,7 +361,7 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
                 return;
             }
             else if (pints > Integer.parseInt(w_amount)) {
-                module.errorToast("Insufficient Amount");
+                module.errorToast(getContext(),"Insufficient Amount");
 
             }else {
 //                if (num==1)
@@ -491,7 +491,7 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
 
                 int wallet_amount = Integer.parseInt(w_amount);
                 if (wallet_amount < amt) {
-                    module.errorToast("Insufficient Amount");
+                    module.errorToast(getContext(),"Insufficient Amount");
                 } else {
                     if (dialogType.equals("placed")) {
                         module.setBidsDialog(Integer.parseInt(w_amount), list, matka_id, game_date.substring(0, 10), game_id, w_amount, matka_name, dialog.findViewById (R.id.btn_dialogSubmit), s_time, e_time,dialog);
@@ -502,7 +502,7 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
                    }
             } catch (Exception err) {
                 err.printStackTrace();
-                module.errorToast("Err" + err.getMessage());
+                module.errorToast(getContext(),"Err" + err.getMessage());
             }
 
         }
@@ -587,7 +587,7 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
                         JSONArray as = jsonObject.getJSONArray("data");
                         final String data= String.valueOf(as);
                         if (data.equals("[]")) {
-                            module.errorToast("Enter valid digits!");
+                            module.errorToast(getContext(),"Enter valid digits!");
                             clearData();
                         }else {
                         for (int i = 0; i <= as.length() - 1; i++) {
@@ -604,7 +604,7 @@ public class ChoicePannaFragment extends Fragment implements View.OnClickListene
                         loadingBar.dismiss();
                     } else {
                         loadingBar.dismiss();
-                        module.errorToast( "Something went wrong");
+                        module.errorToast(getContext(), "Something went wrong");
                     }
 
                 } catch (Exception ex) {

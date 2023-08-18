@@ -188,7 +188,7 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
                     getTimeSlots();
                     showWithdrawalDialog();
                 }else {
-                    module.errorToast("Please add bank first");
+                     module.errorToast(getApplicationContext(),"Please add bank first");
                     Intent i = new Intent(WithdrawalFundFragment.this, AddBankAccountActivity.class);
                     startActivity(i);
                 }
@@ -281,23 +281,23 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
                                         if(getEndTimOutStatus(timeList)) {
                                             getwithdrawAmount (user_id, st, "Withdraw", bank_type, String.valueOf (t_amt));
                                         }else{
-                                            module.errorToast("Withdrawal Request is not allowed after "+timeList.get(0).getEnd_time());
+                                             module.errorToast(getApplicationContext(),"Withdrawal Request is not allowed after "+timeList.get(0).getEnd_time());
                                         }
                                     } else {
-                                        module.errorToast("Withdrawal Request is not allowed before "+timeList.get(0).getStart_time());
+                                         module.errorToast(getApplicationContext(),"Withdrawal Request is not allowed before "+timeList.get(0).getStart_time());
                                     }
 
                                 }else {
-                                    module.errorToast("Withdrawal Request is not allowed on "+getCurrentDay());
+                                     module.errorToast(getApplicationContext(),"Withdrawal Request is not allowed on "+getCurrentDay());
                                 }
                             }else {
-                                module.errorToast("Withdrawal Request is not allowed on "+getCurrentDay());
+                                 module.errorToast(getApplicationContext(),"Withdrawal Request is not allowed on "+getCurrentDay());
 
                             }
                         }
                         else if(flg==2 || flg==4)
                         {
-                            module.errorToast("Withdrawal Request is not allowed on "+getCurrentDay());
+                             module.errorToast(getApplicationContext(),"Withdrawal Request is not allowed on "+getCurrentDay());
                         }
                     }
                 }
@@ -421,12 +421,12 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
                     boolean resp = object.getBoolean("responce");
                     if (resp) {
                         loadingBar.dismiss();
-                        module.successToast(object.getString("message"));
+                        module.successToast(getApplicationContext(),object.getString("message"));
                        tv_walletAmount.setText(module.getAndSetWalletAmount());
                         Intent i = new Intent(WithdrawalFundFragment.this,MainActivity.class);
                         startActivity(i);
                     }else {
-                        module.errorToast(object.getString("error"));
+                        module.errorToast(getApplicationContext(),object.getString("error"));
                         loadingBar.dismiss();
                     }
                 }catch (Exception ex)
@@ -466,7 +466,7 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
                         status =timeList.get (0).getStatus ();
 
                     }else{
-                        module.errorToast("Something Went Wrong");
+                         module.errorToast(getApplicationContext(),"Something Went Wrong");
                     }
                 }catch (Exception ex){
                     ex.printStackTrace();
