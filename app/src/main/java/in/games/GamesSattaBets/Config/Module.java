@@ -826,6 +826,26 @@ public class Module {
         ln.startAnimation (swing);
 
     }
+    public void getRequest(String url, HashMap<String, String> params, Response.Listener<String> listener, Response.ErrorListener errorListener) {
+        Log.e ("postmethod", "postRequest: " + url + "\n" + params);
+
+        StringRequest stringRequest = new StringRequest (Method.GET, url, listener, errorListener) {
+            @Override
+            protected Map<String, String> getParams() {
+                Log.e ("params", "check" + params);
+                return params;
+                // return super.getParams ( );
+            }
+        };
+        RetryPolicy retryPolicy = new DefaultRetryPolicy (Constants.REQUEST_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        stringRequest.setRetryPolicy (retryPolicy);
+
+        AppController.getInstance ( ).addToRequestQueue (stringRequest, "tag");
+
+    }
+
 
     public void postRequest(String url, HashMap<String, String> params, Response.Listener<String> listener, Response.ErrorListener errorListener) {
         Log.e ("postmethod", "postRequest: " + url + "\n" + params);

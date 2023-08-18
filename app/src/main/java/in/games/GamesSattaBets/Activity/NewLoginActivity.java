@@ -167,13 +167,13 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
         loadingBar.show ( );
 
         HashMap<String, String> params = new HashMap<> ( );
-        params.put("imei",sessionMangement.getDeviceId());
-        params.put("token", sessionMangement.getToken());
+        //params.put("imei",sessionMangement.getDeviceId());
+       // params.put("token", sessionMangement.getToken());
 //        "atoken" = "db043646-ace0-11ec-b274-4e54eef4664f"
 //       "android_id" -- "3471842a0c9f2c20"
-        params.put ("username", mobile);
+        params.put ("phone", mobile);
         params.put ("password", Pass);
-        params.put("mobile_name",getDeviceName());
+        //params.put("mobile_name",getDeviceName());
         Log.e("params",params.toString());
         module.postRequest (BaseUrls.URL_NEWLOGIN, params, new com.android.volley.Response.Listener<String> ( ) {
             @Override
@@ -184,42 +184,43 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
 
                     JSONObject object = new JSONObject(response);
 
-                    boolean resp=object.getBoolean("responce");
+                    boolean resp=object.getBoolean("token_status");
                     if (resp)
-                    {
-                        JSONObject jsonObject = object.getJSONObject("data");
+                    {   module.successToast (object.getString("message").toString());
+                        JSONObject jsonObjectm = object.getJSONObject("data");
+                        JSONObject jsonObject = jsonObjectm.getJSONObject("user");
                         String id=module.checkNull(jsonObject.getString("id").toString());
                         String name=module.checkNull(jsonObject.getString("name").toString());
-                        String username=module.checkNull(jsonObject.getString("username").toString());
-                        String mobile=module.checkNull(jsonObject.getString("mobileno").toString());
+                        //String username=module.checkNull(jsonObject.getString("username").toString());
+                        String mobile=module.checkNull(jsonObject.getString("mobile_number").toString());
                         String email=module.checkNull(jsonObject.getString("email").toString());
-                        String address=module.checkNull(jsonObject.getString("address").toString());
-                        String city=module.checkNull(jsonObject.getString("city").toString());
-                        String pincode=module.checkNull(jsonObject.getString("pincode").toString());
-                        String accno=module.checkNull(jsonObject.getString("accountno").toString());
-                        String bank=module.checkNull(jsonObject.getString("bank_name").toString());
-                        String ifsc=module.checkNull(jsonObject.getString("ifsc_code").toString());
-                        String holder=module.checkNull(jsonObject.getString("account_holder_name").toString());
-                        String paytm=module.checkNull(jsonObject.getString("paytm_no").toString());
-                        String tez=module.checkNull(jsonObject.getString("tez_no").toString());
-                        String phonepay=module.checkNull(jsonObject.getString("phonepay_no").toString());
-                        String wallet=module.checkNull(jsonObject.getString("wallet").toString());
-                        String dob=module.checkNull(jsonObject.getString("dob").toString());
+//                        String address=module.checkNull(jsonObject.getString("address").toString());
+//                        String city=module.checkNull(jsonObject.getString("city").toString());
+//                        String pincode=module.checkNull(jsonObject.getString("pincode").toString());
+//                        String accno=module.checkNull(jsonObject.getString("accountno").toString());
+//                        String bank=module.checkNull(jsonObject.getString("bank_name").toString());
+//                        String ifsc=module.checkNull(jsonObject.getString("ifsc_code").toString());
+//                        String holder=module.checkNull(jsonObject.getString("account_holder_name").toString());
+//                        String paytm=module.checkNull(jsonObject.getString("paytm_no").toString());
+//                        String tez=module.checkNull(jsonObject.getString("tez_no").toString());
+//                        String phonepay=module.checkNull(jsonObject.getString("phonepay_no").toString());
+//                        String wallet=module.checkNull(jsonObject.getString("wallet").toString());
+//                        String dob=module.checkNull(jsonObject.getString("dob").toString());
                         //String gender=module.checkNull(jsonObject.getString("gender").toString());
-                        String p = jsonObject.getString("password");
-                        if (Pass.equals(p)) {
+                        //String p = jsonObject.getString("password");
+                       // if (Pass.equals(p)) {
                             sessionMangement.setIsLoginSuccess();
-                            sessionMangement.createLoginSession (id,name,username,mobile,email,dob,address
-                                    ,city,pincode,accno,bank,ifsc,holder,paytm,tez,phonepay,wallet,"");
+                            sessionMangement.createLoginSession (id,name,name,mobile,email,"",""
+                                    ,"","","","","","","","","","","");
 
                             Intent intent = new Intent(NewLoginActivity.this, MainActivity.class);
-                            intent.putExtra("username", jsonObject.getString("username").toString());
+                            intent.putExtra("username", jsonObject.getString("name").toString());
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
-                        } else {
-                            module.errorToast ("Password is not correct ");
-                        }
+//                        } else {
+//                            module.errorToast ("Password is not correct ");
+//                        }
 
                     }
                     else {

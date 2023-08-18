@@ -106,7 +106,7 @@ public class SplashActivity extends AppCompatActivity {
 
     public void getApiData() {
         HashMap<String,String> params = new HashMap<String, String> ( );
-        module.postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
+        module.getRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
                 Log.e ("getApiData", "onResponse: " + response.toString ( ));
@@ -213,14 +213,14 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }else {
-                intent = new Intent(SplashActivity.this,MainActivity.class);
+                intent = new Intent(SplashActivity.this,NewLoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         }
         else
         {
-            Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+            Intent intent = new Intent(SplashActivity.this,NewLoginActivity.class);
            // intent.putExtra("type","r");
             startActivity(intent);
             finish();
