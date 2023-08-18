@@ -9,7 +9,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Build;
-import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.text.InputFilter;
 import android.text.Spanned;
@@ -48,7 +47,6 @@ import com.onesignal.OneSignal;
 import in.games.GamesSattaBets.Activity.MainActivity;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
@@ -64,8 +62,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import in.games.GamesSattaBets.Activity.NewLoginActivity;
-import in.games.GamesSattaBets.Activity.SplashActivity;
 import in.games.GamesSattaBets.Adapter.AddDuplicatesCommonAdpater;
 import in.games.GamesSattaBets.Adapter.BulkAdapter;
 import in.games.GamesSattaBets.Adapter.TableAdapter;
@@ -82,15 +78,10 @@ import in.games.GamesSattaBets.Util.SessionMangement;
 import in.games.GamesSattaBets.Util.ToastMsg;
 //import kotlinx.coroutines.channels.Receive;
 
-import static in.games.GamesSattaBets.Config.BaseUrls.URL_CHECK_DEVICE_LOGIN;
-import static in.games.GamesSattaBets.Config.BaseUrls.URL_GETSTATUS;
-import static in.games.GamesSattaBets.Config.BaseUrls.URL_GET_STATUS;
 import static in.games.GamesSattaBets.Config.BaseUrls.URL_INDEX;
 import static in.games.GamesSattaBets.Config.BaseUrls.URL_INSERT_DATA;
-import static in.games.GamesSattaBets.Config.BaseUrls.URL_UNSET_TOKE;
 import static in.games.GamesSattaBets.Config.Constants.END_NUMBER;
 import static in.games.GamesSattaBets.Config.Constants.KEY_ID;
-import static in.games.GamesSattaBets.Config.Constants.KEY_MOBILE;
 import static in.games.GamesSattaBets.Config.Constants.KEY_WALLET;
 import static in.games.GamesSattaBets.Config.Constants.NUMBER;
 import static in.games.GamesSattaBets.Config.Constants.NextDay;
@@ -221,7 +212,7 @@ public class Module {
 
 
             dialog.requestWindowFeature (Window.FEATURE_NO_TITLE);
-            dialog.setContentView (R.layout.nointernet_layout);
+            dialog.setContentView (R.layout.layout_nointernet);
             dialog.show ( );
             Button btn_wifi = (Button) dialog.findViewById (R.id.btn_wifi);
             Button btn_data = (Button) dialog.findViewById (R.id.btn_data);
@@ -258,10 +249,10 @@ public class Module {
         postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String resp) {
-                Log.e ("Common", "onResponse: " + resp.toString ( ));
+                Log.e ("Common_index", "onResponse: " + resp.toString ( ));
                 try {
                     JSONObject jsonObject = new JSONObject (resp);
-                    Boolean result = Boolean.valueOf (jsonObject.getString ("responce"));
+                    Boolean result = Boolean.valueOf (jsonObject.getString ("response"));
                     if (result) {
                         JSONArray arr = jsonObject.getJSONArray ("data");
 //                        JSONObject dataObj=arr.getJSONObject(0);
