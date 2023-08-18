@@ -200,7 +200,7 @@ String your_user_id = "";
 
         pointlist= new ArrayList<>();
         HashMap<String, String> params = new HashMap<> ( );
-        module.postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
+        module.getRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String resp) {
                 Log.e ("money_list", "onResponse: " + resp.toString ( ));

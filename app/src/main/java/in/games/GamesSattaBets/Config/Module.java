@@ -246,7 +246,7 @@ public class Module {
 
     public void getConfigData(final GetAppSettingData settingData) {
         HashMap<String, String> params = new HashMap<> ( );
-        postRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
+        getRequest (URL_INDEX, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String resp) {
                 Log.e ("Common_index", "onResponse: " + resp.toString ( ));

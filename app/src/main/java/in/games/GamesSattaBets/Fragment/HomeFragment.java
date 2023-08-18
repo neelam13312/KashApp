@@ -417,7 +417,7 @@ int is_download,is_forced;
         mList.clear();
         loadingBar.show ();
         HashMap<String,String> params = new HashMap<> (  );
-        module.postRequest (URL_Matka, params, new Response.Listener<String> ( ) {
+        module.getRequest (URL_Matka, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
                 Log.e (TAG, "onResponse: "+response );
@@ -426,7 +426,9 @@ int is_download,is_forced;
                     try
                     {
                         mList.clear();
-                        JSONArray datay=new JSONArray(response);
+                        JSONObject object = new JSONObject(response);
+                        JSONArray datay=object.getJSONArray ("data");
+
                         for(int i=0; i<datay.length();i++) {
 
                             JSONObject jsonObject = datay.getJSONObject(i);
