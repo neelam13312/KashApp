@@ -1,11 +1,19 @@
 package in.games.GamesSattaBets.Model;
 
 public class IndexResponse {
-    String is_notification, is_forced, is_in_update,download_link,chat_msg,chat_text,chat_status,chat_mobile;
+    String is_notification, is_forced, is_in_update,download_link,chat_msg,chat_text,chat_status,chat_mobile,telegram_id;
     String id,withdraw_description,  mobile,adm_email,version,app_link,share_link,message,home_text,withdraw_text,withdraw_no,tag_line,min_amount,msg_status,w_saturday,w_sunday,w_amount,withdraw_limit,min_wallet,min_wallet_msg,device_config,notice;
     String logout_time,whatsapp_no,support,starline_id, max_bet_amount, min_bet_amt,max_withdraw_amount,withdraw_status,new_app_link;
 
     public IndexResponse() {
+    }
+
+    public String getTelegram_id() {
+        return telegram_id;
+    }
+
+    public void setTelegram_id(String telegram_id) {
+        this.telegram_id = telegram_id;
     }
 
     public String getChat_msg() {

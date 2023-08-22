@@ -112,7 +112,7 @@ int is_download,is_forced;
             public void getAppSettingData(IndexResponse model) {
                 Log.e("running_text", "getAppSettingData: "+model.getHome_text() );
                 tv_msg.setText (model.getHome_text());
-                telegramLink=model.getApp_link();
+                telegramLink=model.getTelegram_id();
 
                 tv_whatsapp.setText (model.getMobile());
                 running_text = model.getHome_text();
