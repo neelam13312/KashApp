@@ -22,7 +22,7 @@
         android:textSize="16dp"
         android:padding="10dp"
         android:textAllCaps="true"
-        android:textStyle="bold"
+
         android:background="@color/colorPrimary"
         android:textColor="@color/white"
         />
@@ -34,7 +34,7 @@
           android:text="@string/open"
           android:padding="5dp"
           android:textSize="16dp"
-          android:textStyle="bold"
+
           android:layout_gravity="center"
           android:drawablePadding="10dp"
           android:drawableStart="@drawable/alarm_clock_24px"/>
@@ -46,7 +46,7 @@
         <TextView
             android:id="@+id/tv_close"
             android:padding="5dp"
-            android:textStyle="bold"
+
             android:layout_gravity="center"
             android:drawablePadding="10dp"
             android:textSize="16dp"

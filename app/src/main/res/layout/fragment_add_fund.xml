@@ -39,7 +39,7 @@
                            android:layout_height="wrap_content"
                            android:text="@string/add_fund_message"
 
-                           android:textStyle="bold"
+
                            android:layout_marginTop="10dp"
 
                            />
@@ -62,7 +62,7 @@
                                android:layout_marginLeft="10dp"
 
 
-                               android:textStyle="bold"
+
                                android:text=""/>
                    </LinearLayout>
 
@@ -106,7 +106,7 @@
 <TextView
         android:padding="8dp"
         android:text="Current Balance "
-        android:textColor="@color/gray"
+
         android:gravity="center"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                                 android:text=""
                                 android:textColor="@color/colorPrimary"
                                 android:gravity="center"
-                                android:textStyle="bold"
+
                                 android:textSize="30sp"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"

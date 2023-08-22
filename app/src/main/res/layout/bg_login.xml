@@ -20,7 +20,7 @@
                                 android:padding="4dp"
                                 android:elevation="6dp"
                                 android:textSize="26dp"
-                                android:textStyle="bold"
+
                                 android:text="@string/welcome"
                                 android:textColor="@color/white"
                                 android:textAlignment="center"
@@ -29,7 +29,7 @@
                         <TextView
                                 android:padding="4dp"
                                  style="@style/MyTextview_semibold_small"
-                                android:textStyle="bold"
+
                                 android:text="@string/to_the_best_betting_platform"
                                 android:textColor="@color/white"
                                 android:textAlignment="center"

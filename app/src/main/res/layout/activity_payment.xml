@@ -182,7 +182,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="UPI"
                                 android:textSize="7pt"
-                                android:textStyle="bold"
+
                                 android:layout_marginLeft="10dp"
                                />
                             <TextView
@@ -191,7 +191,7 @@
                                 android:text="Pay with installed app, or use others"
                                 android:textSize="6pt"
                                 android:layout_marginLeft="10dp"
-                                android:textColor="@color/gray"/>
+                                />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -237,7 +237,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Google Pay"
                                 android:textSize="5pt"
-                                android:textColor="@color/gray"/>
+                                />
                         </LinearLayout>
 
 
@@ -275,7 +275,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Paytm"
                                 android:textSize="5pt"
-                                android:textColor="@color/gray"/>
+                                />
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/lin_PhnPe"
@@ -312,7 +312,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Amazon Pay"
                                 android:textSize="5pt"
-                                android:textColor="@color/gray"
+
                                 android:gravity="center_vertical"/>
                         </LinearLayout>
 
@@ -350,7 +350,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Others"
                                 android:textSize="5pt"
-                                android:textColor="@color/gray"/>
+                                />
                         </LinearLayout>
 
 

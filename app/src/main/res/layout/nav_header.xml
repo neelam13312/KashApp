@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="@string/mobile"
-                android:textColor="@color/gray"
+
                  />
         </androidx.appcompat.widget.LinearLayoutCompat>
 

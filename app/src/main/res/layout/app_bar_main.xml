@@ -6,6 +6,9 @@
     android:background="@android:color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <com.google.android.material.appbar.AppBarLayout
+    app:contentInsetEnd="0dp"
+    app:contentInsetStart="0dp"
+    android:fitsSystemWindows="true"
     android:id="@+id/app_barLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,6 +16,9 @@
         android:background="@drawable/bg_bottom_round_20pd"
     android:theme="@style/AppTheme.AppBarOverlay">
     <androidx.appcompat.widget.Toolbar
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        android:fitsSystemWindows="true"
         android:background="@color/colorAccent"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -113,7 +119,7 @@
                         android:gravity="center_vertical"
                         android:textSize="10sp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="bold"
+
                         android:text="0"/>
                 </LinearLayout>
 

@@ -45,6 +45,6 @@
         android:text="Result"
         android:textColor="@color/colorPrimary"
 
-        android:textStyle="bold" />
+         />
 </RelativeLayout>
 </RelativeLayout>

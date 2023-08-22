@@ -24,7 +24,7 @@
                         android:text="Set Filter"
                         android:textColor="@color/colorPrimary"
                          style="@style/MyTextview_semibold_small"
-                        android:textStyle="bold">
+                        >
 
                 </TextView>
         </RelativeLayout>
@@ -115,7 +115,7 @@
                                                                                     android:gravity="center"
                                                                                     android:layout_gravity="center"
                                                                                     android:textColor="@color/white"
-                                                                                    android:background="@drawable/button_bg"
+                                                                                    android:background="@drawable/bg_button"
 
                                                                                     android:id="@+id/btn_date"
                                                                                     android:layout_weight=".6"
@@ -322,7 +322,7 @@
                                 android:layout_weight="2"
                                 android:id="@+id/btn_submit"
                                 android:text="@string/submit"
-                                android:background="@drawable/button_bg"
+                                android:background="@drawable/bg_button"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content">
 

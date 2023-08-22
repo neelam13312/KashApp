@@ -43,7 +43,7 @@
                 style="@style/MyTextview_bold_login12pt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kash"
+                android:text="KASH"
                 android:textColor="@color/white"
                 />
 

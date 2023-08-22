@@ -19,7 +19,7 @@
             android:src="@drawable/wallet" />
         <TextView
             android:id="@+id/tv_wallet"
-            android:textStyle="bold"
+
             android:visibility="gone"
             android:text="Wallet amount :"
             android:textAlignment="center"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/tv_service"
-            android:textStyle="bold"
+
             android:text="Service Charges:"
             android:textAlignment="center"
             android:layout_marginTop="4dp"

@@ -51,7 +51,7 @@
 
                     android:textColor="@color/white"
                      style="@style/MyTextview_semibold_small"
-                    android:textStyle="bold" />
+                     />
 
         </LinearLayout>
 
@@ -93,7 +93,7 @@ android:elevation="6dp"
                     android:text="@string/redeem_point"
                     android:textColor="@color/white"
                      style="@style/MyTextview_semibold_small"
-                    android:textStyle="bold" />
+                     />
 
         </LinearLayout>
     </LinearLayout>

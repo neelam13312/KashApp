@@ -190,7 +190,7 @@
                                                 <TextView
                                                     android:layout_gravity="center"
                                                     android:gravity="left"
-                                                    android:textStyle="bold"
+
                                                     android:layout_weight="1"
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
@@ -208,7 +208,7 @@
                                                     android:layout_marginLeft="@dimen/space_4"
                                                     android:textAlignment="viewStart"
 
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -221,7 +221,7 @@
                                                 android:layout_height="wrap_content"
                                                 >
                                                 <TextView
-                                                    android:textStyle="bold"
+
                                                     android:layout_gravity="center"
                                                     android:gravity="left"
                                                     android:layout_weight="1"
@@ -241,7 +241,7 @@
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
                                                     android:text="mode"
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -253,7 +253,7 @@
                                                 android:layout_height="wrap_content"
                                                 >
                                                 <TextView
-                                                    android:textStyle="bold"
+
                                                     android:layout_gravity="center"
                                                     android:gravity="left"
                                                     android:layout_weight="1"
@@ -272,7 +272,7 @@
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
                                                     android:text="mode"
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -284,7 +284,7 @@
                                                 android:layout_height="wrap_content"
                                                 >
                                                 <TextView
-                                                    android:textStyle="bold"
+
                                                     android:layout_gravity="center"
                                                     android:gravity="left"
                                                     android:layout_weight="1"
@@ -304,7 +304,7 @@
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
                                                     android:text="mode"
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -332,7 +332,7 @@
                                                 <TextView
                                                     android:layout_gravity="center"
 
-                                                    android:textStyle="bold"
+
 
                                                     android:layout_weight="1"
                                                     android:layout_width="0dp"
@@ -350,7 +350,7 @@
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
                                                     android:text="mode"
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -367,7 +367,7 @@
                                                 <TextView
                                                     android:layout_gravity="center"
                                                     android:gravity="center"
-                                                    android:textStyle="bold"
+
                                                     android:layout_weight="1"
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
@@ -382,7 +382,7 @@
                                                     android:text="mode"
                                                     android:textAlignment="viewStart"
 
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -398,7 +398,7 @@
                                                 <TextView
                                                     android:layout_gravity="center"
                                                     android:gravity="left"
-                                                    android:textStyle="bold"
+
                                                     android:layout_weight="1"
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
@@ -414,7 +414,7 @@
                                                     android:layout_width="0dp"
                                                     android:layout_height="wrap_content"
                                                     android:text="mode"
-                                                    android:textColor="@color/gray"
+
                                                     android:textSize="@dimen/passbook_size" />
 
                                             </LinearLayout>
@@ -431,7 +431,7 @@
                                             android:layout_height="wrap_content"
                                             >
                                             <TextView
-                                                android:textStyle="bold"
+
                                                 android:layout_gravity="center"
                                                 android:gravity="left"
                                                 android:layout_weight="1"
@@ -450,7 +450,7 @@
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="mode"
-                                                android:textColor="@color/gray"
+
                                                 android:textSize="@dimen/passbook_size" />
 
                                         </LinearLayout>
@@ -467,7 +467,7 @@
                                             <TextView
                                                 android:layout_gravity="center"
                                                 android:gravity="left"
-                                                android:textStyle="bold"
+
                                                 android:layout_weight="1"
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
@@ -484,7 +484,7 @@
                                                 android:text="mode"
                                                 android:textAlignment="viewStart"
 
-                                                android:textColor="@color/gray"
+
                                                 android:textSize="@dimen/passbook_size" />
 
                                         </LinearLayout>
@@ -504,7 +504,7 @@
                                     android:drawableEnd="@drawable/icons8_sad_16px"
                                     android:drawableStart="@drawable/icons8_sad_16px"
                                     android:text="Old Data is Not Available"
-                                    android:textStyle="bold"
+
                                     android:textColor="@color/colorPrimary"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"/>

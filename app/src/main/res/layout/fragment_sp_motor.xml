@@ -42,7 +42,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="SP MOTOR"
-                            android:textColor="@color/gray"
+
 
                             />
 
@@ -58,9 +58,9 @@
                             android:padding="10dp"
                             android:text=""
 
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
 
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
 
                     <LinearLayout
@@ -93,9 +93,9 @@
                             android:padding="10dp"
                             android:text=""
 
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
 
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
 
                     <LinearLayout
@@ -111,7 +111,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/points"
-                            android:textColor="@color/gray"
+
 
                              />
 
@@ -127,9 +127,9 @@
                             android:padding="10dp"
                             android:text=""
 
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
 
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
 
                     <Button
@@ -141,7 +141,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/bg_button"
                         android:paddingVertical="5dp"
                         android:text="@string/add" />
 

@@ -27,7 +27,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/two_digit"
-                        android:textColor="@color/gray"
+
 
                         android:layout_weight="1"
                         />
@@ -42,11 +42,11 @@
                         android:gravity="center"
                         android:inputType="number"
                         android:hint="Enter Two Digit (CPSR)"
-                        android:textColorHint="@color/gray"
+                       style="@style/bid_autoText"
                         android:layout_weight="1"
                         android:maxLength="2"
                         android:background="@drawable/card_shape"
-                        android:textStyle="bold"/>
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/points"
-                        android:textColor="@color/gray"
+
 
                         android:layout_weight="1"
                        />
@@ -75,10 +75,10 @@
                         android:inputType="number"
                         android:gravity="center"
                         android:hint="@string/enter_points"
-                        android:textColorHint="@color/gray"
+                       style="@style/bid_autoText"
                         android:layout_weight="1"
                         android:background="@drawable/card_shape"
-                        android:textStyle="bold"/>
+                        />
                 </LinearLayout>
 
                 <Button
@@ -90,7 +90,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/bg_button"
                     android:paddingVertical="5dp"
                     android:text="@string/add" />
             </LinearLayout>

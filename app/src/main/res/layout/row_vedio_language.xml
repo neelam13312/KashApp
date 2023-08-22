@@ -33,7 +33,7 @@
                 android:gravity="center"
                 android:padding="7dp"
                 android:text="@string/name"
-            android:textStyle="bold"
+
                 android:textAlignment="center"
 
                 android:textSize="17sp"
@@ -52,7 +52,7 @@
                 android:gravity="center"
                 android:padding="7dp"
                 android:text="@string/name"
-                android:textStyle="bold"
+
                 android:textAlignment="center"
 
                 android:textSize="17sp" />

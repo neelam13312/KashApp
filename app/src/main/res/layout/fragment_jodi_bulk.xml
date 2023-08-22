@@ -89,7 +89,7 @@
                             android:paddingLeft="10dp"
                             android:text="@string/single_panna"
                             android:textAllCaps="true"
-                            android:textColor="@color/gray"
+
                             android:textSize="15dp" />
 
                         <TextView
@@ -101,9 +101,9 @@
                             android:text="@string/double_panna"
                             android:visibility="gone"
                             android:layout_centerVertical="true"
-                            android:textColor="@color/gray"
+
                             android:paddingLeft="10dp"
-                            android:textStyle="bold"
+
                             android:textSize="15dp"/>
                         <TextView
                             android:layout_marginTop="10dp"
@@ -114,9 +114,9 @@
                             android:text="@string/triple_panna"
                             android:visibility="gone"
                             android:layout_centerVertical="true"
-                            android:textColor="@color/gray"
+
                             android:paddingLeft="10dp"
-                            android:textStyle="bold"
+
                             android:textSize="15dp"/>
 
                         <AutoCompleteTextView
@@ -131,9 +131,9 @@
                             android:inputType="number"
                             android:padding="10dp"
                             android:textAlignment="center"
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
                             android:textSize="14dp"
-                            android:textStyle="bold" />
+                             />
 
 
                     </RelativeLayout>
@@ -150,9 +150,9 @@
                             android:paddingLeft="10dp"
                             android:text="@string/point"
                             android:textAllCaps="true"
-                            android:textColor="@color/gray"
+
                             android:textSize="15dp"
-                            android:textStyle="bold" />
+                             />
 
                         <EditText
                             android:id="@+id/et_point"
@@ -167,10 +167,10 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:textAlignment="center"
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
 
                             android:textSize="14dp"
-                            android:textStyle="bold" />
+                             />
 
 
                     </RelativeLayout>
@@ -183,7 +183,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/bg_button"
                         android:paddingVertical="5dp"
                         android:text="@string/add" />
                     <include
@@ -215,7 +215,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/bg_button"
                         android:text="@string/submit_bid"
 
                         />

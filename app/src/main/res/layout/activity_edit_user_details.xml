@@ -154,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:text="Email"
-                    android:textColor="@color/gray"
+
                     android:textSize="5pt" />
 
                 <EditText

@@ -141,7 +141,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                                android:textStyle="bold"
+
                             android:text="MORNING KUBER"
                             android:textAllCaps="true"
                             android:textColor="#4A4848" />
@@ -178,7 +178,7 @@
                                     android:text="-"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="16dp"
-                                    android:textStyle="bold"
+
                                     android:visibility="gone" />
 
                                 <TextView
@@ -190,7 +190,7 @@
 
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="16dp"
-                                    android:textStyle="bold"
+
                                     android:visibility="gone" />
 
                                 <TextView
@@ -203,7 +203,7 @@
                                     android:text="-"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="16dp"
-                                    android:textStyle="bold"
+
                                     android:visibility="gone" />
 
                                 <TextClock
@@ -215,7 +215,7 @@
 
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="16dp"
-                                    android:textStyle="bold"
+
                                     android:visibility="gone" />
 
                                 <TextView
@@ -226,7 +226,7 @@
                                     android:text="578"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="8dp"
-                                    android:textStyle="bold"
+
                                     android:visibility="invisible" />
 
                             </RelativeLayout>

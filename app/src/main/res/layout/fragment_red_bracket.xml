@@ -52,7 +52,7 @@
                         android:layout_weight=".4"
                         android:layout_marginLeft="15dp"
                         android:layout_width="wrap_content"
-                        android:textStyle="bold"
+
                         android:textSize="12sp"
                         android:layout_height="wrap_content"
                         android:text="@string/bid_all_bracket"
@@ -85,7 +85,7 @@
                             android:paddingLeft="10dp"
                             android:text="@string/red_bracket"
                             android:textAllCaps="true"
-                            android:textColor="@color/gray"
+
                             android:textSize="15dp"
                             android:textStyle="" />
 
@@ -102,12 +102,12 @@
                             android:maxLength="5"
                             android:padding="10dp"
                             android:textAlignment="center"
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
 
                             android:textSize="14dp"
 
 
-                            android:textStyle="bold" />
+                             />
 
 
                     </RelativeLayout>
@@ -128,7 +128,7 @@
                             android:paddingLeft="10dp"
                             android:text="@string/point"
                             android:textAllCaps="true"
-                            android:textColor="@color/gray"
+
                             android:textSize="15dp"
                             android:textStyle="" />
 
@@ -145,11 +145,11 @@
                             android:maxLength="5"
                             android:padding="10dp"
                             android:textAlignment="center"
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
                             android:textSize="14dp"
 
 
-                            android:textStyle="bold" />
+                             />
 
 
                     </RelativeLayout>
@@ -164,7 +164,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginBottom="5dp"
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/bg_button"
                         android:text="@string/add" />
 
 

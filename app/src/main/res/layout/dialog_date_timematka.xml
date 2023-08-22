@@ -33,7 +33,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                 />
     </RelativeLayout>
 
     <LinearLayout
@@ -52,7 +52,7 @@
                 android:textAllCaps="true"
 
 
-                android:textStyle="bold" />
+                 />
 
         <TextView
                 android:id="@+id/tv_status"
@@ -227,7 +227,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
 android:layout_margin="10dp"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/bg_button"
 
                 android:text="Ok"
 

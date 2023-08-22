@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -792,7 +793,7 @@ public class Module {
             String msg_s = str + str1;
             Log.e("toast,", "" + msg_s);
             ImageView  ivHappy=view.findViewById(R.id.ivHappy);
-            LinearLayout lin_main = view.findViewById(R.id.lin_main);
+            RelativeLayout lin_main = view.findViewById(R.id.relBg);
             lin_main.setBackgroundTintList(ColorStateList.valueOf(context.getColor(R.color.red)));
             ivHappy.setImageResource(R.drawable.sad);
 
@@ -824,7 +825,7 @@ public class Module {
             Log.e("successToast,", "" + msg_s);
             tv_msg.setText(msg_s);
             tv_msg.setTextColor(Color.WHITE);
-            LinearLayout lin_main = view.findViewById(R.id.lin_main);
+            RelativeLayout lin_main = view.findViewById(R.id.relBg);
             ImageView  ivHappy=view.findViewById(R.id.ivHappy);
             ivHappy.setImageResource(R.drawable.happy);
 
@@ -1177,7 +1178,7 @@ public class Module {
         postRequest (BaseUrls.URL_MATKA_WITH_ID, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
-                Log.e ("datcheck", "onResponse: " + response);
+                Log.e ("URL_MATKA_WITH_ID", "onResponse: " + response);
                 try {
                     if (loadingBar.isShowing ( )) {
                         loadingBar.dismiss ( );

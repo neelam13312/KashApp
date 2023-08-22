@@ -16,7 +16,7 @@
                 android:layout_centerVertical="true"
                 android:text="name"
                 style="@style/Mytextcolor"
-                android:textStyle="bold"
+
                  />
 
             <TextView
@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="result"
-                android:textColor="@color/gray"
+
                 android:textSize="12sp" />
         </LinearLayout>
 </RelativeLayout>

@@ -76,7 +76,7 @@
                         android:text="@string/left_digit"
 
 
-                        android:textStyle="bold" />
+                         />
 
                     <EditText
                         android:id="@+id/et_lDigit"
@@ -106,7 +106,7 @@
                         android:text="@string/middle_digit"
 
 
-                        android:textStyle="bold" />
+                         />
 
                     <EditText
                         android:id="@+id/et_mDigit"
@@ -136,7 +136,7 @@
                         android:text="@string/right_digit"
 
 
-                        android:textStyle="bold" />
+                         />
 
                     <EditText
                         android:id="@+id/et_rDigit"
@@ -170,7 +170,7 @@
                     android:text="@string/points"
 
 
-                    android:textStyle="bold" />
+                     />
 
                 <EditText
                     android:id="@+id/et_points"
@@ -184,9 +184,9 @@
                     android:padding="10dp"
                     android:text=""
 
-                    android:textColorHint="@color/gray"
+                   style="@style/bid_autoText"
 
-                    android:textStyle="bold" />
+                     />
             </LinearLayout>
 
             <Button
@@ -198,7 +198,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/bg_button"
                 android:paddingVertical="5dp"
                 android:text="@string/add" />
 

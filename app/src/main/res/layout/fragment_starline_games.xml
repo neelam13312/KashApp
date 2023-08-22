@@ -43,7 +43,7 @@
                 android:text="@string/title"
 
 
-                android:textStyle="bold" />
+                 />
         </LinearLayout>
         <LinearLayout
             android:layout_alignParentEnd="true"
@@ -74,12 +74,12 @@
                     android:id="@+id/tv_wallet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/gray"
+
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
                     android:textSize="10sp"
                     android:layout_marginLeft="5dp"
-                    android:textStyle="bold"
+
                     android:text="0"/>
             </LinearLayout>
 

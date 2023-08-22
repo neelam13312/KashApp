@@ -36,7 +36,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/time"
                             android:gravity="center_horizontal"
-                            android:textStyle="italic|bold"
+                            style="@style/MyTextview_semibold"
                             android:layout_gravity="center_horizontal"
 
                             />

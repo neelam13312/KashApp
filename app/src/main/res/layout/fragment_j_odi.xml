@@ -42,8 +42,7 @@
                     android:text="@string/select_date"
                     android:textAlignment="center"
                     android:textAllCaps="true"
-
-                    android:textStyle="italic|bold" />
+                    style="@style/MyTextview_semibold" />
 
                 <TextView
                     android:visibility="invisible"
@@ -57,7 +56,7 @@
                     android:text="@string/select_game_type"
                     android:textAlignment="center"
 
-                    android:textStyle="italic|bold" />
+                    style="@style/MyTextview_semibold" />
 
             </LinearLayout>
 
@@ -90,9 +89,10 @@
                                     android:text="@string/select_date"
                                     android:textAlignment="viewStart"
                                     android:textAllCaps="true"
-                                    android:textColor="@color/gray" />
+                                     />
 
                             <AutoCompleteTextView
+
                                     android:id="@+id/auto_openPanna"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -104,12 +104,10 @@
                                     android:hint=""
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:padding="10dp"
                                     android:text=""
+                                style="@style/bid_autoText"
 
-                                    android:textColorHint="@color/gray"
-
-                                    android:textStyle="bold" />
+                                     />
 
                         </LinearLayout>
                         <LinearLayout
@@ -130,7 +128,7 @@
                                     android:text="@string/point"
                                     android:textAlignment="viewStart"
                                     android:textAllCaps="true"
-                                    android:textColor="@color/gray" />
+                                     />
 
                             <AutoCompleteTextView
                                     android:id="@+id/auto_ponit"
@@ -144,20 +142,17 @@
                                     android:hint=""
                                     android:inputType="number"
                                     android:maxLength="3"
-                                    android:padding="10dp"
                                     android:text=""
+                                    style="@style/bid_autoText"
 
-                                    android:textColorHint="@color/gray"
-
-                                    android:textStyle="bold" />
+                                     />
 
                         </LinearLayout>
                         <Button
+                            android:layout_margin="@dimen/space_5"
                                 android:textAllCaps="false"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:background="@drawable/bg_button"
+                            android:background="@drawable/bg_button"
                                 android:text="@string/add_more"
-                                android:padding="6dp"
                                 android:layout_gravity="end"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -279,7 +274,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="8dp"
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/bg_button"
                         android:padding="10dp"
                         android:text="@string/submit_bid"
 

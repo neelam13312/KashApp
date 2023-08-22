@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/left_digit"
 
-                        android:textStyle="bold"
+
                         android:gravity="center_horizontal"
                        />
                     <EditText
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/right_digit"
 
-                        android:textStyle="bold"
+
                         android:gravity="center_horizontal"
                        />
                     <EditText
@@ -109,7 +109,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/points"
-                    android:textColor="@color/gray"
+
 
                     android:layout_weight="1"
                     />
@@ -124,10 +124,10 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:hint="@string/enter_points"
-                    android:textColorHint="@color/gray"
+                   style="@style/bid_autoText"
                     android:layout_weight="1"
                     android:background="@drawable/card_shape"
-                    android:textStyle="bold"/>
+                    />
             </LinearLayout>
             <Button
                 android:id="@+id/btn_add"
@@ -138,7 +138,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/bg_button"
                 android:paddingVertical="5dp"
                 android:text="@string/add" />
 

@@ -43,7 +43,7 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Available Balance "
-                        android:textColor="@color/gray"
+
                          />
 
                     <TextView
@@ -57,7 +57,7 @@
                         android:text=""
                         android:textColor="@color/colorPrimary"
                         android:textSize="30sp"
-                        android:textStyle="bold" />
+                         />
 
                     <Button
                         android:id="@+id/btn_withdraw"
@@ -92,9 +92,9 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text=" "
-                        android:textColor="@color/gray"
 
-                        android:textStyle="bold" />
+
+                         />
 
                     <LinearLayout
                         android:id="@+id/lin_whatsapp"
@@ -120,7 +120,7 @@
                             android:text=""
                             android:textColor="@color/green"
 
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -143,7 +143,7 @@
                         android:text="For Withdraw Related Query's Call or What'sApp"
 
 
-                        android:textStyle="bold" />
+                         />
 
                     <TextView
                         android:id="@+id/tv_message"
@@ -155,7 +155,7 @@
                         android:layout_marginRight="20dp"
                         android:gravity="center_horizontal"
                         android:text=""
-                        android:textColor="@color/gray"
+
                         android:textSize="15sp" />
 
                     <View
@@ -228,7 +228,7 @@
                             android:maxLength="7"
                             android:padding="10dp"
 
-                            android:textColorHint="@color/gray"
+                           style="@style/bid_autoText"
                             android:textSize="16dp" />
                     </LinearLayout>
 
@@ -239,7 +239,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="15dp"
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/bg_button"
                         android:text="@string/send_request"
                         android:textColor="@color/white"
 

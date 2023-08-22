@@ -87,13 +87,13 @@
                         android:text="@string/odd_number"
 
                         android:textSize="16dp"
-                        android:textStyle="bold" />
+                         />
 
                     <CheckBox
                         android:id="@+id/check_even"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
-                        android:textStyle="bold"
+
                         android:textSize="16dp"
                         android:layout_height="wrap_content"
                         android:text="@string/even_number"
@@ -117,7 +117,7 @@
                             android:paddingLeft="10dp"
                             android:text="@string/point"
                             android:textAllCaps="true"
-                            android:textColor="@color/gray"
+
                             android:textSize="15dp"
                             />
 
@@ -133,9 +133,9 @@
                             android:maxLength="5"
                             android:padding="10dp"
                             android:textAlignment="center"
-                            android:textColorHint="@color/black"
+                            style="@style/bid_autoText"
                             android:textSize="14dp"
-                            android:textStyle="bold" />
+                             />
 
 
                 </RelativeLayout>
@@ -147,7 +147,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="30dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/bg_button"
                     android:text="@string/add"
                     />
 

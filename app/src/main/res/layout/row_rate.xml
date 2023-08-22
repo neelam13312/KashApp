@@ -31,7 +31,7 @@
 
 
                     <TextView
-                        android:textColor="@color/gray"
+
                         android:padding="5dp"
                         android:layout_gravity="start"
                         android:id="@+id/tv_gamerate"

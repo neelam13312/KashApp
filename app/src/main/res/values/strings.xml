@@ -276,6 +276,6 @@
     <string name="share">Share</string>
     <string name="login_error">Check mobile number</string>
     <string name="live_chat">Live Chat</string>
-    <string name="n">किस्मत आपकी \nसाथ हमारा</string>
+    <string name="n"> "किस्मत आपकी \nसाथ हमारा" </string>
 
 </resources>

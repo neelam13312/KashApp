@@ -66,14 +66,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Record Permission"
-                        android:textColor="@color/gray"
+
                          style="@style/MyTextview_semibold_small" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="This permission is required for sending audio messages to Satta Bets Customer support"
-                        android:textColor="@color/gray"
+
                         android:layout_marginTop="10dp"
                          />
                 </LinearLayout>
@@ -122,14 +122,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call Permission"
-                        android:textColor="@color/gray"
+
                          style="@style/MyTextview_semibold_small" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="This permission is required for calling to Satta Bets Customer support"
-                        android:textColor="@color/gray"
+
                         android:layout_marginTop="10dp"
                          />
                 </LinearLayout>
@@ -178,14 +178,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Storage Permission"
-                        android:textColor="@color/gray"
+
                          style="@style/MyTextview_semibold_small" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="This permission is required to access Storage"
-                        android:textColor="@color/gray"
+
                         android:layout_marginTop="10dp"
                          />
                 </LinearLayout>

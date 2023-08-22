@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:text="SP"
                     android:layout_weight="1"
-                    android:textColor="@color/gray"
+
                     android:buttonTint="@color/colorPrimary"
                     />
                 <CheckBox
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="DP"
                     android:layout_weight="1"
-                    android:textColor="@color/gray"
+
                     android:buttonTint="@color/colorPrimary"
                     />
                 <CheckBox
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="TP"
                     android:layout_weight="1"
-                    android:textColor="@color/gray"
+
                     android:buttonTint="@color/colorPrimary"
                     />
 
@@ -62,7 +62,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/DIGIT"
-                    android:textColor="@color/gray"
+
 
                     android:layout_weight="1"
                     />
@@ -78,10 +78,10 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:hint="@string/enter_digit"
-                    android:textColorHint="@color/gray"
+                   style="@style/bid_autoText"
                     android:layout_weight="1"
                     android:background="@drawable/card_shape"
-                    android:textStyle="bold"/>
+                    />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/points"
-                    android:textColor="@color/gray"
+
 
                     android:layout_weight="1"
                    />
@@ -109,10 +109,10 @@
                     android:inputType="number"
                     android:gravity="center"
                     android:hint="@string/enter_points"
-                    android:textColorHint="@color/gray"
+                   style="@style/bid_autoText"
                     android:layout_weight="1"
                     android:background="@drawable/card_shape"
-                    android:textStyle="bold"/>
+                    />
             </LinearLayout>
             <Button
                 android:id="@+id/btn_add"
@@ -123,7 +123,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/bg_button"
                 android:paddingVertical="5dp"
                 android:text="@string/add" />
 

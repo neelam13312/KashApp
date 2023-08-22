@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initView();
-        getMobileData();
+      //  getMobileData();
         module.getConfigData(new GetAppSettingData() {
             @Override
             public void getAppSettingData(IndexResponse model) {
@@ -662,31 +662,31 @@ case R.id.bottom_profile:
         }
     }
 
-   public void getMobileData()
-   {
-       HashMap<String,String> params = new HashMap<String, String> ( );
-       module.postRequest (URL_CHART, params, new Response.Listener<String> ( ) {
-           @Override
-           public void onResponse(String response) {
-               Log.e ("URL_CHART", "onResponse: " + response.toString ( ));
-               try {
-                   JSONObject jsonObject = new JSONObject (response);
-                   Chart_link= jsonObject.getString ("link");
-
-               } catch (JSONException e) {
-                   e.printStackTrace ( );
-               }
-           }
-       }, new Response.ErrorListener ( ) {
-           @Override
-           public void onErrorResponse(VolleyError error) {
-               String msg = module.VolleyErrorMessage (error);
-               if (!msg.isEmpty ( )) {
-                   module.errorToast (MainActivity.this,"" + msg);
-               }
-           }
-       });
-   }
+//   public void getMobileData()
+//   {
+//       HashMap<String,String> params = new HashMap<String, String> ( );
+//       module.postRequest (URL_CHART, params, new Response.Listener<String> ( ) {
+//           @Override
+//           public void onResponse(String response) {
+//               Log.e ("URL_CHART", "onResponse: " + response.toString ( ));
+//               try {
+//                   JSONObject jsonObject = new JSONObject (response);
+//                   Chart_link= jsonObject.getString ("link");
+//
+//               } catch (JSONException e) {
+//                   e.printStackTrace ( );
+//               }
+//           }
+//       }, new Response.ErrorListener ( ) {
+//           @Override
+//           public void onErrorResponse(VolleyError error) {
+//               String msg = module.VolleyErrorMessage (error);
+//               if (!msg.isEmpty ( )) {
+//                   module.errorToast (MainActivity.this,"" + msg);
+//               }
+//           }
+//       });
+//   }
     void showUpdateDialog()
     {
         final Dialog dialog=new Dialog(MainActivity.this);

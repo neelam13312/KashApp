@@ -28,7 +28,7 @@
                     android:textAlignment="center"
                     android:textSize="18dp"
 
-                    android:textStyle="bold" />
+                     />
             <TextView
 
                     android:id="@+id/tv_info"
@@ -37,7 +37,7 @@
                     android:padding="8dp"
 
                     android:text="@string/name"
-                    android:textStyle="bold" />
+                     />
             <View
                     android:background="@color/black"
                     android:layout_width="match_parent"
