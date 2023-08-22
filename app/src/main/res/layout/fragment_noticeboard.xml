@@ -12,22 +12,38 @@
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipe"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-            <androidx.core.widget.NestedScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
                     <LinearLayout
+                        android:layout_marginTop="@dimen/space_10"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:src="@drawable/notice_rules"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        </ImageView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
                             android:visibility="gone"
                             android:layout_margin="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-                        <TextView
+                            <TextView
                                 android:visibility="gone"
                                 android:id="@+id/tv_sample"
                                 android:layout_width="match_parent"
@@ -37,55 +53,55 @@
                                 android:textSize="16dp"
                                 android:text="@string/text"/>
 
-                        <LinearLayout
+                            <LinearLayout
                                 android:visibility="gone"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_marginTop="20dp"
                                 android:weightSum="2">
-                            <TextView
+                                <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:textStyle="bold"
                                     android:text="@string/min_deposit"
-                                   />
-                            <TextView
+                                    />
+                                <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:textStyle="bold"
                                     android:text="@string/min_withdraw"
-                                   />
-                        </LinearLayout>
-                        <LinearLayout
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
                                 android:visibility="gone"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_marginTop="10dp"
                                 android:weightSum="2">
-                            <TextView
+                                <TextView
                                     android:id="@+id/tv_minDeposit"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text=""
                                     android:gravity="center"
-                                   />
-                            <TextView
+                                    />
+                                <TextView
                                     android:id="@+id/tv_minwithdraw"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text=""
                                     android:gravity="center"
-                                   />
-                        </LinearLayout>
+                                    />
+                            </LinearLayout>
 
 
-                        <TextView
+                            <TextView
                                 android:textAlignment="center"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -95,7 +111,7 @@
                                 android:textSize="17dp"
                                 android:padding="5dp"
                                 android:text="Withdraw Information"/>
-                        <TextView
+                            <TextView
                                 android:id="@+id/tv_wdescription"
                                 android:textAlignment="center"
                                 android:layout_width="match_parent"
@@ -107,7 +123,7 @@
                                 android:text="@string/text"/>
 
 
-                        <TextView
+                            <TextView
                                 android:visibility="gone"
                                 android:layout_marginTop="15dp"
                                 android:layout_width="match_parent"
@@ -118,7 +134,7 @@
                                 android:textSize="17dp"
                                 android:textAlignment="center"
                                 android:text="@string/withdrawal"/>
-                        <TextView
+                            <TextView
                                 android:id="@+id/tv_withdraw"
                                 android:textAlignment="center"
                                 android:layout_marginTop="5dp"
@@ -129,15 +145,15 @@
 
                                 android:text="@string/text"/>
 
-                        <View
+                            <View
                                 android:background="@color/gray"
                                 android:layout_width="match_parent"
                                 android:layout_marginTop="10dp"
                                 android:layout_height="1dp"
                                 >
 
-                        </View>
-                        <LinearLayout
+                            </View>
+                            <LinearLayout
                                 android:weightSum="1"
                                 android:padding="6dp"
                                 android:gravity="center"
@@ -146,7 +162,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 >
-                            <TextView
+                                <TextView
                                     android:visibility="gone"
                                     android:layout_weight="0.5"
                                     android:textAlignment="viewStart"
@@ -157,7 +173,7 @@
                                     android:textSize="17dp"
                                     android:padding="5dp"
                                     android:text="@string/contact"/>
-                            <LinearLayout
+                                <LinearLayout
                                     android:layout_weight="0.5"
                                     android:id="@+id/lin_whatsapp"
                                     android:layout_width="0dp"
@@ -166,11 +182,11 @@
                                     android:padding="6dp"
                                     android:layout_gravity="center"
                                     android:orientation="horizontal">
-                                <ImageView
+                                    <ImageView
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:src="@drawable/whatsapp"/>
-                                <TextView
+                                    <TextView
                                         android:id="@+id/tv_whatsapp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -179,18 +195,18 @@
                                         android:textSize="16dp"
                                         android:textColor="@color/colorPrimaryDark"
                                         android:layout_marginLeft="15dp"/>
+                                </LinearLayout>
                             </LinearLayout>
-                        </LinearLayout>
-                        <View
+                            <View
                                 android:background="@color/gray"
                                 android:layout_width="match_parent"
                                 android:layout_marginTop="10dp"
                                 android:layout_height="1dp"
                                 >
 
-                        </View>
+                            </View>
 
-                        <TextView
+                            <TextView
                                 android:textAlignment="center"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -200,7 +216,7 @@
                                 android:textSize="17dp"
                                 android:padding="5dp"
                                 android:text="@string/notice"/>
-                        <TextView
+                            <TextView
                                 android:id="@+id/tv_notice"
                                 android:textAlignment="center"
                                 android:layout_width="match_parent"
@@ -211,16 +227,16 @@
                                 android:textStyle="italic"
                                 android:text="@string/text"/>
 
-                        <View
+                            <View
                                 android:background="@color/gray"
                                 android:layout_width="match_parent"
                                 android:layout_marginTop="10dp"
                                 android:layout_height="1dp"
                                 >
 
-                        </View>
+                            </View>
 
-                        <TextView
+                            <TextView
                                 android:id="@+id/tv_stitle"
                                 android:textAlignment="center"
                                 android:layout_width="match_parent"
@@ -231,7 +247,7 @@
                                 android:textSize="17dp"
                                 android:padding="5dp"
                                 android:text="Starline"/>
-                        <TextView
+                            <TextView
                                 android:id="@+id/tv_starline_des"
                                 android:textAlignment="center"
                                 android:layout_width="match_parent"
@@ -243,21 +259,24 @@
                                 android:text="Description"/>
 
 
-                    </LinearLayout>
-                    <RelativeLayout
+                        </LinearLayout>
+                        <RelativeLayout
                             android:layout_margin="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="visible">
 
-                        <androidx.recyclerview.widget.RecyclerView
+                            <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/rec_notice"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:nestedScrollingEnabled="false" />
-                    </RelativeLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
+
+
+            </RelativeLayout>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -94,6 +94,7 @@ public class SelectGameFragment extends Fragment {
         Log.e("xdcfvgbh",is_market_open_nextday);
         Log.e("xdcfvgbh",is_market_open_nextday2);
         if (Integer.parseInt(matka_id)<20) {
+            Log.e("matka_id", "onCreateView:  "+matka_id );
             ((SelectGameActivity) getActivity ( )).setGameTitle (matka_name);
         } else if (Integer.parseInt(matka_id)>20 && Integer.parseInt(matka_id)<100){
             ((SelectGameActivity) getActivity ( )).setGameTitle ("Starline Games"+"("+matka_name+")");

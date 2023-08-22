@@ -1741,7 +1741,7 @@ public void whatsapp(String phone, String message) {
         postRequest (BaseUrls.URL_GET_WALLET_AMOUNT, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
-                Log.e ("wallet", response.toString ( ));
+                Log.e ("getWalletAmount", response.toString ( ));
                 loadingBar.dismiss ( );
                 try {
                     JSONObject object = new JSONObject (response);

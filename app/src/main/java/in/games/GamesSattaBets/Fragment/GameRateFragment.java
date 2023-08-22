@@ -116,7 +116,7 @@ SessionMangement sessionMangement;
         module.postRequest(URL_NOTICE, params, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("dcfretgy",response.toString());
+                Log.e("game_rate",response.toString());
                 try {
                      JSONObject obj = new JSONObject(response);
                      String status = obj.getString("status");
@@ -128,7 +128,7 @@ SessionMangement sessionMangement;
                             JSONObject object = array.getJSONObject(i);
                             gameRateModel.setId(object.getString("id"));
                             gameRateModel.setName(object.getString("name"));
-                            gameRateModel.setRate_range(object.getString("rate_range"));
+                           // gameRateModel.setRate_range(object.getString("rate_range"));
                             gameRateModel.setRate(object.getString("rate"));
                             String type = object.getString("type").toString();
                             gameRateModel.setType(type);

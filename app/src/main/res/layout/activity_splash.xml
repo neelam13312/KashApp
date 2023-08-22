@@ -24,15 +24,39 @@
             android:src="@drawable/app_logo"
             android:layout_gravity="center_horizontal"
             />
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/MyTextview_bold_login12pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome To"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:textSize="16pt"
+                style="@style/MyTextview_bold_login12pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kash"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
         <TextView
-            style="@style/MyTextview_bold_login12pt"
+            android:gravity="center"
+            android:layout_gravity="center"
+            style="@style/MyTextview_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome To Kash"
+            android:text="@string/n"
             android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-           />
-
+            />
 
     </LinearLayout>
 
@@ -42,6 +66,7 @@
         android:layout_alignParentBottom="true">
 
         <TextView
+            style="@style/MyTextview_semibold_small"
             android:id="@+id/tv_vername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

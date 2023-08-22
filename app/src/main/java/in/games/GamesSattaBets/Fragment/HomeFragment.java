@@ -431,51 +431,49 @@ int is_download,is_forced;
                 Log.e (TAG, "onResponse: "+response );
 
 
-                    try
-                    {
-                        mList.clear();
-                        JSONObject object = new JSONObject(response);
-                        JSONArray datay=object.getJSONArray ("data");
+                try
+                {
+                    mList.clear();
+                    JSONArray datay=new JSONArray(response);
+                    for(int i=0; i<datay.length();i++) {
 
-                        for(int i=0; i<datay.length();i++) {
-
-                            JSONObject jsonObject = datay.getJSONObject(i);
-                            MatkaModel matkasObjects = new MatkaModel();
-                            matkasObjects.setId(jsonObject.getString("id"));
-                            matkasObjects.setName(jsonObject.getString("name"));
-                            matkasObjects.setStart_time(jsonObject.getString("start_time"));
-                            matkasObjects.setEnd_time(jsonObject.getString("end_time"));
-                            matkasObjects.setStarting_num(jsonObject.getString("starting_num"));
-                            matkasObjects.setNumber(jsonObject.getString("number"));
-                            matkasObjects.setEnd_num(jsonObject.getString("end_num"));
+                        JSONObject jsonObject = datay.getJSONObject(i);
+                        MatkaModel matkasObjects = new MatkaModel();
+                        matkasObjects.setId(jsonObject.getString("id"));
+                        matkasObjects.setName(jsonObject.getString("name"));
+                        matkasObjects.setStart_time(jsonObject.getString("start_time"));
+                        matkasObjects.setEnd_time(jsonObject.getString("end_time"));
+                        matkasObjects.setStarting_num(jsonObject.getString("starting_num"));
+                        matkasObjects.setNumber(jsonObject.getString("number"));
+                        matkasObjects.setEnd_num(jsonObject.getString("end_num"));
 //                            matkasObjects.setCreated_at(jsonObject.getString("created_at"));
 //                            matkasObjects.setUpdated_at(jsonObject.getString("updated_at"));
-                            matkasObjects.setStatus(jsonObject.getString("status"));
-                            matkasObjects.setOpen_result_time(jsonObject.getString("open_result_time"));
-                            matkasObjects.setClose_result_time(jsonObject.getString("close_result_time"));
-                            matkasObjects.setColor (jsonObject.getString ("highlight"));
-                            matkasObjects.setIs_market_open (jsonObject.getString ("is_market_open"));
-                            matkasObjects.setIs_market_open_nextday (jsonObject.getString ("is_market_open_nextday"));
-                            matkasObjects.setIs_market_open_nextday2 (jsonObject.getString ("is_market_open_nextday2"));
-                           // matkasObjects.setLoader(jsonObject.getString("loader"));
-                           // matkasObjects.setText(jsonObject.getString("text"));
-                            //matkasObjects.setText_status(jsonObject.getString("text_status"));
-                            mList.add(matkasObjects);
-                        }
-                        if(mList.size()>0)
-                        {
-                            rec_matka.setLayoutManager(new GridLayoutManager (getActivity (),1));
-                            matkaAdapter = new MatkaAdapter(getActivity(),mList);
-                            rec_matka.setAdapter(matkaAdapter);
-                            matkaAdapter.notifyDataSetChanged ();
-                        }
-                        loadingBar.dismiss();
+                        matkasObjects.setStatus(jsonObject.getString("status"));
+                        matkasObjects.setOpen_result_time(jsonObject.getString("open_result_time"));
+                        matkasObjects.setClose_result_time(jsonObject.getString("close_result_time"));
+                        matkasObjects.setColor (jsonObject.getString ("highlight"));
+                        matkasObjects.setIs_market_open (jsonObject.getString ("is_market_open"));
+                        matkasObjects.setIs_market_open_nextday (jsonObject.getString ("is_market_open_nextday"));
+                        matkasObjects.setIs_market_open_nextday2 (jsonObject.getString ("is_market_open_nextday2"));
+                        // matkasObjects.setLoader(jsonObject.getString("loader"));
+                        // matkasObjects.setText(jsonObject.getString("text"));
+                        //matkasObjects.setText_status(jsonObject.getString("text_status"));
+                        mList.add(matkasObjects);
                     }
-                    catch (Exception ex)
+                    if(mList.size()>0)
                     {
-                        ex.printStackTrace();
-                      loadingBar.dismiss();
+                        rec_matka.setLayoutManager(new GridLayoutManager (getActivity (),1));
+                        matkaAdapter = new MatkaAdapter(getActivity(),mList);
+                        rec_matka.setAdapter(matkaAdapter);
+                        matkaAdapter.notifyDataSetChanged ();
                     }
+                    loadingBar.dismiss();
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                    loadingBar.dismiss();
+                }
             }
         }, new Response.ErrorListener ( ) {
             @Override

@@ -25,36 +25,47 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_margin="5dp"
                     android:padding="5dp"
-                    android:text="Game Win Ratio For All Bids"
+                    android:text=" Main Game Win Ratio For All Bids"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rec_rate"
+                    android:textColor="@color/colorPrimary"
+                    style="@style/MyTextview_bold" />
+                <LinearLayout
+                    android:layout_margin="@dimen/space_10"
+                    android:background="@drawable/bg_round_with_border"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false" />
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rec_rate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_margin="5dp"
                     android:padding="5dp"
-                    android:text="Kalyan Starline Game Win Ratio "
+                    android:text=" Starline Game Win Ratio "
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/colorPrimary"
+                    style="@style/MyTextview_bold" />
+            <LinearLayout
+                android:layout_margin="@dimen/space_10"
+                android:background="@drawable/bg_round_with_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rec_srate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false" />
+            </LinearLayout>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

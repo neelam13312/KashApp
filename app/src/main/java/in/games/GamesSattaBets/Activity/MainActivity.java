@@ -350,7 +350,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case "Game Rates":
                         fm = new GameRateFragment();
                         break;
-                        case "Notice Board/Rules":
+
+                        case "Notice Board /Rules":
                             fm = new NoticeboardFragment();
                             break;
 
