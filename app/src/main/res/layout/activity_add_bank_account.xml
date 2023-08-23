@@ -19,23 +19,23 @@
                         </include>
 
                         <RelativeLayout
-                            android:visibility="gone"
                             android:id="@+id/rel_edit"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_below="@+id/toolbar">
 
                                 <LinearLayout
+                                    android:layout_marginTop="@dimen/space_5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentTop="true"
                                     android:layout_centerInParent="true"
-                                    android:layout_marginTop="20dp"
                                     android:gravity="center"
                                     android:orientation="vertical"
-                                    android:padding="10dp">
+                                    android:padding="5dp">
 
                                         <TextView
+                                            style="@style/MyTextview_semibold"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:padding="6dp"
@@ -47,11 +47,9 @@
 
 
                                         <RelativeLayout
+                                            android:layout_margin="@dimen/space_5"
                                             android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:padding="10dp"
-
-                                            >
+                                            android:layout_height="wrap_content">
 
                                                 <ImageView
                                                     android:id="@+id/logo"
@@ -67,29 +65,23 @@
                                                     android:layout_width="match_parent"
                                                     android:layout_height="@dimen/edittext_height"
                                                     android:layout_below="@id/logo"
-                                                    android:layout_marginStart="10dp"
-                                                    android:layout_marginTop="10dp"
-                                                    android:layout_marginEnd="10dp"
-                                                    android:layout_marginRight="10dp"
-                                                    android:layout_marginBottom="10dp"
+                                                    android:layout_marginVertical="@dimen/margin_editextvertical"
+                                                     android:layout_marginHorizontal="@dimen/margin_edittext_horizontal"
                                                     
                                                     android:hint="Account Holder Name"
                                                     android:inputType="text"
-                                                    android:paddingLeft="20dp" />
+                                                     />
 
                                                 <EditText
                                                     android:id="@+id/et_accno"
                                                     android:layout_width="match_parent"
                                                    android:layout_height="@dimen/edittext_height"
                                                     android:layout_below="@id/et_hname"
-                                                    android:layout_marginStart="10dp"
-                                                    android:layout_marginTop="10dp"
-                                                    android:layout_marginEnd="10dp"
-                                                    android:layout_marginRight="10dp"
-                                                    android:layout_marginBottom="10dp"
+                                                    android:layout_marginVertical="@dimen/margin_editextvertical"
+                                                     android:layout_marginHorizontal="@dimen/margin_edittext_horizontal"
                                                     android:hint="Account No."
                                                     android:inputType="number"
-                                                    android:paddingLeft="20dp" />
+                                                     />
 
 
                                                 <EditText
@@ -97,15 +89,11 @@
                                                     android:layout_width="match_parent"
                                                    android:layout_height="@dimen/edittext_height"
                                                     android:layout_below="@id/et_accno"
-                                                    android:layout_marginStart="10dp"
-                                                    android:layout_marginTop="10dp"
-                                                    android:layout_marginEnd="10dp"
-                                                    android:layout_marginRight="10dp"
-                                                    android:layout_marginBottom="10dp"
-                                                    
+                                                    android:layout_marginVertical="@dimen/margin_editextvertical"
+                                                     android:layout_marginHorizontal="@dimen/margin_edittext_horizontal"
                                                     android:hint="IFSC Code"
                                                     android:inputType="text"
-                                                    android:paddingLeft="20dp"
+                                                    
                                                     
                                                    
                                                    />
@@ -115,16 +103,13 @@
                                                     android:layout_width="match_parent"
                                                    android:layout_height="@dimen/edittext_height"
                                                     android:layout_below="@id/et_ifsc"
-                                                    android:layout_marginStart="10dp"
-                                                    android:layout_marginTop="10dp"
-                                                    android:layout_marginEnd="10dp"
-                                                    android:layout_marginRight="10dp"
-                                                    android:layout_marginBottom="10dp"
+                                                    android:layout_marginVertical="@dimen/margin_editextvertical"
+                                                     android:layout_marginHorizontal="@dimen/margin_edittext_horizontal"
                                                     
 
                                                     android:hint="Bank Name"
 
-                                                    android:paddingLeft="20dp"
+                                                    
 
                                                    
                                                    />
@@ -134,16 +119,13 @@
                                                     android:layout_width="match_parent"
                                                    android:layout_height="@dimen/edittext_height"
                                                     android:layout_below="@id/et_bankname"
-                                                    android:layout_marginStart="10dp"
-                                                    android:layout_marginTop="10dp"
-                                                    android:layout_marginEnd="10dp"
-                                                    android:layout_marginRight="10dp"
-                                                    android:layout_marginBottom="10dp"
+                                                    android:layout_marginVertical="@dimen/margin_editextvertical"
+                                                     android:layout_marginHorizontal="@dimen/margin_edittext_horizontal"
                                                     
 
                                                     android:hint="Branch Name"
 
-                                                    android:paddingLeft="20dp"
+                                                    
 
                                                    
                                                    />
@@ -157,9 +139,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_margin="20dp"
-                                            android:background="@drawable/bg_button"
                                             android:gravity="center"
-                                            android:padding="10dp"
                                             android:text="Add Bank Details"
 
 

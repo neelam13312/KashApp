@@ -449,15 +449,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             getSupportFragmentManager().beginTransaction().replace(R.id.frame,
                                     selectedFragment).addToBackStack(null).commit();
                             break;
-case R.id.bottom_profile:
-                            selectedFragment = new AccountStatementtFragment();
-                            getSupportFragmentManager().beginTransaction().replace(R.id.frame,
-                                    selectedFragment).addToBackStack(null).commit();
+                   case R.id.bottom_profile:
+                       Intent intent_bank = new Intent(MainActivity.this, AddBankAccountActivity.class);
+                       startActivity(intent_bank);
+
                             break;
 
                         case R.id.bottom_passbook:
-                            Intent intent = new Intent(MainActivity.this, PassbookFragment.class);
-                            startActivity(intent);
+                            selectedFragment = new AccountStatementtFragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frame,
+                                    selectedFragment).addToBackStack(null).commit();
                             //selectedFragment = new PassbookFragment();
                             break;
 
