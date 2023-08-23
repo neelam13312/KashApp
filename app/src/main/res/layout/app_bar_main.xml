@@ -91,7 +91,7 @@
 
                 <LinearLayout
                     android:layout_gravity="center"
-                    android:layout_marginEnd="@dimen/space_15"
+                    android:layout_marginEnd="@dimen/space_10"
                     android:padding="@dimen/space_2"
                     android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/bg_round_edge_5dp"
@@ -101,7 +101,7 @@
                     android:orientation="horizontal"
                     android:layout_weight=".5">
                     <ImageView
-                        android:layout_marginStart="@dimen/space_10"
+                        android:layout_marginStart="@dimen/space_4"
                         android:id="@+id/img_wallet"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
@@ -110,17 +110,17 @@
                         android:layout_gravity="center_vertical"
                         app:tint="@color/white" />
                     <TextView
-                        android:layout_marginStart="@dimen/space_15"
+                        android:textSize="@dimen/tv_x_small_6"
+                        android:layout_marginStart="@dimen/space_10"
                         android:id="@+id/tv_wallet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
-                        android:textSize="10sp"
                         android:layout_marginLeft="5dp"
-
                         android:text="0"/>
+
                 </LinearLayout>
 
                 <LinearLayout

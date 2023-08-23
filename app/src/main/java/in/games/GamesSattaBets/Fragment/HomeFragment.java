@@ -429,7 +429,7 @@ int is_download,is_forced;
         module.getRequest (URL_Matka, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
-                Log.e (TAG, "onResponse: "+response );
+                Log.e ("URL_Matka", "onResponse: "+response );
 
 
                 try

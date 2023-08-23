@@ -19,12 +19,12 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/MyTextview_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Error"
-            android:textColor="@color/colorPrimary"
-            android:textSize="25sp"
+            android:textColor="@color/red"
              />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Allow Satta Bets Online to access your photos, media contents and files on your device" />
+            android:text="@string/allow_kash_online_to_access_your_photos_media_contents_and_files_on_your_device" />
 
         <Button
             android:id="@+id/btn_yes"
@@ -42,19 +42,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_button"
-            android:text="Allow"
+            android:text="@string/allow"
             android:backgroundTint="@color/colorPrimary"
             android:textColor="@color/white" />
 
         <TextView
+            style="@style/MyTextview_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:text="or"
-
-
-             />
+            />
 
         <Button
             android:id="@+id/btn_no"

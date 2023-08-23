@@ -86,7 +86,7 @@
                             android:text="@string/point"
                             android:textAllCaps="true"
 
-                            android:textSize="15dp"
+                            
                              />
 
                     <EditText
@@ -103,7 +103,7 @@
                         android:padding="10dp"
                         android:textAlignment="center"
                        style="@style/bid_autoText"
-                        android:textSize="14dp"
+                        
                          />
 
 
@@ -124,9 +124,7 @@
                             android:paddingLeft="10dp"
                             android:text="JODI DIGIT"
                             android:textAllCaps="true"
-
-                            android:textSize="15dp"
-                             />
+                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -136,7 +134,7 @@
 
                         android:paddingLeft="10dp"
 
-                        android:textSize="15dp"/>
+                        />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -146,7 +144,7 @@
 
                         android:paddingLeft="10dp"
 
-                        android:textSize="15dp"/>
+                        />
 
                     <AutoCompleteTextView
                         android:id="@+id/et_digit"
@@ -163,7 +161,7 @@
                         android:padding="10dp"
                         android:textAlignment="center"
                        style="@style/bid_autoText"
-                        android:textSize="14dp"
+                        
 
 
 

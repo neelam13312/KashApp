@@ -76,7 +76,7 @@
                         android:text="@string/left_digit"
 
 
-                         />
+                        />
 
                     <EditText
                         android:id="@+id/et_lDigit"
@@ -85,12 +85,12 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/card_shape"
                         android:gravity="center"
+                        android:hint="@string/enter_digit"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:hint="@string/enter_digit"
                         android:padding="10dp"
 
-                         />
+                        />
                 </LinearLayout>
 
                 <LinearLayout

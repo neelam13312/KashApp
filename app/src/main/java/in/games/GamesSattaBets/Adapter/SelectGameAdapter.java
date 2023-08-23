@@ -88,7 +88,7 @@ public class SelectGameAdapter extends RecyclerView.Adapter<SelectGameAdapter.Vi
 //      }
 //
 
-//      if (model.getName().equalsIgnoreCase("SINGLE DIGIT"))
+//      if (model.getName().equalsIgnoreCase("SIngle GharT"))
 //      {
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_pink)));
@@ -103,7 +103,7 @@ public class SelectGameAdapter extends RecyclerView.Adapter<SelectGameAdapter.Vi
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
 //
-//      }else  if (model.getName().equalsIgnoreCase("DOUBLE PANA"))
+//      }else  if (model.getName().equalsIgnoreCase("Double Panu"))
 //      {
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card2));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorPrimary)));

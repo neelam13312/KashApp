@@ -91,7 +91,7 @@
                                 android:text="@string/single_panna"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp" />
+                                 />
 
                         <TextView
                             android:layout_marginTop="10dp"
@@ -105,7 +105,7 @@
 
                             android:paddingLeft="10dp"
 
-                            android:textSize="15dp"/>
+                            />
                         <TextView
                             android:layout_marginTop="10dp"
                             android:id="@+id/tv_triple"
@@ -118,7 +118,7 @@
 
                             android:paddingLeft="10dp"
 
-                            android:textSize="15dp"/>
+                            />
 
                         <AutoCompleteTextView
                             android:id="@+id/et_panna"
@@ -133,7 +133,7 @@
                             android:padding="10dp"
                             android:textAlignment="center"
                            style="@style/bid_autoText"
-                            android:textSize="14dp"
+
                              />
 
 
@@ -152,7 +152,7 @@
                                 android:text="@string/point"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp"
+
                                  />
 
                         <EditText
@@ -170,7 +170,7 @@
                             android:textAlignment="center"
                            style="@style/bid_autoText"
 
-                            android:textSize="14dp"
+
                              />
 
 

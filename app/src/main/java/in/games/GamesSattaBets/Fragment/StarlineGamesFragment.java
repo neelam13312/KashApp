@@ -315,7 +315,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
 //                            {
 //                                slist.add(gameRateModel);
 //                            }
-                            if (object.getString("name").equalsIgnoreCase("single digit"))
+                            if (object.getString("name").equalsIgnoreCase("SIngle Ghart"))
                             {
                                 tv_singleDigit.setText(object.getString("rate_range")+"-"+object.getString("rate"));
                             }
@@ -327,7 +327,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                             {
                                 tv_triplePanna.setText(object.getString("rate_range")+"-"+object.getString("rate"));
                             }
-                            if (object.getString("name").equalsIgnoreCase("Double pana"))
+                            if (object.getString("name").equalsIgnoreCase("Double Panu"))
                             {
                                 tv_doublePanna.setText(object.getString("rate_range")+"-"+object.getString("rate"));
                             }

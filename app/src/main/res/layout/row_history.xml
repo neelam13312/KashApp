@@ -51,7 +51,7 @@
                         android:text="@string/Bit_Time"
                         android:gravity="end"
 
-                        android:textSize="15dp"
+
                          />
                     <TextView
                         android:id="@+id/bid_time"
@@ -62,7 +62,7 @@
                         android:text=" "
 
 
-                        android:textSize="15dp"
+
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -97,7 +97,7 @@
                                 android:text="@string/Play_on"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp"
+
                                  />
 
                         <TextView
@@ -108,7 +108,7 @@
                                 android:padding="2dp"
                                 android:text=" 12:00"
 
-                                android:textSize="15dp"
+
                                 android:textStyle="italic" />
                     </LinearLayout>
 
@@ -127,7 +127,7 @@
                                 android:text="@string/Play_for"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp"
+
                                  />
 
                         <TextView
@@ -138,7 +138,7 @@
                                 android:padding="2dp"
                                 android:text="12:00 "
 
-                                android:textSize="15dp"
+
                                 android:textStyle="italic" />
                     </LinearLayout>
                 </LinearLayout>
@@ -163,7 +163,7 @@
                                 android:text="@string/Bid_Id"
 
 
-                                android:textSize="15dp"
+
                                  />
 
                         <TextView
@@ -174,7 +174,7 @@
                                 android:padding="2dp"
                                 android:text=" 1"
 
-                                android:textSize="15dp" />
+                                 />
                     </LinearLayout>
 
                     <LinearLayout
@@ -192,7 +192,7 @@
                                 android:text="@string/Digits"
 
 
-                                android:textSize="15dp"
+
                                  />
 
                         <TextView
@@ -204,7 +204,7 @@
                                 android:padding="2dp"
                                 android:text="10 "
 
-                                android:textSize="15dp" />
+                                 />
                     </LinearLayout>
 
                     <LinearLayout
@@ -222,7 +222,7 @@
                                 android:text="@string/Coins"
 
 
-                                android:textSize="15dp"
+
                                  />
 
                         <TextView
@@ -233,7 +233,7 @@
                                 android:padding="2dp"
                                 android:text="20 "
 
-                                android:textSize="15dp" />
+                                 />
                     </LinearLayout>
                 </LinearLayout>
 

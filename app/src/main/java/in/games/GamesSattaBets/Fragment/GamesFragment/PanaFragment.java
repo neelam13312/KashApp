@@ -89,7 +89,7 @@ public class PanaFragment extends Fragment implements View.OnClickListener {
             et_panna.setAdapter(adapter1);
 
         }
-       else if(name.equalsIgnoreCase ("DOUBLE PANNA")){
+       else if(name.equalsIgnoreCase ("Double Panu")){
             tv_single.setVisibility (View.GONE);
             tv_triple.setVisibility (View.GONE);
             tv_double.setVisibility (View.VISIBLE);

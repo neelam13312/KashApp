@@ -88,7 +88,7 @@
                                 android:text="@string/single_panna"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp" />
+                                 />
 
                         <TextView
                                 android:id="@+id/tv_double"
@@ -100,7 +100,7 @@
                                 android:text="@string/double_panna"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp"
+
 
                                 android:visibility="gone" />
 
@@ -114,7 +114,7 @@
                                 android:text="@string/triple_panna"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp"
+
 
                                 android:visibility="gone" />
 
@@ -131,7 +131,7 @@
                                 android:padding="10dp"
                                 android:textAlignment="center"
                                style="@style/bid_autoText"
-                                android:textSize="14dp"
+
                                  />
 
 
@@ -150,7 +150,7 @@
                                 android:text="@string/point"
                                 android:textAllCaps="true"
 
-                                android:textSize="15dp"
+
                                  />
 
                         <EditText
@@ -168,7 +168,7 @@
                             android:textAlignment="center"
                            style="@style/bid_autoText"
 
-                            android:textSize="14dp"
+
                              />
 
 

@@ -47,7 +47,7 @@
                                 android:padding="2dp"
                                 android:text="@string/request_no"
                                 android:textColor="@color/lightRed"
-                                android:textSize="15dp" />
+                                 />
 
 
                         <LinearLayout
@@ -102,7 +102,7 @@
                             android:padding="2dp"
                             android:text="@string/request_no"
 
-                            android:textSize="15dp" />
+                             />
 
                     <TextView
                             android:id="@+id/tv_req_no"
@@ -114,7 +114,7 @@
                             android:padding="2dp"
                             android:text="@string/request_no"
 
-                            android:textSize="15dp" />
+                             />
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,7 +148,7 @@
             android:layout_marginTop="5dp"
             android:text="Request Type"
 
-            android:textSize="15dp" />
+             />
     <TextView
             android:id="@+id/tv_fundmode"
 
@@ -157,7 +157,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/status"
 
-            android:textSize="15dp" />
+             />
 </LinearLayout>
 
                 </LinearLayout>
@@ -183,7 +183,7 @@
 
                             android:text="Fund Id: "
 
-                            android:textSize="15dp"
+
                             android:visibility="gone" />
 
                     <TextView
@@ -197,7 +197,7 @@
                             android:text=" "
 
 
-                            android:textSize="15dp"
+
 
                             />
                 </LinearLayout>

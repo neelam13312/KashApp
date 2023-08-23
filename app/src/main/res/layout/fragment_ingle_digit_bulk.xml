@@ -41,7 +41,7 @@
                         android:paddingHorizontal="20dp"
                         android:paddingVertical="10dp"
                         android:text="@string/select_date"
-                        android:textSize="12sp"
+                        
                         android:textAlignment="center"
                         android:textAllCaps="true"
                         />
@@ -54,7 +54,7 @@
                         android:layout_weight=".5"
                         android:background="@drawable/card_shape"
                         android:padding="10dp"
-                        android:textSize="12sp"
+                        
                         android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
                         android:drawableTint="@color/colorPrimary"
                         android:gravity="center"
@@ -91,7 +91,7 @@
                             android:text="@string/single_digit"
                             android:textAllCaps="true"
 
-                            android:textSize="15dp"
+                           
                              />
 
                         <TextView
@@ -104,7 +104,7 @@
                             android:text="@string/jodi_digit"
                             android:textAllCaps="true"
 
-                            android:textSize="15dp"
+                           
 
                             android:visibility="gone" />
 
@@ -122,7 +122,7 @@
                             android:padding="10dp"
                             android:textAlignment="center"
                            style="@style/bid_autoText"
-                            android:textSize="14dp"
+                           
                              />
 
 
@@ -143,10 +143,7 @@
                             android:layout_marginTop="10dp"
                             android:paddingLeft="10dp"
                             android:text="@string/point"
-                            android:textAllCaps="true"
-
-                            android:textSize="15dp"
-                             />
+                            android:textAllCaps="true" />
 
                         <EditText
                             android:id="@+id/et_point"
@@ -162,7 +159,7 @@
                             android:padding="10dp"
                             android:textAlignment="center"
                            style="@style/bid_autoText"
-                            android:textSize="14dp"
+                           
                              />
 
 
@@ -178,7 +175,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_button"
                         android:paddingVertical="5dp"
                         android:text="@string/add" />
 

@@ -171,6 +171,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content">
                                 <TextView
+                                    style="@style/MyTextview_semibold_small"
                                         android:layout_weight="0.4"
 
                                         android:layout_width="0dp"
@@ -183,6 +184,7 @@
                                         android:textAllCaps="false"
                                         />
                                 <TextView
+                                    style="@style/MyTextview_semibold_small"
                                         android:layout_weight="0.4"
 
                                         android:layout_width="0dp"
@@ -194,9 +196,10 @@
                                         />
 
                                 <TextView
-                                        android:layout_weight="0.4"
+                                    style="@style/MyTextview_semibold_small"
 
-                                        android:layout_width="0dp"
+                                        android:layout_weight="0.4"
+                                       android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:padding="4dp"

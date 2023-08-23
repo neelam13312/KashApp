@@ -266,12 +266,12 @@ public class JodiDigitBulkFragment extends Fragment implements View.OnClickListe
                     }
                     String number = String.valueOf (num);
 
-//                    module.addOrRemoveData(number, "JODI DIGIT BULK", digit, point, "close", list, tableAdaper, list_table, btn_submit,"jodibulk",removeList,numlist.get(position).getNumber());
+//                    module.addOrRemoveData(number, "jodi", digit, point, "close", list, tableAdaper, list_table, btn_submit,"jodibulk",removeList,numlist.get(position).getNumber());
 
 
 //                    module.addData(number,"JODI FAMILY",digit,point,"close",list,tableAdaper,list_table,btn_submit,tv_subBid,tv_subAmount,lin_submit);
 
-                    module.addDataDuplicates (number, "JODI DIGIT BULK", digit, point, "close", list, tableAdaper, list_table, btn_submit, tv_subBid, tv_subAmount, lin_submit);
+                    module.addDataDuplicates (number, "jodi", digit, point, "close", list, tableAdaper, list_table, btn_submit, tv_subBid, tv_subAmount, lin_submit);
                     et_digit.requestFocus ( );
                     clearData ( );
 

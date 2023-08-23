@@ -118,7 +118,7 @@
                             android:text="@string/point"
                             android:textAllCaps="true"
 
-                            android:textSize="15dp"
+
                             />
 
                     <EditText
@@ -134,7 +134,7 @@
                             android:padding="10dp"
                             android:textAlignment="center"
                             style="@style/bid_autoText"
-                            android:textSize="14dp"
+
                              />
 
 

@@ -66,7 +66,8 @@
     <color name="lightest">#F5F5F5</color>
     <color name="light_gray">#C5C2C2</color>
     <color name="light_pink">#FBECF2</color>
-<!---->
+    <color name="border_cl">#E5D9D9</color>
+    <!---->
 <!--    <color name="white_smoke">#C9EAFD</color>-->
 
 

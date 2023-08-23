@@ -105,7 +105,7 @@ public class SelectGameFragment extends Fragment {
         loadingBar = new LoadingBar (getActivity ( ));
         sList = new ArrayList<> ( );
         rec_selectGame = view.findViewById (R.id.rec_selectGame);
-//        rec_selectGame.setLayoutManager(new GridLayoutManager (getActivity (),2));
+       rec_selectGame.setLayoutManager(new GridLayoutManager (getActivity (),3));
 
         swipe = view.findViewById (R.id.swipe);
 
@@ -152,6 +152,7 @@ public class SelectGameFragment extends Fragment {
                 try {
                 SelectGameModel model = sList.get (position);
                 String gameNAme = sList.get (position).getName ( );
+
                 String name = "";
                 // Toast.makeText (getContext (), "gh"+gameNAme, Toast.LENGTH_SHORT).show ( );
                 Bundle bundle = new Bundle ( );
@@ -177,54 +178,56 @@ public class SelectGameFragment extends Fragment {
                 }
                 else {
 
-                    switch (gameNAme.toLowerCase()) {
-                        case "single and bulk digit":
-                            fragment=new SingleDigirtFragment();
-//                            fragment = new Single_digit_bulkFragment ( );
-                            break;
+//                    switch (gameNAme) {
+                        switch (gameNAme.toLowerCase()) {
+//                        case "single and bulk digit":
+//                            fragment=new SingleDigirtFragment();
+////                            fragment = new Single_digit_bulkFragment ( );
+//                            break;
 
-                        case "jodi digit bulk":
+                        case "jodi":
                             fragment = new JodiDigitBulkFragment( );
                             break;
-                        case "group jodi":
-                            fragment = new JodiFamilyFragment ( );
-                            break;
-                        case "panel group":
-                            fragment = new PanelGroupFragment( );
-                            break;
-                        case "single pana bulk":
-                            fragment = new SinglePanaBulkFragment ( );
-                            bundle.putString ("type", "single");
-                            break;
-                        case "double pana bulk":
-                            fragment = new SinglePanaBulkFragment ( );
-                            bundle.putString ("type", "double");
-                            break;
-                        case "single digit":
+//                        case "group jodi":
+//                            fragment = new JodiFamilyFragment ( );
+//                            break;
+//                        case "panel group":
+//                            fragment = new PanelGroupFragment( );
+//                            break;
+//                        case "single pana bulk":
+//                            fragment = new SinglePanaBulkFragment ( );
+//                            bundle.putString ("type", "single");
+//                            break;
+//                        case "Double Panu bulk":
+//                            fragment = new SinglePanaBulkFragment ( );
+//                            bundle.putString ("type", "double");
+//                            break;
+                            
+                        case "SIngle Ghart":
                             fragment=new SingleDigirtFragment ();
 //                            fragment = new DigitFragment( );
 //                            bundle.putString ("type", "SINGLE");
 //
                             break;
 
-                        case "jodi digit":
-//                            fragment=new JOdiFragment ();
-                            fragment = new DigitFragment ( );
-                            bundle.putString ("type", "JODI");
-                            break;
+//                        case "jodi digit":
+////                            fragment=new JOdiFragment ();
+//                            fragment = new DigitFragment ( );
+//                            bundle.putString ("type", "JODI");
+//                            break;
 
-                        case "odd even":
-                            fragment = new OddEvenFragment ( );//
-                            break;
+//                        case "odd even":
+//                            fragment = new OddEvenFragment ( );//
+//                            break;
 
                         case "single pana":
                             fragment = new PanaFragment ( );
                             bundle.putString ("panna", "SINGLE PANNA");
                             break;
 
-                        case "double pana":
+                        case "Double Panu":
                             fragment = new PanaFragment ( );
-                            bundle.putString ("panna", "DOUBLE PANNA");
+                            bundle.putString ("panna", "Double Panu");
 
                             break;
 
@@ -234,18 +237,18 @@ public class SelectGameFragment extends Fragment {
 
                             break;
 
-                        case "jodi family":
-                            fragment = new JodiFamilyFragment ( );//
-                            break;
+//                        case "jodi family":
+//                            fragment = new JodiFamilyFragment ( );//
+//                            break;
 
-                        case "pana family":
-                            fragment = new PannaFamilyFragment ( );
-                            break;
-
-                        case "red bracket":
-                            fragment = new RedBracketFragment ( );
-                            break;
-                        case "half sangam":
+//                        case "pana family":
+//                            fragment = new PannaFamilyFragment ( );
+//                            break;
+//
+//                        case "red bracket":
+//                            fragment = new RedBracketFragment ( );
+//                            break;
+                        case "Cycle":
                            fragment = new HalfSangamFragment ( );
                             break;
                         case "full sangam":
@@ -255,40 +258,40 @@ public class SelectGameFragment extends Fragment {
                         case "sp dp tp":
                             fragment = new SpDpTpFragment ( );
                             break;
-                        case "choice pana":
-                            fragment = new ChoicePannaFragment ( );
-                            break;
-                        case "sp motor":
-                            fragment = new SpMotorFragment ( );
-                            name = "SP MOTOR";
-                            break;
-                        case "dp motor":
-                            fragment = new SpMotorFragment ( );
-                            name = "DP MOTOR";
-                            break;
-                        case "two digit pana(cp,sr)":
-                            fragment = new TwoDigitPannaFragment ( );
-                            break;
-                        case "digit based jodi":
-                            fragment = new DigitBasedJodiFragment ( );
-                            break;
-
-                        case "left digits":
-                            fragment = new LeftRightDigitFragment ( );
-                            name = "left";
-                            bundle.putString ("jackpot", "LEFT");
-                            break;
-                        case "jackpot jodi digits":
-                            fragment = new LeftRightDigitFragment ( );
-                            name = " jJodi";
-                            bundle.putString ("jackpot", "JODI");
-                            break;
-                        case "right digits":
-                            fragment = new LeftRightDigitFragment ( );
-                            name = "right";
-                            bundle.putString ("jackpot", "RIGHT");
-//                            fragment.setArguments (bundle);
-                            break;
+//                        case "choice pana":
+//                            fragment = new ChoicePannaFragment ( );
+//                            break;
+//                        case "sp motor":
+//                            fragment = new SpMotorFragment ( );
+//                            name = "SP MOTOR";
+//                            break;
+//                        case "dp motor":
+//                            fragment = new SpMotorFragment ( );
+//                            name = "DP MOTOR";
+//                            break;
+//                        case "two digit pana(cp,sr)":
+//                            fragment = new TwoDigitPannaFragment ( );
+//                            break;
+//                        case "digit based jodi":
+//                            fragment = new DigitBasedJodiFragment ( );
+//                            break;
+//
+//                        case "left digits":
+//                            fragment = new LeftRightDigitFragment ( );
+//                            name = "left";
+//                            bundle.putString ("jackpot", "LEFT");
+//                            break;
+//                        case "jackpot jodi digits":
+//                            fragment = new LeftRightDigitFragment ( );
+//                            name = " jJodi";
+//                            bundle.putString ("jackpot", "JODI");
+//                            break;
+//                        case "right digits":
+//                            fragment = new LeftRightDigitFragment ( );
+//                            name = "right";
+//                            bundle.putString ("jackpot", "RIGHT");
+////                            fragment.setArguments (bundle);
+//                            break;
 
                     }
                 }
@@ -477,7 +480,7 @@ public class SelectGameFragment extends Fragment {
                         }
                         else {
                             if (object.getString("name").equalsIgnoreCase("JODI DIGIT")
-                                    ||object.getString("name").equalsIgnoreCase ("JODI DIGIT BULK")
+                                    ||object.getString("name").equalsIgnoreCase ("jodi")
                                     ||object.getString("name").equalsIgnoreCase ("RED BRACKET")
                                     ||object.getString("name").equalsIgnoreCase ("DIGIT BASED JODI")
                                     ||object.getString("name").equalsIgnoreCase ("GROUP JODI")
@@ -491,7 +494,7 @@ public class SelectGameFragment extends Fragment {
                                     sList.add(selectGameModel);
                                 }
                             }
-                            else if(object.getString("name").equals("Single Digit Bulk"))
+                            else if(object.getString("name").equals("SIngle Ghart Bulk"))
                             {
 
                             }
@@ -507,107 +510,11 @@ public class SelectGameFragment extends Fragment {
                         }
                     if (sList.size()>0)
                     {
-                        int sssize=sList.size ();
                         selectGameAdapter = new SelectGameAdapter(getActivity(),sList);
                        // selectGameAdapter.notifyDataSetChanged();
                         rec_selectGame.setAdapter(selectGameAdapter);
-                        GridLayoutManager glm;
                         Log.e ("nsgs", "onResponse: "+sList.size () );
-                        if(sList.size ()==18)
-                        {
-                            glm = new GridLayoutManager (getActivity ( ), 2);
-                            glm.setSpanSizeLookup (new GridLayoutManager.SpanSizeLookup ( ) {
-                                @Override
-                                public int getSpanSize(int position) {
-
-
-
-                                    Log.d ("xhh", "getSpanSize: " + position);
-                                    switch (position) {
-                                        case 0:
-                                        case 17:
-
-
-
-                                            return 2;
-                                        case 1:
-                                        case 2:
-                                        case 3:
-                                        case 4:
-//                    case 2:
-                                            return 1;
-                                            default:
-                                            //never gonna happen
-                                            return 1;
-                                    }
-                                }
-
-                            });
-                        }
-                        else if(sList.size ()==20)
-                        {
-
-                            glm = new GridLayoutManager (getActivity ( ), 2);
-                            glm.setSpanSizeLookup (new GridLayoutManager.SpanSizeLookup ( ) {
-                                @Override
-                                public int getSpanSize(int position) {
-
-                                    switch (position) {
-                                        case 0:
-                                        case 19:
-
-
-
-                                            return 2;
-                                        case 1:
-                                        case 2:
-                                        case 3:
-                                        case 4:
-//                    case 2:
-                                            return 1;
-                                        default:
-                                            //never gonna happen
-                                            return 1;
-                                    }
-                                }
-
-                            });
-                        }
-                        else {
-
-                             glm = new GridLayoutManager (getActivity ( ), 2);
-                            glm.setSpanSizeLookup (new GridLayoutManager.SpanSizeLookup ( ) {
-                                @Override
-                                public int getSpanSize(int position) {
-//                if (position % 4 == 2) {
-//                    return 2;
-
-//                }
-
-
-                                    Log.d ("xhh", "getSpanSize: " + position);
-                                    switch (position) {
-                                        case 0:
-
-
-                                            return 2;
-                                        case 1:
-                                        case 2:
-                                        case 3:
-                                        case 4:
-//                    case 2:
-                                            return 1;
-
-                                        default:
-                                            //never gonna happen
-                                            return 1;
-                                    }
-                                }
-
-                            });
-                        }
-
-                        rec_selectGame.setLayoutManager (glm);
+//                        rec_selectGame.setLayoutManager (glm);
 
                     }
                 } catch (JSONException e) {
@@ -654,7 +561,7 @@ public class SelectGameFragment extends Fragment {
                         selectGameModel.setIs_starline_disable(object.getString("is_starline_disable"));
                         selectGameModel.setIs_deleted(object.getString("is_deleted"));
                         if(object.getString("name").equalsIgnoreCase ("SINGLE and BULK DIGIT")) {
-                            selectGameModel.setName("SINGLE DIGIT");
+                            selectGameModel.setName("SIngle GharT");
                         }
                         else {
                             selectGameModel.setName(object.getString("name"));
@@ -671,78 +578,8 @@ public class SelectGameFragment extends Fragment {
                         selectGameAdapter = new SelectGameAdapter(getActivity(),sList);
                         selectGameAdapter.notifyDataSetChanged();
                         rec_selectGame.setAdapter(selectGameAdapter);
-                        GridLayoutManager glm;
+//                        GridLayoutManager glm;
                         Log.e ("nsgs", "onResponse: "+sList.size () );
-                        if(sList.size ()==8)
-                        {
-
-                            glm = new GridLayoutManager (getActivity ( ), 2);
-                            glm.setSpanSizeLookup (new GridLayoutManager.SpanSizeLookup ( ) {
-                                @Override
-                                public int getSpanSize(int position) {
-//                if (position % 4 == 2) {
-//                    return 2;
-
-//                }
-
-
-                                    Log.d ("xhh", "getSpanSize: " + position);
-                                    switch (position) {
-                                        case 0:
-                                        case 7:
-
-
-                                            return 2;
-                                        case 1:
-                                        case 2:
-                                        case 3:
-                                        case 4:
-//                    case 2:
-                                            return 1;
-
-                                        default:
-                                            //never gonna happen
-                                            return 1;
-                                    }
-                                }
-
-                            });
-                        }
-                        else {
-
-                            glm = new GridLayoutManager (getActivity ( ), 2);
-                            glm.setSpanSizeLookup (new GridLayoutManager.SpanSizeLookup ( ) {
-                                @Override
-                                public int getSpanSize(int position) {
-//                if (position % 4 == 2) {
-//                    return 2;
-
-//                }
-
-
-                                    Log.d ("xhh", "getSpanSize: " + position);
-                                    switch (position) {
-                                        case 0:
-
-
-                                            return 2;
-                                        case 1:
-                                        case 2:
-                                        case 3:
-                                        case 4:
-//                    case 2:
-                                            return 1;
-
-                                        default:
-                                            //never gonna happen
-                                            return 1;
-                                    }
-                                }
-
-                            });
-                        }
-
-                        rec_selectGame.setLayoutManager (glm);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
