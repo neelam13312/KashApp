@@ -159,7 +159,8 @@ public class SelectGameFragment extends Fragment {
                 Fragment fragment = null;
                 if (model.getIs_close ( ).equals ("1")) {
                     module.marketClosed ("Biding is closed for today");
-                } else if (type.equals ("jackpot")) {
+                }
+                else if (type.equals ("jackpot")) {
                     if (gameNAme.equals ("LEFT DIGIT")) {
                         fragment = new LeftRightDigitFragment ( );
                         name = "LEFT";
@@ -179,6 +180,7 @@ public class SelectGameFragment extends Fragment {
                 else {
 
 //                    switch (gameNAme) {
+                    Log.d ("name_of_game", "onItemClick: "+gameNAme.toLowerCase());
                         switch (gameNAme.toLowerCase()) {
 //                        case "single and bulk digit":
 //                            fragment=new SingleDigirtFragment();
@@ -203,7 +205,7 @@ public class SelectGameFragment extends Fragment {
 //                            bundle.putString ("type", "double");
 //                            break;
                             
-                        case "SIngle Ghart":
+                        case "single ghar":
                             fragment=new SingleDigirtFragment ();
 //                            fragment = new DigitFragment( );
 //                            bundle.putString ("type", "SINGLE");
@@ -220,18 +222,18 @@ public class SelectGameFragment extends Fragment {
 //                            fragment = new OddEvenFragment ( );//
 //                            break;
 
-                        case "single pana":
+                        case "single panu":
                             fragment = new PanaFragment ( );
                             bundle.putString ("panna", "SINGLE PANNA");
                             break;
 
-                        case "Double Panu":
+                        case "double panu":
                             fragment = new PanaFragment ( );
                             bundle.putString ("panna", "Double Panu");
 
                             break;
 
-                        case "triple pana":
+                        case "triple panu":
                             fragment = new PanaFragment ( );
                             bundle.putString ("panna", "TRIPLE PANNA");
 
@@ -248,10 +250,11 @@ public class SelectGameFragment extends Fragment {
 //                        case "red bracket":
 //                            fragment = new RedBracketFragment ( );
 //                            break;
-                        case "Cycle":
+                        case "cycle":
                            fragment = new HalfSangamFragment ( );
                             break;
                         case "full sangam":
+                        case "moter":
                             //comment by client
                             fragment = new FullSangamFragment ( );
                             break;
