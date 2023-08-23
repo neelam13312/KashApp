@@ -43,6 +43,7 @@ import java.util.HashMap;
 import in.games.GamesSattaBets.Adapter.MenuAdapter;
 import in.games.GamesSattaBets.Config.Module;
 import in.games.GamesSattaBets.Fragment.AccountStatementtFragment;
+import in.games.GamesSattaBets.Fragment.AllHistoryActivity;
 import in.games.GamesSattaBets.Fragment.FundFragment;
 import in.games.GamesSattaBets.Fragment.GameRateFragment;
 //import in.games.GamesSattaBet.Fragment.HistoryFragment;
@@ -445,9 +446,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Fragment selectedFragment = null;
                     switch (item.getItemId()) {
                         case R.id.bottom_my_bids:
-                            selectedFragment = new MyBidsFragment();
-                            getSupportFragmentManager().beginTransaction().replace(R.id.frame,
-                                    selectedFragment).addToBackStack(null).commit();
+                          Intent  intent=new Intent ( MainActivity.this, AllHistoryActivity.class );
+                            intent.putExtra ("name","mList.get(position).getName()");
+                            intent.putExtra ("type","matka");
+                            intent.putExtra ("matka_id","0");
+
                             break;
                    case R.id.bottom_profile:
                        Intent intent_bank = new Intent(MainActivity.this, AddBankAccountActivity.class);

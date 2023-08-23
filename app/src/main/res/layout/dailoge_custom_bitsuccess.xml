@@ -41,10 +41,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                                 <TextView
+                                    style="@style/MyTextview_semibold"
                                     android:id="@+id/tv_luck"
                                     android:layout_marginTop="50dp"
-                                    android:textSize="25sp"
-
                                     android:layout_gravity="center"
                                     android:gravity="center"
                                     android:text="@string/good_luck"
@@ -53,9 +52,9 @@
 
                                 </TextView>
                                 <TextView
+                                    style="@style/MyTextview_semibold"
                                     android:id="@+id/tv_bid"
-                                    android:layout_marginTop="25dp"
-                                    android:textSize="20sp"
+                                    android:layout_marginTop="5dp"
                                     android:textColor="@color/dark_Green"
                                     android:layout_gravity="center"
                                     android:gravity="center"
@@ -70,8 +69,6 @@
                                     android:id="@+id/btn_ok"
                                     android:backgroundTint="@color/dark_Green"
                                     android:padding="4dp"
-
-                                    android:layout_marginTop="20dp"
                                     android:text="Ok"
                                     android:layout_margin="10dp"
                                     android:layout_gravity="center"

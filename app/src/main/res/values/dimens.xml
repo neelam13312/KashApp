@@ -124,6 +124,7 @@
     <dimen name="edittext_height">24pt</dimen>
     <dimen name="margin_editextvertical">7dp</dimen>
     <dimen name="margin_edittext_horizontal">20dp</dimen>
+    <dimen name="tv_8pt">8pt</dimen>
     <!--        <dimen name="passbok_size">@dimen/space_14</dimen>-->
 
 

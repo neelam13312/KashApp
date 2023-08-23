@@ -60,7 +60,7 @@ import static in.games.GamesSattaBets.Activity.SplashActivity.min_bet_amount;
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private final String TAG= HomeFragment.class.getSimpleName();
 SwipeRefreshLayout swipe;
-LinearLayout lin_home,lin_whatsapp,lin_whatsapp2,lin_play;
+LinearLayout lin_home,lin_whatsapp,lin_whatsapp2,lin_play,linAddFund,Lin_withdraw_fund;
 CircleImageView civ_logo;
 LinearLayout lin_satarline,lin_newUpdate,linTelegram;
 LoadingBar loadingBar;
@@ -113,7 +113,6 @@ int is_download,is_forced;
                 Log.e("running_text", "getAppSettingData: "+model.getHome_text() );
                 tv_msg.setText (model.getHome_text());
                 telegramLink=model.getTelegram_id();
-
                 tv_whatsapp.setText (model.getMobile());
                 running_text = model.getHome_text();
                 home_text =model.getHome_text();
@@ -232,6 +231,8 @@ int is_download,is_forced;
         lin_home = root.findViewById(R.id.lin_home);
         lin_satarline= root.findViewById(R.id.lin_satarline);
         lin_whatsapp = root.findViewById(R.id.lin_whatsapp);
+        linAddFund = root.findViewById(R.id.linAddFund);
+        Lin_withdraw_fund = root.findViewById(R.id.Lin_withdraw_fund);
         lin_play = root.findViewById(R.id.lin_play);
         civ_logo = root.findViewById(R.id.civ_logo);
         tv_whatsapp = root.findViewById(R.id.tv_whatsapp);
@@ -249,6 +250,8 @@ int is_download,is_forced;
         btn_jackpot.setOnClickListener(this);
         btn_starline.setOnClickListener(this);
         lin_whatsapp.setOnClickListener(this);
+        linAddFund.setOnClickListener(this);
+        Lin_withdraw_fund.setOnClickListener(this);
         tv_whatsapp.setOnClickListener(this);
         lin_newUpdate.setOnClickListener(this);
 
@@ -347,10 +350,22 @@ int is_download,is_forced;
           case R.id.tv_whatsapp:
               showWhatsappDailoge(tv_whatsapp.getText ().toString ());
               break;
-          case R.id.linTelegram:
-                  module.intentT0TelegramId(telegramLink);
+          case R.id.linAddFund:
+            Intent  intent_rr =new Intent (getActivity (),AddFundFragment.class);
+            startActivity(intent_rr);
+
 
               break;
+                  case R.id.Lin_withdraw_fund:
+                      Intent  int_rr =new Intent (getActivity (),WithdrawalFundFragment.class);
+                      startActivity(int_rr);
+
+
+                      break;
+
+                  case R.id.linTelegram:
+                  module.intentT0TelegramId(telegramLink);
+                  break;
 
               
           case R.id.lin_newUpdate:

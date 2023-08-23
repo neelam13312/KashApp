@@ -14,7 +14,7 @@
             android:gravity="center"
             android:layout_height="wrap_content"
             android:text="@string/select_date"
-            android:textSize="16dp"
+            
             android:padding="10dp"
             android:textAllCaps="true"
 
@@ -38,14 +38,14 @@
                     android:layout_height="wrap_content"
 
                     android:padding="2dp"
-                    android:textSize="18dp"
+                    
                     android:text=""/>
                 <TextView
                     android:padding="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:textSize="18dp"
+                    
                     android:text=""/>
             </LinearLayout>
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:textSize="18dp"
+                
                 android:visibility="gone"
                 android:text="@string/Bet_Open"/>
         </LinearLayout>
@@ -81,14 +81,14 @@
                     android:layout_height="wrap_content"
 
                     android:padding="2dp"
-                    android:textSize="18dp"
+                    
                     android:text=""/>
                 <TextView
                     android:padding="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:textSize="18dp"
+                    
                     android:text=""/>
             </LinearLayout>
             <TextView
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:textSize="18dp"
+                
                 android:visibility="gone"
                 android:text="@string/Bet_Open"/>
         </LinearLayout>
@@ -126,14 +126,14 @@
                     android:layout_height="wrap_content"
 
                     android:padding="2dp"
-                    android:textSize="18dp"
+                    
                     android:text=""/>
                 <TextView
                     android:padding="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:textSize="18dp"
+                    
                     android:text=""/>
             </LinearLayout>
             <TextView
@@ -144,7 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:textSize="18dp"
+                
                 android:visibility="gone"
                 android:text="@string/Bet_Open"/>
         </LinearLayout>

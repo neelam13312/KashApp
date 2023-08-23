@@ -71,6 +71,7 @@ import java.util.Random;
 import in.games.GamesSattaBets.Adapter.AddDuplicatesCommonAdpater;
 import in.games.GamesSattaBets.Adapter.BulkAdapter;
 import in.games.GamesSattaBets.Adapter.TableAdapter;
+import in.games.GamesSattaBets.Fragment.AddFundFragment;
 import in.games.GamesSattaBets.Fragment.SelectGameActivity;
 import in.games.GamesSattaBets.Interfaces.GetAppSettingData;
 import in.games.GamesSattaBets.Model.IndexResponse;
@@ -96,6 +97,10 @@ import static in.games.GamesSattaBets.Config.Constants.STATUS;
 import static in.games.GamesSattaBets.Config.Constants.TYPE;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Module {
@@ -295,17 +300,11 @@ public class Module {
         final String appName = "org.telegram.messenger";
         Log.e("common_intentT0TelegramId",telegrm_link);
         try{
-            // Intent intent = new Intent (Intent.ACTION_VIEW, Uri.parse ("tg://resolve?domain=partsilicon"));
-            Intent intent = new Intent (Intent.ACTION_VIEW, Uri.parse (telegrm_link));
-            intent.setPackage (appName);
-            PackageManager pm = context.getPackageManager();
-            if (intent.resolveActivity(pm) != null) {
-                context.startActivity(intent);
-            } else {
-//                Toast.makeText(RequestActivity.this, "No Valid Link Found", Toast.LENGTH_LONG).show();
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(telegrm_link));
-                context.startActivity(browserIntent);
-            }
+            Intent telegram = new Intent(Intent.ACTION_VIEW);
+            telegram.setData(Uri.parse("tg://msg?text=Hello&to=+496........."));
+            telegram.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            telegram.setPackage("org.telegram.messenger");
+            context.startActivity(telegram);
         } catch (Exception ignored) {
             ignored.printStackTrace();
             errorToast(context,"No Valid Link Found");
@@ -988,7 +987,7 @@ public class Module {
         dialog.show ( );
         TextView tv_open = (TextView) dialog.findViewById (R.id.tv_open);
         TextView tv_close = (TextView) dialog.findViewById (R.id.tv_close);
-        Log.e ("betTypecheck", betType + "--");
+        Log.e ("bet_Typecheck", betType + "--");
         if (betType == 1) {
             tv_open.setVisibility (View.GONE);
             tv_close.setVisibility (View.VISIBLE);
@@ -1782,7 +1781,7 @@ public void whatsapp(String phone, String message) {
         postRequest (BaseUrls.URL_GET_WALLET_AMOUNT, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
-                Log.e ("wallet", response.toString ( ));
+                Log.e ("URL_GET_WALLET_AMOUNT", response.toString ( ));
                 loadingBar.dismiss ( );
                 try {
                     JSONObject object = new JSONObject (response);
@@ -1934,7 +1933,7 @@ public void generateToken(){
     session_management.addToken(UUID);
     String android_id = Settings.Secure.getString(context.getContentResolver(),
             Settings.Secure.ANDROID_ID);
-    Log.e("sadfg",android_id);
+    Log.e("android_id",android_id);
     session_management.addDeviceId(android_id);
 
 }
@@ -2152,5 +2151,12 @@ public void generateToken(){
         return bb;
 
     }
+    public void switchFragment(Fragment fragment) {
+        FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+        //FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.frame, fragment).addToBackStack(null).commit();
+
+    }
+
 
 }

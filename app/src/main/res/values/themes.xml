@@ -156,7 +156,7 @@
         <item name="fontFamily">@font/sfui_regular</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">7pt</item>
+        <item name="android:textSize">7.5pt</item>
     </style>
 
     <style name="MyTextview_ragular4">

@@ -32,7 +32,7 @@ import in.games.GamesSattaBets.Util.LoadingBar;
 import in.games.GamesSattaBets.Util.SessionMangement;
 
 public class SettingFragment extends Fragment {
-    RadioButton rv_mpin,rv_pass;
+    RadioButton rv_mpin,rv_pass,rv_directlogin;
     String type="",is_mpin="1",is_password="0",game_notifaction="1",main_notification="1"
             ,starline_notification="1";
     String android_id;
@@ -250,6 +250,7 @@ public class SettingFragment extends Fragment {
     }
 
     private void initview(View view) {
+        rv_directlogin=view.findViewById (R.id.rv_directlogin);
         rv_mpin=view.findViewById (R.id.rv_mpin);
         rv_pass=view.findViewById (R.id.rv_pass);
         sessionMangement=new SessionMangement (getActivity ());

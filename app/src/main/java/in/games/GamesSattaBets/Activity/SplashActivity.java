@@ -143,7 +143,7 @@ public class SplashActivity extends AppCompatActivity {
                         min_bet_amount = Integer.parseInt(module.checkNullNumber(dataObj.getString("min_bet_amt")));
                         new_app_link=dataObj.getString("new_app_link");
 
-//                        checkAppPermissions();
+                        checkAppPermissions();
                         go_next();
                     } else {
                         module.errorToast (SplashActivity.this,"Something Went Wrong");

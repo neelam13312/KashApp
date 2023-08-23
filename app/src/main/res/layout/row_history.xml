@@ -5,6 +5,8 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
+        android:layout_margin="@dimen/space_5"
+        app:cardBackgroundColor="@color/white_smoke"
         android:layout_width="match_parent"
         app:cardCornerRadius="10dp"
         android:layout_marginBottom="15dp"
@@ -25,46 +27,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary"
+                    style="@style/MyTextview_bold"
                     android:id="@+id/tv_name"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/name"
-
-                    android:textSize="16dp"
-                     />
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_toEndOf="@+id/tv_name"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="0dp"
-                    android:weightSum="2"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:padding="2dp"
-                        android:text="@string/Bit_Time"
-                        android:gravity="end"
-
-
-                         />
-                    <TextView
-                        android:id="@+id/bid_time"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:padding="2dp"
-                        android:text=" "
-
-
-
-                        />
-                </LinearLayout>
+                    android:text="@string/name" />
             </LinearLayout>
 
 
@@ -88,8 +57,8 @@
                             android:orientation="vertical">
 
                         <TextView
-
-                                android:layout_width="match_parent"
+                            style="@style/MyTextview_semibold"
+                            android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:gravity="center"
@@ -101,6 +70,7 @@
                                  />
 
                         <TextView
+                            style="@style/MyTextview_semibold_small"
                                 android:id="@+id/play_on"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -119,6 +89,7 @@
                             android:orientation="vertical">
 
                         <TextView
+                            style="@style/MyTextview_semibold"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
@@ -131,6 +102,7 @@
                                  />
 
                         <TextView
+                            style="@style/MyTextview_semibold_small"
                                 android:id="@+id/play_for"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -155,18 +127,16 @@
                             android:orientation="vertical">
 
                         <TextView
-
+style="@style/MyTextview_semibold"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="2dp"
-                                android:text="@string/Bid_Id"
-
-
-
-                                 />
+                                android:text="@string/Bid_Id" />
 
                         <TextView
+                            android:textColor="@color/colorPrimary"
+                            style="@style/MyTextview_semibold"
                                 android:id="@+id/bid_id"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -184,7 +154,7 @@
                             android:orientation="vertical">
 
                         <TextView
-
+style="@style/MyTextview_semibold"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -196,6 +166,8 @@
                                  />
 
                         <TextView
+                            style="@style/MyTextview_semibold"
+                            android:textColor="@color/colorPrimary"
                                 android:id="@+id/bid_digit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -214,7 +186,7 @@
                             android:orientation="vertical">
 
                         <TextView
-
+style="@style/MyTextview_semibold"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -226,6 +198,8 @@
                                  />
 
                         <TextView
+                            android:textColor="@color/colorPrimary"
+                            style="@style/MyTextview_semibold"
                                 android:id="@+id/bid_point"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -236,8 +210,38 @@
                                  />
                     </LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_gravity="start"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                       style="@style/MyTextview_semibold"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        android:text="@string/Bit_Time"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/bid_time"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        android:text=" "
+
+
+
+                        />
+                </LinearLayout>
+
 
                 <View
+                    android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:layout_margin="10dp"
@@ -249,14 +253,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:drawableStart="@drawable/privacy_24px"
+                        android:drawableEnd="@drawable/privacy_24px"
                         android:drawablePadding="10dp"
                         android:drawableTint="@color/green"
                         android:gravity="center"
                         android:padding="2dp"
                         android:text="@string/Results"
                         android:textColor="@color/green"
-                         style="@style/MyTextview_semibold_small"
                     />
 
             </LinearLayout>
