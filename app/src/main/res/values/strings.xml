@@ -16,7 +16,7 @@
     <string name="panna">PANA</string>
     <string name="bracket_digit">BRACKET DIGIT</string>
     <string name="bid_all_bracket">BID ALL BRACKET</string>
-    <string name="welcome">Welcome ! </string>
+    <string name="welcome">Welcome To</string>
     <string name="otp">OTP</string>
     <string name="Bet_Open">Bet Open</string>
     <string name="open">Open</string>
@@ -24,11 +24,11 @@
     <string name="home_message">Viswas ka Dhanda Vishwas ke Sath</string>
     <string name="fund">Fund</string>
     <string name="play_starline">Play Starline</string>
-    <string name="login_account">Login Please</string>
-    <string name="register_account">Register Please</string>
+    <string name="login_account">Login In</string>
+    <string name="register_account">Sign Up</string>
     <string name="loading...">Loading</string>
     <string name="email">Email</string>
-    <string name="forgot_password">FORGOT PASSWORD</string>
+    <string name="forgot_password">Forgot Password</string>
     <string name="REGISTER_ACCOUNT">REGISTER ACCOUNT</string>
     <string name="number">Number</string>
     <string name="wifi">WIFI</string>
@@ -279,5 +279,6 @@
     <string name="n"> "किस्मत आपकी \nसाथ हमारा" </string>
     <string name="allow_kash_online_to_access_your_photos_media_contents_and_files_on_your_device">Allow Kash Online to access your photos, media contents and files on your device</string>
     <string name="allow">Allow</string>
+    <string name="forgot_username">Forgot Username?</string>
 
 </resources>

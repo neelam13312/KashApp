@@ -9,29 +9,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <LinearLayout
+            android:layout_margin="@dimen/space_12"
                 android:visibility="visible"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="vertical"
-                android:layout_marginTop="80dp"
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
+                style="@style/MyTextview_bold_login12pt"
                     android:textAllCaps="false"
-                    android:padding="4dp"
                     android:elevation="6dp"
-                    android:textSize="26dp"
-
-                    android:text="@string/welcome"
+                    
+                android:text="@string/welcome"
                     android:textColor="@color/white"
                     android:textAlignment="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             <TextView
-                    android:padding="4dp"
-                     style="@style/MyTextview_semibold_small"
-
-                    android:text="@string/to_the_best_betting_platform"
+                android:layout_marginStart="@dimen/space_5"
+                     style="@style/MyTextview_bold_login12pt"
+                android:text="@string/app_name"
                     android:textColor="@color/white"
                     android:textAlignment="center"
                     android:layout_width="wrap_content"
@@ -67,7 +65,7 @@
 <!--                    android:textAllCaps="false"-->
 <!--                    android:padding="4dp"-->
 <!--                    android:elevation="6dp"-->
-<!--                    android:textSize="26dp"-->
+<!--                    -->
 <!--                    -->
 <!--                    android:text="@string/welcome"-->
 <!--                    android:textColor="@color/white"-->

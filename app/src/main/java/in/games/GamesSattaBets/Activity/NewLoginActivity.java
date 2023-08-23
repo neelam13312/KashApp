@@ -41,7 +41,7 @@ import retrofit2.Callback;
 public class NewLoginActivity extends AppCompatActivity implements View.OnClickListener {
 //    https://softechplanettechnology.com/softwares/matka/api/login
 
-    TextView tv_register,tv_forget,tv_email,tv_adminnumber,tv_forgetUserName;
+    TextView tvRegister,tv_forget,tv_email,tv_adminnumber,tv_forgetUserName;
     Button btn_login;
     ImageView img_back;
     TextView tv_maintitle,tv_mpin;
@@ -70,10 +70,10 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
         }else {
             tv_mpin.setVisibility(View.GONE);
         }
-        tv_adminnumber=findViewById (R.id.tv_adminnumber);
-        tv_register=findViewById (R.id.tv_register);
+        tv_adminnumber=findViewById (R.id.tvRegister);
+        tvRegister=findViewById (R.id.tvRegister);
 
-        tv_register.setOnClickListener (this);
+        tvRegister.setOnClickListener (this);
         tv_forget=findViewById (R.id.tv_forget);
         tv_forget.setOnClickListener (this);
         btn_login=findViewById (R.id.btn_login);
@@ -101,8 +101,8 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        if(v.getId ()==R.id.tv_register){
-            Intent intent=new Intent ( NewLoginActivity.this,NewLoginActivity.class );
+        if(v.getId ()==R.id.tvRegister){
+            Intent intent=new Intent ( NewLoginActivity.this,RegisterActivity.class );
             startActivity (intent);
 
         }else if (v.getId()==R.id.tv_mpin){

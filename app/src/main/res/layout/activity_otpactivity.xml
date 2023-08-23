@@ -42,7 +42,7 @@
                         style="@style/MyTextview_bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
+                        android:layout_margin="0dp"
                         android:text="OTP Verification"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimary"
@@ -50,6 +50,7 @@
                         android:visibility="visible" />
 
                     <TextView
+                        android:layout_margin="@dimen/space_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Enter one time password here"
@@ -60,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_margin="22dp"
+                        android:layout_margin="12dp"
                         android:inputType="number"
                         android:textColor="@android:color/black"
                         android:textSize="9pt"

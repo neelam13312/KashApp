@@ -1,20 +1,32 @@
 package in.games.GamesSattaBets.Activity;
 
+import static in.games.GamesSattaBets.Fragment.AddFundFragment.desc;
+import static in.games.GamesSattaBets.Fragment.AddFundFragment.gatewayStatus;
+import static in.games.GamesSattaBets.Fragment.AddFundFragment.s_amount;
+import static in.games.GamesSattaBets.Fragment.AddFundFragment.u_name;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import in.games.GamesSattaBets.Config.Module;
 import in.games.GamesSattaBets.R;
 import in.games.GamesSattaBets.Util.ConnectivityReceiver;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 Module module;
     String name ,email;
-    EditText  et_number,et_username,et_pass,et_email;
+    EditText  et_number,et_username,et_pass,et_confpass;
+    TextView tvPrivacy;
+    Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +40,26 @@ Module module;
         et_number=findViewById(R.id.et_number);
         et_username=findViewById(R.id.et_username);
         et_pass=findViewById(R.id.et_pass);
-        et_email=findViewById(R.id.et_email);
-
+        et_confpass=findViewById(R.id.et_confpass);
+        btnSignUp=findViewById(R.id.btnSignUp);
+        tvPrivacy=findViewById(R.id.tvPrivacy);
+        tvPrivacy.setText(Html.fromHtml("By click on SignUp you are agree with our <u>Privacy Policy</u>"));
+        btnSignUp.setOnClickListener(this);
         if (ConnectivityReceiver.isConnected ( )) {
-            onValidation ( );
+
         } else {
             module.noInternet ( );
         }
     }
 
+
     private void onValidation() {
          name =et_username.getText ( ).toString ( );
-         email = et_email.getText ( ).toString ( );
 
-         if (Module.validateUserName  (et_username)
-                &&(Module.validateEmail(et_email) &&
+         if (Module.validateUserName  (et_username) &&
                 (Module.validateWhatsappNumber (et_number)
-                && (Module.validatePassword(et_pass))))){
+                && (Module.validatePassword(et_pass)&&
+                        (Module.validateEmail(et_confpass))))){
 
              callApi();
 
@@ -58,4 +73,14 @@ Module module;
         startActivity(i_reg);
         finish();    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnSignUp:
+                onValidation();
+                break;
+
+        }
+
+    }
 }
