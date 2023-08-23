@@ -434,13 +434,13 @@ public class MatkaAdapter extends RecyclerView.Adapter<MatkaAdapter.ViewHolder> 
 
         //Remove dialog for bid closed  and check inside games (if and else condition comment)
 
-//        if(endDiff<0 || is_error==true)
-//        {
-//            common.marketClosed ("Bid is closed for today");
-//
-//        }
-//        else
-//        {
+        if(endDiff<0 || is_error==true)
+        {
+            common.marketClosed ("Bid is closed for today");
+
+        }
+        else
+        {
             try
             {
 
@@ -518,7 +518,7 @@ public class MatkaAdapter extends RecyclerView.Adapter<MatkaAdapter.ViewHolder> 
                 ex.printStackTrace();
                 Toast.makeText(context,""+ex.getMessage(), Toast.LENGTH_SHORT).show();
             }
-       // }
+        }
     }
     public void getStatus(MatkaModel model,TextView tv_sta){
         String dyClick=new SimpleDateFormat("EEEE").format(new Date());
