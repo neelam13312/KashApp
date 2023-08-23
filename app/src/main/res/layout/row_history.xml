@@ -215,21 +215,18 @@ style="@style/MyTextview_semibold"
                     android:layout_gravity="start"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
+                    android:layout_margin="@dimen/space_4"
                     android:layout_height="wrap_content">
                     <TextView
                        style="@style/MyTextview_semibold"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="2dp"
-                        android:text="@string/Bit_Time"
-
-
-                        />
+                        android:text="@string/Bit_Time" />
                     <TextView
+                        android:layout_marginStart="@dimen/space_5"
                         android:id="@+id/bid_time"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="2dp"
                         android:text=" "

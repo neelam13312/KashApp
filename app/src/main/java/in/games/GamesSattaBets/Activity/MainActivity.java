@@ -450,6 +450,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             intent.putExtra ("name","mList.get(position).getName()");
                             intent.putExtra ("type","matka");
                             intent.putExtra ("matka_id","0");
+                            startActivity(intent);
 
                             break;
                    case R.id.bottom_profile:

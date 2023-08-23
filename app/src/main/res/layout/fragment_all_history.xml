@@ -14,8 +14,10 @@
             android:background="@drawable/bg_bottom_round_20pd"
             >
         <LinearLayout
+
+            android:layout_marginStart="@dimen/space_12"
                 android:layout_marginTop="20dp"
-                android:gravity="center_horizontal"
+                android:gravity="start|center"
                 android:id="@+id/lin_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,88 +49,9 @@
                         android:singleLine="true"
                         android:text="@string/title"
                         android:textColor="@color/white"
-                         style="@style/MyTextview_semibold_small"
+                         style="@style/MyTextview_semibold"
                          />
             </RelativeLayout>
-
-            <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginEnd="10dp"
-
-                    android:layout_gravity="end"
-                    android:gravity="end|center_vertical"
-                    android:layout_weight=".8">
-                <LinearLayout
-                        android:id="@+id/lin_wallet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginRight="10dp"
-                        android:visibility="gone">
-                    <ImageView
-                            android:id="@+id/img_wallet"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/wallet"
-                            app:tint="@color/white"
-                            android:layout_gravity="center_vertical"
-                            />
-                    <TextView
-                            android:id="@+id/tv_wallet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/white"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_vertical"
-
-                            android:layout_marginLeft="5dp"
-
-                            android:text="0"/>
-                </LinearLayout>
-
-                <LinearLayout
-                        android:id="@+id/lin_notification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginRight="10dp">
-                    <ImageView
-                            android:id="@+id/img_notification"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/notification"
-                            app:tint="@color/gray"
-                            android:visibility="gone"
-                            android:layout_gravity="center_vertical"
-                            />
-                </LinearLayout>
-                <LinearLayout
-                        android:visibility="visible"
-                        android:id="@+id/lin_filter"
-                        android:layout_width="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginEnd="10dp"
-                        android:layout_height="wrap_content">
-                    <TextView
-                             style="@style/MyTextview_semibold_small"
-                            android:textColor="@color/white"
-                            android:text="Filter Type"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                    <ImageView
-                            android:src="@drawable/filter"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            app:tint="@color/white" />
-                </LinearLayout>
-
-            </LinearLayout>
-
         </LinearLayout>
     </RelativeLayout>
 
@@ -182,11 +105,12 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="@dimen/space_5"
         android:id="@+id/rec_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lin_calender"
-        android:layout_marginTop="20dp" />
+        />
 
 </RelativeLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

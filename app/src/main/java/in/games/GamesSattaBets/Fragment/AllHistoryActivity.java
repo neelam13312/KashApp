@@ -80,11 +80,9 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
     SessionMangement sessionMangement;
     String name = "";
     SwipeRefreshLayout swipe;
-    ImageView img_notification, img_back;
+    ImageView  img_back;
     String type = "", matka_id = "";
-    LinearLayout lin_filter;
     RecyclerView rec_gametype;
-    LinearLayout lin_notification, lin_wallet;
     FilterAdapter filterAdapter;
     ArrayList<FilterModel> filterlist;
 
@@ -204,15 +202,9 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
         Log.e("type", type);
         tv_title = findViewById(R.id.tv_title);
         img_back = findViewById(R.id.img_back);
-        lin_filter = findViewById(R.id.lin_filter);
         tv_title.setText("History");
-        lin_notification = findViewById(R.id.lin_notification);
-        img_notification = findViewById(R.id.img_notification);
-        lin_wallet = findViewById(R.id.lin_wallet);
-        img_notification = findViewById(R.id.img_notification);
-        img_notification.setOnClickListener(this);
+
         img_back.setOnClickListener(this);
-        lin_filter.setOnClickListener(this);
         sessionMangement = new SessionMangement(AllHistoryActivity.this);
         module = new Module(AllHistoryActivity.this);
         loadingBar = new LoadingBar(AllHistoryActivity.this);
@@ -244,15 +236,17 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
             if (allHistoryAdapter != null) {
                 allHistoryAdapter.getFilter().filter(tv_date.getText().toString());
             }
-        } else if (v.getId() == R.id.img_notification) {
-            Intent intent = new Intent(AllHistoryActivity.this, NotificationFragment.class);
-            startActivity(intent);
-//            Fragment fm = null;
-//            fm=new NotificationFragment ();
-//            FragmentManager fragmentManager = getSupportFragmentManager();
-//            fragmentManager.beginTransaction().replace(R.id.frame,fm).addToBackStack(null).commit();
-
-        } else if (v.getId() == R.id.img_back) {
+        }
+//        else if (v.getId() == R.id.img_notification) {
+//            Intent intent = new Intent(AllHistoryActivity.this, NotificationFragment.class);
+//            startActivity(intent);
+////            Fragment fm = null;
+////            fm=new NotificationFragment ();
+////            FragmentManager fragmentManager = getSupportFragmentManager();
+////            fragmentManager.beginTransaction().replace(R.id.frame,fm).addToBackStack(null).commit();
+//
+//        }
+        else if (v.getId() == R.id.img_back) {
             finish();
         } else if (v.getId() == R.id.lin_filter) {
             showBottomSheetDialog();
@@ -1198,7 +1192,9 @@ public class AllHistoryActivity extends AppCompatActivity implements View.OnClic
     private boolean checkFilterStatus(){
         if (!checkStaticOpton()&& selectedGameType.size()==0)
             return false ;
-       else
+       else{
+
+        }
         return true;
     }
 
