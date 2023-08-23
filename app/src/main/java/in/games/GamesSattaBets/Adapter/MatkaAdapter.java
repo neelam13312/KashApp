@@ -188,25 +188,22 @@ public class MatkaAdapter extends RecyclerView.Adapter<MatkaAdapter.ViewHolder> 
             @Override
             public void onClick(View view)
             {
-                //remove if condition
-
-//                if (model.getIs_market_open().equals("0")){
-//                    common.marketClosed ("Bid is closed for today");
-//                }else {
+                if (model.getIs_market_open().equals("0")){
+                    common.marketClosed ("Bid is closed for today");
+                }else {
                     gotoGames(model);
-               // }
+                }
             }
         });
 
         holder.rel_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //remove if condition
-//                 if (model.getIs_market_open().equals("0")){
-//                    common.marketClosed ("Bid is closed for today");
-//                }else {
+                if (model.getIs_market_open().equals("0")){
+                    common.marketClosed ("Bid is closed for today");
+                }else {
                      gotoGames(model);
-               //  }
+                 }
             }
         });
         holder.time_image.setOnClickListener (new View.OnClickListener ( ) {
