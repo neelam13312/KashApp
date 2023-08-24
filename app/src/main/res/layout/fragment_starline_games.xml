@@ -7,45 +7,55 @@
     tools:context=".Fragment.StarlineGamesFragment">
     <include layout="@layout/bg_withouttext_layout"/>
     <RelativeLayout
+        android:gravity="center_horizontal"
         android:id="@+id/rel_title"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="70dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/bg_bottom_round_20pd"
+        >
         <LinearLayout
-            android:layout_alignParentStart="true"
-
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/lin_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-
-            android:visibility="visible"
-            android:layout_height="?attr/actionBarSize"
-            >
+            android:weightSum="2">
             <ImageView
+                android:layout_marginStart="@dimen/space_12"
                 android:id="@+id/img_back"
-                android:layout_marginLeft="@dimen/space_20"
-                android:layout_width="@dimen/space_20"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
-
-                android:layout_gravity="center_vertical"
+                android:layout_weight=".2"
+                android:visibility="visible"
                 android:src="@drawable/back_arrow"
-                app:tint="@color/colorPrimary"/>
+                app:tint="@color/white"/>
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.8">
 
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:ellipsize="marquee"
-                android:gravity="center_vertical"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:paddingLeft="5dp"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:text="@string/title"
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/title"
+                    android:textColor="@color/white"
+                    style="@style/MyTextview_semibold_small"
+                    />
+            </RelativeLayout>
 
 
-                 />
         </LinearLayout>
         <LinearLayout
+            android:layout_marginEnd="@dimen/space_12"
             android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -54,36 +64,42 @@
 
             android:gravity="end|center_vertical"
             >
-
             <LinearLayout
+                android:elevation="@dimen/space_6"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/space_10"
+                android:padding="@dimen/space_2"
+                android:background="@drawable/bg_round_grient"
                 android:id="@+id/lin_wallet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
                 android:orientation="horizontal"
-                android:gravity="end"
-                >
+                android:layout_weight=".5">
                 <ImageView
+                    android:layout_marginStart="@dimen/space_4"
                     android:id="@+id/img_wallet"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/wallet"
-                    app:tint="@color/gray"
+
                     android:layout_gravity="center_vertical"
-                    />
+                    app:tint="@color/white" />
                 <TextView
+                    android:textSize="@dimen/tv_x_small_6"
+                    android:layout_marginStart="@dimen/space_10"
                     android:id="@+id/tv_wallet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
                     android:gravity="center_vertical"
-                    android:textSize="10sp"
                     android:layout_marginLeft="5dp"
-
                     android:text="0"/>
+
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/lin_notification"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -104,7 +120,10 @@
                     />
             </LinearLayout>
         </LinearLayout>
+
     </RelativeLayout>
+
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe"
@@ -113,288 +132,312 @@
         android:layout_height="wrap_content">
 
         <androidx.core.widget.NestedScrollView
+            android:fillViewport="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_margin="@dimen/space_6"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_margin="@dimen/space_6"
+                        style="@style/MyTextview_title"
+                        android:text="Rates"
+                        android:layout_alignParentStart="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_margin="@dimen/space_6"
+                        style="@style/MyTextview_title"
+                        android:text="starline Chart"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
+
+                </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1.5"
-                            android:orientation="vertical">
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
 
-                            <TextView
-                                android:layout_width="match_parent"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="@string/starline_ratio"
+                                android:layout_weight="1.5"
+                                android:orientation="vertical">
 
-                                 />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
 
-                            <TextView
-                                android:layout_width="match_parent"
+                                    android:text="@string/starline_ratio"
+
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+
+                                    android:text="*SingleDigit:- 1-10"
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_singlePanna"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="*SinglePanna:- 1-160"
+                                    android:textColor="@color/white"
+
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/tv_doublePanna"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="DoublePanna:- 1-320"
+
+
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/tv_triplePanna"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="*TriplePanna:- 1-800"
+
+
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:gravity="center"
-                                android:text="*SingleDigit:- 1-10"
+                                android:layout_weight="1.5"
+                                android:orientation="vertical">
 
-                                 />
+                                <RelativeLayout
+                                    android:id="@+id/rel_bidHistory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_rounded_outline_red"
+                                    >
 
-                            <TextView
-                                android:id="@+id/tv_singlePanna"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="*SinglePanna:- 1-160"
-                                android:textColor="@color/white"
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
 
-                                android:visibility="gone" />
+                                        android:padding="10dp"
+                                        android:text="@string/bid_history"
+                                        android:textColor="@color/white" />
+                                </RelativeLayout>
 
-                            <TextView
-                                android:id="@+id/tv_doublePanna"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="DoublePanna:- 1-320"
+                                <RelativeLayout
+                                    android:id="@+id/rel_winHistory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
 
+                                    android:background="@drawable/bg_rounded_outline_red"
+                                    >
 
-                                android:visibility="gone" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
 
-                            <TextView
-                                android:id="@+id/tv_triplePanna"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="*TriplePanna:- 1-800"
+                                        android:padding="10dp"
+                                        android:text="@string/win_history"
+                                        android:textColor="@color/white" />
+                                </RelativeLayout>
 
+                                <!--                            <RelativeLayout-->
+                                <!--                                android:id="@+id/rel_terms"-->
+                                <!--                                android:layout_width="match_parent"-->
+                                <!--                                android:layout_height="wrap_content"-->
+                                <!--                               -->
+                                <!--                                android:background="@drawable/bg_rounded_outline_red"-->
+                                <!--                               >-->
 
-                                android:visibility="gone" />
+                                <!--                                <TextView-->
+                                <!--                                    android:layout_width="wrap_content"-->
+                                <!--                                    android:layout_height="wrap_content"-->
+                                <!--                                    android:layout_centerInParent="true"-->
+                                <!--                                   -->
+                                <!--                                    android:padding="10dp"-->
+                                <!--                                    android:text="@string/terms_and_conditions"-->
+                                <!--                                    android:textAllCaps="true"-->
+                                <!--                                    android:textColor="@color/white" />-->
+                                <!--                            </RelativeLayout>-->
+                            </LinearLayout>
+
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1.5"
-                            android:orientation="vertical">
+                    </LinearLayout>
 
-                            <RelativeLayout
-                                android:id="@+id/rel_bidHistory"
-                                android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_bg"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:padding="@dimen/space_3"
+
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/bg_rounded_outline_red"
-                                android:gravity="center">
+                                android:orientation="horizontal"
+                                android:weightSum="2">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_centerInParent="true"
-                                    android:gravity="center"
-                                    android:padding="10dp"
-                                    android:text="@string/bid_history"
-                                    android:textColor="@color/white" />
-                            </RelativeLayout>
+                                    android:layout_weight="1"
 
-                            <RelativeLayout
-                                android:id="@+id/rel_winHistory"
-                                android:layout_width="match_parent"
+                                    android:text="SIngle Ghar"
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_singleDigit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="1"
+
+                                    android:text=""
+                                    android:textColor="@color/colorPrimary"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg_rounded_outline_red"
-                                android:gravity="center">
+                                android:orientation="horizontal"
+                                android:weightSum="2">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_centerInParent="true"
-                                    android:gravity="center"
-                                    android:padding="10dp"
-                                    android:text="@string/win_history"
-                                    android:textColor="@color/white" />
-                            </RelativeLayout>
 
-<!--                            <RelativeLayout-->
-<!--                                android:id="@+id/rel_terms"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginTop="5dp"-->
-<!--                                android:background="@drawable/bg_rounded_outline_red"-->
-<!--                                android:gravity="center">-->
+                                    android:layout_weight="1"
 
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_centerInParent="true"-->
-<!--                                    android:gravity="center"-->
-<!--                                    android:padding="10dp"-->
-<!--                                    android:text="@string/terms_and_conditions"-->
-<!--                                    android:textAllCaps="true"-->
-<!--                                    android:textColor="@color/white" />-->
-<!--                            </RelativeLayout>-->
+                                    android:text="Single panu"
+
+                                    />
+                                <TextView
+                                    android:id="@+id/tv_singlePana"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="1"
+
+                                    android:text=""
+                                    android:textColor="@color/colorPrimary"
+                                    />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                        <View
+                            android:layout_margin="@dimen/space_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimary"/>
+                        <LinearLayout
+                            android:padding="@dimen/space_3"
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"                            android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Double Panu"
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_doublePana"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text=""
+                                    android:textColor="@color/colorPrimary"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"                            android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="triple panu"
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_triplePana"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="@color/colorPrimary"
+                                    />
+                            </LinearLayout>
                         </LinearLayout>
 
                     </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_bg"
-                    android:orientation="horizontal"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:weightSum="2">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="2">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="SIngle Ghart"
-
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/tv_singleDigit"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text=""
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="2">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="Single Pana"
-
-                                android:textSize="12sp" />
-                            <TextView
-                                android:id="@+id/tv_singlePana"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text=""
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-<View
-    android:layout_width="1dp"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary"/>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="2">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="Double Panu"
-
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/tv_doublePana"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text=""
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="2">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="Triple Pana"
-
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/tv_triplePana"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text=""
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
                 </LinearLayout>
 
                 <RelativeLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp">
@@ -405,12 +448,12 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_margin="5dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
+
+
                         android:padding="4dp"
                         android:text="Kalyan Starline"
 
-                         />
+                        />
 
                     <Switch
                         android:id="@+id/swt_notification"
@@ -418,21 +461,20 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="5dp"
-                        android:layout_marginTop="5dp"
+
                         android:layout_marginEnd="5dp"
                         android:layout_marginBottom="5dp"
                         android:checked="true"
                         android:padding="4dp"
                         android:text="Notification"
-                       />
+                        />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="20dp">
+                    android:layout_margin="10dp">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rec_starline"
@@ -440,7 +482,9 @@
                         android:layout_height="wrap_content"
                         android:nestedScrollingEnabled="false" />
                 </RelativeLayout>
+
             </LinearLayout>
+
         </androidx.core.widget.NestedScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

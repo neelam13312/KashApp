@@ -88,63 +88,98 @@ public class SelectGameAdapter extends RecyclerView.Adapter<SelectGameAdapter.Vi
 //      }
 //
 
-//      if (model.getName().equalsIgnoreCase("SIngle GharT"))
-//      {
+      if (model.getName().equalsIgnoreCase("SIngle Ghar"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_singleghar);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_pink)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("JODI DIGIT"))
-//      {
+
+      }
+      else  if (model.getName().equalsIgnoreCase("JODI"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_jodi);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.yellow));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_orangr)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("SINGLE PANA"))
-//      {
+
+      } else  if (model.getName().equalsIgnoreCase("JODI DIGIT"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_jodi);
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.yellow));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.dark_orangr)));
+
+      }
+      else  if (model.getName().equalsIgnoreCase("single panu"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_singlepanu);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("Double Panu"))
-//      {
+
+      }else  if (model.getName().equalsIgnoreCase("Double Panu"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_double_panu);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card2));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorPrimary)));
-//
-//
-//      }else  if (model.getName().equalsIgnoreCase("TRIPLE PANA"))
-//      {
+
+
+      }else  if (model.getName().equalsIgnoreCase("triple panu"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_tripal_panu);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card_dpana));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("HALF SANGAM"))
-//      {
+
+      }
+      else  if (model.getName().equalsIgnoreCase("cycle"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_cycle);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("FULL SANGAM"))
-//      {
+
+      }
+      else  if (model.getName().equalsIgnoreCase("moter"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_motor);
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
+
+      }
+      else  if (model.getName().equalsIgnoreCase("HALF SANGAM"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_cycle);
+//          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card3));
+//          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.purple_500)));
+
+      }
+      else  if (model.getName().equalsIgnoreCase("FULL SANGAM"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_motor);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.full_sangam));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("SP Motor"))
-//      {
+
+      }else  if (model.getName().equalsIgnoreCase("SP Motor"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_motor);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card5));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("DP Motor"))
-//      {
+
+      }else  if (model.getName().equalsIgnoreCase("DP Motor"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_motor);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.dp_motor));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("LEFT DIGIT"))
-//      {
+
+      }else  if (model.getName().equalsIgnoreCase("LEFT DIGIT"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_singleghar);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.card_dpana));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green)));
-//
-//      }else  if (model.getName().equalsIgnoreCase("RIGHT DIGIT"))
-//      {
+
+      }else  if (model.getName().equalsIgnoreCase("RIGHT DIGIT"))
+      {
+          holder.iv_selectgame.setImageResource(R.drawable.game_motor);
 //          holder.lin_game.setBackgroundTintList(context.getColorStateList(R.color.single_digit));
 //          holder.view.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.green)));
-//
-//      }
+
+      }
     }
 
     @Override

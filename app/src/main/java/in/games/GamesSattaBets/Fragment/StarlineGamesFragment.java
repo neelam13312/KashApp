@@ -315,21 +315,21 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
 //                            {
 //                                slist.add(gameRateModel);
 //                            }
-                            if (object.getString("name").equalsIgnoreCase("SIngle Ghart"))
+                            if (object.getString("name").equalsIgnoreCase("SIngle Ghar"))
                             {
-                                tv_singleDigit.setText(object.getString("rate_range")+"-"+object.getString("rate"));
+                                tv_singleDigit.setText(object.getString("rate_range")+getString(R.string.ka)+object.getString("rate"));
                             }
-                            if (object.getString("name").equalsIgnoreCase("single pana"))
+                            if (object.getString("name").equalsIgnoreCase("single panu"))
                             {
-                                tv_singlePanna.setText(object.getString("rate_range")+"-"+object.getString("rate"));
+                                tv_singlePanna.setText(object.getString("rate_range")+getString(R.string.ka)+object.getString("rate"));
                             }
-                            if (object.getString("name").equalsIgnoreCase("triple pana"))
+                            if (object.getString("name").equalsIgnoreCase("triple panu"))
                             {
-                                tv_triplePanna.setText(object.getString("rate_range")+"-"+object.getString("rate"));
+                                tv_triplePanna.setText(object.getString("rate_range")+getString(R.string.ka)+object.getString("rate"));
                             }
                             if (object.getString("name").equalsIgnoreCase("Double Panu"))
                             {
-                                tv_doublePanna.setText(object.getString("rate_range")+"-"+object.getString("rate"));
+                                tv_doublePanna.setText(object.getString("rate_range")+getString(R.string.ka)+object.getString("rate"));
                             }
                         }
 //                        tv_singleDigit.setText(getRate ());
@@ -355,9 +355,9 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         for(RateModel m:slist){
             // if (slist.size()%4==2||slist.size()%4==0) {
             if (slist.size()%4==2) {
-                stringBuffer.append(m.getName() + " - " + m.getRate_range() + " : " + m.getRate() + "\n");
+                stringBuffer.append(m.getName() + " KA " + m.getRate_range() + " : " + m.getRate() + "\n");
             }else {
-                stringBuffer.append(m.getName() + " - " + m.getRate_range() + " : " + m.getRate()+"  |  ");
+                stringBuffer.append(m.getName() + " KA " + m.getRate_range() + " : " + m.getRate()+"  |  ");
             }
         }
         Log.e(TAG, "setRates: "+stringBuffer.toString() );

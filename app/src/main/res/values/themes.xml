@@ -130,7 +130,7 @@
     <style name="MyTextview_title" >
         <item name="fontFamily">@font/montserratextrabold</item>
 
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:padding">@dimen/tv_all_padding2</item>

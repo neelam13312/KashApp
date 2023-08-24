@@ -62,7 +62,7 @@ public class Single_digit_bulkFragment extends Fragment implements View.OnClickL
     TableAdapter tableAdaper;
     Button btn_add,btn_submit;
     List<TableModel> list;
-    String name="SIngle Ghart Bulk",betdate,bettype,w_amount="",game_name, matka_name, matka_id ,game_id,s_time ,e_time,no,title,is_market_open_nextday,is_market_open_nextday2;
+    String name="SIngle Ghar Bulk",betdate,bettype,w_amount="",game_name, matka_name, matka_id ,game_id,s_time ,e_time,no,title,is_market_open_nextday,is_market_open_nextday2;
     Module module;
     RelativeLayout rel_single,rel_jodi;
     List<String> digitlist;

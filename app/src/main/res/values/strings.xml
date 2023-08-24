@@ -8,9 +8,9 @@
     <string name="title">Title</string>
     <string name="odd_number">ODD NUMBER</string>
     <string name="even_number">EVEN NUMBER</string>
-    <string name="single_panna">SINGLE PANA</string>
+    <string name="single_panna">single panu</string>
     <string name="double_panna">Double Panu</string>
-    <string name="triple_panna">TRIPLE PANA</string>
+    <string name="triple_panna">triple panu</string>
     <string name="jodi_family">JODI FAMILY</string>
     <string name="panna_family">PANA FAMILY</string>
     <string name="panna">PANA</string>
@@ -71,7 +71,7 @@
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="game_name">Game Name</string>
-    <string name="single_digit">SIngle Ghart</string>
+    <string name="single_digit">SIngle Ghar</string>
     <string name="jodi_digit">Jodi Digit</string>
     <string name="enter_digit_mpin">Enter 4 Digit Mpin</string>
     <string name="check_your_internet_connection_and_try_again">
@@ -280,5 +280,6 @@
     <string name="allow_kash_online_to_access_your_photos_media_contents_and_files_on_your_device">Allow Kash Online to access your photos, media contents and files on your device</string>
     <string name="allow">Allow</string>
     <string name="forgot_username">Forgot Username?</string>
+    <string name="ka"> KA </string>
 
 </resources>

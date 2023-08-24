@@ -38,10 +38,10 @@ public class RateAdapter extends RecyclerView.Adapter<RateAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull RateAdapter.ViewHolder holder, int position) {
 
         holder.tv_gamename.setText(list.get(position).getName());
-     //   double range = Double.parseDouble(list.get(position).getRate_range().replace(",",""))/10;
+       double range = Double.parseDouble(list.get(position).getRate().replace(",",""))/10;
         double rate = Double.parseDouble(list.get(position).getRate().replace(",",""))/10;
 
-        holder.tv_gamerate.setText(df.format(rate));
+        holder.tv_gamerate.setText(df.format(range)+" "+context.getString(R.string.ka)+" "+df.format(rate));
 //        holder.tv_gamerate.setText(list.get(position).getRate());
 
     }

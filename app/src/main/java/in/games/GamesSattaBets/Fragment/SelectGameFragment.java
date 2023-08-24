@@ -196,7 +196,7 @@ public class SelectGameFragment extends Fragment {
 //                        case "panel group":
 //                            fragment = new PanelGroupFragment( );
 //                            break;
-//                        case "single pana bulk":
+//                        case "single panu bulk":
 //                            fragment = new SinglePanaBulkFragment ( );
 //                            bundle.putString ("type", "single");
 //                            break;
@@ -224,7 +224,7 @@ public class SelectGameFragment extends Fragment {
 
                         case "single panu":
                             fragment = new PanaFragment ( );
-                            bundle.putString ("panna", "SINGLE PANNA");
+                            bundle.putString ("panna", "single panu");
                             break;
 
                         case "double panu":
@@ -235,7 +235,7 @@ public class SelectGameFragment extends Fragment {
 
                         case "triple panu":
                             fragment = new PanaFragment ( );
-                            bundle.putString ("panna", "TRIPLE PANNA");
+                            bundle.putString ("panna", "triple panu");
 
                             break;
 
@@ -497,7 +497,7 @@ public class SelectGameFragment extends Fragment {
                                     sList.add(selectGameModel);
                                 }
                             }
-                            else if(object.getString("name").equals("SIngle Ghart Bulk"))
+                            else if(object.getString("name").equals("SIngle Ghar Bulk"))
                             {
 
                             }
@@ -564,7 +564,7 @@ public class SelectGameFragment extends Fragment {
                         selectGameModel.setIs_starline_disable(object.getString("is_starline_disable"));
                         selectGameModel.setIs_deleted(object.getString("is_deleted"));
                         if(object.getString("name").equalsIgnoreCase ("SINGLE and BULK DIGIT")) {
-                            selectGameModel.setName("SIngle GharT");
+                            selectGameModel.setName("SIngle Ghar");
                         }
                         else {
                             selectGameModel.setName(object.getString("name"));

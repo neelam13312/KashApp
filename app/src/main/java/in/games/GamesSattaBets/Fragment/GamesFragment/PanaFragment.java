@@ -78,7 +78,7 @@ public class PanaFragment extends Fragment implements View.OnClickListener {
 
         Bundle bundle = getArguments ();
         name= bundle.getString ("panna");
-        if(name.equalsIgnoreCase ("SINGLE PANNA")){
+        if(name.equalsIgnoreCase ("single panu")){
             tv_single.setVisibility (View.VISIBLE);
             tv_double.setVisibility (View.GONE);
             tv_triple.setVisibility (View.GONE);
@@ -100,7 +100,7 @@ public class PanaFragment extends Fragment implements View.OnClickListener {
             et_panna.setAdapter(adapter1);
 
         }
-        else if(name.equalsIgnoreCase ("TRIPLE PANNA")){
+        else if(name.equalsIgnoreCase ("triple panu")){
             tv_triple.setVisibility (View.VISIBLE);
             tv_double.setVisibility (View.GONE);
             tv_single.setVisibility (View.GONE);

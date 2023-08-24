@@ -384,9 +384,9 @@ if(object.getString("id").equals ("4")){
                             gameRateModel.setType(type);
 
 
-if((object.getString("name").equals ("SIngle Ghart"))){
+if((object.getString("name").equals ("SIngle Ghar"))){
     list.add(gameRateModel);
-    tv_jodi.setText ("SIngle Ghart"+(object.getString("jackpot_rate")));
+    tv_jodi.setText ("SIngle Ghar"+(object.getString("jackpot_rate")));
 }
 
 
