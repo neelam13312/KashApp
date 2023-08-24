@@ -1,104 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="230dp"
     android:layout_height="wrap_content"
     android:id="@+id/rel_main"
     android:layout_margin="2dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:layout_margin="@dimen/space_5"
         android:id="@+id/cardView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
-        android:layout_marginVertical="5dp"
-        android:layout_marginHorizontal="10dp"
         app:cardElevation="4dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:orientation="vertical">
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tv_bidStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:text="BID Is Running For Today" />
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingLeft="0dp"
                 android:gravity="center">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@id/line_time"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:gravity="start"
-                    android:orientation="vertical"
-                    tools:ignore="NotSibling">
-
-                    <TextView
-                        android:id="@+id/tv_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="false"
-                        android:gravity="start"
-                        android:text="@string/Bit_Time"
-
-                        android:textSize="20dp" />
-
-
-                    <TextView
-                        android:id="@+id/tv_bidStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_sNum"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="2dp"
-                        android:text="10:10 AM"
-                        android:textColor="@color/colorAccent"
-                         />
-
-                    <ImageView
-                        android:id="@+id/watch"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_below="@+id/tv_time"
-                        android:layout_marginLeft="30dp"
-                        android:src="@drawable/btn_play"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginEnd="40dp"
-                    android:layout_alignEnd="@id/rel_play"
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/line_time"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/tv_sNum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_time"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="false"
-                        android:layout_marginEnd="19dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="2dp"
-                        android:text="578-5"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="20dp"/>
-
-                </LinearLayout>
                 <RelativeLayout
-                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
                     android:id="@+id/rel_play"
                     android:layout_width="wrap_content"
                     android:layout_weight=".3"
@@ -108,18 +41,99 @@
 
                     <ImageView
                         android:id="@+id/btn_image"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/btn_play"/>
+                        android:src="@drawable/alarm_clock_24px"
+                        app:tint="@color/colorPrimary" />
 
                 </RelativeLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_toEndOf="@+id/rel_play"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:ignore="NotSibling">
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="false"
+                            android:gravity="start"
+                            android:text="@string/time"/>
+                        <ImageView
+                            android:id="@+id/watch"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/tv_time"
+                            android:layout_marginLeft="30dp"
+                            android:src="@drawable/btn_play"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/line_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center">
+
+                        <TextView
+                            style="@style/MyTextview_semibold"
+                            android:id="@+id/tv_sNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_time"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="false"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="19dp"
+                            android:text="578-5"
+                            android:textColor="@color/colorPrimary"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
             </RelativeLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_margin="@dimen/space_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_play"
+                    android:drawableStart="@drawable/c_play"
+                    android:text="play game"
+                    android:layout_margin="@dimen/space_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:visibility="gone"
+                    android:backgroundTint="@color/gray"
+                    android:id="@+id/btn_close"
+                    android:drawableStart="@drawable/c_play"
+                    android:text="Close"
+                    android:layout_margin="@dimen/space_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>

@@ -88,6 +88,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         super.onCreate (savedInstanceState);
         setContentView (R.layout.fragment_starline_games);
 
+
         initView();
         //tv_singleDigit.setText (getRate());
         //allStarlineGames();
