@@ -5,54 +5,70 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
             android:id="@+id/card_notification"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:background="@drawable/bg_rounded_edge_10dp"
+            android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/white_smoke"
+            android:background="@drawable/bg_round_with_border"
             android:layout_width="match_parent"
-            app:cardCornerRadius="10dp"
             android:layout_height="wrap_content">
-        <LinearLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_margin="@dimen/space_8"
+                android:id="@+id/relBack"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="#C8E2F1"
+                android:background="@drawable/bg_cart_circle"
+                android:layout_width="45dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="45dp">
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/notification"
+                    app:tint="@color/colorPrimary">
+
+                </ImageView>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_toEndOf="@+id/relBack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
 
-            <TextView
+                <TextView
+                    style="@style/MyTextview_semibold"
                     android:id="@+id/tv_title"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                   android:background="@color/full_sangam"
-                    android:gravity="center"
-
-                    android:text="@string/title"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-
-                     />
-            <TextView
+                    android:layout_height="wrap_content"
+                    android:text="@string/title" />
+                <TextView
 
                     android:id="@+id/tv_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
 
                     android:text="@string/name"
-                     />
-            <View
-                    android:background="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"/>
-            <TextView
-
+                    />
+                <TextView
+                    android:layout_margin="@dimen/space_5"
+                    android:layout_gravity="end"
+                    android:textSize="@dimen/tv_small_normal_6"
                     android:id="@+id/tv_time"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:textAlignment="center"
                     android:textColor="@color/dark_gray"
-                    android:text="@string/time"
-                    android:textSize="12sp"/>
-        </LinearLayout>
+                    android:text="@string/time"/>
+            </LinearLayout>
+        </RelativeLayout>
+
 
     </androidx.cardview.widget.CardView>
 

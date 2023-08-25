@@ -10,7 +10,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="@dimen/space_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include
 
+                layout="@layout/layout_commontext"/>
+        </LinearLayout>
         <LinearLayout
             android:background="@color/white"
             android:layout_margin="@dimen/space_10"

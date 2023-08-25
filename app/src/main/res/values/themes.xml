@@ -128,7 +128,7 @@
         <item name="android:textSize">@dimen/tv_small_normal_6</item>
     </style>
     <style name="MyTextview_title" >
-        <item name="fontFamily">@font/montserratextrabold</item>
+        <item name="fontFamily">@font/sfui_semibold</item>
 
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textAllCaps">false</item>

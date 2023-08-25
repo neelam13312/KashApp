@@ -36,7 +36,7 @@
         <item
             android:id="@+id/bottom_funds"
             android:icon="@drawable/wallet"
-            android:title="@string/funds">
+            android:title="History">
 
         </item>
 

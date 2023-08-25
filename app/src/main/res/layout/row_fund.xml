@@ -5,58 +5,73 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <RelativeLayout
+
             android:id="@+id/lin_addFund"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_rounded_edge_10dp"
-            android:backgroundTint="@color/card5"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="@dimen/space_5"
+            android:background="@drawable/bg_round_with_border"
             android:orientation="horizontal">
+
 <RelativeLayout
+    android:layout_margin="@dimen/space_5"
     android:layout_centerInParent="true"
+    android:layout_alignParentStart="true"
         android:id="@+id/rel_backchange"
         android:backgroundTint="@color/white_smoke"
-        android:background="@drawable/bg_round_with_border"
-        android:layout_width="60dp"
+        android:background="@drawable/bg_circle_red"
+        android:layout_width="40dp"
         android:gravity="center"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_height="60dp">
+        android:orientation="horizontal"
+        android:layout_height="40dp">
         <ImageView
                 android:padding="@dimen/space_4"
                 android:id="@+id/iv_fund"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                android:layout_gravity="center"
                 android:src="@drawable/statement"
-               >
+            app:tint="@color/colorPrimary">
 
         </ImageView>
 
 </RelativeLayout>
 
-         <LinearLayout
-             android:id="@+id/linText"
-             android:backgroundTint="@color/colorPrimary"
-             android:layout_alignParentBottom="true"
-             android:background="@color/colorPrimary"
-             android:layout_width="match_parent"
-             android:layout_height="30dp">
-             <TextView
-                 android:textColor="@color/white"
-                 android:gravity="center"
-                 android:layout_gravity="center"
-                 android:id="@+id/tv_fund"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:text="@string/name"
-                 android:textAlignment="center" />
-         </LinearLayout>
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/rel_backchange"
+                android:textColor="@color/black"
+                style="@style/MyTextview_title"
+                android:layout_marginStart="@dimen/space_5"
+                android:layout_marginEnd="@dimen/space_5"
+                android:id="@+id/tv_fund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />
+            <RelativeLayout
+                android:layout_margin="@dimen/space_5"
+                android:id="@+id/relBack"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/white_smoke"
+                android:background="@drawable/bg_cart_circle"
+                android:layout_width="40dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="40dp">
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_right"
+                    app:tint="@color/black">
+
+                </ImageView>
+
+            </RelativeLayout>
         </RelativeLayout>
 
 
