@@ -60,6 +60,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         initview();
+//        89789b85-34de-4526-99ab-ca845c576dca ///appid one signal
 
         OneSignal.clearOneSignalNotifications();//to clear default notification
 

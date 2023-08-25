@@ -100,7 +100,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         if (ConnectivityReceiver.isConnected())
         {
             StarlineGames ();
-            getStatus();
+            //            getStatus();
             getmatkaRate ();
             getCHART();
         }else {module.noInternet();}
@@ -115,7 +115,8 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                     if (ConnectivityReceiver.isConnected())
                     {
                         StarlineGames ();
-                        getStatus();
+
+                        //            getStatus();
                         getmatkaRate ();
                         getCHART();
                     }else {module.noInternet();}
@@ -196,7 +197,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         if (ConnectivityReceiver.isConnected())
         {
             StarlineGames ();
-            getStatus();
+            //            getStatus();
             getmatkaRate ();
             getCHART();
         }else {module.noInternet();}
@@ -209,7 +210,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                     if (ConnectivityReceiver.isConnected())
                     {
                         StarlineGames ();
-                        getStatus();
+                        //            getStatus();
                         getmatkaRate ();
                         getCHART();
                     }else {

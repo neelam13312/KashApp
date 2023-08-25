@@ -32,7 +32,7 @@ android {
         multiDexEnabled true
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [onesignal_app_id: 'fbc00fe7-4e8d-4ab6-8bed-8ca866982c3e',
+        manifestPlaceholders = [onesignal_app_id: '89789b85-34de-4526-99ab-ca845c576dca',
                                 // Project number pulled from dashboard, local value is ignored.
                                 onesignal_google_project_number: 'REMOTE']
 

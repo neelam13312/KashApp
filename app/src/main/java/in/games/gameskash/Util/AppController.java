@@ -43,6 +43,7 @@ import in.games.gameskash.R;
 public class AppController extends Application {
     public static final String TAG = in.games.gameskash.Util.AppController.class.getSimpleName();
     private RequestQueue mRequestQueue;
+    private static final String ONESIGNAL_APP_ID = "89789b85-34de-4526-99ab-ca845c576dca";
 
     private static in.games.gameskash.Util.AppController mInstance;
 
@@ -147,7 +148,7 @@ public class AppController extends Application {
                 notificationLayout.setTextViewText(R.id.tv_name, Html.fromHtml(title));
                 notificationLayout.setTextViewText(R.id.tv_result, Html.fromHtml(alert));
                 notificationLayout.setTextViewText(R.id.tv_time, time);
-                notificationLayout.setImageViewResource(R.id.img_time, R.drawable.card);
+                notificationLayout.setImageViewResource(R.id.img_time, R.drawable.app_logo);
             }
             else {
                 Log.e("erftg", type);
@@ -166,7 +167,7 @@ public class AppController extends Application {
             Notification customNotification;
             if (type.equals("2")) {
                  customNotification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.card)
+                        .setSmallIcon(R.drawable.app_logo)
                         .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
                         .setCustomContentView(notificationLayout)
                         .setCustomBigContentView(notificationLayout)
@@ -178,7 +179,7 @@ public class AppController extends Application {
                         .build();
             }else {
                  customNotification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.card)
+                        .setSmallIcon(R.drawable.app_logo)
                         .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
                         .setCustomContentView(notificationLayout)
                         .setCustomBigContentView(notificationLayout)
