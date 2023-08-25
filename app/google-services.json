@@ -1,123 +1,41 @@
 {
   "project_info": {
-    "project_number": "143608485495",
-    "project_id": "satta-bets",
-    "storage_bucket": "satta-bets.appspot.com"
+    "project_number": "988269760837",
+    "project_id": "kash-ac404",
+    "storage_bucket": "kash-ac404.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:143608485495:android:d15131b182af3330d7d872",
+        "mobilesdk_app_id": "1:988269760837:android:0998fcbbf2da57a0966e2c",
         "android_client_info": {
-          "package_name": "in.games.GamesSattaBets"
+          "package_name": "in.games.gameskash"
         }
       },
       "oauth_client": [
         {
-          "client_id": "143608485495-r949ekq5kiqk7gbd11icnpd1t606i9r8.apps.googleusercontent.com",
+          "client_id": "988269760837-i8jg5fpcgtr7t6pml3s4rq1etsj9kuph.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "in.games.GamesSattaBets",
-            "certificate_hash": "75ab6d7a8a2bc97f4642ceeacb3aefca7be80509"
+            "package_name": "in.games.gameskash",
+            "certificate_hash": "ae92cb05844b7bd3bc2d884f6a013cc6683d29f6"
           }
         },
         {
-          "client_id": "143608485495-mjjfor1cuk47j0o3v8ut9qe3u5v3jhsi.apps.googleusercontent.com",
+          "client_id": "988269760837-95n0narjjpi1qicc89q0ph6iq8hbibjv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDTDmPuObu9hIrsN7yG127wV8PNcN4J1Qw"
+          "current_key": "AIzaSyDmN15Q7xdO7X_ZOL_emusGq5DCt-9HvzM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "143608485495-mjjfor1cuk47j0o3v8ut9qe3u5v3jhsi.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:143608485495:android:bbf55fd42df9cf18d7d872",
-        "android_client_info": {
-          "package_name": "in.games.SattaBetsGame"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "143608485495-0ouuf9prd6d5r0qeigcmlerot4nt8b0p.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "in.games.SattaBetsGame",
-            "certificate_hash": "5d8430803f68f01191a2c7ccac2813ae78cb31dc"
-          }
-        },
-        {
-          "client_id": "143608485495-dc3sn99ns6pcdfapl193keu2ar3hrj5n.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "in.games.SattaBetsGame",
-            "certificate_hash": "75ab6d7a8a2bc97f4642ceeacb3aefca7be80509"
-          }
-        },
-        {
-          "client_id": "143608485495-mjjfor1cuk47j0o3v8ut9qe3u5v3jhsi.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDTDmPuObu9hIrsN7yG127wV8PNcN4J1Qw"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "143608485495-mjjfor1cuk47j0o3v8ut9qe3u5v3jhsi.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:143608485495:android:f7b7794283949de1d7d872",
-        "android_client_info": {
-          "package_name": "in.games.SattaBetsGames"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "143608485495-2fd6jhv2qrjg97t0l8fdebr73jbkol8b.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "in.games.SattaBetsGames",
-            "certificate_hash": "d13ad66892729963dfabdb316dc0226d0b01b96d"
-          }
-        },
-        {
-          "client_id": "143608485495-mjjfor1cuk47j0o3v8ut9qe3u5v3jhsi.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDTDmPuObu9hIrsN7yG127wV8PNcN4J1Qw"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "143608485495-mjjfor1cuk47j0o3v8ut9qe3u5v3jhsi.apps.googleusercontent.com",
+              "client_id": "988269760837-95n0narjjpi1qicc89q0ph6iq8hbibjv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

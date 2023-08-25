@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="in.games.Gameskash">
+    package="in.games.gameskash">
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -61,7 +61,7 @@
     </queries>
 
     <application
-        android:name="in.games.Gameskash.Util.AppController"
+        android:name="in.games.gameskash.Util.AppController"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -71,19 +71,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GDMatkaLive">
         <activity
-            android:name="in.games.Gameskash.Activity.OTPActivity"
+            android:name="in.games.gameskash.Activity.OTPActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.RegisterActivity"
+            android:name="in.games.gameskash.Activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.NewLoginActivity"
+            android:name="in.games.gameskash.Activity.NewLoginActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.GrantPermissionActivity"
+            android:name="in.games.gameskash.Activity.GrantPermissionActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.WhatsappChatSupportActivity"
+            android:name="in.games.gameskash.Activity.WhatsappChatSupportActivity"
             android:exported="false" />
 
         <provider
@@ -98,69 +98,69 @@
         </provider>
 
         <activity
-            android:name="in.games.Gameskash.Activity.StarlineResultHistoryActivity"
+            android:name="in.games.gameskash.Activity.StarlineResultHistoryActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Activity.PlayVideoActivity"
+            android:name="in.games.gameskash.Activity.PlayVideoActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Activity.ShowVedioActivity"
+            android:name="in.games.gameskash.Activity.ShowVedioActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Activity.SubmitIDeaActivity"
+            android:name="in.games.gameskash.Activity.SubmitIDeaActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Fragment.StarlineGamesFragment"
+            android:name="in.games.gameskash.Fragment.StarlineGamesFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Activity.PaymentWebViewActivity"
+            android:name="in.games.gameskash.Activity.PaymentWebViewActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.SupportActivity"
+            android:name="in.games.gameskash.Activity.SupportActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.AddBankAccountActivity"
+            android:name="in.games.gameskash.Activity.AddBankAccountActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Fragment.PassbookFragment"
+            android:name="in.games.gameskash.Fragment.PassbookFragment"
             android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Activity.PermissionActivity"
+            android:name="in.games.gameskash.Activity.PermissionActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Fragment.SelectGameActivity"
+            android:name="in.games.gameskash.Fragment.SelectGameActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Fragment.AllHistoryActivity"
+            android:name="in.games.gameskash.Fragment.AllHistoryActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Fragment.NotificationFragment"
+            android:name="in.games.gameskash.Fragment.NotificationFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Fragment.AddFundFragment"
+            android:name="in.games.gameskash.Fragment.AddFundFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Fragment.WithdrawalFundFragment"
+            android:name="in.games.gameskash.Fragment.WithdrawalFundFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Fragment.WithdrawFundHistoryFragment"
+            android:name="in.games.gameskash.Fragment.WithdrawFundHistoryFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="in.games.Gameskash.Activity.PaymentActivity"
+            android:name="in.games.gameskash.Activity.PaymentActivity"
             android:exported="true"
             android:label="Razorpay Payment" />
 
@@ -169,10 +169,10 @@
             android:value="rzp_live_8b1OKltFTrsEON" />
 
         <activity
-            android:name="in.games.Gameskash.Activity.EditUserDetailsActivity"
+            android:name="in.games.gameskash.Activity.EditUserDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="in.games.Gameskash.Activity.SplashActivity"
+            android:name="in.games.gameskash.Activity.SplashActivity"
             android:exported="true">
             <intent-filter android:exported="false">
                 <action android:name="android.intent.action.MAIN" />
@@ -181,12 +181,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="in.games.Gameskash.Activity.MainActivity"
+            android:name="in.games.gameskash.Activity.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
 
         <receiver
-            android:name="in.games.Gameskash.Util.GcmBroadcastReceiver"
+            android:name="in.games.gameskash.Util.GcmBroadcastReceiver"
             android:exported="false"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>

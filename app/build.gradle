@@ -26,7 +26,7 @@ android {
 //    buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "in.games.GamesSattaBets"
+        applicationId "in.games.gameskash"
         minSdkVersion 23//20//22
         targetSdkVersion 33
         multiDexEnabled true
