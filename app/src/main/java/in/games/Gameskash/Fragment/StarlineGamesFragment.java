@@ -1,6 +1,7 @@
 package in.games.Gameskash.Fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,6 +51,7 @@ import in.games.Gameskash.Util.LoadingBar;
 import in.games.Gameskash.Util.RecyclerTouchListener;
 import in.games.Gameskash.Util.SessionMangement;
 
+import static in.games.Gameskash.Config.BaseUrls.URL_CHART;
 import static in.games.Gameskash.Config.BaseUrls.URL_GET_STATUS;
 import static in.games.Gameskash.Config.BaseUrls.URL_NOTICE;
 import static in.games.Gameskash.Config.BaseUrls.URL_SET_STATUS;
@@ -71,12 +73,14 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
     LoadingBar loadingBar;
     SessionMangement sessionMangement;
     StarlineGameAdapter starlineGameAdapter;
-    TextView tv_singleDigit,tv_singlePanna,tv_doublePanna,tv_triplePanna;
+    TextView tv_singleDigit,tv_singlePanna,tv_doublePanna,tv_triplePanna,tvStalineChart;
     RelativeLayout rel_bidHistory,rel_winHistory;
 
     TextView tv_title,tv_wallet;
     ImageView img_back;
     LinearLayout lin_notification;
+    String Chart_link="";
+
 
     public StarlineGamesFragment() {
         // Required empty public constructor
@@ -98,6 +102,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
             StarlineGames ();
             getStatus();
             getmatkaRate ();
+            getCHART();
         }else {module.noInternet();}
 
 
@@ -112,6 +117,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                         StarlineGames ();
                         getStatus();
                         getmatkaRate ();
+                        getCHART();
                     }else {module.noInternet();}
                     swipe.setRefreshing(false);
                 }
@@ -192,6 +198,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
             StarlineGames ();
             getStatus();
             getmatkaRate ();
+            getCHART();
         }else {module.noInternet();}
 
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -204,6 +211,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                         StarlineGames ();
                         getStatus();
                         getmatkaRate ();
+                        getCHART();
                     }else {
                         module.noInternet();
                     }
@@ -273,10 +281,80 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         }));
         return view;
     }
-    @Override
-    public void onBackPressed() {
-        Intent intent=new Intent ( StarlineGamesFragment.this,MainActivity.class );
-        startActivity (intent);
+    private void initView() {
+        tv_title=findViewById(R.id.tv_title);
+        tv_title.setText ("Starline Games");
+        tv_wallet=findViewById(R.id.tv_wallet);;
+
+
+        img_back=findViewById(R.id.img_back);;
+        lin_notification=findViewById(R.id.lin_notification);;
+
+        lin_notification.setOnClickListener (this);
+        img_back.setOnClickListener (this);
+        sList = new ArrayList<>();
+        rec_starline = findViewById(R.id.rec_starline);
+        swipe = findViewById(R.id.swipe);
+        swt_notification=findViewById(R.id.swt_notification);
+        tv_singleDigit = findViewById(R.id.tv_singleDigit);
+        tv_singlePanna = findViewById(R.id.tv_singlePana);
+        tv_doublePanna = findViewById(R.id.tv_doublePana);
+        tv_triplePanna = findViewById(R.id.tv_triplePana);
+        rel_bidHistory =findViewById(R.id.rel_bidHistory);
+        rel_winHistory = findViewById(R.id.rel_winHistory);
+        tvStalineChart = findViewById(R.id.tvStalineChart);
+
+        rel_bidHistory.setOnClickListener(this);
+        rel_winHistory.setOnClickListener(this);
+        tvStalineChart.setOnClickListener(this);
+        list = new ArrayList<>();
+        slist = new ArrayList<>();
+        sessionMangement=new SessionMangement (StarlineGamesFragment.this);
+        tv_wallet.setText (sessionMangement.getUserDetails ().get (KEY_WALLET));
+        loadingBar=new LoadingBar (StarlineGamesFragment.this);
+        module=new Module (StarlineGamesFragment.this);
+        swt_notification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    starline_notification="1";
+                    setStatus(starline_notification);
+
+                    // The toggle is enabled
+                } else {
+                    starline_notification="0";
+                    setStatus(starline_notification);
+
+                    // The toggle is disabled
+                }
+            }
+        });
+    }
+
+
+    public void getCHART()
+    {
+        HashMap<String,String> params = new HashMap<String, String> ( );
+        module.postRequest (URL_CHART, params, new Response.Listener<String> ( ) {
+            @Override
+            public void onResponse(String response) {
+                Log.e ("URL_CHART", "onResponse: " + response.toString ( ));
+                try {
+                    JSONObject jsonObject = new JSONObject (response);
+                    Chart_link= jsonObject.getString ("link");
+
+                } catch (JSONException e) {
+                    e.printStackTrace ( );
+                }
+            }
+        }, new Response.ErrorListener ( ) {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                String msg = module.VolleyErrorMessage (error);
+                if (!msg.isEmpty ( )) {
+                    module.errorToast (getApplicationContext(),"" + msg);
+                }
+            }
+        });
     }
 
     private void getmatkaRate() {
@@ -365,52 +443,6 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         return stringBuffer.toString();
     }
 
-    private void initView() {
-        tv_title=findViewById(R.id.tv_title);
-        tv_title.setText ("Starline Games");
-        tv_wallet=findViewById(R.id.tv_wallet);;
-
-
-        img_back=findViewById(R.id.img_back);;
-        lin_notification=findViewById(R.id.lin_notification);;
-
-        lin_notification.setOnClickListener (this);
-        img_back.setOnClickListener (this);
-        sList = new ArrayList<>();
-        rec_starline = findViewById(R.id.rec_starline);
-        swipe = findViewById(R.id.swipe);
-        swt_notification=findViewById(R.id.swt_notification);
-        tv_singleDigit = findViewById(R.id.tv_singleDigit);
-        tv_singlePanna = findViewById(R.id.tv_singlePana);
-        tv_doublePanna = findViewById(R.id.tv_doublePana);
-        tv_triplePanna = findViewById(R.id.tv_triplePana);
-        rel_bidHistory =findViewById(R.id.rel_bidHistory);
-        rel_winHistory = findViewById(R.id.rel_winHistory);
-
-        rel_bidHistory.setOnClickListener(this);
-        rel_winHistory.setOnClickListener(this);
-        list = new ArrayList<>();
-        slist = new ArrayList<>();
-        sessionMangement=new SessionMangement (StarlineGamesFragment.this);
-        tv_wallet.setText (sessionMangement.getUserDetails ().get (KEY_WALLET));
-        loadingBar=new LoadingBar (StarlineGamesFragment.this);
-        module=new Module (StarlineGamesFragment.this);
-        swt_notification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    starline_notification="1";
-                    setStatus(starline_notification);
-
-                    // The toggle is enabled
-                } else {
-                    starline_notification="0";
-                    setStatus(starline_notification);
-
-                    // The toggle is disabled
-                }
-            }
-        });
-    }
 
     private  void StarlineGames()
     {
@@ -485,6 +517,10 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
             case R.id.rel_winHistory:
                 fragment = new MatkaNameHistoryFragment();
                 bundle.putString("type","starline_win");
+                break;
+                case R.id.tvStalineChart:
+                    Intent intent1=new Intent ( Intent.ACTION_VIEW, Uri.parse (Chart_link));
+                    startActivity (intent1);
                 break;
 
         }
@@ -619,6 +655,11 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                 module.VolleyErrorMessage (error);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent ( StarlineGamesFragment.this,MainActivity.class );
+        startActivity (intent);
     }
 
 }

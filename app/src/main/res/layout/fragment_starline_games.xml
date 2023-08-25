@@ -151,14 +151,18 @@
                         android:layout_alignParentStart="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+
                     <TextView
-                        android:visibility="gone"
-                        android:layout_margin="@dimen/space_6"
+                        android:id="@+id/tvStalineChart"
                         style="@style/MyTextview_title"
-                        android:text="starline Chart"
-                        android:layout_alignParentEnd="true"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/space_6"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_marginEnd="@dimen/space_6"
+                        android:layout_marginBottom="@dimen/space_6"
+                        android:text="Starline Chart" />
 
 
                 </RelativeLayout>
