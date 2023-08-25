@@ -29,8 +29,6 @@
                     android:layout_height="wrap_content"
                     android:text="SP"
                     android:layout_weight="1"
-
-                    android:buttonTint="@color/colorPrimary"
                     />
                 <CheckBox
                     android:id="@+id/cb_dp"
@@ -38,8 +36,6 @@
                     android:layout_height="wrap_content"
                     android:text="DP"
                     android:layout_weight="1"
-
-                    android:buttonTint="@color/colorPrimary"
                     />
                 <CheckBox
                     android:id="@+id/cb_tp"
@@ -47,83 +43,80 @@
                     android:layout_height="wrap_content"
                     android:text="TP"
                     android:layout_weight="1"
-
-                    android:buttonTint="@color/colorPrimary"
                     />
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_5"
+                android:weightSum="2"
                 android:orientation="horizontal"
-                android:layout_margin="10dp"
-                android:weightSum="2">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/DIGIT"
-
-
-                    android:layout_weight="1"
-                    />
-                <EditText
-                    android:id="@+id/et_digit"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text=""
-
-
-                    android:padding="10dp"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:maxLength="1"
-                    android:hint="@string/enter_digit"
-                   style="@style/bid_autoText"
-                    android:layout_weight="1"
-                    android:background="@drawable/card_shape"
-                    />
-            </LinearLayout>
-            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:weightSum="2">
-                <TextView
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/points"
-
-
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/space_5"
+                    android:weightSum="2">
+                    <TextView
+                        style="@style/MyTextview_titleBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/DIGIT"
+                        android:layout_weight="1"
+                        />
+                    <EditText
+                        android:background="@drawable/bg_round_with_border"
+                        android:id="@+id/et_digit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/edittext_height"
+                        android:text=""
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:hint="@string/enter_digit"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="@dimen/space_5"
                     android:layout_weight="1"
-                   />
-                <EditText
-                    android:id="@+id/et_points"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:orientation="vertical"
 
+                    android:weightSum="2">
+                    <TextView
+                        style="@style/MyTextview_titleBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/points"
+                        android:layout_weight="1"
+                        />
+                    <EditText
+                        android:background="@drawable/bg_round_with_border"
+                        android:id="@+id/et_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/edittext_height"
+                        android:text=""
+                        android:inputType="number"
+                        android:hint="@string/enter_points"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
 
-                    android:padding="10dp"
-                    android:inputType="number"
-                    android:gravity="center"
-                    android:hint="@string/enter_points"
-                   style="@style/bid_autoText"
-                    android:layout_weight="1"
-                    android:background="@drawable/card_shape"
-                    />
             </LinearLayout>
+
             <Button
+                android:gravity="center"
                 android:id="@+id/btn_add"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/button_200dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_button"
                 android:paddingVertical="5dp"
                 android:text="@string/add" />
 
@@ -131,12 +124,19 @@
         </LinearLayout>
 
     </ScrollView>
-    <include
+    <LinearLayout
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/bg_round_with_border"
+        android:layout_marginBottom="60dp"
         android:layout_below="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        layout="@layout/gamebottomlayout" />
+        android:layout_height="300dp">
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/gamebottomlayout" />
+    </LinearLayout>
+
 
     <RelativeLayout
         android:id="@+id/rel_submit"

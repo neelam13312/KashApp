@@ -214,8 +214,8 @@
     <string name="changes">CHANGE</string>
     <string name="close_digit">CLOSE DIGIT</string>
     <string name="open_panna">OPEN PANA</string>
-    <string name="points">POINTS</string>
-    <string name="DIGIT">DIGIT</string>
+    <string name="points">Points</string>
+    <string name="DIGIT">Digits</string>
     <string name="JACKPOT_dIGIT">JACKPOT DIGIT</string>
     <string name="two_digit">TWO DIGIT (CPSR)</string>
     <string name="JACKPOT_jodi">JACKPOT JODI</string>
