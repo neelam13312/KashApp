@@ -12,12 +12,12 @@
         android:gravity="center_horizontal">
 
         <TextView
-            style="@style/MyTextview_semibold_small"
+            style="@style/MyTextview_semibold"
             android:id="@+id/txtno"
             android:layout_width="0dp"
             android:layout_weight=".9"
             android:layout_marginLeft="5dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textAllCaps="true"
 
             android:text="@string/no"
@@ -28,11 +28,11 @@
 
 
         <TextView
-            style="@style/MyTextview_semibold_small"
+            style="@style/MyTextview_semibold"
             android:id="@+id/txtgame"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/game"
 
             android:paddingLeft="5dp"
@@ -42,11 +42,11 @@
 
             android:visibility="gone"/>
         <TextView
-            style="@style/MyTextview_semibold_small"
+            style="@style/MyTextview_semibold"
             android:id="@+id/txtdigit"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/digit"
             android:gravity="center"
             android:paddingLeft="5dp"
@@ -54,23 +54,23 @@
             android:layout_toRightOf="@id/txtgame"
             />
         <TextView
-            style="@style/MyTextview_semibold_small"
+            style="@style/MyTextview_semibold"
             android:id="@+id/txtpoint"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Points"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:layout_toRightOf="@id/txtdigit"
             />
         <TextView
-            style="@style/MyTextview_semibold_small"
+            style="@style/MyTextview_semibold"
             android:id="@+id/txt_action"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Game Type"
 
             android:gravity="center"
@@ -80,7 +80,7 @@
             android:layout_toRightOf="@id/txtpoint"
             />
         <Button
-            style="@style/MyTextview_semibold_small"
+            style="@style/MyTextview_semibold"
             android:id="@+id/btn_delete"
             android:layout_width="28dp"
             android:backgroundTintMode="multiply"

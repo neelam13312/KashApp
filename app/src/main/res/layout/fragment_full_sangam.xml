@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.GamesFragment.FullSangamFragment">
 
     <include layout="@layout/bg_withouttext_layout" />
@@ -25,21 +26,44 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="2">
-                    <TextView
-                        android:id="@+id/tv_date"
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/edittext_height"
                         android:layout_margin="5dp"
-                        android:layout_weight=".5"
-                        android:textSize="12sp"
-                        android:background="@drawable/card_shape"
-                        android:drawableEnd="@drawable/thursday_16px"
-                        android:paddingHorizontal="20dp"
-                        android:paddingVertical="10dp"
-                        android:text="@string/select_date"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        />
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_round_with_border">
+                        <RelativeLayout
+                            android:id="@+id/relBack"
+                            android:backgroundTint="@color/card_clr_main"
+                            android:background="@drawable/bg_cart_circle"
+                            android:layout_width="30dp"
+                            android:orientation="horizontal"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/iv_arrow"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:src="@drawable/thursday_16px"
+                                app:tint="@color/colorPrimary">
+
+                            </ImageView>
+
+                        </RelativeLayout>
+                        <TextView
+                            style="@style/MyTextview_semibold"
+                            android:id="@+id/tv_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/select_date"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            />
+                    </LinearLayout>
 
                 </LinearLayout>
                 <LinearLayout
@@ -78,7 +102,7 @@
                             android:completionThreshold="1"
                            style="@style/bid_autoText"
                             android:layout_weight="1"
-                            android:background="@drawable/card_shape"
+                            android:background="@drawable/bg_digit_shape"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -113,7 +137,7 @@
                             android:completionThreshold="1"
                            style="@style/bid_autoText"
                             android:layout_weight="1"
-                            android:background="@drawable/card_shape"
+                            android:background="@drawable/bg_digit_shape"
                             />
                     </LinearLayout>
 
@@ -146,7 +170,7 @@
                         android:hint="@string/enter_points"
                        style="@style/bid_autoText"
                         android:layout_weight="1"
-                        android:background="@drawable/card_shape"
+                        android:background="@drawable/bg_digit_shape"
                         />
                 </LinearLayout>
                 <Button
@@ -158,7 +182,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_button"
+
                     android:paddingVertical="5dp"
                     android:text="@string/add" />
 

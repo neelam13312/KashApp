@@ -51,7 +51,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/card_shape"
+                            android:background="@drawable/bg_digit_shape"
                             android:gravity="center"
                             android:hint="Enter Motor"
                             android:inputType="number"
@@ -86,7 +86,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/card_shape"
+                            android:background="@drawable/bg_digit_shape"
                             android:gravity="center"
                             android:hint="DP MOTOR"
                             android:inputType="number"
@@ -120,7 +120,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/card_shape"
+                            android:background="@drawable/bg_digit_shape"
                             android:gravity="center"
                             android:hint="@string/enter_points"
                             android:inputType="number"
@@ -141,7 +141,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_button"
+
                         android:paddingVertical="5dp"
                         android:text="@string/add" />
 

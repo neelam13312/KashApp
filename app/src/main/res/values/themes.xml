@@ -178,7 +178,7 @@
     </style>
     <style name="bid_autoText" parent="Widget.AppCompat.AutoCompleteTextView">
         <item name="android:fontFamily">@font/sfui_regular</item>
-        <item name="background">@drawable/bg_round_with_border</item>
+        <item name="background">@drawable/bg_digit_shape</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:padding">10dp</item>

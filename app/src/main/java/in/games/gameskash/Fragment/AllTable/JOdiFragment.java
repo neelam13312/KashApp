@@ -212,6 +212,7 @@ public class JOdiFragment extends Fragment implements View.OnClickListener {
         user_id = session_management.getUserDetails().get(KEY_ID);
         list=new ArrayList<>();
         tv_game=view.findViewById(R.id.tv_game);
+        tv_game.setVisibility(View.INVISIBLE);
         rv_digits =view.findViewById(R.id.rec_jodi);
 
         progressDialog=new LoadingBar(getActivity ());

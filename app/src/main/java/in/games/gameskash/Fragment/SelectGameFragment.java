@@ -32,6 +32,7 @@ import java.util.HashMap;
 import in.games.gameskash.Activity.MainActivity;
 import in.games.gameskash.Adapter.SelectGameAdapter;
 import in.games.gameskash.Config.Module;
+import in.games.gameskash.Fragment.AllTable.JOdiFragment;
 import in.games.gameskash.Fragment.GamesFragment.FullSangamFragment;
 import in.games.gameskash.Fragment.GamesFragment.HalfSangamFragment;
 import in.games.gameskash.Fragment.GamesFragment.JodiDigitBulkFragment;
@@ -177,7 +178,7 @@ public class SelectGameFragment extends Fragment {
 //                            break;
 
                         case "jodi":
-                            fragment = new JodiDigitBulkFragment( );
+                            fragment = new JOdiFragment( );
                             break;
 //                        case "group jodi":
 //                            fragment = new JodiFamilyFragment ( );

@@ -88,7 +88,7 @@
             android:padding="12dp"
             android:textColor="@color/white"
 
-            android:background="@drawable/bg_button"
+
             android:backgroundTint="@color/black"
             />
         <Button
@@ -99,7 +99,7 @@
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_button"
+
             />
     </LinearLayout>
 

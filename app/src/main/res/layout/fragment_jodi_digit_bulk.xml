@@ -25,43 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight=".5"
-                        android:background="@drawable/card_shape"
-                        android:drawableEnd="@drawable/thursday_16px"
-                        android:paddingHorizontal="20dp"
-                        android:paddingVertical="10dp"
-                        android:text="@string/select_date"
-                        android:textSize="12sp"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        />
-                    <TextView
-                        android:visibility="invisible"
-                        android:layout_width="wrap_content"
-                        android:textStyle="italic"
-                        android:layout_weight=".5"
-                        android:padding="10dp"
-                        android:textSize="12sp"
-                        android:layout_margin="5dp"
-                        android:textAlignment="center"
-
-                        android:background="@drawable/card_shape"
-                        android:text="@string/select_game_type"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
+<include layout="@layout/date_time_layout"/>
 
             <LinearLayout
                 android:layout_below="@id/lin_date"
@@ -95,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/card_shape"
+                        android:background="@drawable/bg_digit_shape"
                         android:hint="@string/enter_points"
                         android:inputType="number"
                         android:maxLength="5"
@@ -152,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/card_shape"
+                        android:background="@drawable/bg_digit_shape"
                         android:dropDownHeight="150dp"
                         android:gravity="center"
                         android:hint="@string/enter_digit"
@@ -181,7 +145,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:visibility="gone"
-                    android:background="@drawable/bg_button"
+
                     android:paddingVertical="5dp"
                     android:text="@string/add" />
 

@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/bg_button"
+
             android:orientation="horizontal">
 
             <ImageView

@@ -146,7 +146,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_marginHorizontal="40dp"
-                            android:background="@drawable/bg_button">
+                            >
                             <ImageView
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"

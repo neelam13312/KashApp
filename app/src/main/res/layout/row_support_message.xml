@@ -59,7 +59,7 @@
                     android:visibility="gone"
                     android:layout_margin="5dp"
                     android:elevation="3dp"
-                    android:background="@drawable/bg_button"
+
                     android:backgroundTint="@color/white"
                     android:layout_height="wrap_content"/>
                 <com.makeramen.roundedimageview.RoundedImageView
@@ -90,7 +90,7 @@
                 <!--            android:padding="@dimen/space_10"-->
                 <!--            android:layout_marginLeft="40dp"-->
                 <!--            android:textColor="@color/white"-->
-                <!--            android:background="@drawable/bg_button"-->
+                <!--            -->
                 <!--            android:backgroundTint="#F4A7A1"-->
                 <!--            android:layout_height="wrap_content"/>-->
                 <!--        <com.makeramen.roundedimageview.RoundedImageView-->

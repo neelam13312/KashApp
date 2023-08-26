@@ -227,7 +227,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
 android:layout_margin="10dp"
-                android:background="@drawable/bg_button"
+
 
                 android:text="Ok"
 

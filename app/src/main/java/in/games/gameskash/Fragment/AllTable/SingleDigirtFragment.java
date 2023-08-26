@@ -215,7 +215,7 @@ public class SingleDigirtFragment extends Fragment implements View.OnClickListen
         digit_list =  Arrays.asList(single_digit);
         pointsAdapter =new NewSinglePointsAdapter (digit_list,getActivity ());
         rv_digits.setNestedScrollingEnabled(false);
-        rv_digits.setLayoutManager(new GridLayoutManager (getActivity (),2));
+        rv_digits.setLayoutManager(new GridLayoutManager (getActivity (),4));
         rv_digits.setAdapter(pointsAdapter);
 
 

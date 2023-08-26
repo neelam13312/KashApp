@@ -126,7 +126,9 @@ public class JodiDigitBulkFragment extends Fragment implements View.OnClickListe
             } else {
                 tv_date.setText ("Select Date");
             }
-            //tv_type=view.findViewById (R.id.tv_type);
+            tv_type=view.findViewById (R.id.tv_type);
+
+            tv_type.setVisibility(View.INVISIBLE);
             digitlist = new ArrayList<> ( );
             digitlist = Arrays.asList (group_jodi_digits);
 

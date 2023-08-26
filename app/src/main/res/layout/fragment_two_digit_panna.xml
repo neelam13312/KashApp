@@ -45,7 +45,7 @@
                        style="@style/bid_autoText"
                         android:layout_weight="1"
                         android:maxLength="2"
-                        android:background="@drawable/card_shape"
+                        android:background="@drawable/bg_digit_shape"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -77,7 +77,7 @@
                         android:hint="@string/enter_points"
                        style="@style/bid_autoText"
                         android:layout_weight="1"
-                        android:background="@drawable/card_shape"
+                        android:background="@drawable/bg_digit_shape"
                         />
                 </LinearLayout>
 
@@ -90,7 +90,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_button"
+
                     android:paddingVertical="5dp"
                     android:text="@string/add" />
             </LinearLayout>

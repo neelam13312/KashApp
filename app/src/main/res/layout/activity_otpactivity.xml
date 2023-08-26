@@ -86,7 +86,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="30dp"
                         android:visibility="gone"
-                        android:background="@drawable/bg_button"
+
                         android:text="@string/resend"
 
                         />

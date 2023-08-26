@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.GamesFragment.HalfSangamFragment">
     <include layout="@layout/bg_withouttext_layout"/>
     <RelativeLayout
@@ -34,46 +35,84 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:weightSum="2">
-
-                            <TextView
-                                android:id="@+id/tv_date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:layout_weight=".5"
-                                android:background="@drawable/card_shape"
-                                android:drawableEnd="@drawable/thursday_16px"
-                                android:paddingHorizontal="20dp"
-                                android:paddingVertical="10dp"
-                                android:text="@string/select_date"
-                                android:textAlignment="center"
-                                android:textAllCaps="true"
-
-                                android:textSize="12sp" />
-
                             <LinearLayout
-                                android:id="@+id/lin_change"
-                                android:layout_width="0dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="20dp"
+                                android:padding="@dimen/space_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:background="@drawable/card_shape"
-                                android:gravity="center"
-                                android:orientation="horizontal"
-                                android:padding="5dp"
-                                style="@style/MyTextview_semibold">
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/edittext_height"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight=".5"
+                                    android:padding="10dp"
 
-                                <TextView
-                                        android:gravity="center"
-                                    android:layout_width="190dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/bg_round_with_border">
+                                    <RelativeLayout
+                                        android:id="@+id/relBack"
+                                        android:backgroundTint="@color/card_clr_main"
+                                        android:background="@drawable/bg_cart_circle"
+                                        android:layout_width="30dp"
+                                        android:orientation="horizontal"
+                                        android:layout_height="30dp">
+
+                                        <ImageView
+                                            android:id="@+id/iv_arrow"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_centerInParent="true"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/thursday_16px"
+                                            app:tint="@color/colorPrimary">
+
+                                        </ImageView>
+
+                                    </RelativeLayout>
+                                    <TextView
+                                        style="@style/MyTextview_semibold"
+                                        android:id="@+id/tv_date"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/select_date"
                                         android:textAlignment="center"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:text="@string/changes"
+                                        android:textAllCaps="true"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/edittext_height"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight=".5"
+                                    android:padding="10dp"
+                                    android:gravity="center"
+                                    android:background="@drawable/bg_round_with_border">
+                                    <LinearLayout
+                                        android:id="@+id/lin_change"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
 
-                                    android:textSize="12sp" />
+                                        <TextView
+                                            android:gravity="center"
+                                            android:layout_width="match_parent"
+                                            android:textAlignment="center"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/changes" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+
                             </LinearLayout>
+
+
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -104,7 +143,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:background="@drawable/card_shape"
+                                    android:background="@drawable/bg_digit_shape"
                                     android:gravity="center"
                                     android:hint="Enter Open Digit"
                                     android:inputType="number"
@@ -140,7 +179,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:background="@drawable/card_shape"
+                                    android:background="@drawable/bg_digit_shape"
                                     android:completionThreshold="1"
                                     android:dropDownHeight="150dp"
                                     android:gravity="center"
@@ -183,7 +222,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:background="@drawable/card_shape"
+                                    android:background="@drawable/bg_digit_shape"
                                     android:completionThreshold="1"
                                     android:dropDownHeight="150dp"
                                     android:gravity="center"
@@ -219,7 +258,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:background="@drawable/card_shape"
+                                    android:background="@drawable/bg_digit_shape"
                                     android:gravity="center"
                                     android:hint="Enter Close Digit"
                                     android:inputType="number"
@@ -254,7 +293,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:background="@drawable/card_shape"
+                                android:background="@drawable/bg_digit_shape"
                                 android:gravity="center"
                                 android:hint="@string/enter_points"
                                 android:inputType="number"
@@ -270,7 +309,7 @@
                             android:layout_marginLeft="30dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="30dp"
-                            android:background="@drawable/bg_button"
+
                             android:padding="10dp"
                             android:text="@string/add" />
 

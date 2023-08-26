@@ -92,7 +92,7 @@
                     android:layout_margin="10dp"
                     android:paddingVertical="8dp"
                     android:paddingHorizontal="20dp"
-                    android:background="@drawable/bg_button"
+
                     android:backgroundTint="@color/colorPrimary"
                     android:textColor="@color/white"
                     />
