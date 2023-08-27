@@ -43,7 +43,7 @@
                         android:text="@string/select_date"
                         
                         android:textAlignment="center"
-                        android:textAllCaps="true"
+
                         />
 
                     <TextView
@@ -89,7 +89,7 @@
                             android:layout_marginTop="10dp"
                             android:paddingLeft="10dp"
                             android:text="@string/single_digit"
-                            android:textAllCaps="true"
+
 
                            
                              />
@@ -102,7 +102,7 @@
                             android:layout_marginTop="10dp"
                             android:paddingLeft="10dp"
                             android:text="@string/jodi_digit"
-                            android:textAllCaps="true"
+
 
                            
 
@@ -143,7 +143,7 @@
                             android:layout_marginTop="10dp"
                             android:paddingLeft="10dp"
                             android:text="@string/point"
-                            android:textAllCaps="true" />
+                             />
 
                         <EditText
                             android:id="@+id/et_point"

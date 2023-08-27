@@ -42,7 +42,7 @@
                         android:layout_width="wrap_content"
                         android:textAlignment="center"
                         android:layout_weight=".5"
-                        android:textAllCaps="true"
+
                         android:layout_margin="5dp"
                         android:padding="10dp"
                         android:textSize="12sp"
@@ -116,7 +116,7 @@
                             android:layout_centerVertical="true"
                             android:paddingLeft="10dp"
                             android:text="@string/point"
-                            android:textAllCaps="true"
+
 
 
                             />
@@ -139,17 +139,11 @@
 
 
                 </RelativeLayout>
-                <Button
-                    android:id="@+id/btn_add"
-                    android:layout_gravity="end"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-
-                    android:text="@string/add"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <include layout="@layout/add_bit_button"/>
+                </LinearLayout>
 
             </LinearLayout>
         </RelativeLayout>

@@ -78,7 +78,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/select_date"
                                         android:textAlignment="center"
-                                        android:textAllCaps="true"
+
                                         />
                                 </LinearLayout>
                                 <LinearLayout
@@ -99,6 +99,7 @@
                                         android:orientation="horizontal">
 
                                         <TextView
+                                            style="@style/MyTextview_semibold"
                                             android:gravity="center"
                                             android:layout_width="match_parent"
                                             android:textAlignment="center"
@@ -226,7 +227,7 @@
                                     android:completionThreshold="1"
                                     android:dropDownHeight="150dp"
                                     android:gravity="center"
-                                    android:hint="Enter Open Pana"
+                                    android:hint="@string/enter_open_pana"
                                     android:inputType="number"
                                     android:maxLength="3"
                                     android:padding="10dp"
@@ -260,7 +261,7 @@
                                     android:layout_weight="1"
                                     android:background="@drawable/bg_digit_shape"
                                     android:gravity="center"
-                                    android:hint="Enter Close Digit"
+                                    android:hint="@string/enter_close_digit"
                                     android:inputType="number"
                                     android:maxLength="1"
                                     android:padding="10dp"
@@ -301,17 +302,11 @@
                                 android:text="" />
                         </LinearLayout>
 
-                        <Button
-                            android:id="@+id/btn_add"
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:layout_gravity="end"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-
-                            android:padding="10dp"
-                            android:text="@string/add" />
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content">
+                          <include layout="@layout/add_bit_button"/>
+                       </LinearLayout>
 
                         <!--                <include-->
                         <!--                    layout="@layout/gamebottomlayout"/>-->

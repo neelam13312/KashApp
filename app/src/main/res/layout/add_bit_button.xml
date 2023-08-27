@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+        <Button
+            android:layout_marginVertical="@dimen/space_10"
+            android:layout_marginHorizontal="@dimen/space_10"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:id="@+id/btn_add"
+            android:layout_width="@dimen/button_200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/add" />
+</LinearLayout>

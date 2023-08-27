@@ -211,9 +211,9 @@
     <string name="jackpot_ratio">JACKPOT GAME RATIO</string>
     <string name="selectDate">SELECT DATE</string>
     <string name="date">Date</string>
-    <string name="changes">CHANGE</string>
-    <string name="close_digit">CLOSE DIGIT</string>
-    <string name="open_panna">OPEN PANA</string>
+    <string name="changes">Change</string>
+    <string name="close_digit">Close Digit</string>
+    <string name="open_panna">Open Pnna</string>
     <string name="points">Points</string>
     <string name="DIGIT">Digits</string>
     <string name="JACKPOT_dIGIT">JACKPOT DIGIT</string>
@@ -222,8 +222,8 @@
     <string name="right_digit">RIGHT DIGIT</string>
     <string name="middle_digit">MIDDLE DIGIT</string>
     <string name="left_digit">LEFT DIGIT</string>
-    <string name="open_digit">OPEN DIGIT</string>
-    <string name="close_panna">CLOSE PANA</string>
+    <string name="open_digit">Open Digit</string>
+    <string name="close_panna">Close Panna</string>
     <string name="point_reedem_query">For Point Redeem Query Contact</string>
 
     <string name="message"> </string>
@@ -281,5 +281,7 @@
     <string name="allow">Allow</string>
     <string name="forgot_username">Forgot Username?</string>
     <string name="ka"> KA </string>
+    <string name="enter_open_pana">Enter Open Pana</string>
+    <string name="enter_close_digit">Enter Close Digit</string>
 
 </resources>

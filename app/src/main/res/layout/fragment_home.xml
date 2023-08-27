@@ -194,7 +194,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:text="Recharge"
-                            android:textAllCaps="true"/>
+                            />
 
 
                     </LinearLayout>
@@ -222,7 +222,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:text="withdraw"
-                            android:textAllCaps="true"/>
+                            />
                     </LinearLayout>
 
                 </LinearLayout>

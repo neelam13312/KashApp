@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:text="@string/select_date"
         android:textAlignment="center"
-        android:textAllCaps="true"
+
         />
 </LinearLayout>
 

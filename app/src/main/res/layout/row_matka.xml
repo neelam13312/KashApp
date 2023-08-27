@@ -143,7 +143,7 @@
                             android:gravity="center"
 
                             android:text="MORNING KUBER"
-                            android:textAllCaps="true"
+
                             android:textColor="#4A4848" />
 
                         <RelativeLayout

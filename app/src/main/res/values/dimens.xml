@@ -2,6 +2,7 @@
     <dimen name="text_margin">16dp</dimen>
         <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="button_height">20pt</dimen>
 
     <dimen name="tv_small_normal_6">6pt</dimen>
     <dimen name="tv_all_padding2">2pt</dimen>
@@ -122,7 +123,7 @@
     <dimen name="margin_editextvertical">7dp</dimen>
     <dimen name="margin_edittext_horizontal">20dp</dimen>
     <dimen name="tv_8pt">8pt</dimen>
-    <dimen name="button_200dp">200dp</dimen>
+    <dimen name="button_200dp">240dp</dimen>
     <!--        <dimen name="passbok_size">@dimen/space_14</dimen>-->
 
 

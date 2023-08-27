@@ -298,7 +298,7 @@
                                 <!--                                   -->
                                 <!--                                    android:padding="10dp"-->
                                 <!--                                    android:text="@string/terms_and_conditions"-->
-                                <!--                                    android:textAllCaps="true"-->
+                                <!--                                    -->
                                 <!--                                    android:textColor="@color/white" />-->
                                 <!--                            </RelativeLayout>-->
                             </LinearLayout>

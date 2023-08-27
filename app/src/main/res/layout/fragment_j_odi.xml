@@ -57,7 +57,7 @@
                                     android:padding="10dp"
                                 android:text="@string/select_date"
                                     android:textAlignment="viewStart"
-                                    android:textAllCaps="true"
+
                                      />
 
                             <AutoCompleteTextView
@@ -92,10 +92,9 @@
                                     android:layout_margin="5dp"
                                     android:layout_weight=".5"
                                     android:padding="10dp"
-
                                     android:text="@string/point"
                                     android:textAlignment="viewStart"
-                                    android:textAllCaps="true"
+
                                      />
 
                             <AutoCompleteTextView
@@ -116,15 +115,11 @@
                                      />
 
                         </LinearLayout>
-                        <Button
-                            android:layout_margin="@dimen/space_5"
-                                
-                            android:text="@string/add_more"
-                                android:layout_gravity="end"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                        </Button>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <include layout="@layout/add_bit_button"/>
+                        </LinearLayout>
 
                         <LinearLayout
                                 android:orientation="vertical"

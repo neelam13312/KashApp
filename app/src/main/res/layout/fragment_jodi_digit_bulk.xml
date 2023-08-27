@@ -48,7 +48,7 @@
                             android:layout_marginTop="10dp"
                             android:paddingLeft="10dp"
                             android:text="@string/point"
-                            android:textAllCaps="true"
+
 
                             
                              />
@@ -87,7 +87,7 @@
                             android:layout_marginTop="10dp"
                             android:paddingLeft="10dp"
                             android:text="JODI DIGIT"
-                            android:textAllCaps="true"
+
                          />
                     <TextView
                         android:layout_width="wrap_content"
@@ -133,21 +133,12 @@
 
 
                 </RelativeLayout>
-
-
-                <Button
-                    android:id="@+id/btn_add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
+                <LinearLayout
                     android:visibility="gone"
-
-                    android:paddingVertical="5dp"
-                    android:text="@string/add" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <include layout="@layout/add_bit_button"/>
+                </LinearLayout>
 
             </LinearLayout>
 

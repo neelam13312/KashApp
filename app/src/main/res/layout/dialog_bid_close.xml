@@ -15,32 +15,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="15dp"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_baseline_cancel_24"
                 app:tint="@color/red" />
             <TextView
+                style="@style/MyTextview_bold"
                 android:id="@+id/tv_msg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/name"
-
-
                 android:gravity="center"
-                android:layout_marginTop="10dp"
                 />
             <Button
+                 android:layout_margin="@dimen/space_12"
                 android:id="@+id/btn_ok"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-
+                android:layout_width="@dimen/button_200dp"
+                android:layout_height="@dimen/button_height"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/black"
                 android:text="OK"/>
         </LinearLayout>
 

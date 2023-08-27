@@ -3,99 +3,110 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-       <RelativeLayout
-               android:background="@drawable/bg_round_with_border"
-               android:padding="8dp"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-               <androidx.cardview.widget.CardView
-                       app:cardBackgroundColor="@color/white"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content">
-                       <RelativeLayout
-                               android:gravity="center"
-                               android:layout_gravity="center"
-                               android:background="@color/white"
-                               android:layout_width="match_parent"
-                               android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:background="@color/white"
+            android:layout_margin="@dimen/space_8"
+            app:cardCornerRadius="@dimen/space_10"
+            app:cardBackgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:padding="@dimen/space_10"
+                            android:id="@+id/linClose"
+                            android:background="@color/colorPrimary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="Select One"
+                                    android:textColor="@color/white"
+                                    android:layout_centerInParent="true"
+                                    style="@style/MyTextview_bold"
+                                    android:gravity="center"
+                                    android:textAlignment="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                                <ImageView
+                                    android:id="@+id/iv_close"
+                                    android:layout_width="@dimen/space_30dp"
+                                    android:layout_height="@dimen/space_30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_gravity="center"
 
-                               <ImageView
-                                       android:id="@+id/iv_close"
-                                       android:layout_width="@dimen/space_30dp"
-                                       android:layout_height="@dimen/space_30dp"
-                                       android:layout_alignParentEnd="true"
-                                       android:layout_alignParentTop="true"
-                                       android:src="@drawable/ic_close"
-                                       app:tint="@color/gray">
+                                    android:src="@drawable/ic_baseline_cancel_24"
+                                    app:tint="@color/white" />
 
-                               </ImageView>
-                               <LinearLayout
-                                       android:layout_below="@id/iv_close"
-                                       android:weightSum="4"
-                                       android:padding="6dp"
-                                       android:orientation="horizontal"
-                                       android:layout_width="match_parent"
-                                       android:layout_height="wrap_content">
-                                       <LinearLayout
-                                               android:layout_gravity="start"
-                                               android:id="@+id/lin_d_call"
-                                               android:layout_weight="2"
-                                               android:gravity="start"
-                                               android:padding="@dimen/space_4dp"
-                                               android:orientation="vertical"
-                                               android:layout_width="0dp"
-                                               android:layout_height="wrap_content">
-                                               <ImageView
-                                                       android:layout_gravity="center"
-                                                       android:layout_margin="5dp"
-                                                       android:src="@drawable/telephone"
-                                                       android:layout_width="35dp"
-                                                       android:layout_height="35dp"
-                                                       app:tint="@color/green">
-                                               </ImageView>
-                                               <TextView
-                                                       android:textAlignment="center"
-                                                       android:layout_margin="@dimen/space_10dp"
-                                                        style="@style/MyTextview_semibold_small"
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:background="@color/white"
+                            android:layout_below="@id/linClose"
+                            android:weightSum="4"
+                            android:padding="6dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                                <LinearLayout
+                                    android:layout_margin="@dimen/space_5"
+                                    android:layout_gravity="center"
+                                    android:id="@+id/lin_d_call"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:padding="@dimen/space_4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_margin="@dimen/space_5"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/telephone"
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp"
+                                            app:tint="@color/green">
+                                        </ImageView>
+                                        <TextView
+                                            style="@style/MyTextview_semibold"
+                                            android:text=" call"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
 
-                                                       android:text=" call"
-                                                       android:layout_width="match_parent"
-                                                       android:layout_height="wrap_content">
+                                        </TextView>
+                                </LinearLayout>
+                                <View
+                                    android:background="@color/gray"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+                                <LinearLayout
+                                    android:layout_margin="@dimen/space_5"
+                                    android:id="@+id/lin_d_whasapp2"
+                                    android:layout_weight="2"
+                                    android:padding="4dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:layout_margin="@dimen/space_5"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/whatsapp"
+                                            android:layout_width="35dp"
+                                            android:layout_height="35dp">
+                                        </ImageView>
+                                        <TextView
+                                            style="@style/MyTextview_semibold"
+                                            android:text="Whatsapp call"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
 
-                                               </TextView>
-                                       </LinearLayout>
-                                       <LinearLayout
-                                               android:id="@+id/lin_d_whasapp2"
-                                               android:layout_weight="2"
-                                               android:padding="4dp"
-                                               android:layout_gravity="end"
-                                               android:gravity="end"
-                                               android:orientation="vertical"
-                                               android:layout_width="0dp"
-                                               android:layout_height="wrap_content">
-                                               <ImageView
-                                                       android:layout_gravity="center"
-                                                       android:layout_margin="5dp"
-                                                       android:src="@drawable/whatsapp"
-                                                       android:layout_width="35dp"
-                                                       android:layout_height="35dp">
-                                               </ImageView>
-                                               <TextView
-                                                       android:layout_margin="10dp"
-                                                        style="@style/MyTextview_semibold_small"
+                                        </TextView>
+                                </LinearLayout>
+                        </LinearLayout>
 
-                                                       android:text="Whatsapp call"
-                                                       android:gravity="center"
-                                                       android:layout_width="match_parent"
-                                                       android:layout_height="wrap_content">
+                </RelativeLayout>
 
-                                               </TextView>
-                                       </LinearLayout>
-                               </LinearLayout>
-
-                       </RelativeLayout>
-               </androidx.cardview.widget.CardView>
-
-       </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

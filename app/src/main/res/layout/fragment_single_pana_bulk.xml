@@ -45,7 +45,7 @@
                         android:textSize="12sp"
                         android:gravity="center"
                         android:textAlignment="center"
-                        android:textAllCaps="true"
+
                         />
                     <TextView
                         android:id="@+id/tv_type"
@@ -86,7 +86,7 @@
                                 android:layout_marginTop="10dp"
                                 android:paddingLeft="10dp"
                                 android:text="@string/single_panna"
-                                android:textAllCaps="true"
+
 
                                  />
 
@@ -98,7 +98,7 @@
                                 android:layout_marginTop="10dp"
                                 android:paddingLeft="10dp"
                                 android:text="@string/double_panna"
-                                android:textAllCaps="true"
+
 
 
 
@@ -112,7 +112,7 @@
                                 android:layout_marginTop="10dp"
                                 android:paddingLeft="10dp"
                                 android:text="@string/triple_panna"
-                                android:textAllCaps="true"
+
 
 
 
@@ -148,7 +148,7 @@
                                 android:layout_marginTop="10dp"
                                 android:paddingLeft="10dp"
                                 android:text="@string/point"
-                                android:textAllCaps="true"
+
 
 
                                  />
