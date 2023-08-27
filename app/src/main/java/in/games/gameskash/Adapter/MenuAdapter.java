@@ -39,13 +39,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         if (title.equalsIgnoreCase("Home"))
         {
             holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.home));
-
         }
-
-//        else  if (title.equalsIgnoreCase("My Profile"))
-//        {
-//            holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.profile));
-//        }
+        else  if (title.equalsIgnoreCase("My Profile"))
+        {
+            holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.profile));
+        }else  if (title.equalsIgnoreCase("Top Winner"))
+        {
+            holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.profile));
+        }
         else  if (title.equalsIgnoreCase("My Bids"))
         {
             holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.my_bids));
@@ -81,8 +82,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
             holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.video));
         }else  if (title.equalsIgnoreCase("Game Rates"))
         {
-            holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.rate));
-        }else  if (title.equalsIgnoreCase("Notice Board/Rules"))
+            holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_rate));
+        }else  if (title.equalsIgnoreCase("Notice Board /Rules"))
         {
             holder.img_icon.setImageDrawable(context.getResources().getDrawable(R.drawable.notice));
         }else  if (title.equalsIgnoreCase("Logout"))

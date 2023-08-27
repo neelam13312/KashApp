@@ -296,8 +296,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case "My Profile":
-                        fm = new AccountStatementtFragment();
-                        break;
+                        Intent intent_bank = new Intent(MainActivity.this, AddBankAccountActivity.class);
+                        startActivity(intent_bank);                        break;
 
 //                    case "Alert":
 //                        Intent intents = new Intent(MainActivity.this, NotificationFragment.class);
@@ -380,7 +380,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                 // getStatus();
+                                getStatus();
 //                                    unSetToken();
                             }
                         });
@@ -623,7 +623,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mList.add (new MenuModel (  "Top Winner",R.drawable.wallet));
         mList.add (new MenuModel (  "Account Statement",R.drawable.statement));
         mList.add (new MenuModel (  "Notification",R.drawable.notification));
-        mList.add (new MenuModel (  "Game Rates",R.drawable.rate));
+        mList.add (new MenuModel (  "Game Rates",R.drawable.ic_rate));
         mList.add (new MenuModel (  "Notice Board /Rules",R.drawable.notice));
         mList.add (new MenuModel (  "Setting",R.drawable.settings));
         mList.add (new MenuModel (  "Logout",R.drawable.signout));

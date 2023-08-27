@@ -54,6 +54,7 @@ import com.onesignal.OneSignal;
 import in.games.gameskash.Activity.MainActivity;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
@@ -70,6 +71,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
+import in.games.gameskash.Activity.NewLoginActivity;
+import in.games.gameskash.Activity.SplashActivity;
 import in.games.gameskash.Adapter.AddDuplicatesCommonAdpater;
 import in.games.gameskash.Adapter.BulkAdapter;
 import in.games.gameskash.Adapter.TableAdapter;
@@ -85,10 +88,15 @@ import in.games.gameskash.Util.LoadingBar;
 import in.games.gameskash.Util.SessionMangement;
 //import kotlinx.coroutines.channels.Receive;
 
+import static in.games.gameskash.Config.BaseUrls.URL_CHECK_DEVICE_LOGIN;
+import static in.games.gameskash.Config.BaseUrls.URL_GETSTATUS;
+import static in.games.gameskash.Config.BaseUrls.URL_GET_STATUS;
 import static in.games.gameskash.Config.BaseUrls.URL_INDEX;
 import static in.games.gameskash.Config.BaseUrls.URL_INSERT_DATA;
+import static in.games.gameskash.Config.BaseUrls.URL_UNSET_TOKE;
 import static in.games.gameskash.Config.Constants.END_NUMBER;
 import static in.games.gameskash.Config.Constants.KEY_ID;
+import static in.games.gameskash.Config.Constants.KEY_MOBILE;
 import static in.games.gameskash.Config.Constants.KEY_WALLET;
 import static in.games.gameskash.Config.Constants.NUMBER;
 import static in.games.gameskash.Config.Constants.NextDay;
@@ -295,6 +303,11 @@ public class Module {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + number));
         context.startActivity(intent);
+    }
+    public void openURL(String url) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        context.startActivity(i);
     }
     public void intentT0TelegramId(String telegrm_link){
         final String appName = "org.telegram.messenger";
@@ -1578,175 +1591,175 @@ public class Module {
         return diff_e_s;
     }
 
-//    public void loginStatus() {
-//        HashMap<String, String> params = new HashMap<> ( );
-//        params.put ("user_id",session_management.getUserDetails ().get (KEY_ID));
-//        postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
-//            @Override
-//            public void onResponse(String response) {
-//                try {
-//                    Log.e ("logonstatus", "onResponse: " + response);
-//                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
-//                    jsonObject.getString ("login_status");
-//                    if (jsonObject.getBoolean("responce")) {
-//                        if (jsonObject.getString("login_status").equals("1")) {
-//                            getStatus();
-//                            errorToast (context,jsonObject.getString ("message"));
-//
-//                        } else {
+    public void loginStatus() {
+        HashMap<String, String> params = new HashMap<> ( );
+        params.put ("user_id",session_management.getUserDetails ().get (KEY_ID));
+        postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    Log.e ("logonstatus", "onResponse: " + response);
+                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
+                    jsonObject.getString ("login_status");
+                    if (jsonObject.getBoolean("responce")) {
+                        if (jsonObject.getString("login_status").equals("1")) {
+                            getStatus();
+                            errorToast (context,jsonObject.getString ("message"));
+
+                        } else {
+                        }
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace ( );
+                }
+            }
+        }, new Response.ErrorListener ( ) {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                showToast ("" + error);
+            }
+        });
+
+    }
+
+    public void getStatus() {
+//        unSetToken();
+        loadingBar.show();
+        String android_id = Settings.Secure.getString(context.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+        HashMap<String,String> params = new HashMap<>();
+        params.put("device_id",android_id);
+        postRequest(URL_GET_STATUS, params, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.e("URL_GET_STATUS",response);
+                try {
+                    loadingBar.dismiss();
+                    JSONObject object = new JSONObject(response);
+                    if (object.getBoolean("response")){
+                        JSONArray array = object.getJSONArray("data");
+
+                        JSONObject obj = array.getJSONObject(0);
+                        String is_mpin=obj.getString ("is_mpin");
+                        String is_pass=obj.getString ("is_password");
+                        if (SplashActivity.sessionCountDownTimer!=null){
+                            SplashActivity.sessionCountDownTimer.cancel();
+                        }
+
+                        Intent intent= null;
+//                        if(is_mpin.equalsIgnoreCase ("1"))
+//                        {
+                            intent = new Intent(context, NewLoginActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
 //                        }
-//
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace ( );
-//                }
-//            }
-//        }, new Response.ErrorListener ( ) {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                showToast ("" + error);
-//            }
-//        });
-//
-//    }
-//    public void getStatus()
-//    {
-////        unSetToken();
-//        loadingBar.show();
-//        String android_id = Settings.Secure.getString(context.getContentResolver(),
-//                Settings.Secure.ANDROID_ID);
-//        HashMap<String,String> params = new HashMap<>();
-//        params.put("device_id",android_id);
-//        postRequest(URL_GET_STATUS, params, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                Log.e("URL_GET_STATUS",response);
-//                try {
-//                    loadingBar.dismiss();
-//                    JSONObject object = new JSONObject(response);
-//                    if (object.getBoolean("response")){
-//                        JSONArray array = object.getJSONArray("data");
-//
-//                        JSONObject obj = array.getJSONObject(0);
-//                        String is_mpin=obj.getString ("is_mpin");
-//                        String is_pass=obj.getString ("is_password");
-//                        if (SplashActivity.sessionCountDownTimer!=null){
-//                            SplashActivity.sessionCountDownTimer.cancel();
-//                        }
-//
-//                        Intent intent= null;
-////                        if(is_mpin.equalsIgnoreCase ("1"))
-////                        {
-//                            intent = new Intent(context, NewLoginActivity.class);
+//                        else
+//                        {
+//                            intent = new Intent(context,LoginActivity.class);
 //                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                            context.startActivity(intent);
-////                        }
-////                        else
-////                        {
-////                            intent = new Intent(context,LoginActivity.class);
-////                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-////                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-////                            context.startActivity(intent);
-////                        }
-//                    }
-//                    else {
-//
-////                        errorToast("Something Went Wrong");
-//                    }
-//
-//                } catch (JSONException e) {
-//                    loadingBar.dismiss();
-//                    e.printStackTrace();
-//
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                loadingBar.dismiss();
-//                VolleyErrorMessage (error);
-//            }
-//        });
-//    }
-//    private void unSetToken()
-//    {
-//        loadingBar.show();
-//        HashMap<String,String> params = new HashMap<>();
-//        params.put("mobileno",session_management.getUserDetails().get(KEY_MOBILE));
-//        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
-//        postRequest(URL_UNSET_TOKE, params, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                Log.e("URL_UNSET_TOKE",response);
-//                loadingBar.dismiss();
-//                try {
-//                    JSONObject object = new JSONObject(response);
-//                    if (object.getBoolean("responce")){
-//                        session_management.logoutSession();
-//                        Intent intent = new Intent(context, NewLoginActivity.class);
-//                        intent.putExtra("type","r");
-//                        context.startActivity(intent);
-////                        context.finish();
-//                    }
-//                    else {
-//                        errorToast("Something Went Wrong");
-//                    }
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//
-//                }
-//
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                loadingBar.dismiss();
-//                VolleyErrorMessage (error);
-//            }
-//        });
-//    }
-//    public void checkDeviceLogin() {
-//        HashMap<String, String> params = new HashMap<> ( );
-//        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
-//        params.put("device_id",session_management.getDeviceId());
-//        Log.e("asdfg",params.toString());
-//        postRequest (URL_CHECK_DEVICE_LOGIN, params, new Response.Listener<String> ( ) {
-//            @Override
-//            public void onResponse(String response) {
-//                try {
-//                    Log.e ("URL_CHECK_DEVICE_LOGIN", "onResponse: " + response);
-//                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
-//                    if (jsonObject.getBoolean("responce")){
-//                     if (jsonObject.getString("is_same_device").equalsIgnoreCase("yes")){
-//
-//                     }  else {
-//
-//                         unSetToken();
-////                         getStatus();
-//                     }
-//                    }else {
-//                        if (jsonObject.getString("is_same_device").equalsIgnoreCase("no")){
-//                            unSetToken();
-////                            getStatus();
-//                        }  else {
-//
 //                        }
-//                    }
-//                } catch (JSONException e) {
-//                    e.printStackTrace ( );
-//                }
-//            }
-//        }, new Response.ErrorListener ( ) {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                showToast ("" + error);
-//            }
-//        });
-//
-//    }
+                    }
+                    else {
+
+//                        errorToast("Something Went Wrong");
+                    }
+
+                } catch (JSONException e) {
+                    loadingBar.dismiss();
+                    e.printStackTrace();
+
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loadingBar.dismiss();
+                VolleyErrorMessage (error);
+            }
+        });
+    }
+    private void unSetToken() {
+        loadingBar.show();
+        HashMap<String,String> params = new HashMap<>();
+        params.put("mobileno",session_management.getUserDetails().get(KEY_MOBILE));
+        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
+        postRequest(URL_UNSET_TOKE, params, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.e("URL_UNSET_TOKE",response);
+                loadingBar.dismiss();
+                try {
+                    JSONObject object = new JSONObject(response);
+                    if (object.getBoolean("responce")){
+                        session_management.logoutSession();
+                        Intent intent = new Intent(context, NewLoginActivity.class);
+                        intent.putExtra("type","r");
+                        context.startActivity(intent);
+//                        context.finish();
+                    }
+                    else {
+                        errorToast(context,"Something Went Wrong");
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loadingBar.dismiss();
+                VolleyErrorMessage (error);
+            }
+        });
+    }
+
+    public void checkDeviceLogin() {
+        HashMap<String, String> params = new HashMap<> ( );
+        params.put("user_id",session_management.getUserDetails().get(KEY_ID));
+        params.put("device_id",session_management.getDeviceId());
+        Log.e("asdfg",params.toString());
+        postRequest (URL_CHECK_DEVICE_LOGIN, params, new Response.Listener<String> ( ) {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    Log.e ("URL_CHECK_DEVICE_LOGIN", "onResponse: " + response);
+                    JSONObject jsonObject = new JSONObject (String.valueOf (response));
+                    if (jsonObject.getBoolean("responce")){
+                     if (jsonObject.getString("is_same_device").equalsIgnoreCase("yes")){
+
+                     }  else {
+
+                         unSetToken();
+getStatus();
+                     }
+                    }else {
+                        if (jsonObject.getString("is_same_device").equalsIgnoreCase("no")){
+                            unSetToken();
+//                            getStatus();
+                        }  else {
+
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace ( );
+                }
+            }
+        }, new Response.ErrorListener ( ) {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                showToast ("" + error);
+            }
+        });
+
+    }
 
     public void getWalletAmount(String page) {
         loadingBar.show ( );

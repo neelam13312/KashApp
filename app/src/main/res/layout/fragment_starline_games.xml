@@ -144,13 +144,17 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <TextView
-                        android:layout_margin="@dimen/space_6"
                         style="@style/MyTextview_title"
-                        android:text="Rates"
-                        android:layout_alignParentStart="true"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/space_6"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_marginEnd="@dimen/space_6"
+                        android:layout_marginBottom="@dimen/space_6"
+                        android:text="Rates" />
 
                     <TextView
                         android:id="@+id/tvStalineChart"
@@ -309,7 +313,7 @@
                         android:background="@drawable/edit_bg"
                         android:orientation="vertical"
                         android:padding="10dp"
-                        android:layout_margin="5dp"
+                        android:layout_marginHorizontal="5dp"
                         android:weightSum="2">
 
                         <LinearLayout
@@ -423,7 +427,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="triple panu"
+                                    android:text="Triple panu"
 
                                     />
 

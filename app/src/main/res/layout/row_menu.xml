@@ -8,7 +8,7 @@
         android:background="@drawable/bg_rounded_btn"
         android:backgroundTint="@color/white"
         android:id="@+id/lin_main"
-        android:padding="@dimen/space_10"
+        android:padding="@dimen/space_11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -18,8 +18,8 @@
 
         <ImageView
                 android:id="@+id/img_icon"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:src="@drawable/app_logo"
                 app:tint="@color/colorPrimary" />
 

@@ -42,7 +42,7 @@ public class BaseUrls {
 
     public static final String URL_BID_HISTORY=BASE_URL+"getBidHistory";///done
 
-    public static final String URL_CHART=BASE_URL+"get_chart_links";
+    public static final String URL_CHART=BASE_URL+"get_chart_links";  /////done
 
     public static final String URL_INSERT_DATA=BASE_URL+"insert_data";///done
     public static final String URL_StarLine_id = BASE_URL+"starline_data.php";

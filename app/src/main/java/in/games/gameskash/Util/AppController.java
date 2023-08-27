@@ -43,7 +43,7 @@ import in.games.gameskash.R;
 public class AppController extends Application {
     public static final String TAG = in.games.gameskash.Util.AppController.class.getSimpleName();
     private RequestQueue mRequestQueue;
-    private static final String ONESIGNAL_APP_ID = "89789b85-34de-4526-99ab-ca845c576dca";
+//    private static final String ONESIGNAL_APP_ID = "89789b85-34de-4526-99ab-ca845c576dca";
 
     private static in.games.gameskash.Util.AppController mInstance;
 

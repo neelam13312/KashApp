@@ -10,9 +10,6 @@
     <dimen name="all_tvsize_7pt">7pt</dimen>
     <dimen name="box_raddius">7dp</dimen>
     <dimen name="edittext_padding">4pt</dimen>
-
-
-
     <dimen name="space_1dp">1dp</dimen>
     <dimen name="space_view_1dp">1dp</dimen>
     <dimen name="space_2dp">2dp</dimen>
