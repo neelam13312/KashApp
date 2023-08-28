@@ -79,36 +79,36 @@ import static in.games.gameskash.Fragment.FundFragment.my_error;
 
 //
 public class AddFundFragment extends AppCompatActivity implements View.OnClickListener, PaymentStatusListener {
-SwipeRefreshLayout swipe;
-ImageView civ_logo,img_back;
-TextView tv_title,tv_message,tv_whatsapp,tv_wallet,tv_walletAmount;
-EditText et_points;
-LinearLayout lin_whatsapp,lin_whats;
-Button btn_add;
-SessionMangement sessionMangement;
-RecyclerView rec_point;
-private EasyUpiPayment mEasyUpiPayment;
-AddFundPointAdpter adapter;
-boolean upi_flag=false;
-//ArrayList<AddFundPointModel> pointlist;
-ArrayList<String> pointlist;
-Module module;
-String pnts,wallet_amt="",withdr_no="";
-public  static  String razorpay_email="",minAmount="",razorpay_mobile="";
-LoadingBar loadingBar;
-String order_val="" ;
-String orderid="";
-ArrayList<String> newList = new ArrayList<String>();
-public static String themeColor,desc,imageUrl,requestStatus,gatewayStatus;
-public  static  String upi="",upi_name="",upi_desc="",upi_type="",transactionId="",webview_link="",upi_merchant_code="";
-public static String razor_pay_order_id="",razor_pay="",secrete_key="",s_amount="",s_transaction_id="",u_name="",company_upi_id="";
-public static int UPI_REQUEST_CODE=101;
-String radio_upipay="";
-String phonepay_val="false";
-String tran_ref_id="";
-ProgressDialog progressDialog;
-int count = 0;
-String your_user_id = "";
+    SwipeRefreshLayout swipe;
+    ImageView civ_logo,img_back;
+    TextView tv_title,tv_message,tv_whatsapp,tv_wallet,tv_walletAmount;
+    EditText et_points;
+    LinearLayout lin_whatsapp,lin_whats;
+    Button btn_add;
+    SessionMangement sessionMangement;
+    RecyclerView rec_point;
+    private EasyUpiPayment mEasyUpiPayment;
+    AddFundPointAdpter adapter;
+    boolean upi_flag=false;
+    //ArrayList<AddFundPointModel> pointlist;
+    ArrayList<String> pointlist;
+    Module module;
+    String pnts,wallet_amt="",withdr_no="";
+    public  static  String razorpay_email="",minAmount="",razorpay_mobile="";
+    LoadingBar loadingBar;
+    String order_val="" ;
+    String orderid="";
+    ArrayList<String> newList = new ArrayList<String>();
+    public static String themeColor,desc,imageUrl,requestStatus,gatewayStatus;
+    public  static  String upi="",upi_name="",upi_desc="",upi_type="",transactionId="",webview_link="",upi_merchant_code="";
+    public static String razor_pay_order_id="",razor_pay="",secrete_key="",s_amount="",s_transaction_id="",u_name="",company_upi_id="";
+    public static int UPI_REQUEST_CODE=101;
+    String radio_upipay="";
+    String phonepay_val="false";
+    String tran_ref_id="";
+    ProgressDialog progressDialog;
+    int count = 0;
+    String your_user_id = "";
 
 
     public AddFundFragment() {
@@ -258,189 +258,62 @@ String your_user_id = "";
         }
     }
 
-    private void onValidatingData( String orderid){
-        int points=0;
+    private void onValidatingData( String orderid) {
+        int points = 0;
 
-            if(TextUtils.isEmpty(et_points.getText().toString())) {
-                et_points.setError("Enter Some Points");
-                return;
+        if (TextUtils.isEmpty (et_points.getText ( ).toString ( ))) {
+            et_points.setError ("Enter Some Points");
+            return;
+        }
+        else {
+            points = Integer.parseInt (et_points.getText ( ).toString ( ).trim ( ));
+            if (points < Integer.parseInt (minAmount)) {
+                module.fieldRequired ("Minimum Range for points is " + minAmount);
+
             } else {
-                points=Integer.parseInt(et_points.getText().toString().trim());
-                if(points<Integer.parseInt(minAmount))
-                {
-                    module.fieldRequired("Minimum Range for points is "+ minAmount);
+                pnts = String.valueOf (points);
+                String p = String.valueOf (points);
+                String st = "pending";
+                transactionId = "TXN" + System.currentTimeMillis ( );
+                String transactionRefId = transactionId;
+                u_name = sessionMangement.getUserDetails ( ).get (KEY_NAME);
+                s_amount = p;
+                s_transaction_id = transactionRefId;
 
-                } else {
-                    pnts=String.valueOf(points);
-                    String p=String.valueOf(points);
-                    String st="pending";
-                    transactionId = "TXN" + System.currentTimeMillis();
-                    String transactionRefId = transactionId;
-                    u_name=sessionMangement.getUserDetails().get(KEY_NAME);
-                    s_amount=p;
-                    s_transaction_id=transactionRefId;
-
-                    if (ConnectivityReceiver.isConnected()) {
-                        if(gatewayStatus.equals("0")){
-                            saveInfoIntoDatabase(your_user_id, pnts, requestStatus, "Add","");
-                        }else if(gatewayStatus.equals("1")){
-                            //razorpay
-//                            on status 1
-//                            1- hit paymentuniq_id api(get order id).
-//                            2- on click on pay hit payment_order api.
-//                            3- no API hit on payment success.
-
-//                            loadingBar.show ();
-//                            ExampleAsync calBestObj = new ExampleAsync();
-//                            calBestObj.execute();
-                            if(module.checkNull (orderid).equalsIgnoreCase (""))
-                            {
-                               module.errorToast (getApplicationContext(),"Something went Wrong");
-                            }
-                            else {
-                                Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
-                                intents.putExtra ("email", sessionMangement.getUserDetails ( ).get (KEY_EMAIL));
-                                intents.putExtra ("mob", razorpay_mobile);
-                                intents.putExtra ("code", "");
-                                intents.putExtra ("order_id_value", orderid);
-                                startActivity (intents);
-                            }
-                           }else if (gatewayStatus.equals("2")){
-                            // upi gateway.
-                            String payeeVpa = upi;
-                            String payeeName = upi_name;
-                            try {
-                                newList.clear();
-                                newList.addAll(UpiPayment.getExistingUpiApps(AddFundFragment.this));
-                                newList.remove(newList.indexOf("phonepe"));
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            startUpiPayment(transactionId, payeeVpa, payeeName, transactionRefId, desc, pnts,"","");
-
-                        }else if (gatewayStatus.equals("3")){
-//                            on status 3
-//                            1- hit paymentuniq_id api(get order id).
-//                            2- hit get_payment to get payment detials
-//                            3- on click on pay call easy upi gateway.
-//                            4- on payment success call add_request api.
-
-//                            q63720472@ybl
-//                            String url = "upi://pay?pa=q63720472@ybl&pn=rahulnamdev&tr=EZY2022121215300389110320&txn=EZY2022121215300389110320&am=1.00&cu=INR&mc=5691";
-//                            Intent intent = new Intent(Intent.ACTION_VIEW);
-//                            intent.setAction(Intent.ACTION_VIEW);
-//                            intent.setData(Uri.parse(url));
-//                            Intent chooser = Intent.createChooser(intent, "Pay with...");
-//                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-//                                startActivityForResult(chooser, UPI_REQUEST_CODE, null);
-//                            }
-
-                            //razor pay like design with upi gateway.
-                            Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
-                            startActivity (intents);
-                        }else if(gatewayStatus.equals("4")){
-                            //web view
-                            Intent intents = new Intent (AddFundFragment.this, PaymentWebViewActivity.class);
-                            intents.putExtra("url",orderid);
-                            startActivity (intents);
-                        }else if(gatewayStatus.equals("5")){
-//                            on status 5
-//                            custom razor pay.
-//                            1- hit getorderid_pg api(get order id from txn_id field).
-//                            2- on click on pay hit payment_order api.
-//                            3- no API hit on payment success.
-
-                            if(module.checkNull (orderid).equalsIgnoreCase (""))
-                            {
-                                module.errorToast (getApplicationContext(),"Something went Wrong");
-                            }
-                            else {
-
-                                Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
-                                intents.putExtra ("email", sessionMangement.getUserDetails ( ).get (KEY_EMAIL));
-                                intents.putExtra ("mob", razorpay_mobile);
-                                intents.putExtra ("code", "");
-                                intents.putExtra ("order_id_value", orderid);
-                                startActivity (intents);
-                            }
-                        }else if(gatewayStatus.equals("6")){
-                            Log.e("zsxdftgyhuji",webview_link);
-                            Intent intents = new Intent (AddFundFragment.this, PaymentWebViewActivity.class);
-                            intents.putExtra("url",webview_link+your_user_id+"/"+
-                                    s_amount);
-                            startActivity(intents);
-                        }
-                        else if(gatewayStatus.equals("7")){
-                            Log.e("zsxdftgyhuji",webview_link+your_user_id+"/"+
-                                    s_amount);
-
-                            String url = webview_link+"/"+your_user_id+"/"+s_amount;
-                            Intent intent = new Intent(Intent.ACTION_VIEW);
-                            intent.setAction(Intent.ACTION_VIEW);
-                            intent.setData(Uri.parse(url));
-                            Intent chooser = Intent.createChooser(intent, "Pay with...");
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                                startActivityForResult(chooser, 348, null);
-                            }
-
-                        }else if (gatewayStatus.equals("8")){
-                            //razor pay like design with upi gateway. same as status
-                            // 3 gateway, only the difference is, post pending status on payment success.
-                            Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
-                            intents.putExtra ("order_id_value", orderid);
-                            startActivity (intents);
-
-                        }else if (gatewayStatus.equals("9")){
-                            //razor pay like design with upi gateway. same as status
-                            // 8 gateway, only the difference is, post pending status on payment success.
-                            Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
-                            intents.putExtra ("order_id_value", "");
-                            startActivity (intents);
-
-                        }else if (gatewayStatus.equals("10")){
-                            //razor pay like design with upi gateway. same as status
-                            // 9 gateway, only the difference is, hit new api to get gatway details.
-                            Intent intents = new Intent (AddFundFragment.this, PaymentActivity.class);
-                            intents.putExtra ("order_id_value", "");
-                            startActivity (intents);
-
-                        }else if(gatewayStatus.equals("11")){
-                            Log.e("zsxdftgyhuji",webview_link);
-                            Intent intents = new Intent (AddFundFragment.this, PaymentWebViewActivity.class);
-                            intents.putExtra("url",webview_link+your_user_id+"/"+
-                                    s_amount);
-                            startActivity(intents);
-
-                        } else if (gatewayStatus.equals("12")) {
-//                            String url = "upi://pay?pa=q63720472@ybl&pn=rahulnamdev&tr=EZY2022121215300389110320&txn=EZY2022121215300389110320&am=1.00&cu=INR&mc=5691";
-//                            String url = orderid.replace("am=100.0","am="+pnts);
-
-                            Log.e("dftgyhuj",orderid);
-                            Intent intent = new Intent(Intent.ACTION_VIEW);
-                            intent.setAction(Intent.ACTION_VIEW);
-                            intent.setData(Uri.parse(orderid));
-                            Intent chooser = Intent.createChooser(intent, "Pay with...");
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                                startActivityForResult(chooser, UPI_REQUEST_CODE, null);
-                            }
-                        }
+                if (ConnectivityReceiver.isConnected ( )) {
+                    // upi gateway.
+                    String payeeVpa = upi;
+                    String payeeName = upi_name;
+                    try {
+                        newList.clear ( );
+                        newList.addAll (UpiPayment.getExistingUpiApps (AddFundFragment.this));
+                        newList.remove (newList.indexOf ("phonepe"));
+                    } catch (Exception e) {
+                        e.printStackTrace ( );
                     }
-                    else
-                    {
-                       module.noInternet();
-                    }
+                    startUpiPayment(transactionId, payeeVpa, payeeName, transactionRefId, desc, pnts,"","");
+
+
+                }
+                else{
+                    Toast.makeText (getApplicationContext(), "No internet", Toast.LENGTH_SHORT).show ( );
                 }
             }
         }
 
+
+    }
+
+
     public void getOrderId(String final_points) {
         String url="";
         if (gatewayStatus.equals("4")||gatewayStatus.equals("5")) {
-             url = URL_PAYMENT_GATEWAY_LINK;
+            url = URL_PAYMENT_GATEWAY_LINK;
             if (count==0) {
                 loadingBar.show();
             }
-        }else {
+        }
+        else {
             if (gatewayStatus.equals("12")){
                 url = URL_CNC_PAY+"/"+your_user_id+"/"+final_points;
 //                url = URL_KASTAKAR_PAY+"/"+your_user_id+"/"+final_points;
@@ -563,7 +436,7 @@ String your_user_id = "";
         {
             saveInfoIntoDatabase(your_user_id, pnts, "approved", "Add", transactionDetails.getTransactionId().toString());
         } else {
-             module.showToast("Payment Failed.");
+            module.showToast("Payment Failed.");
         }
 
     }
@@ -651,7 +524,7 @@ String your_user_id = "";
                 module.showVolleyError(error);
             }
         });
-      }
+    }
 
     public void getGatewaySetting(){
         HashMap<String,String> params=new HashMap<>();
@@ -758,7 +631,7 @@ String your_user_id = "";
     @Override
     public void onPaymentSuccess(String s) {
         Log.e("TAG", "onPaymentSuccess: "+s.toString() );
-       saveInfoIntoDatabase(your_user_id, pnts,"approved","Add","");
+        saveInfoIntoDatabase(your_user_id, pnts,"approved","Add","");
     }
 
     @Override
@@ -829,7 +702,7 @@ String your_user_id = "";
     protected void onRestart() {
         super.onRestart();
         Log.d ("update_rstart", "onResume: "+"_rstart");
-       // tv_wallet.setText(module.getAndSetWalletAmount());
+        // tv_wallet.setText(module.getAndSetWalletAmount());
         tv_walletAmount.setText("Rs. "+module.getAndSetWalletAmount());
     }
 
@@ -1012,24 +885,24 @@ String your_user_id = "";
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
         try {
-                if (requestCode == UPI_REQUEST_CODE) {
-                    Log.d("result", data.toString());
-                    if (data.getStringExtra("Status").equalsIgnoreCase("SUCCESS")) {
-                        saveInfoIntoDatabase(your_user_id, pnts, "pending", "Add", data.getStringExtra("txnId"));
+            if (requestCode == UPI_REQUEST_CODE) {
+                Log.d("result", data.toString());
+                if (data.getStringExtra("Status").equalsIgnoreCase("SUCCESS")) {
+                    saveInfoIntoDatabase(your_user_id, pnts, "pending", "Add", data.getStringExtra("txnId"));
 //                        SuccessBidDailoge();
 
-                    } else {
-                        module.showToast("Payment Failed.");
-                        finish();
-                    }
-                    Log.e("UPI_REQUEST_CODE", String.valueOf(UPI_REQUEST_CODE));
                 } else {
-                    Log.e("UPI_REQUEST_CODE", "400 Failed");
+                    module.showToast("Payment Failed.");
+                    finish();
                 }
-
-            } catch (Exception e) {
-                Log.e("Error in UPI", e.getMessage());
+                Log.e("UPI_REQUEST_CODE", String.valueOf(UPI_REQUEST_CODE));
+            } else {
+                Log.e("UPI_REQUEST_CODE", "400 Failed");
             }
-    }
+
+        } catch (Exception e) {
+            Log.e("Error in UPI", e.getMessage());
+   }
+}
 
 }
