@@ -94,7 +94,7 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
     ArrayList<String> pointlist;
     Module module;
     String pnts,wallet_amt="",withdr_no="";
-    public  static  String razorpay_email="",minAmount="",razorpay_mobile="";
+    public  static  String razorpay_email="",minAmount="1",razorpay_mobile="";
     LoadingBar loadingBar;
     String order_val="" ;
     String orderid="";
@@ -245,7 +245,7 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
                     module.fieldRequired("Minimum Range for points is "+ minAmount);
                 } else {
                     count=0;
-                    getOrderId (et_points.getText().toString() );
+                    onValidatingData ( );
                 }
 
                 break;
@@ -258,7 +258,10 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    private void onValidatingData( String orderid) {
+    private void getOrderId(String toString) {
+    }
+
+    private void onValidatingData() {
         int points = 0;
 
         if (TextUtils.isEmpty (et_points.getText ( ).toString ( ))) {
@@ -305,127 +308,6 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    public void getOrderId(String final_points) {
-        String url="";
-        if (gatewayStatus.equals("4")||gatewayStatus.equals("5")) {
-            url = URL_PAYMENT_GATEWAY_LINK;
-            if (count==0) {
-                loadingBar.show();
-            }
-        }
-        else {
-            if (gatewayStatus.equals("12")){
-                url = URL_CNC_PAY+"/"+your_user_id+"/"+final_points;
-//                url = URL_KASTAKAR_PAY+"/"+your_user_id+"/"+final_points;
-
-            }else {
-                url = URL_OrderId;
-            }
-            loadingBar.show();
-        }
-
-        HashMap<String,String> params=new HashMap<>();
-        String amt=String.valueOf (et_points.getText().toString());
-        params.put("user_id",your_user_id);
-        params.put("amount",amt);
-        Log.e("sendRequest", "saveInfoIntoDatabase: "+params.toString() );
-        module.postRequest(url, params, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (gatewayStatus.equals("4")) {
-                    if (count == 0) {
-                        loadingBar.dismiss();
-                    }
-                }else {
-                    loadingBar.dismiss();
-                }
-                Log.e("oder_id_valu",response.toString());
-                try {
-                    JSONObject obj = new JSONObject(response);
-                    boolean resp;
-                    if (gatewayStatus.equals("4")||gatewayStatus.equals("5")){
-                        resp = obj.getBoolean("response");
-                    }else {
-                        resp = obj.getBoolean("responce");
-                    }
-                    if(resp)
-                    {
-                        if (gatewayStatus.equals("4")){
-                            JSONObject object =obj.getJSONObject ("message");
-                            String url = object.getString("dyn_txn_url");
-                            String time = object.getString("delayTime");
-                            long timer = Long.parseLong(time);
-                            if (gatewayStatus.equals("4")) {
-                                if (count == 0) {
-                                    progressDialog.show();
-                                }
-                            }
-                            if (object.getString("status").equalsIgnoreCase("INITIATE")){
-                                Handler handler = new Handler();
-                                handler.postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        progressDialog.dismiss();
-                                        onValidatingData(url);
-                                    }
-                                },timer);
-
-                            }else {
-                                if (count<10) {
-                                    count++;
-                                    getOrderId(final_points);
-                                }else {
-                                    dialogPaymentError(final_points);
-                                }
-                            }
-                        }
-                        else if (gatewayStatus.equals("5")){
-                            JSONObject object = obj.getJSONObject ("message");
-                            order_val = object.getString ("txn_id");
-                            razor_pay = object.getString ("appkey");
-                            onValidatingData(order_val);
-
-                        } else if (gatewayStatus.equals("12")) {
-                            order_val = obj.getString("pay_url");
-                            onValidatingData(order_val);
-
-//                            JSONObject object = obj.getJSONObject ("message");
-//                            order_val = object.getString ("upi_intent_link");
-//                            onValidatingData(order_val);
-
-
-//                            {"responce":true,"message":{"upi_intent_link":"upi:\/\/pay?pa=Sharukh@indianbk&pn=Sharukh@indianbk&mc=5816&tr=2012316016420326057&tn=Pay&am=1.00&cu=INR&refUrl=",
-//                                    "transaction_id":"inpc1d2de04ff1686309151"}}
-
-
-                        } else {
-                            order_val = obj.getString ("message");
-                            onValidatingData(order_val);
-
-                        }
-                    } else {
-                        module.errorToast (getApplicationContext(),""+obj.getString("message"));
-
-                    }
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                if (gatewayStatus.equals("4")) {
-                    if (count == 0) {
-                        loadingBar.dismiss();
-                    }
-                }else {
-                    loadingBar.dismiss();
-                }
-                module.showVolleyError(error);
-            }
-        });
-        // return order_val;
-    }
 
 
     @Override

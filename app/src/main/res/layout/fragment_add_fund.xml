@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.AddFundFragment">
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/app_bar_common" />
@@ -20,179 +19,200 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-               <LinearLayout
-                       android:id="@+id/lin_whats"
-                       android:visibility="gone"
-                       android:gravity="center"
-                       android:layout_gravity="center"
-                       android:orientation="vertical"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content">
-                   <TextView
-                           android:id="@+id/tv_message"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="@string/add_fund_message"
-
-
-                           android:layout_marginTop="10dp"
-
-                           />
-                   <LinearLayout
-                           android:id="@+id/lin_whatsapp"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginTop="5dp"
-                           android:layout_gravity="center"
-                           android:gravity="center"
-                           android:orientation="horizontal">
-                       <ImageView
-                               android:layout_width="15dp"
-                               android:layout_height="15dp"
-                               android:src="@drawable/whatsapp"/>
-                       <TextView
-                               android:id="@+id/tv_whatsapp"
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_marginLeft="10dp"
-
-
-
-                               android:text=""/>
-                   </LinearLayout>
-
-
-                   <LinearLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:visibility="gone"
-                           android:orientation="vertical">
-                       <LinearLayout
-                               android:layout_width="match_parent"
-                               android:layout_height="45dp"
-                               android:layout_marginLeft="15dp"
-                               android:layout_marginTop="15dp"
-                               android:layout_marginRight="15dp"
-                               android:layout_gravity="center_vertical"
-                               android:gravity="center_vertical"
-                               android:background="@drawable/edit_bg">
-
-                       </LinearLayout>
-
-                   </LinearLayout>
-               </LinearLayout>
                 <LinearLayout
+                    android:background="@drawable/bg_round_with_border"
+                    android:layout_margin="@dimen/space_15"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_button"
+                        android:layout_width="140dp"
+                        android:layout_height="130dp">
+                        <ImageView
+                            android:padding="@dimen/space_5"
+                            android:src="@drawable/app_logo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lin_whats"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            style="@style/MyTextview_bold"
+                            android:id="@+id/tv_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_fund_message"
+                            android:layout_margin="10dp"
+                            />
+                        <LinearLayout
+                            android:id="@+id/lin_whatsapp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/whatsapp"/>
+                            <TextView
+                                style="@style/MyTextview_semibold"
+                                android:id="@+id/tv_whatsapp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text=""/>
+                        </LinearLayout>
+                        <View
+                            android:background="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:background="@drawable/edit_bg">
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
                         android:gravity="center"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <LinearLayout
+                        <LinearLayout
+                            android:visibility="gone"
                             android:gravity="center"
                             android:elevation="10dp"
-                            android:padding="12dp"
                             android:orientation="vertical"
-                            android:layout_marginHorizontal="25dp"
-                            android:layout_marginVertical="25dp"
                             android:background="@drawable/bg_round_with_border"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
 
-<TextView
-        android:padding="8dp"
-        android:text="Current Balance "
-
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-                        <TextView
-                            android:id="@+id/tv_walletAmount"
+                            <TextView
+                                android:padding="8dp"
+                                android:text="Current Balance "
+                                android:textColor="@color/gray"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:id="@+id/tv_walletAmount"
                                 android:padding="4dp"
                                 android:text=""
                                 android:textColor="@color/colorPrimary"
                                 android:gravity="center"
-
+                                android:textStyle="bold"
                                 android:textSize="30sp"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
 
-                    </LinearLayout>
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:padding="4dp"
-                            android:text="Add Fund Request"
-
-                            android:textSize="16dp" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginHorizontal="40dp"
-                            >
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/rupee"
-                                android:layout_marginHorizontal="5dp"
-                                app:tint="@color/colorPrimary"/>
-                            <EditText
-                                android:id="@+id/et_points"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_margin="@dimen/space_5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="12dp"
-                                android:background="@android:color/transparent"
-                                android:hint="@string/enter_points"
-                                android:textAlignment="center"
-                                android:maxLength="8"
-                                android:inputType="number"
-                                android:textAllCaps="false"
+                                android:text="Payment add karne ke 5 minute ke andar
+aapke wallet me points add ho jayenge. " />
+                            <View
+                                android:layout_margin="@dimen/space_5"
+                                android:background="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
 
-                                />
+                            <LinearLayout
 
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginVertical="10dp"
+                                android:layout_marginHorizontal="20dp"
+                                android:backgroundTint="@color/gray"
+                                android:background="@drawable/bg_digit_shape">
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/rupee"
+                                    android:layout_marginHorizontal="5dp"
+                                    app:tint="@color/colorPrimary"/>
+                                <EditText
+                                    android:id="@+id/et_points"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="12dp"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/enter_points"
+                                    android:textAlignment="textStart"
+                                    android:maxLength="8"
+                                    android:inputType="number"
+                                    android:textAllCaps="false" />
+
+                            </LinearLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rec_point"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginVertical="10dp">
+
+                            </androidx.recyclerview.widget.RecyclerView>
+                            <Button
+                                android:layout_margin="@dimen/space_10"
+                                android:id="@+id/btn_add"
+                                android:layout_width="@dimen/button_200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Add Fund">
+
+                            </Button>
                         </LinearLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rec_point"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="20dp"
-                            android:layout_marginVertical="20dp">
-
-                        </androidx.recyclerview.widget.RecyclerView>
-                        <Button
-                            android:id="@+id/btn_add"
-                            android:layout_width="272dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="35dp"
-                            android:layout_marginVertical="35dp"
-                            android:backgroundTint="@color/colorPrimary"
-                            android:padding="10dp"
-                            android:text="Add Fund"
-                            android:textAllCaps="false">
-
-                        </Button>
                     </LinearLayout>
-
                 </LinearLayout>
+
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
