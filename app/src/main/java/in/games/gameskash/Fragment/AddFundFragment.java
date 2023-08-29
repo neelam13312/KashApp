@@ -266,16 +266,13 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
 
     private void onValidatingData() {
         int points = 0;
-
         if (TextUtils.isEmpty (et_points.getText ( ).toString ( ))) {
             et_points.setError ("Enter Some Points");
-            return;
-        }
+            return;}
         else {
             points = Integer.parseInt (et_points.getText ( ).toString ( ).trim ( ));
             if (points < Integer.parseInt (minAmount)) {
                 module.fieldRequired ("Minimum Range for points is " + minAmount);
-
             } else {
                 pnts = String.valueOf (points);
                 String p = String.valueOf (points);
