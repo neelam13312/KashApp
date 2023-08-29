@@ -44,6 +44,7 @@ import in.games.gameskash.Adapter.MenuAdapter;
 import in.games.gameskash.Config.Module;
 import in.games.gameskash.Fragment.AccountStatementtFragment;
 import in.games.gameskash.Fragment.AllHistoryActivity;
+import in.games.gameskash.Fragment.FundFragment;
 import in.games.gameskash.Fragment.GameRateFragment;
 //import in.games.GamesSattaBet.Fragment.HistoryFragment;
 import in.games.gameskash.Fragment.HomeFragment;
@@ -297,7 +298,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     case "My Profile":
                         Intent intent_bank = new Intent(MainActivity.this, AddBankAccountActivity.class);
-                        startActivity(intent_bank);                        break;
+                        startActivity(intent_bank);
+                        break;
+                    case "My History":
+                        fm=new MyBidsFragment();
+                    case "Account Statement":
+                        fm = new AccountStatementtFragment();
+                        break;
+
+                    case "Notification":
+                        Intent intent = new Intent(MainActivity.this, NotificationFragment.class);
+                        startActivity(intent);
+
+                        break;
+//                        case "How to Play":
+//                            fm = new HowtoPlayFragment ();
+//                            break;
+                    case "Game Rates":
+                        fm = new GameRateFragment();
+                        break;
+
+                    case "Notice Board /Rules":
+                        fm = new NoticeboardFragment();
+                        break;
+
+                    case "Setting":
+                        fm = new SettingFragment();
+                        break;
 
 //                    case "Alert":
 //                        Intent intents = new Intent(MainActivity.this, NotificationFragment.class);
@@ -310,9 +337,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                        fm = new GenerateMPIN_Fragment();
 //                        break;
 //
-////                        case "My History":
-////                            fm=new HistoryFragment ();
-////                            break;
 //                    case "Funds":
 //                        fm = new FundFragment();
 //                        break;
@@ -320,9 +344,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                        fm = new VedioLanguageFragment();
 //                        break;
 
-                    case "Account Statement":
-                        fm = new AccountStatementtFragment();
-                        break;
+
 
 //                    case "Support":
 //                        if (chat_status.equals("0")) {
@@ -337,25 +359,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //
 //                        break;
 
-                    case "Notification":
-                        Intent intent = new Intent(MainActivity.this, NotificationFragment.class);
-                        startActivity(intent);
-
-                        break;
-//                        case "How to Play":
-//                            fm = new HowtoPlayFragment ();
-//                            break;
-                    case "Game Rates":
-                        fm = new GameRateFragment();
-                        break;
-
-                        case "Notice Board /Rules":
-                            fm = new NoticeboardFragment();
-                            break;
-
-                    case "Setting":
-                        fm = new SettingFragment();
-                        break;
 //                    case "Charts":
 //                        Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(Chart_link));
 //                        startActivity(intent1);
@@ -371,6 +374,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                        startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
 //
 //                        break;
+
+
                     case "Logout":
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.RightButtonsDialog);
                         builder.setTitle("Logout");

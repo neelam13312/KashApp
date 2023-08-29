@@ -1,11 +1,19 @@
 package in.games.gameskash.Model;
 
 public class IndexResponse {
-    String is_notification, is_forced, is_in_update,download_link,chat_msg,chat_text,chat_status,chat_mobile,telegram_id;
+    String is_notification, is_forced, is_in_update,download_link,chat_msg,chat_text,chat_status,chat_mobile,telegram_id,add_fund_msg;
     String id,withdraw_description,  mobile,adm_email,version,app_link,share_link,message,home_text,withdraw_text,withdraw_no,tag_line,min_amount,msg_status,w_saturday,w_sunday,w_amount,withdraw_limit,min_wallet,min_wallet_msg,device_config,notice;
     String logout_time,whatsapp_no,support,starline_id, max_bet_amount, min_bet_amt,max_withdraw_amount,withdraw_status,new_app_link;
 
     public IndexResponse() {
+    }
+
+    public String getAdd_fund_msg() {
+        return add_fund_msg;
+    }
+
+    public void setAdd_fund_msg(String add_fund_msg) {
+        this.add_fund_msg = add_fund_msg;
     }
 
     public String getTelegram_id() {

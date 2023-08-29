@@ -24,17 +24,19 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <LinearLayout
+                    android:layout_marginVertical="@dimen/space_8"
                     android:background="@drawable/bg_round_with_border"
-                    android:layout_margin="@dimen/space_15"
+                    android:layout_marginHorizontal="@dimen/space_15"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
+                        android:layout_margin="@dimen/space_10"
                         android:gravity="center"
                         android:layout_gravity="center"
                         android:background="@drawable/bg_button"
-                        android:layout_width="140dp"
-                        android:layout_height="130dp">
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
                         <ImageView
                             android:padding="@dimen/space_5"
                             android:src="@drawable/app_logo"
@@ -73,13 +75,14 @@
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 android:src="@drawable/whatsapp"/>
+
                             <TextView
-                                style="@style/MyTextview_semibold"
                                 android:id="@+id/tv_whatsapp"
+                                style="@style/MyTextview_semibold"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="25dp"
                                 android:layout_marginLeft="10dp"
-                                android:text=""/>
+                                android:text="" />
                         </LinearLayout>
                         <View
                             android:background="@color/black"
@@ -151,11 +154,14 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/tvAddFundDec"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:layout_gravity="center"
                                 android:layout_margin="@dimen/space_5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Payment add karne ke 5 minute ke andar
-aapke wallet me points add ho jayenge. " />
+                                android:text=" " />
                             <View
                                 android:layout_margin="@dimen/space_5"
                                 android:background="@color/black"

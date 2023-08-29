@@ -84,7 +84,7 @@ String ifsc_code,mobile, paytm_number, account_number, phonePay_number, googlePa
         lin_withdrawFund = view.findViewById(R.id.lin_withdrawFund);
         rec_fund= view.findViewById(R.id.rec_fund);
         rec_fund.setHasFixedSize(true);
-       rec_fund.setLayoutManager(new GridLayoutManager(getActivity (),2));
+    //   rec_fund.setLayoutManager(new GridLayoutManager(getActivity (),2));
         lin_withdrawFund.setOnClickListener(this);
         lin_addFund.setOnClickListener(this);
     }
@@ -99,28 +99,28 @@ String ifsc_code,mobile, paytm_number, account_number, phonePay_number, googlePa
 
         adapter= new FundAdapter(getActivity(),modellist);
         rec_fund.setAdapter(adapter);
-
-        GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
-        glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                switch (position %5) {
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        return 1;
-                    case 4:
+//
+//        GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
+//        glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(int position) {
+//                switch (position %5) {
+//                    case 0:
+//                    case 1:
 //                    case 2:
-                        return 2;
-                    default:
-                        //never gonna happen
-                        return  -1 ;
-                }
-            }
-        });
-
-        rec_fund.setLayoutManager (glm);
+//                    case 3:
+//                        return 1;
+//                    case 4:
+////                    case 2:
+//                        return 2;
+//                    default:
+//                        //never gonna happen
+//                        return  -1 ;
+//                }
+//            }
+//        });
+//
+//        rec_fund.setLayoutManager (glm);
         rec_fund.addOnItemTouchListener (new RecyclerTouchListener (getActivity ( ), rec_fund, new RecyclerTouchListener.OnItemClickListener ( ) {
             @Override
             public void onItemClick(View view, int position) {

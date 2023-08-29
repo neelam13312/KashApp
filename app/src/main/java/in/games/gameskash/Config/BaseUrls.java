@@ -33,7 +33,7 @@ public class BaseUrls {
     //get_starline
 
     public static final String URL_PAYMENT_METHOD=BASE_URL+"getPaymentMethods";
-    public static final String URL_TIME_SLOTS=BASE_URL+"get_time_slots";
+    public static final String URL_TIME_SLOTS=BASE_URL+"get_time_slots";//done
     public static final String URL_MATKA_WITH_ID=BASE_URL+"get_matka_with_id";///done
     public static final String URL_PLAY=BASE_URL+"how_to_play";
     public static final String URL_NOTICE=BASE_URL+"getNotice";///done
@@ -53,12 +53,12 @@ public class BaseUrls {
     public static final String Url_transaction_history=BASE_URL+"transaction";
     public static final String URL_GET_HISTORY=BASE_URL+"get_history";///done
     public static final String URL_Jackpot_HISTORY=BASE_URL+"getBidHistory";
-    public static final String URL_FUND_HISTORY=BASE_URL+"request_history";
+    public static final String URL_FUND_HISTORY=BASE_URL+"request_history";//done
     public static final String URL_GET_GAMES=BASE_URL+"getGames";
-    public static final String URL_GET_GATEWAY=BASE_URL+"gateway_setting";
+    public static final String URL_GET_GATEWAY=BASE_URL+"gateway_setting";//done
     public static final String URL_STARLINE_HISTORY=BASE_URL+"get_starline_history";
     public static final String URL_NOTICEBOARD=BASE_URL+"getNoticeboard";  ///done used image
-    public static final String URL_GETSTATUS=BASE_URL+"getLoginStatus"; // ///done
+    public static final String URL_GETLOGINSTATUS =BASE_URL+"getLoginStatus"; // ///done
     public static final String URL_STARLINEGAMES=BASE_URL+"getStarlineGames"; ///done
     public static final String URL_MATKAGAMES=BASE_URL+"getMatkaGames"; ///done
 
@@ -71,14 +71,17 @@ public class BaseUrls {
     public static final String URL_NOTIFICATIONS = BASE_URL+"notifications";//  in app not use
     public static final String URL_GET_NOTIFICATIONS = BASE_URL+"get_notifications";//done
     public static final String URL_SET_NOTIFICATIONS_STATUS = BASE_URL+"set_notification_status"; // done
-    public static final String URL_TERMS = BASE_URL+"terms_n_condition";
-    public static final String URL_JackpotMatka = BASE_URL+"get_jackpot";
-    public static final String URL_videoLanguage = BASE_URL+"get_languages";
-    public static final String URL_Submit_idea = BASE_URL+"submit_idea";
-    public static final String URL_VIDEO_LIST = BASE_URL+"video_list";
-    public static final String URL_Passbook = BASE_URL+"get_transactions";
+    public static final String URL_TERMS = BASE_URL+"terms_n_condition";// no need
+    public static final String URL_JackpotMatka = BASE_URL+"get_jackpot"; // no need
+
     public static final String URL_SET_STATUS = BASE_URL+"set_status";
     public static final String URL_GET_STATUS = BASE_URL+"get_status";
+
+    public static final String URL_videoLanguage = BASE_URL+"get_languages";//
+    public static final String URL_Submit_idea = BASE_URL+"submit_idea";//
+    public static final String URL_VIDEO_LIST = BASE_URL+"video_list";
+    public static final String URL_Passbook = BASE_URL+"get_transactions";
+
 
     public static final String URL_VERIFY_REGISTRATION = BASE_URL+"varify_sign_up";
     public static final String URL_GET_BANK_NAME = BASE_URL+"getbankdetails";

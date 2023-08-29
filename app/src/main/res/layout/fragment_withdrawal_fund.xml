@@ -25,9 +25,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-               
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -45,91 +42,15 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             android:padding="12dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:padding="8dp"
-                                android:text="Available Balance "
-
-                                />
-
-                            <TextView
-                                android:id="@+id/tv_walletAmount"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginVertical="10dp"
-                                android:gravity="center"
-                                android:padding="4dp"
-                                android:text=""
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="30sp"
-                                />
-
-                            <Button
-                                android:visibility="gone"
-                                android:id="@+id/btn_withdraw"
-                                android:layout_width="200dp"
-                                android:layout_height="@dimen/button_height"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
-                                android:drawableTint="@color/white"
-                                android:padding="10dp"
-                                android:text="Withdraw Fund"
-                                android:textAllCaps="false"
-                                />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:elevation="10dp"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-
-
                             <TextView
                                 android:id="@+id/tv_reeedm_msg"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
-                                android:text=" "
+                                android:text=" " />
 
 
-                                />
-
-                            <LinearLayout
-                                android:id="@+id/lin_whatsapp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/whatsapp"
-                                    android:visibility="gone" />
-
-                                <TextView
-                                    android:visibility="gone"
-                                    android:id="@+id/tv_whatsapp"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:text=""
-                                    android:textColor="@color/green"
-
-                                    />
-                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -139,17 +60,6 @@
                             android:elevation="10dp"
                             android:gravity="center"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="For Withdraw Related Query's Call or What'sApp"
-
-
-                                />
-
                             <TextView
                                 android:id="@+id/tv_message"
                                 android:layout_width="match_parent"
@@ -167,7 +77,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:layout_marginVertical="10dp"
-                                android:background="@color/lightggray" />
+                                android:background="@color/black" />
 
                             <TextView
                                 android:id="@+id/tv_desciption"
@@ -181,7 +91,84 @@
                             </TextView>
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_margin="@dimen/space_5"
+                                style="@style/MyTextview_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/for_withdraw_related_query_s_call_or_what_sapp" />
+                            <LinearLayout
+                                android:id="@+id/lin_whatsapp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
 
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/whatsapp" />
+
+                                <TextView
+                                    android:visibility="gone"
+                                    android:id="@+id/tv_whatsapp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:text=""
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_margin="@dimen/space_5"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_marginHorizontal="@dimen/space_8"
+                                    android:src="@drawable/wallet"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"/>
+                                <TextView
+                                    style="@style/MyTextview_bold"
+                                    android:id="@+id/tv_walletAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/withdrawal"
+                                    android:textColor="@color/colorPrimary"
+
+                                    />
+                            </LinearLayout>
+
+
+
+                            <Button
+                                android:visibility="gone"
+                                android:id="@+id/btn_withdraw"
+                                android:layout_width="200dp"
+                                android:layout_height="@dimen/button_height"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                android:drawableTint="@color/white"
+                                android:padding="10dp"
+                                android:text="Withdraw Fund"
+                                android:textAllCaps="false"
+                                />
+                        </LinearLayout>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

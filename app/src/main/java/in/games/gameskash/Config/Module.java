@@ -89,7 +89,7 @@ import in.games.gameskash.Util.SessionMangement;
 //import kotlinx.coroutines.channels.Receive;
 
 import static in.games.gameskash.Config.BaseUrls.URL_CHECK_DEVICE_LOGIN;
-import static in.games.gameskash.Config.BaseUrls.URL_GETSTATUS;
+import static in.games.gameskash.Config.BaseUrls.URL_GETLOGINSTATUS;
 import static in.games.gameskash.Config.BaseUrls.URL_GET_STATUS;
 import static in.games.gameskash.Config.BaseUrls.URL_INDEX;
 import static in.games.gameskash.Config.BaseUrls.URL_INSERT_DATA;
@@ -1594,7 +1594,7 @@ public class Module {
     public void loginStatus() {
         HashMap<String, String> params = new HashMap<> ( );
         params.put ("user_id",session_management.getUserDetails ().get (KEY_ID));
-        postRequest (URL_GETSTATUS, params, new Response.Listener<String> ( ) {
+        postRequest (URL_GETLOGINSTATUS, params, new Response.Listener<String> ( ) {
             @Override
             public void onResponse(String response) {
                 try {
@@ -1697,7 +1697,7 @@ public class Module {
                     if (object.getBoolean("responce")){
                         session_management.logoutSession();
                         Intent intent = new Intent(context, NewLoginActivity.class);
-                        intent.putExtra("type","r");
+                       // intent.putExtra("type","r");
                         context.startActivity(intent);
 //                        context.finish();
                     }

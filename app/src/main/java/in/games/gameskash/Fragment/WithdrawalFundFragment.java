@@ -119,7 +119,7 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
             public void getAppSettingData(IndexResponse model) {
                 tv_message.setText(model.getWithdraw_text());
                 withdraw_no = model.getWithdraw_no();
-                tv_desciption.setText (Html.fromHtml (model.getWithdraw_description ()));
+                tv_desciption.setText (module.htmlString (model.getWithdraw_description ()));
                 tv_whatsapp.setText(withdraw_no);
                 String text ="All withdrawal related queries \n";
                 String text1 = " whatsapp call ";

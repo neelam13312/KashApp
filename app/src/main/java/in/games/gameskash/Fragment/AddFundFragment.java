@@ -81,7 +81,7 @@ import static in.games.gameskash.Fragment.FundFragment.my_error;
 public class AddFundFragment extends AppCompatActivity implements View.OnClickListener, PaymentStatusListener {
     SwipeRefreshLayout swipe;
     ImageView civ_logo,img_back;
-    TextView tv_title,tv_message,tv_whatsapp,tv_wallet,tv_walletAmount;
+    TextView tv_title,tv_message,tv_whatsapp,tv_wallet,tv_walletAmount,tvAddFundDec;
     EditText et_points;
     LinearLayout lin_whatsapp,lin_whats;
     Button btn_add;
@@ -137,6 +137,7 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
                 if (Integer.parseInt(pointlist.get(position))>=Integer.parseInt(minAmount)) {
                     et_points.setText(pointlist.get(position));
                 }
+
             }
             @Override
             public void onLongItemClick(View view, int position) {
@@ -147,7 +148,6 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initView() {
-
         loadingBar = new LoadingBar(AddFundFragment.this);
         module = new Module(AddFundFragment.this);
         sessionMangement = new SessionMangement(AddFundFragment.this);
@@ -159,6 +159,7 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
         civ_logo =findViewById(R.id.civ_logo);
         tv_message =findViewById(R.id.tv_message);
         tv_whatsapp = findViewById(R.id.tv_whatsapp);
+        tvAddFundDec = findViewById(R.id.tvAddFundDec);
         tv_wallet = findViewById(R.id.tv_wallet);
         tv_walletAmount = findViewById(R.id.tv_walletAmount);
         et_points = findViewById(R.id.et_points);
@@ -177,8 +178,10 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
         module.getConfigData(new GetAppSettingData() {
             @Override
             public void getAppSettingData(IndexResponse model) {
+                tvAddFundDec.setText(model.getAdd_fund_msg());
                 tv_whatsapp.setText(model.getWithdraw_no());
                 withdr_no =model.getWithdraw_no();
+
             }
         });
 
@@ -205,7 +208,7 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
                 Log.e ("money_list", "onResponse: " + resp.toString ( ));
                 try {
                     JSONObject jsonObject = new JSONObject (resp);
-                    Boolean result = Boolean.valueOf (jsonObject.getString ("responce"));
+                    Boolean result = Boolean.valueOf (jsonObject.getString ("response"));
                     if (result) {
                         JSONArray arr = jsonObject.getJSONArray ("data");
                         JSONObject dataObj=arr.getJSONObject(0);

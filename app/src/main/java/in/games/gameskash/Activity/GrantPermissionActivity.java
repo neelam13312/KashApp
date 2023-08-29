@@ -87,7 +87,7 @@ public class GrantPermissionActivity extends AppCompatActivity {
     }
     void storage(){
         try {
-            startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:in.games.GamesSattaBets")));
+            startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("in.games.gameskash")));
         }catch (Exception e){
             e.printStackTrace();
         }
