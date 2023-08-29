@@ -309,10 +309,6 @@ public class AddFundFragment extends AppCompatActivity implements View.OnClickLi
 
 
     }
-
-
-
-
     @Override
     public void onTransactionCompleted(TransactionDetails transactionDetails)
     {

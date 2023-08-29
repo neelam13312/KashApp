@@ -102,7 +102,7 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
         civ_logo =findViewById(R.id.civ_logo);
         tv_message = findViewById(R.id.tv_message);
         tv_whatsapp =findViewById(R.id.tv_whatsapp);
-        tv_reeedm_msg=findViewById(R.id.tv_reeedm_msg);
+//        tv_reeedm_msg=findViewById(R.id.tv_reeedm_msg);
         tv_wallet =findViewById(R.id.tv_wallet);
 //        et_points = findViewById(R.id.et_points);
         lin_whatsapp =findViewById(R.id.lin_whatsapp);
@@ -123,8 +123,8 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
                 tv_whatsapp.setText(withdraw_no);
                 String text ="All withdrawal related queries \n";
                 String text1 = " whatsapp call ";
-                tv_reeedm_msg.setText(Html.fromHtml(text+"\n" +"<br><font color=green >"+ "<big>"+ withdraw_no +"</big>" +"</font><br>"
-                       +"\n" + text1));
+//                tv_reeedm_msg.setText(Html.fromHtml(text+"\n" +"<br><font color=green >"+ "<big>"+ withdraw_no +"</big>" +"</font><br>"
+//                       +"\n" + text1));
 
                 max_withdraw_amount = model.getMax_withdraw_amount();
                 w_status= model.getWithdraw_status();
@@ -133,7 +133,7 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
 
 
         btn_add.setOnClickListener(this);
-        tv_reeedm_msg.setOnClickListener(this);
+//        tv_reeedm_msg.setOnClickListener(this);
         lin_whatsapp.setOnClickListener(this);
         img_back.setOnClickListener(this);
         btn_withdraw.setOnClickListener(this);
@@ -176,9 +176,9 @@ public class WithdrawalFundFragment extends AppCompatActivity implements View.On
             case R.id.lin_whatsapp:
                 module.whatsapp(withdraw_no.toString(),"Hello! Admin ");
                 break;
-                case R.id.tv_reeedm_msg:
-                module.whatsapp(withdraw_no.toString(),"Hello! Admin ");
-                break;
+//                case R.id.tv_reeedm_msg:
+//                module.whatsapp(withdraw_no.toString(),"Hello! Admin ");
+//                break;
             case R.id.img_back:
                 finish();
                 break;

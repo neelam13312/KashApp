@@ -99,7 +99,7 @@
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
                                             android:visibility="visible"
-                                            android:src="@drawable/telephone"
+                                            android:src="@drawable/call"
                                             app:tint="@color/white"/>
 
 

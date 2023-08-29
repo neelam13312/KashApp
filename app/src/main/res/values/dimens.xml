@@ -124,6 +124,7 @@
     <dimen name="margin_edittext_horizontal">20dp</dimen>
     <dimen name="tv_8pt">8pt</dimen>
     <dimen name="button_200dp">240dp</dimen>
+    <dimen name="iv_25dp">25dp</dimen>
     <!--        <dimen name="passbok_size">@dimen/space_14</dimen>-->
 
 

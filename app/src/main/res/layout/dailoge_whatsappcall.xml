@@ -62,7 +62,7 @@
                                         <ImageView
                                             android:layout_margin="@dimen/space_5"
                                             android:layout_gravity="center"
-                                            android:src="@drawable/telephone"
+                                            android:src="@drawable/call"
                                             android:layout_width="35dp"
                                             android:layout_height="35dp"
                                             app:tint="@color/green">
