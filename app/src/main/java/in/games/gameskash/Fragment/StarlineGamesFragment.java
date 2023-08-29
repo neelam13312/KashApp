@@ -438,7 +438,6 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                     JSONObject object = new JSONObject(response);
                     if (object.getBoolean("response")){
                         JSONArray array = object.getJSONArray("data");
-
                         JSONObject obj = array.getJSONObject(0);
                         if(obj.getString ("starline_notification").equalsIgnoreCase ("1"))
                         {

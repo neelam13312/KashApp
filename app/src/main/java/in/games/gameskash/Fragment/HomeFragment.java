@@ -96,7 +96,7 @@ int is_download,is_forced;
 
         if (ConnectivityReceiver.isConnected())
         {
-            
+            module.loginStatus ();
             //                module.checkDeviceLogin();
 
             allMatkaGames ();

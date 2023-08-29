@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initView();
+        module.loginStatus ();
       //  getMobileData();
         module.getConfigData(new GetAppSettingData() {
             @Override
