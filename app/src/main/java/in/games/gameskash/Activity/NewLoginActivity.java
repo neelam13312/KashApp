@@ -215,7 +215,7 @@ public class NewLoginActivity extends AppCompatActivity implements View.OnClickL
 
                     }
                     else {
-                        module.errorToast (NewLoginActivity.this,object.getString("error").toString());
+                        module.errorToast (NewLoginActivity.this,object.getString("message").toString());
                     }
 
                 } catch (Exception ex) {

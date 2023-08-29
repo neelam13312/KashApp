@@ -1,7 +1,6 @@
 package in.games.gameskash.Fragment;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -99,8 +98,10 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         //StarlineGames();
         if (ConnectivityReceiver.isConnected())
         {
-            StarlineGames ();
+            getStarlineGames();
           getStatus();
+                           setStatus(starline_notification);
+
             getmatkaRate ();
             getCHART();
         }else {module.noInternet();}
@@ -114,9 +115,10 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                 {
                     if (ConnectivityReceiver.isConnected())
                     {
-                        StarlineGames ();
+                        getStarlineGames();
 
                       getStatus();
+                        setStatus(starline_notification);
                         getmatkaRate ();
                         getCHART();
                     }else {module.noInternet();}
@@ -196,8 +198,9 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         //StarlineGames();
         if (ConnectivityReceiver.isConnected())
         {
-            StarlineGames ();
+            getStarlineGames();
           getStatus();
+            setStatus(starline_notification);
             getmatkaRate ();
             getCHART();
         }else {module.noInternet();}
@@ -209,8 +212,9 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                 {
                     if (ConnectivityReceiver.isConnected())
                     {
-                        StarlineGames ();
+                        getStarlineGames();
                       getStatus();
+                        setStatus(starline_notification);
                         getmatkaRate ();
                         getCHART();
                     }else {
@@ -311,6 +315,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                             gameRateModel.setName(object.getString("name"));
                             gameRateModel.setRate_range(object.getString("rate_range"));
                             gameRateModel.setRate(object.getString("rate"));
+                            Log.e("tv_singleDigit", "onResponse: "+object.getString("rate") );
                             String type=object.getString("type").toString();
                             gameRateModel.setType(type);
 //                            if(type.equals("0"))
@@ -371,7 +376,7 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
     }
 
 
-    private  void StarlineGames()
+    private  void getStarlineGames()
     {
         sList.clear ();
         loadingBar.show();
@@ -402,6 +407,9 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
                         rec_starline.setAdapter(starlineGameAdapter);
                         rec_starline.startAnimation (leftTORight);
 
+                    }
+                    else {
+                        module.errorToast(getApplicationContext(),"No List Found");
                     }
                 }
                 catch (Exception ex)
@@ -568,21 +576,21 @@ public class StarlineGamesFragment extends AppCompatActivity implements View.OnC
         tv_wallet.setText (sessionMangement.getUserDetails ().get (KEY_WALLET));
         loadingBar=new LoadingBar (StarlineGamesFragment.this);
         module=new Module (StarlineGamesFragment.this);
-        swt_notification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    starline_notification="1";
-                    setStatus(starline_notification);
-
-                    // The toggle is enabled
-                } else {
-                    starline_notification="0";
-                    setStatus(starline_notification);
-
-                    // The toggle is disabled
-                }
-            }
-        });
+//        swt_notification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    starline_notification="1";
+//                    setStatus(starline_notification);
+//
+//                    // The toggle is enabled
+//                } else {
+//                    starline_notification="1";
+//                    setStatus(starline_notification);
+//
+//                    // The toggle is disabled
+//                }
+//            }
+//        });
     }
 
 
